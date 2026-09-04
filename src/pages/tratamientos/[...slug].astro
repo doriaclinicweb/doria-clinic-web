@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
+import { fotosEquipo } from '../../data/equipo-fotos';
 
 export async function getStaticPaths() {
   const tratamientos = await getCollection('tratamientos', (t) => !t.data.seo.noindex);
@@ -83,22 +84,28 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
     </div>
 
     <aside class="ficha">
-      <dl>
-        {d.precio_desde ? (<><dt>Desde</dt><dd>{d.precio_desde} €</dd></>) : null}
-        {d.financiacion_meses ? (<><dt>Financiación</dt><dd>{d.financiacion_meses} meses</dd></>) : null}
-        {d.duracion_sesion ? (<><dt>Sesión</dt><dd>{d.duracion_sesion}</dd></>) : null}
-        {d.numero_sesiones ? (<><dt>Sesiones</dt><dd>{d.numero_sesiones}</dd></>) : null}
-        {d.anestesia ? (<><dt>Anestesia</dt><dd>{anestesias[d.anestesia]}</dd></>) : null}
-      </dl>
+      {doctor && fotosEquipo[doctor.id] && (
+        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
+      )}
+      <div class="ficha-info">
+        <dl>
+          {d.precio_desde ? (<><dt>Desde</dt><dd>{d.precio_desde} €</dd></>) : null}
+          {d.financiacion_meses ? (<><dt>Financiación</dt><dd>{d.financiacion_meses} meses</dd></>) : null}
+          {d.duracion_sesion ? (<><dt>Sesión</dt><dd>{d.duracion_sesion}</dd></>) : null}
+          {d.numero_sesiones ? (<><dt>Sesiones</dt><dd>{d.numero_sesiones}</dd></>) : null}
+          {d.anestesia ? (<><dt>Anestesia</dt><dd>{anestesias[d.anestesia]}</dd></>) : null}
+        </dl>
 
-      <div class="firma">
-        <strong>{doctor?.data.nombre}</strong>
-        {doctor?.data.cargo} · Col. {doctor?.data.numero_colegiado}
+        <div class="firma">
+          <strong>{doctor?.data.nombre}</strong>
+          {doctor?.data.cargo}
+          <span class="colegiado">Col. {doctor?.data.numero_colegiado}</span>
+        </div>
+
+        <a class="boton boton-verde cta" href={`https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre ' + d.titulo)}`}>
+          Preguntar por WhatsApp
+        </a>
       </div>
-
-      <a class="boton boton-verde cta" href={`https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre ' + d.titulo)}`}>
-        Preguntar por WhatsApp
-      </a>
     </aside>
   </div>
 </Base>

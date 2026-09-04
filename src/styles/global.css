@@ -135,12 +135,16 @@ a { color: inherit; }
 
 .columnas { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 4rem; align-items: start; margin: 3rem 0 5rem; }
 @media (max-width: 900px) { .columnas { grid-template-columns: 1fr; gap: 2.5rem; } }
-.ficha { border: 1px solid var(--verde-claro); background: var(--gris); padding: 1.6rem; position: sticky; top: 2rem; }
-.ficha dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 0.6rem 1rem; font-size: 0.92rem; }
+.ficha { border: 1px solid var(--verde-claro); background: var(--gris); position: sticky; top: 2rem; overflow: hidden; }
+.ficha .foto { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; }
+.ficha-info { padding: 1.6rem; }
+.ficha dl { margin: 0 0 1.4rem; display: grid; grid-template-columns: 1fr auto; gap: 0.6rem 1rem; font-size: 0.92rem; }
 .ficha dt { color: #556055; }
 .ficha dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
-.ficha .firma { border-top: 1px solid var(--verde-claro); margin-top: 1.3rem; padding-top: 1.1rem; font-size: 0.86rem; color: #556055; }
-.ficha .firma strong { display: block; color: var(--tinta); font-family: var(--display); font-weight: 400; font-size: 1rem; }
+.ficha .firma { font-size: 0.86rem; color: #556055; }
+.ficha .firma strong { display: block; color: var(--tinta); font-family: var(--display); font-weight: 400; font-size: 1.2rem; margin-bottom: 0.3rem; }
+.ficha .firma .colegiado { display: block; margin-top: 0.15rem; font-size: 0.8rem; opacity: 0.85; }
+.ficha .cta { display: block; width: 100%; text-align: center; margin-top: 1.4rem; }
 .cabecera-pagina { background: var(--verde); color: var(--crema); padding: 1.6rem 0; }
 .cabecera-pagina .wrap { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
 .cabecera-pagina .marca { font-size: 1.55rem; text-decoration: none; margin-right: auto; }

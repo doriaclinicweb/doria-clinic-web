@@ -4,6 +4,7 @@ import '../styles/global.css';
 import clinica from '../data/clinica.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { fotosEquipo } from '../data/equipo-fotos';
 
 const IMG = 'https://doria.clinic/wp-content/uploads';
 
@@ -13,12 +14,7 @@ const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiv
 const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
 
 const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
-const fotos = {
-  'guillermo-doria': IMG + '/2025/12/guillermo-2-440x660.jpg',
-  'ines-doria': IMG + '/2025/12/ines-2-440x660.jpg',
-  'mariana-ettedgui': IMG + '/2025/12/marina-desktop-440x660.jpg',
-  'laura-rojas': IMG + '/2026/06/laura-440x660.jpg',
-};
+const fotos = fotosEquipo;
 
 const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
 const wa = clinica.software_citas;

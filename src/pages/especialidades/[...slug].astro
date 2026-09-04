@@ -2,6 +2,7 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
+import { fotosEquipo } from '../../data/equipo-fotos';
 
 export async function getStaticPaths() {
   const especialidades = await getCollection(
@@ -63,15 +64,21 @@ const schema = {
     </div>
 
     <aside class="ficha">
-      {doctor && (
-        <div class="firma">
-          <strong>{doctor.data.nombre}</strong>
-          {doctor.data.cargo} · Col. {doctor.data.numero_colegiado}
-        </div>
+      {doctor && fotosEquipo[doctor.id] && (
+        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
       )}
-      <a class="boton boton-verde cta" href={wa('Hola, quería información sobre ' + d.titulo)}>
-        Preguntar por WhatsApp
-      </a>
+      <div class="ficha-info">
+        {doctor && (
+          <div class="firma">
+            <strong>{doctor.data.nombre}</strong>
+            {doctor.data.cargo}
+            <span class="colegiado">Col. {doctor.data.numero_colegiado}</span>
+          </div>
+        )}
+        <a class="boton boton-verde cta" href={wa('Hola, quería información sobre ' + d.titulo)}>
+          Preguntar por WhatsApp
+        </a>
+      </div>
     </aside>
   </div>
 </Base>

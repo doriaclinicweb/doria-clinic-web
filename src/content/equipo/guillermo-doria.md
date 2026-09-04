@@ -1,7 +1,7 @@
 ---
 nombre: "Dr. Guillermo Doria"
 cargo: "Odontólogo especializado en odontología general, endodoncia y cirugía"
-numero_colegiado: "PENDIENTE"
+numero_colegiado: "08006212 (COEC)"
 titulacion:
   - "Doctor en Odontología por la Universitat Internacional de Catalunya"
   - "Licenciatura en Odontología por la Universitat Internacional de Catalunya"
