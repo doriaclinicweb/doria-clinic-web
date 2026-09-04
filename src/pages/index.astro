@@ -6,11 +6,11 @@ import clinica from '../data/clinica.json';
 const destacadas = (await getCollection('especialidades', (e) => e.data.idioma === 'es' && e.data.destacada))
   .sort((a, b) => a.data.orden - b.data.orden);
 ---
-<Base titulo="Clínica dental en el Eixample de Barcelona | Doria Clinic" descripcion="Clínica dental en el Eixample de Barcelona especializada en salud bucodental integral, estética dental y atención al deportista. Primera visita gratuita.">
-  <h1>Odontología con rigor y sin prisas, en el Eixample</h1>
+<Base titulo="Clínica dental en el Eixample de Barcelona | Doria Clinic" descripcion="Clínica dental en Carrer Villarroel, Barcelona, especializada en salud bucodental integral, estética dental y atención al deportista.">
+  <h1>Cuidamos personas, no solo sonrisas</h1>
   <p class="lede">
-    Un equipo de especialistas que trabaja coordinado, con tecnología de diagnóstico
-    digital y el tiempo suficiente para explicarte qué te pasa y por qué.
+    Clínica dental en el Eixample especializada en salud bucodental integral, estética
+    dental y atención al deportista. Sin prisas y sin sorpresas.
   </p>
 
   <div class="rejilla">
@@ -22,7 +22,10 @@ const destacadas = (await getCollection('especialidades', (e) => e.data.idioma =
     ))}
   </div>
 
-  <h2>Primera visita sin coste</h2>
-  <p>Valoración inicial, diagnóstico y plan de tratamiento explicado, sin compromiso.</p>
-  <a class="cta" href={`https://wa.me/${clinica.whatsapp}`}>Pedir cita por WhatsApp</a>
+  <h2>Primera visita</h2>
+  <p>
+    Revisión completa, diagnóstico personalizado y un plan de tratamiento adaptado a ti.
+    Nos tomamos el tiempo de escucharte y resolver tus dudas, sin compromiso.
+  </p>
+  <a class="cta" href={clinica.software_citas}>Pedir cita por WhatsApp</a>
 </Base>
