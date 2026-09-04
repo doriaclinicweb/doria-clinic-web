@@ -4,6 +4,7 @@ titulo: "Traumatología dental"
 subtitulo: "Atención inmediata ante golpes y accidentes"
 resumen: "Diagnóstico y tratamiento de lesiones en dientes, encías y hueso por golpes o accidentes, con teléfono de urgencia dental para deportistas y pacientes de cualquier edad."
 orden: 3
+especialista: guillermo-doria
 seo:
   titulo_seo: "Traumatología dental en Barcelona | Urgencias"
   meta_descripcion: "Traumatología dental en Barcelona: atención urgente ante golpes y fracturas dentales. Teléfono de urgencia y protectores bucales de prevención."

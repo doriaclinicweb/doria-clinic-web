@@ -5,6 +5,7 @@ subtitulo: "Equilibrio entre salud y armonía"
 resumen: "Carillas de porcelana y composite y blanqueamiento dental, con planificación digital de la sonrisa para ver el resultado antes de empezar el tratamiento."
 orden: 6
 destacada: true
+especialista: ines-doria
 seo:
   titulo_seo: "Estética dental en Barcelona | Doria Clinic"
   meta_descripcion: "Carillas dentales y blanqueamiento en Barcelona con planificación digital de la sonrisa. Primera visita gratuita en el Eixample."

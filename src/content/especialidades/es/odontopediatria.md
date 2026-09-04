@@ -4,6 +4,7 @@ titulo: "Odontopediatría"
 subtitulo: "Salud dental infantil"
 resumen: "Revisiones, selladores, fluorización y ortodoncia interceptiva. La prevención en la infancia es la base de una sonrisa sana en la edad adulta."
 orden: 7
+especialista: mariana-ettedgui
 seo:
   titulo_seo: "Odontopediatría en Barcelona | Dentista infantil"
   meta_descripcion: "Dentista infantil en el Eixample de Barcelona: revisiones, selladores y ortodoncia interceptiva. Primera visita gratuita."

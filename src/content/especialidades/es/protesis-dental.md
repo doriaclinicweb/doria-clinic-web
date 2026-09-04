@@ -4,6 +4,7 @@ titulo: "Prótesis dental"
 subtitulo: "Flujo digital de principio a fin"
 resumen: "Prótesis fijas y removibles sobre dientes naturales o implantes, diseñadas con escaneado intraoral y fabricación CAD/CAM en lugar de impresiones tradicionales."
 orden: 10
+especialista: ines-doria
 seo:
   titulo_seo: "Prótesis dentales en Barcelona | Doria Clinic"
   meta_descripcion: "Prótesis dentales fijas y removibles en Barcelona, diseñadas con escaneado intraoral y fabricación CAD/CAM. Primera visita gratuita."

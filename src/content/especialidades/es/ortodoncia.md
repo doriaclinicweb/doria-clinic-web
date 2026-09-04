@@ -5,6 +5,7 @@ subtitulo: "Alineación para la salud, no solo para la estética"
 resumen: "Ortodoncia invisible, brackets y ortodoncia infantil. Colocar cada diente en su posición mejora la función masticatoria y facilita la higiene diaria."
 orden: 4
 destacada: true
+especialista: mariana-ettedgui
 seo:
   titulo_seo: "Ortodoncia en Barcelona | Doria Clinic"
   meta_descripcion: "Ortodoncia invisible, brackets estéticos y ortodoncia infantil en el Eixample de Barcelona. Primera visita gratuita."
