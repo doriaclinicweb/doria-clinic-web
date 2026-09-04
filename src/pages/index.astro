@@ -1,31 +1,239 @@
 ---
 import { getCollection } from 'astro:content';
-import Base from '../layouts/Base.astro';
+import '../styles/global.css';
 import clinica from '../data/clinica.json';
 
-const destacadas = (await getCollection('especialidades', (e) => e.data.idioma === 'es' && e.data.destacada))
+const IMG = 'https://doria.clinic/wp-content/uploads';
+
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
   .sort((a, b) => a.data.orden - b.data.orden);
+const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiva'));
+const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
+
+const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
+const fotos = {
+  'guillermo-doria': IMG + '/2025/12/guillermo-2-440x660.jpg',
+  'ines-doria': IMG + '/2025/12/ines-2-440x660.jpg',
+  'mariana-ettedgui': IMG + '/2025/12/marina-desktop-440x660.jpg',
+  'laura-rojas': IMG + '/2026/06/laura-440x660.jpg',
+};
+
+const url = (e) => '/tratamientos/' + e.id.replace(/^es\//, '') + '/';
+const wa = clinica.software_citas;
+const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: clinica.nombre,
+  telephone: clinica.telefono,
+  email: clinica.email,
+  url: 'https://doria.clinic',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: clinica.direccion.calle,
+    postalCode: clinica.direccion.codigo_postal,
+    addressLocality: clinica.direccion.ciudad,
+    addressCountry: 'ES',
+  },
+  openingHours: 'Mo-Fr 10:00-14:00, Mo-Fr 16:00-20:00',
+  medicalSpecialty: 'Dentistry',
+};
 ---
-<Base titulo="Clínica dental en el Eixample de Barcelona | Doria Clinic" descripcion="Clínica dental en Carrer Villarroel, Barcelona, especializada en salud bucodental integral, estética dental y atención al deportista.">
-  <h1>Cuidamos personas, no solo sonrisas</h1>
-  <p class="lede">
-    Clínica dental en el Eixample especializada en salud bucodental integral, estética
-    dental y atención al deportista. Sin prisas y sin sorpresas.
-  </p>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clínica dental en el Eixample de Barcelona | Doria Clinic</title>
+    <meta name="description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
+    <link rel="canonical" href="https://doria.clinic/" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="wrap">
+        <a class="marca" href="/">Doria</a>
+        <nav>
+          <a href="/tratamientos/">Tratamientos</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#espacio">Espacio</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <a class="boton boton-fantasma" href={wa}>Pedir cita</a>
+      </div>
+    </header>
 
-  <div class="rejilla">
-    {destacadas.map((e) => (
-      <a href={`/tratamientos/${e.id.replace(/^es\//, '')}/`}>
-        <h3>{e.data.titulo}</h3>
-        <p>{e.data.resumen}</p>
-      </a>
-    ))}
-  </div>
+    <section class="hero">
+      <img src={IMG + '/2025/12/2-9.jpg'} alt="Recepción de Doria Clinic, con mostrador de madera y luz natural" fetchpriority="high" />
+      <div class="wrap">
+        <h1>Nuestra especialidad es tu bienestar</h1>
+        <p class="entradilla">
+          Clínica dental en el Eixample especializada en salud bucodental, estética
+          y atención al deportista.
+        </p>
+        <div class="acciones">
+          <a class="boton boton-primario" href={wa}>Pedir cita por WhatsApp</a>
+          <a class="boton boton-fantasma" href={tel}>{clinica.telefono}</a>
+        </div>
+      </div>
+    </section>
 
-  <h2>Primera visita</h2>
-  <p>
-    Revisión completa, diagnóstico personalizado y un plan de tratamiento adaptado a ti.
-    Nos tomamos el tiempo de escucharte y resolver tus dudas, sin compromiso.
-  </p>
-  <a class="cta" href={clinica.software_citas}>Pedir cita por WhatsApp</a>
-</Base>
+    <section class="seccion intro">
+      <div class="wrap cuerpo">
+        <p>Cuidamos personas, no solo sonrisas.</p>
+        <div>
+          <p>
+            Somos un equipo de odontólogos con una manera propia de hacer las cosas: con
+            rigor, cercanía y atención a cada detalle. Creemos que venir al dentista no
+            debería generar dudas ni incomodidad.
+          </p>
+          <p>
+            Por eso te ofrecemos una experiencia pensada para que te sientas cómodo,
+            tranquilo y bien acompañado desde el primer día.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="tratamientos">
+      <div class="wrap">
+        <h2>Tratamientos</h2>
+        <div class="especialidades">
+          {deportiva && (
+            <a class="ancha" href={url(deportiva)}>
+              <h3>{deportiva.data.titulo}</h3>
+              <p>{deportiva.data.resumen}</p>
+              <span class="mas">Protectores bucales a medida y salud oral del deportista →</span>
+            </a>
+          )}
+          {resto.map((e) => (
+            <a href={url(e)}>
+              <h3>{e.data.titulo}</h3>
+              <p>{e.data.resumen}</p>
+              <span class="mas">Ver tratamiento →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="equipo">
+      <div class="wrap">
+        <h2>Más que dentistas: tu equipo de confianza</h2>
+        <div class="equipo">
+          {equipo.map((d) => (
+            <figure>
+              <img src={fotos[d.id]} alt={d.data.nombre} loading="lazy" />
+              <figcaption>
+                <span class="nombre">{d.data.nombre}</span>
+                <span class="puesto">{d.data.cargo}</span>
+                <ul>{d.data.titulacion.slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion visita">
+      <div class="wrap cuerpo">
+        <div>
+          <h2>Tu primera visita</h2>
+          <p>
+            Revisión completa, diagnóstico personalizado y un plan de tratamiento adaptado
+            a ti. Nos tomamos el tiempo de escucharte y de resolver todas tus dudas.
+          </p>
+          <div class="acciones" style="margin-top:2rem">
+            <a class="boton boton-primario" href={wa}>Reservar por WhatsApp</a>
+          </div>
+        </div>
+        <ul>
+          <li>Sin compromiso y sin prisas</li>
+          <li>Presupuesto cerrado por escrito</li>
+          <li>Financiación a medida</li>
+          <li>Urgencias en el {clinica.telefono_urgencias}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="espacio">
+      <div class="wrap">
+        <h2>El espacio</h2>
+        <p style="margin-bottom:2.5rem">
+          Cada rincón está pensado para que te sientas cómodo: luz natural, materiales
+          cálidos y un ambiente que transmite calma.
+        </p>
+        <div class="espacio">
+          <figure><img src={IMG + '/2025/12/3-10.jpg'} alt="Sala de tratamiento de Doria Clinic" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/4-9.jpg'} alt="Interior de la clínica" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/1-10.jpg'} alt="Zona de espera" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" style="background:var(--gris)">
+      <div class="wrap">
+        <h2>Qué dicen nuestros pacientes</h2>
+        <div class="opiniones">
+          <blockquote>
+            <q>El trato es cercano, profesional y muy humano. Se nota que sabe lo que hace, siempre salgo encantada con el resultado.</q>
+            <cite>Yvonne Bayer</cite>
+          </blockquote>
+          <blockquote>
+            <q>Equipo honesto y muy profesional. Recomiendo esta clínica tanto para adultos como para niños.</q>
+            <cite>Hugo M. R.</cite>
+          </blockquote>
+          <blockquote>
+            <q>Un trato de 10, ir al dentista así da gusto. Volveremos seguro.</q>
+            <cite>Marta Bestard</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pie" id="contacto">
+      <div class="wrap">
+        <div class="cuerpo">
+          <div>
+            <span class="marca">Doria Clinic</span>
+            <p style="color:var(--verde-claro);max-width:34ch">
+              Clínica dental en el Eixample de Barcelona. Salud bucodental, estética
+              y atención al deportista.
+            </p>
+          </div>
+          <div>
+            <h3>Dónde estamos</h3>
+            <ul>
+              <li>{clinica.direccion.calle}</li>
+              <li>{clinica.direccion.codigo_postal} {clinica.direccion.ciudad}</li>
+              <li style="margin-top:.8rem"><a href={clinica.google_business_profile}>Cómo llegar</a></li>
+              <li><a href={tel}>{clinica.telefono}</a></li>
+              <li><a href={'mailto:' + clinica.email}>{clinica.email}</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Horarios</h3>
+            <ul>
+              {clinica.horarios.map((h) => <li>{h.dias}: {h.franja}</li>)}
+              <li style="margin-top:.8rem"><a href={clinica.redes.instagram}>Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">
+          <p>
+            El contenido sobre salud de esta web está redactado y revisado por el equipo
+            clínico de Doria Clinic. No recibimos financiación externa ni alojamos
+            publicidad de terceros. La información publicada complementa, pero no
+            sustituye, la relación entre el profesional sanitario y el paciente.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="flotante">
+      <a href={tel}>Llamar</a>
+      <a href={wa}>WhatsApp</a>
+    </div>
+  </body>
+</html>
