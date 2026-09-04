@@ -1,0 +1,74 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+
+export async function getStaticPaths() {
+  const especialidades = await getCollection(
+    'especialidades',
+    (e) => e.data.idioma === 'es' && !e.data.seo.noindex
+  );
+  return especialidades.map((e) => ({
+    params: { slug: e.id.replace(/^es\//, '') },
+    props: { especialidad: e },
+  }));
+}
+
+const { especialidad } = Astro.props;
+const d = especialidad.data;
+const { Content } = await render(especialidad);
+const doctor = d.especialista ? await getEntry(d.especialista) : null;
+
+const tratamientos = await getCollection(
+  'tratamientos',
+  (t) => t.data.especialidad.id === especialidad.id
+);
+
+const wa = (texto) =>
+  `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalSpecialty',
+  name: d.titulo,
+  description: d.resumen,
+};
+---
+<Base titulo={d.seo.titulo_seo} descripcion={d.seo.meta_descripcion} noindex={d.seo.noindex} schema={schema}>
+  <p><a href="/especialidades/">Especialidades</a></p>
+
+  <h1>{d.titulo}</h1>
+  {d.subtitulo && <p class="lede">{d.subtitulo}</p>}
+
+  <div class="columnas">
+    <div>
+      <Content />
+
+      {tratamientos.length > 0 && (
+        <>
+          <h2>Tratamientos relacionados</h2>
+          <ol class="proceso">
+            {tratamientos.map((t) => (
+              <li>
+                <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}><strong>{t.data.titulo}</strong></a>
+                <div>{t.data.resumen}</div>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+    </div>
+
+    <aside class="ficha">
+      {doctor && (
+        <div class="firma">
+          <strong>{doctor.data.nombre}</strong>
+          {doctor.data.cargo} · Col. {doctor.data.numero_colegiado}
+        </div>
+      )}
+      <a class="boton boton-verde cta" href={wa('Hola, quería información sobre ' + d.titulo)}>
+        Preguntar por WhatsApp
+      </a>
+    </aside>
+  </div>
+</Base>

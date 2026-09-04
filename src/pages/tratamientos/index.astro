@@ -1,19 +1,31 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
-const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
-  .sort((a, b) => a.data.orden - b.data.orden);
+const tratamientos = await getCollection(
+  'tratamientos',
+  (t) => t.data.idioma === 'es' && !t.data.seo.noindex
+);
+const conEspecialidad = await Promise.all(
+  tratamientos.map(async (t) => ({ t, especialidad: await getEntry(t.data.especialidad) }))
+);
 ---
-<Base titulo="Tratamientos dentales en Barcelona | Doria Clinic" descripcion="Especialidades y tratamientos de Doria Clinic en el Eixample de Barcelona: implantes, endodoncia, ortodoncia, periodoncia, estética dental y odontología deportiva.">
+<Base
+  titulo="Tratamientos dentales en Barcelona | Doria Clinic"
+  descripcion="Tratamientos concretos de Doria Clinic en el Eixample de Barcelona, con precio, duración y proceso detallado."
+>
   <h1>Tratamientos</h1>
-  <p class="lede">Cada especialidad la lleva el doctor formado en ella. Estas son las áreas en las que trabajamos.</p>
+  <p class="lede">
+    El detalle de precio, duración y proceso de cada tratamiento. Para conocer la
+    especialidad completa, visita <a href="/especialidades/">especialidades</a>.
+  </p>
 
-  <div class="rejilla">
-    {especialidades.map((e) => (
-      <a href={`/tratamientos/${e.id.replace(/^es\//, '')}/`}>
-        <h3>{e.data.titulo}</h3>
-        <p>{e.data.resumen}</p>
+  <div class="especialidades" style="margin:3rem 0 5rem">
+    {conEspecialidad.map(({ t, especialidad }) => (
+      <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}>
+        <h3>{t.data.titulo}</h3>
+        <p>{t.data.resumen}</p>
+        <span class="mas">{especialidad?.data.titulo} →</span>
       </a>
     ))}
   </div>

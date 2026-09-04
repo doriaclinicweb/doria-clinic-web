@@ -18,7 +18,7 @@ const fotos = {
   'laura-rojas': IMG + '/2026/06/laura-440x660.jpg',
 };
 
-const url = (e) => '/tratamientos/' + e.id.replace(/^es\//, '') + '/';
+const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
 const wa = clinica.software_citas;
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 
@@ -55,7 +55,7 @@ const schema = {
       <div class="wrap">
         <a class="marca" href="/">Doria</a>
         <nav>
-          <a href="/tratamientos/">Tratamientos</a>
+          <a href="/especialidades/">Especialidades</a>
           <a href="#equipo">Equipo</a>
           <a href="#espacio">Espacio</a>
           <a href="#contacto">Contacto</a>

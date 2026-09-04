@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
+  .sort((a, b) => a.data.orden - b.data.orden);
+const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
+---
+<Base
+  titulo="Especialidades dentales en Barcelona | Doria Clinic"
+  descripcion="Especialidades de Doria Clinic en el Eixample de Barcelona: implantes, endodoncia, ortodoncia, periodoncia, estética dental, odontopediatría y odontología deportiva."
+>
+  <h1>Especialidades</h1>
+  <p class="lede">
+    Cada área la lleva el doctor formado en ella. Así trabajamos la salud bucodental de
+    forma integral.
+  </p>
+
+  <div class="especialidades" style="margin:3rem 0 5rem">
+    {especialidades.map((e) => (
+      <a href={url(e)}>
+        <h3>{e.data.titulo}</h3>
+        <p>{e.data.resumen}</p>
+        <span class="mas">Ver especialidad →</span>
+      </a>
+    ))}
+  </div>
+</Base>

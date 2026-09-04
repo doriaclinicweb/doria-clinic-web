@@ -11,9 +11,27 @@ seo:
   meta_descripcion: "Endodoncia en Barcelona en una sola visita, bajo microscopio y sin dolor. Retratamientos y microcirugía apical. Primera visita gratuita."
 ---
 
-La endodoncia consiste en retirar la pulpa dañada o infectada del interior del diente,
-limpiar el conducto y sellarlo, de forma que la pieza siga cumpliendo su función y deje
-de doler.
+## Qué es una endodoncia
 
-Actuar antes de que la inflamación avance evita molestias intensas y permite conservar
-el diente natural. Hoy suele resolverse en una sola visita.
+La endodoncia, conocida popularmente como "matar el nervio", es el tratamiento que salva
+un diente cuya pulpa está dañada o infectada. En lugar de extraer la pieza, limpiamos y
+sellamos el interior del diente para eliminar el dolor y que siga cumpliendo su función.
+
+Actuar a tiempo evita molestias intensas y permite conservar la sonrisa natural. Hoy es
+un tratamiento rápido, que suele resolverse en una sola visita, indoloro y con una
+recuperación sencilla.
+
+## Retratamientos endodónticos
+
+Cuando un tratamiento de conductos previo no evoluciona como se esperaba, el
+retratamiento evita la pérdida de la pieza. Empezamos con un estudio exhaustivo de las
+causas del fracaso anterior y trabajamos bajo magnificación, con microscopio o lupas de
+alta potencia, para localizar conductos omitidos o fisuras casi invisibles a simple
+vista.
+
+## Microcirugía apical
+
+Cuando una endodoncia o un retratamiento no consiguen eliminar la infección en la punta
+de la raíz, la microcirugía apical es la última opción de la odontología conservadora
+para salvar el diente. [Cómo es la microcirugía
+apical](/tratamientos/microcirugia-apical/).
