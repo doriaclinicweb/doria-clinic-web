@@ -1,14 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-import '../styles/global.css';
-import clinica from '../data/clinica.json';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { fotosEquipo } from '../data/equipo-fotos';
+import '../../styles/global.css';
+import clinica from '../../data/clinica.json';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { fotosEquipo } from '../../data/equipo-fotos';
+import { equipoCa } from '../../data/equipo-ca';
 
 const IMG = 'https://doria.clinic/wp-content/uploads';
 
-const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'ca'))
   .sort((a, b) => a.data.orden - b.data.orden);
 const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiva'));
 const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
@@ -16,7 +17,7 @@ const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
 const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
 const fotos = fotosEquipo;
 
-const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
+const url = (e) => '/ca/especialidades/' + e.id.replace(/^ca\//, '') + '/';
 const wa = clinica.software_citas;
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 
@@ -39,27 +40,27 @@ const schema = {
 };
 ---
 <!doctype html>
-<html lang="es">
+<html lang="ca">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Clínica dental en el Eixample de Barcelona | Doria Clinic</title>
-    <meta name="description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
-    <link rel="canonical" href="https://doria.clinic/" />
+    <title>Clínica dental a l'Eixample de Barcelona | Doria Clinic</title>
+    <meta name="description" content="Clínica dental a Carrer Villarroel, Barcelona. Salut bucodental integral, estètica dental i atenció a l'esportista. Primera visita sense compromís." />
+    <link rel="canonical" href="https://doria.clinic/ca/" />
     <link rel="alternate" hreflang="es" href="https://doria.clinic/" />
     <link rel="alternate" hreflang="ca" href="https://doria.clinic/ca/" />
     <link rel="alternate" hreflang="x-default" href="https://doria.clinic/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="ca_ES" />
     <meta property="og:site_name" content={clinica.nombre} />
-    <meta property="og:url" content="https://doria.clinic/" />
-    <meta property="og:title" content="Clínica dental en el Eixample de Barcelona | Doria Clinic" />
-    <meta property="og:description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
+    <meta property="og:url" content="https://doria.clinic/ca/" />
+    <meta property="og:title" content="Clínica dental a l'Eixample de Barcelona | Doria Clinic" />
+    <meta property="og:description" content="Clínica dental a Carrer Villarroel, Barcelona. Salut bucodental integral, estètica dental i atenció a l'esportista. Primera visita sense compromís." />
     <meta property="og:image" content={IMG + '/2025/12/1-10.jpg'} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Clínica dental en el Eixample de Barcelona | Doria Clinic" />
-    <meta name="twitter:description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
+    <meta name="twitter:title" content="Clínica dental a l'Eixample de Barcelona | Doria Clinic" />
+    <meta name="twitter:description" content="Clínica dental a Carrer Villarroel, Barcelona. Salut bucodental integral, estètica dental i atenció a l'esportista. Primera visita sense compromís." />
     <meta name="twitter:image" content={IMG + '/2025/12/1-10.jpg'} />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -68,15 +69,15 @@ const schema = {
     <Header variante="hero" />
 
     <section class="hero">
-      <img src={IMG + '/2025/12/1-10.jpg'} alt="Recepción de Doria Clinic, con mostrador de madera y luz natural" fetchpriority="high" />
+      <img src={IMG + '/2025/12/1-10.jpg'} alt="Recepció de Doria Clinic, amb taulell de fusta i llum natural" fetchpriority="high" />
       <div class="wrap">
-        <h1>Nuestra especialidad es tu bienestar</h1>
+        <h1>La nostra especialitat és el teu benestar</h1>
         <p class="entradilla">
-          Clínica dental en el Eixample especializada en salud bucodental, estética
-          y atención al deportista.
+          Clínica dental a l'Eixample especialitzada en salut bucodental, estètica
+          i atenció a l'esportista.
         </p>
         <div class="acciones">
-          <a class="boton boton-primario" href={wa}>Pedir cita por WhatsApp</a>
+          <a class="boton boton-primario" href={wa}>Demanar cita per WhatsApp</a>
           <a class="boton boton-fantasma" href={tel}>{clinica.telefono}</a>
         </div>
       </div>
@@ -84,16 +85,16 @@ const schema = {
 
     <section class="seccion intro">
       <div class="wrap cuerpo">
-        <p>Cuidamos personas, no solo sonrisas.</p>
+        <p>Cuidem persones, no només somriures.</p>
         <div>
           <p>
-            Somos un equipo de odontólogos con una manera propia de hacer las cosas: con
-            rigor, cercanía y atención a cada detalle. Creemos que venir al dentista no
-            debería generar dudas ni incomodidad.
+            Som un equip d'odontòlegs amb una manera pròpia de fer les coses: amb
+            rigor, proximitat i atenció a cada detall. Creiem que anar al dentista no
+            hauria de generar dubtes ni incomoditat.
           </p>
           <p>
-            Por eso te ofrecemos una experiencia pensada para que te sientas cómodo,
-            tranquilo y bien acompañado desde el primer día.
+            Per això t'oferim una experiència pensada perquè et sentis còmode,
+            tranquil i ben acompanyat des del primer dia.
           </p>
         </div>
       </div>
@@ -101,20 +102,20 @@ const schema = {
 
     <section class="seccion" id="tratamientos">
       <div class="wrap">
-        <h2>Tratamientos</h2>
+        <h2>Tractaments</h2>
         <div class="especialidades">
           {deportiva && (
             <a class="ancha" href={url(deportiva)}>
               <h3>{deportiva.data.titulo}</h3>
               <p>{deportiva.data.resumen}</p>
-              <span class="mas">Protectores bucales a medida y salud oral del deportista →</span>
+              <span class="mas">Protectors bucals a mida i salut oral de l'esportista →</span>
             </a>
           )}
           {resto.map((e) => (
             <a href={url(e)}>
               <h3>{e.data.titulo}</h3>
               <p>{e.data.resumen}</p>
-              <span class="mas">Ver tratamiento →</span>
+              <span class="mas">Veure tractament →</span>
             </a>
           ))}
         </div>
@@ -123,15 +124,15 @@ const schema = {
 
     <section class="seccion" id="equipo">
       <div class="wrap">
-        <h2>Más que dentistas: tu equipo de confianza</h2>
+        <h2>Més que dentistes: el teu equip de confiança</h2>
         <div class="equipo">
           {equipo.map((d) => (
             <figure>
               <img src={fotos[d.id]} alt={d.data.nombre} loading="lazy" />
               <figcaption>
                 <span class="nombre">{d.data.nombre}</span>
-                <span class="puesto">{d.data.cargo}</span>
-                <ul>{d.data.titulacion.slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+                <span class="puesto">{equipoCa[d.id]?.cargo ?? d.data.cargo}</span>
+                <ul>{(equipoCa[d.id]?.titulacion ?? d.data.titulacion).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
               </figcaption>
             </figure>
           ))}
@@ -142,42 +143,42 @@ const schema = {
     <section class="seccion visita">
       <div class="wrap cuerpo">
         <div>
-          <h2>Tu primera visita</h2>
+          <h2>La teva primera visita</h2>
           <p>
-            Revisión completa, diagnóstico personalizado y un plan de tratamiento adaptado
-            a ti. Nos tomamos el tiempo de escucharte y de resolver todas tus dudas.
+            Revisió completa, diagnòstic personalitzat i un pla de tractament adaptat
+            a tu. Ens prenem el temps d'escoltar-te i de resoldre tots els teus dubtes.
           </p>
           <div class="acciones" style="margin-top:2rem">
-            <a class="boton boton-primario" href={wa}>Reservar por WhatsApp</a>
+            <a class="boton boton-primario" href={wa}>Reservar per WhatsApp</a>
           </div>
         </div>
         <ul>
-          <li>Sin compromiso y sin prisas</li>
-          <li>Presupuesto cerrado por escrito</li>
-          <li>Financiación a medida</li>
-          <li>Urgencias en el {clinica.telefono_urgencias}</li>
+          <li>Sense compromís i sense presses</li>
+          <li>Pressupost tancat per escrit</li>
+          <li>Finançament a mida</li>
+          <li>Urgències al {clinica.telefono_urgencias}</li>
         </ul>
       </div>
     </section>
 
     <section class="seccion" id="espacio">
       <div class="wrap">
-        <h2>El espacio</h2>
+        <h2>L'espai</h2>
         <p style="margin-bottom:2.5rem">
-          Cada rincón está pensado para que te sientas cómodo: luz natural, materiales
-          cálidos y un ambiente que transmite calma.
+          Cada racó està pensat perquè et sentis còmode: llum natural, materials
+          càlids i un ambient que transmet calma.
         </p>
         <div class="espacio">
-          <figure><img src={IMG + '/2025/12/3-10.jpg'} alt="Odontopediatra explicando el tratamiento a un niño" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/3-10.jpg'} alt="Odontopediatra explicant el tractament a un nen" loading="lazy" /></figure>
           <figure><img src={IMG + '/2025/12/4-9.jpg'} alt="Interior de la clínica" loading="lazy" /></figure>
-          <figure><img src={IMG + '/2025/12/1-10.jpg'} alt="Zona de espera" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/1-10.jpg'} alt="Zona d'espera" loading="lazy" /></figure>
         </div>
       </div>
     </section>
 
     <section class="seccion" style="background:var(--gris)">
       <div class="wrap">
-        <h2>Qué dicen nuestros pacientes</h2>
+        <h2>Què diuen els nostres pacients</h2>
         <div class="opiniones">
           <blockquote>
             <q>El trato es cercano, profesional y muy humano. Se nota que sabe lo que hace, siempre salgo encantada con el resultado.</q>

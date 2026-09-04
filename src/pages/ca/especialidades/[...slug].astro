@@ -1,0 +1,86 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import clinica from '../../../data/clinica.json';
+import { fotosEquipo } from '../../../data/equipo-fotos';
+import { equipoCa } from '../../../data/equipo-ca';
+
+export async function getStaticPaths() {
+  const especialidades = await getCollection(
+    'especialidades',
+    (e) => e.data.idioma === 'ca' && !e.data.seo.noindex
+  );
+  return especialidades.map((e) => ({
+    params: { slug: e.id.replace(/^ca\//, '') },
+    props: { especialidad: e },
+  }));
+}
+
+const { especialidad } = Astro.props;
+const d = especialidad.data;
+const { Content } = await render(especialidad);
+const doctor = d.especialista ? await getEntry(d.especialista) : null;
+const cargoCa = doctor ? equipoCa[doctor.id]?.cargo ?? doctor.data.cargo : null;
+
+const tratamientos = await getCollection(
+  'tratamientos',
+  (t) => t.data.especialidad.id === especialidad.id
+);
+
+const wa = (texto) =>
+  `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalSpecialty',
+  name: d.titulo,
+  description: d.resumen,
+};
+---
+<Base
+  titulo={d.seo.titulo_seo}
+  descripcion={d.seo.meta_descripcion}
+  noindex={d.seo.noindex}
+  schema={schema}
+  h1={d.titulo}
+  lede={d.subtitulo}
+  migas={[{ href: '/ca/especialidades/', etiqueta: 'Especialitats' }]}
+>
+  <div class="columnas">
+    <div>
+      <Content />
+
+      {tratamientos.length > 0 && (
+        <>
+          <h2>Tractaments relacionats</h2>
+          <ol class="proceso">
+            {tratamientos.map((t) => (
+              <li>
+                <a href={`/ca/tratamientos/${t.id.replace(/^ca\//, '')}/`}><strong>{t.data.titulo}</strong></a>
+                <div>{t.data.resumen}</div>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+    </div>
+
+    <aside class="ficha">
+      {doctor && fotosEquipo[doctor.id] && (
+        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
+      )}
+      <div class="ficha-info">
+        {doctor && (
+          <div class="firma">
+            <strong>{doctor.data.nombre}</strong>
+            {cargoCa}
+            <span class="colegiado">Col. {doctor.data.numero_colegiado}</span>
+          </div>
+        )}
+        <a class="boton boton-verde cta" href={wa('Hola, voldria informació sobre ' + d.titulo)}>
+          Preguntar per WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+</Base>

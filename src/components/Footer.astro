@@ -2,47 +2,74 @@
 import clinica from '../data/clinica.json';
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 const wa = clinica.software_citas;
+
+const pathname = Astro.url.pathname;
+const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
+
+const t = esCa
+  ? {
+      blurb: "Clínica dental a l'Eixample de Barcelona. Salut bucodental, estètica i atenció a l'esportista.",
+      donde: 'On som',
+      comoLlegar: 'Com arribar-hi',
+      horarios: 'Horaris',
+      llamar: 'Trucar',
+      legal:
+        "El contingut sobre salut d'aquesta web està redactat i revisat per l'equip clínic de Doria Clinic. No rebem finançament extern ni allotgem publicitat de tercers. La informació publicada complementa, però no substitueix, la relació entre el professional sanitari i el pacient.",
+    }
+  : {
+      blurb: 'Clínica dental en el Eixample de Barcelona. Salud bucodental, estética y atención al deportista.',
+      donde: 'Dónde estamos',
+      comoLlegar: 'Cómo llegar',
+      horarios: 'Horarios',
+      llamar: 'Llamar',
+      legal:
+        'El contenido sobre salud de esta web está redactado y revisado por el equipo clínico de Doria Clinic. No recibimos financiación externa ni alojamos publicidad de terceros. La información publicada complementa, pero no sustituye, la relación entre el profesional sanitario y el paciente.',
+    };
+
+const diasCa: Record<string, string> = {
+  'Lunes a viernes': 'Dilluns a divendres',
+  'Miércoles por la mañana': 'Dimecres al matí',
+  'Sábado y domingo': 'Dissabte i diumenge',
+};
+const franjaCa: Record<string, string> = {
+  '10:00 – 14:00 y 16:00 – 20:00': '10:00 – 14:00 i 16:00 – 20:00',
+  Cerrado: 'Tancat',
+};
 ---
 <footer class="pie" id="contacto">
   <div class="wrap">
     <div class="cuerpo">
       <div>
         <span class="marca">Doria Clinic</span>
-        <p style="color:var(--verde-claro);max-width:34ch">
-          Clínica dental en el Eixample de Barcelona. Salud bucodental, estética
-          y atención al deportista.
-        </p>
+        <p style="color:var(--verde-claro);max-width:34ch">{t.blurb}</p>
       </div>
       <div>
-        <h3>Dónde estamos</h3>
+        <h3>{t.donde}</h3>
         <ul>
           <li>{clinica.direccion.calle}</li>
           <li>{clinica.direccion.codigo_postal} {clinica.direccion.ciudad}</li>
-          <li style="margin-top:.8rem"><a href={clinica.google_business_profile}>Cómo llegar</a></li>
+          <li style="margin-top:.8rem"><a href={clinica.google_business_profile}>{t.comoLlegar}</a></li>
           <li><a href={tel}>{clinica.telefono}</a></li>
           <li><a href={'mailto:' + clinica.email}>{clinica.email}</a></li>
         </ul>
       </div>
       <div>
-        <h3>Horarios</h3>
+        <h3>{t.horarios}</h3>
         <ul>
-          {clinica.horarios.map((h) => <li>{h.dias}: {h.franja}</li>)}
+          {clinica.horarios.map((h) => (
+            <li>{esCa ? diasCa[h.dias] ?? h.dias : h.dias}: {esCa ? franjaCa[h.franja] ?? h.franja : h.franja}</li>
+          ))}
           <li style="margin-top:.8rem"><a href={clinica.redes.instagram}>Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="legal">
-      <p>
-        El contenido sobre salud de esta web está redactado y revisado por el equipo
-        clínico de Doria Clinic. No recibimos financiación externa ni alojamos
-        publicidad de terceros. La información publicada complementa, pero no
-        sustituye, la relación entre el profesional sanitario y el paciente.
-      </p>
+      <p>{t.legal}</p>
     </div>
   </div>
 </footer>
 
 <div class="flotante">
-  <a href={tel}>Llamar</a>
+  <a href={tel}>{t.llamar}</a>
   <a href={wa}>WhatsApp</a>
 </div>

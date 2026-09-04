@@ -1,0 +1,32 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+const tratamientos = await getCollection(
+  'tratamientos',
+  (t) => t.data.idioma === 'ca' && !t.data.seo.noindex
+);
+const conEspecialidad = await Promise.all(
+  tratamientos.map(async (t) => ({ t, especialidad: await getEntry(t.data.especialidad) }))
+);
+---
+<Base
+  titulo="Tractaments dentals a Barcelona | Doria Clinic"
+  descripcion="Tractaments concrets de Doria Clinic a l'Eixample de Barcelona, amb preu, durada i procés detallat."
+  h1="Tractaments"
+  lede="El detall de preu, durada i procés de cada tractament."
+>
+  <p style="margin-top:-1.5rem">
+    Per conèixer l'especialitat completa, visita <a href="/ca/especialidades/">especialitats</a>.
+  </p>
+
+  <div class="especialidades">
+    {conEspecialidad.map(({ t, especialidad }) => (
+      <a href={`/ca/tratamientos/${t.id.replace(/^ca\//, '')}/`}>
+        <h3>{t.data.titulo}</h3>
+        <p>{t.data.resumen}</p>
+        <span class="mas">{especialidad?.data.titulo} →</span>
+      </a>
+    ))}
+  </div>
+</Base>

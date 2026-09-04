@@ -5,17 +5,27 @@ interface Props { variante?: 'hero' | 'solida' }
 const { variante = 'solida' } = Astro.props;
 const enHero = variante === 'hero';
 const wa = clinica.software_citas;
+
+const pathname = Astro.url.pathname;
+const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
+const inicio = esCa ? '/ca/' : '/';
+const rutaAlterna = esCa ? (pathname.replace(/^\/ca/, '') || '/') : '/ca' + pathname;
+
+const t = esCa
+  ? { especialidades: 'Especialitats', tratamientos: 'Tractaments', equipo: 'Equip', espacio: 'Espai', contacto: 'Contacte', cita: 'Demanar cita' }
+  : { especialidades: 'Especialidades', tratamientos: 'Tratamientos', equipo: 'Equipo', espacio: 'Espacio', contacto: 'Contacto', cita: 'Pedir cita' };
 ---
 <header class="cabecera">
   <div class="wrap">
-    <a class="marca" href="/">Doria</a>
+    <a class="marca" href={inicio}>Doria</a>
     <nav>
-      <a href="/especialidades/">Especialidades</a>
-      <a href="/tratamientos/">Tratamientos</a>
-      <a href={enHero ? '#equipo' : '/#equipo'}>Equipo</a>
-      <a href={enHero ? '#espacio' : '/#espacio'}>Espacio</a>
-      <a href={enHero ? '#contacto' : '/#contacto'}>Contacto</a>
+      <a href={esCa ? '/ca/especialidades/' : '/especialidades/'}>{t.especialidades}</a>
+      <a href={esCa ? '/ca/tratamientos/' : '/tratamientos/'}>{t.tratamientos}</a>
+      <a href={enHero ? '#equipo' : inicio + '#equipo'}>{t.equipo}</a>
+      <a href={enHero ? '#espacio' : inicio + '#espacio'}>{t.espacio}</a>
+      <a href={enHero ? '#contacto' : inicio + '#contacto'}>{t.contacto}</a>
     </nav>
-    <a class="boton boton-fantasma" href={wa}>Pedir cita</a>
+    <a class="idioma" href={rutaAlterna}>{esCa ? 'ES' : 'CA'}</a>
+    <a class="boton boton-fantasma" href={wa}>{t.cita}</a>
   </div>
 </header>
