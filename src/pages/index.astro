@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import '../styles/global.css';
 import clinica from '../data/clinica.json';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const IMG = 'https://doria.clinic/wp-content/uploads';
 
@@ -51,18 +53,7 @@ const schema = {
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
-    <header class="cabecera">
-      <div class="wrap">
-        <a class="marca" href="/">Doria</a>
-        <nav>
-          <a href="/especialidades/">Especialidades</a>
-          <a href="#equipo">Equipo</a>
-          <a href="#espacio">Espacio</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <a class="boton boton-fantasma" href={wa}>Pedir cita</a>
-      </div>
-    </header>
+    <Header variante="hero" />
 
     <section class="hero">
       <img src={IMG + '/2025/12/1-10.jpg'} alt="Recepción de Doria Clinic, con mostrador de madera y luz natural" fetchpriority="high" />
@@ -192,48 +183,6 @@ const schema = {
       </div>
     </section>
 
-    <footer class="pie" id="contacto">
-      <div class="wrap">
-        <div class="cuerpo">
-          <div>
-            <span class="marca">Doria Clinic</span>
-            <p style="color:var(--verde-claro);max-width:34ch">
-              Clínica dental en el Eixample de Barcelona. Salud bucodental, estética
-              y atención al deportista.
-            </p>
-          </div>
-          <div>
-            <h3>Dónde estamos</h3>
-            <ul>
-              <li>{clinica.direccion.calle}</li>
-              <li>{clinica.direccion.codigo_postal} {clinica.direccion.ciudad}</li>
-              <li style="margin-top:.8rem"><a href={clinica.google_business_profile}>Cómo llegar</a></li>
-              <li><a href={tel}>{clinica.telefono}</a></li>
-              <li><a href={'mailto:' + clinica.email}>{clinica.email}</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Horarios</h3>
-            <ul>
-              {clinica.horarios.map((h) => <li>{h.dias}: {h.franja}</li>)}
-              <li style="margin-top:.8rem"><a href={clinica.redes.instagram}>Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="legal">
-          <p>
-            El contenido sobre salud de esta web está redactado y revisado por el equipo
-            clínico de Doria Clinic. No recibimos financiación externa ni alojamos
-            publicidad de terceros. La información publicada complementa, pero no
-            sustituye, la relación entre el profesional sanitario y el paciente.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <div class="flotante">
-      <a href={tel}>Llamar</a>
-      <a href={wa}>WhatsApp</a>
-    </div>
+    <Footer />
   </body>
 </html>

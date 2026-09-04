@@ -1,0 +1,21 @@
+---
+import clinica from '../data/clinica.json';
+
+interface Props { variante?: 'hero' | 'solida' }
+const { variante = 'solida' } = Astro.props;
+const enHero = variante === 'hero';
+const wa = clinica.software_citas;
+---
+<header class={enHero ? 'cabecera' : 'cabecera-pagina'}>
+  <div class="wrap">
+    <a class="marca" href="/">Doria</a>
+    <nav>
+      <a href="/especialidades/">Especialidades</a>
+      <a href="/tratamientos/">Tratamientos</a>
+      <a href={enHero ? '#equipo' : '/#equipo'}>Equipo</a>
+      <a href={enHero ? '#espacio' : '/#espacio'}>Espacio</a>
+      <a href={enHero ? '#contacto' : '/#contacto'}>Contacto</a>
+    </nav>
+    <a class="boton boton-fantasma" href={wa}>Pedir cita</a>
+  </div>
+</header>

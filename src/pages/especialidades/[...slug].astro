@@ -34,12 +34,15 @@ const schema = {
   description: d.resumen,
 };
 ---
-<Base titulo={d.seo.titulo_seo} descripcion={d.seo.meta_descripcion} noindex={d.seo.noindex} schema={schema}>
-  <p><a href="/especialidades/">Especialidades</a></p>
-
-  <h1>{d.titulo}</h1>
-  {d.subtitulo && <p class="lede">{d.subtitulo}</p>}
-
+<Base
+  titulo={d.seo.titulo_seo}
+  descripcion={d.seo.meta_descripcion}
+  noindex={d.seo.noindex}
+  schema={schema}
+  h1={d.titulo}
+  lede={d.subtitulo}
+  migas={{ href: '/especialidades/', etiqueta: 'Especialidades' }}
+>
   <div class="columnas">
     <div>
       <Content />

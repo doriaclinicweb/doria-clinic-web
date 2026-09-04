@@ -13,14 +13,14 @@ const conEspecialidad = await Promise.all(
 <Base
   titulo="Tratamientos dentales en Barcelona | Doria Clinic"
   descripcion="Tratamientos concretos de Doria Clinic en el Eixample de Barcelona, con precio, duración y proceso detallado."
+  h1="Tratamientos"
+  lede="El detalle de precio, duración y proceso de cada tratamiento."
 >
-  <h1>Tratamientos</h1>
-  <p class="lede">
-    El detalle de precio, duración y proceso de cada tratamiento. Para conocer la
-    especialidad completa, visita <a href="/especialidades/">especialidades</a>.
+  <p style="margin-top:-1.5rem">
+    Para conocer la especialidad completa, visita <a href="/especialidades/">especialidades</a>.
   </p>
 
-  <div class="especialidades" style="margin:3rem 0 5rem">
+  <div class="especialidades">
     {conEspecialidad.map(({ t, especialidad }) => (
       <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}>
         <h3>{t.data.titulo}</h3>

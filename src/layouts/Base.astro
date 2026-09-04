@@ -1,9 +1,18 @@
 ---
 import '../styles/global.css';
-import clinica from '../data/clinica.json';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-interface Props { titulo: string; descripcion: string; noindex?: boolean; schema?: object; }
-const { titulo, descripcion, noindex = false, schema } = Astro.props;
+interface Props {
+  titulo: string;
+  descripcion: string;
+  noindex?: boolean;
+  schema?: object;
+  h1: string;
+  lede?: string;
+  migas?: { href: string; etiqueta: string };
+}
+const { titulo, descripcion, noindex = false, schema, h1, lede, migas } = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
@@ -17,42 +26,20 @@ const { titulo, descripcion, noindex = false, schema } = Astro.props;
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   </head>
   <body>
-    <header class="site">
-      <div class="wrap">
-        <a class="marca" href="/">{clinica.nombre}</a>
-        <nav>
-          <a href="/especialidades/">Especialidades</a>
-          <a href="/tratamientos/">Tratamientos</a>
-          <a href="/equipo/">Equipo</a>
-          <a href="/la-clinica/">La clínica</a>
-          <a href="/contacto/">Contacto</a>
-        </nav>
-      </div>
-    </header>
+    <Header />
 
-    <main class="wrap">
+    <section class="pagina-intro">
+      <div class="wrap">
+        {migas && <a class="migas" href={migas.href}>← {migas.etiqueta}</a>}
+        <h1>{h1}</h1>
+        {lede && <p class="lede">{lede}</p>}
+      </div>
+    </section>
+
+    <main class="wrap contenido">
       <slot />
     </main>
 
-    <div class="wrap">
-      <section class="transparencia">
-        <p>
-          El contenido sobre salud de esta web está redactado y revisado por el equipo
-          clínico de {clinica.nombre}. Esta web no recibe financiación externa ni aloja
-          publicidad de terceros.
-        </p>
-        <p>
-          La información publicada complementa, pero no sustituye, la relación entre el
-          profesional sanitario y el paciente. Ante cualquier duda, consulte con su
-          dentista.
-        </p>
-      </section>
-    </div>
-
-    <footer class="site">
-      <div class="wrap">
-        {clinica.direccion.calle} · {clinica.direccion.ciudad} · {clinica.telefono}
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
