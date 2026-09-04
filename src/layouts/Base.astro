@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import clinica from '../data/clinica.json';
+
+interface Props { titulo: string; descripcion: string; noindex?: boolean; schema?: object; }
+const { titulo, descripcion, noindex = false, schema } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="marca" href="/">{clinica.nombre}</a>
+        <nav>
+          <a href="/tratamientos/">Tratamientos</a>
+          <a href="/equipo/">Equipo</a>
+          <a href="/la-clinica/">La clínica</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <div class="wrap">
+      <section class="transparencia">
+        <p>
+          El contenido sobre salud de esta web está redactado y revisado por el equipo
+          clínico de {clinica.nombre}. Esta web no recibe financiación externa ni aloja
+          publicidad de terceros.
+        </p>
+        <p>
+          La información publicada complementa, pero no sustituye, la relación entre el
+          profesional sanitario y el paciente. Ante cualquier duda, consulte con su
+          dentista.
+        </p>
+      </section>
+    </div>
+
+    <footer class="site">
+      <div class="wrap">
+        {clinica.direccion.calle} · {clinica.direccion.ciudad} · {clinica.telefono}
+      </div>
+    </footer>
+  </body>
+</html>

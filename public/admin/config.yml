@@ -1,0 +1,198 @@
+backend:
+  name: github
+  repo: ignaciorodesg/doria-clinic-web
+  branch: main
+
+media_folder: "src/assets/img"
+public_folder: "/img"
+
+i18n:
+  structure: multiple_folders
+  locales: [es, ca]
+  default_locale: es
+
+collections:
+  - name: tratamientos
+    label: "Tratamientos"
+    label_singular: "Tratamiento"
+    folder: "src/content/tratamientos"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    summary: "{{titulo}}"
+    fields:
+      - { name: idioma, label: "Idioma", widget: hidden, default: es }
+      - { name: titulo, label: "Título", widget: string, i18n: true }
+      - name: especialidad
+        label: "Especialidad"
+        widget: relation
+        collection: especialidades
+        search_fields: [titulo]
+        value_field: "{{slug}}"
+        display_fields: [titulo]
+      - name: resumen
+        label: "Resumen"
+        hint: "Dos frases. Sale en los listados y en Google. Entre 80 y 300 caracteres."
+        widget: text
+        i18n: true
+      - { name: precio_desde, label: "Precio desde (€)", widget: number, required: false, value_type: int }
+      - { name: financiacion_meses, label: "Financiación (meses)", widget: number, required: false, value_type: int }
+      - { name: duracion_sesion, label: "Duración de la sesión", widget: string, required: false }
+      - { name: numero_sesiones, label: "Número de sesiones", widget: string, required: false }
+      - name: anestesia
+        label: "Anestesia"
+        widget: select
+        required: false
+        options: ["no", "local", "sedacion"]
+      - name: especialista
+        label: "Especialista que lo firma"
+        widget: relation
+        collection: equipo
+        search_fields: [nombre]
+        value_field: "{{slug}}"
+        display_fields: [nombre, cargo]
+      - name: cuando_se_indica
+        label: "Cuándo se indica"
+        hint: "Situaciones concretas del paciente. Mínimo dos."
+        widget: list
+        field: { name: situacion, label: "Situación", widget: string }
+        i18n: true
+      - name: proceso
+        label: "Proceso"
+        widget: list
+        required: false
+        i18n: true
+        fields:
+          - { name: titulo, label: "Paso", widget: string }
+          - { name: descripcion, label: "Descripción", widget: text }
+          - { name: duracion, label: "Duración", widget: string, required: false }
+      - name: faqs
+        label: "Preguntas frecuentes"
+        hint: "Se convierten solas en datos estructurados para Google."
+        widget: list
+        required: false
+        i18n: true
+        fields:
+          - { name: pregunta, label: "Pregunta", widget: string }
+          - { name: respuesta, label: "Respuesta", widget: text }
+      - name: casos
+        label: "Casos"
+        hint: "Solo con consentimiento del paciente firmado y archivado."
+        widget: list
+        required: false
+        fields:
+          - { name: antes, label: "Antes", widget: image }
+          - { name: despues, label: "Después", widget: image }
+          - { name: descripcion, label: "Descripción", widget: string }
+          - { name: consentimiento_firmado, label: "Consentimiento firmado y archivado", widget: boolean, default: false }
+      - { name: imagen, label: "Imagen principal", widget: image, required: false }
+      - { name: actualizado, label: "Última revisión", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - name: seo
+        label: "Google"
+        widget: object
+        i18n: true
+        fields:
+          - { name: titulo_seo, label: "Título en Google", widget: string, pattern: ['^.{1,60}$', 'Máximo 60 caracteres'] }
+          - { name: meta_descripcion, label: "Descripción en Google", widget: text, pattern: ['^.{1,155}$', 'Máximo 155 caracteres'] }
+          - { name: noindex, label: "Ocultar de Google", widget: boolean, default: false }
+      - { name: body, label: "Contenido", widget: markdown, i18n: true }
+
+  - name: especialidades
+    label: "Especialidades"
+    label_singular: "Especialidad"
+    folder: "src/content/especialidades"
+    create: true
+    slug: "{{slug}}"
+    i18n: true
+    summary: "{{titulo}}"
+    fields:
+      - { name: idioma, label: "Idioma", widget: hidden, default: es }
+      - { name: titulo, label: "Título", widget: string, i18n: true }
+      - { name: subtitulo, label: "Subtítulo", widget: string, required: false, i18n: true }
+      - { name: resumen, label: "Resumen", widget: text, i18n: true }
+      - { name: orden, label: "Orden en el menú", widget: number, value_type: int }
+      - { name: destacada, label: "Destacar en la home", widget: boolean, default: false }
+      - name: especialista
+        label: "Especialista responsable"
+        widget: relation
+        required: false
+        collection: equipo
+        search_fields: [nombre]
+        value_field: "{{slug}}"
+        display_fields: [nombre]
+      - { name: imagen, label: "Imagen", widget: image, required: false }
+      - name: seo
+        label: "Google"
+        widget: object
+        i18n: true
+        fields:
+          - { name: titulo_seo, label: "Título en Google", widget: string }
+          - { name: meta_descripcion, label: "Descripción en Google", widget: text }
+          - { name: noindex, label: "Ocultar de Google", widget: boolean, default: false }
+      - { name: body, label: "Contenido", widget: markdown, i18n: true }
+
+  - name: equipo
+    label: "Equipo"
+    label_singular: "Doctor"
+    folder: "src/content/equipo"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{nombre}} — {{cargo}}"
+    fields:
+      - { name: nombre, label: "Nombre", widget: string }
+      - { name: cargo, label: "Cargo", widget: string }
+      - { name: numero_colegiado, label: "Número de colegiado", widget: string }
+      - name: titulacion
+        label: "Titulación"
+        widget: list
+        field: { name: titulo, label: "Título", widget: string }
+      - name: especialidades
+        label: "Especialidades"
+        widget: list
+        field: { name: nombre, label: "Especialidad", widget: string }
+      - { name: foto, label: "Foto", widget: image, required: false }
+      - { name: orden, label: "Orden", widget: number, value_type: int }
+      - { name: body, label: "Descripción", widget: markdown }
+
+  - name: ajustes
+    label: "Datos de la clínica"
+    files:
+      - name: clinica
+        label: "Teléfono, dirección y horarios"
+        file: "src/data/clinica.json"
+        fields:
+          - { name: nombre, label: "Nombre", widget: string }
+          - { name: razon_social, label: "Razón social", widget: string, required: false }
+          - { name: telefono, label: "Teléfono", widget: string }
+          - { name: telefono_urgencias, label: "Teléfono de urgencias", widget: string, required: false }
+          - { name: whatsapp, label: "WhatsApp (con prefijo, sin +)", widget: string }
+          - { name: email, label: "Email", widget: string }
+          - name: direccion
+            label: "Dirección"
+            widget: object
+            fields:
+              - { name: calle, label: "Calle y número", widget: string }
+              - { name: codigo_postal, label: "Código postal", widget: string }
+              - { name: ciudad, label: "Ciudad", widget: string }
+              - { name: barrio, label: "Barrio", widget: string }
+          - name: coordenadas
+            label: "Coordenadas"
+            widget: object
+            fields:
+              - { name: lat, label: "Latitud", widget: number, required: false, value_type: float }
+              - { name: lng, label: "Longitud", widget: number, required: false, value_type: float }
+          - name: horarios
+            label: "Horarios"
+            widget: list
+            fields:
+              - { name: dias, label: "Días", widget: string }
+              - { name: franja, label: "Horario", widget: string }
+          - { name: primera_visita_gratuita, label: "Primera visita gratuita", widget: boolean, default: true }
+          - { name: software_citas, label: "Enlace para pedir cita", widget: string, required: false }
+          - { name: google_business_profile, label: "Perfil de Google Business", widget: string, required: false }
+          - name: redes
+            label: "Redes"
+            widget: object
+            fields:
+              - { name: instagram, label: "Instagram", widget: string, required: false }
+              - { name: linkedin, label: "LinkedIn", widget: string, required: false }

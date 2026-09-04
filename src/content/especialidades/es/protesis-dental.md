@@ -1,0 +1,16 @@
+---
+idioma: es
+titulo: "Prótesis dental"
+subtitulo: "Flujo digital de principio a fin"
+resumen: "Prótesis fijas y removibles sobre dientes naturales o implantes, diseñadas con escaneado intraoral y fabricación CAD/CAM en lugar de impresiones tradicionales."
+orden: 9
+seo:
+  titulo_seo: "Prótesis dentales en Barcelona | Doria Clinic"
+  meta_descripcion: "Prótesis dentales fijas y removibles en Barcelona, diseñadas con escaneado intraoral y fabricación CAD/CAM. Primera visita gratuita."
+---
+
+Sustituimos la impresión tradicional por un escaneado intraoral que genera un modelo
+digital preciso de la boca. El laboratorio diseña la prótesis con software CAD y la
+fabrica con fresadora o impresión 3D.
+
+El resultado son prótesis más precisas, más cómodas y con mejor ajuste estético.

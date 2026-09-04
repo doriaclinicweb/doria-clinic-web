@@ -1,0 +1,101 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+
+export async function getStaticPaths() {
+  const tratamientos = await getCollection('tratamientos', (t) => !t.data.seo.noindex);
+  return tratamientos.map((t) => ({
+    params: { slug: t.id.replace(/^es\//, '') },
+    props: { tratamiento: t },
+  }));
+}
+
+const { tratamiento } = Astro.props;
+const d = tratamiento.data;
+const { Content } = await render(tratamiento);
+const especialidad = await getEntry(d.especialidad);
+const doctor = await getEntry(d.especialista);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalProcedure',
+  name: d.titulo,
+  description: d.resumen,
+  provider: { '@type': 'Dentist', name: clinica.nombre, address: clinica.direccion.calle },
+  ...(d.faqs.length && {
+    subjectOf: {
+      '@type': 'FAQPage',
+      mainEntity: d.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+      })),
+    },
+  }),
+};
+
+const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'Sedación' };
+---
+<Base titulo={d.seo.titulo_seo} descripcion={d.seo.meta_descripcion} noindex={d.seo.noindex} schema={schema}>
+  <p><a href="/tratamientos/">Tratamientos</a> / {especialidad?.data.titulo}</p>
+
+  <h1>{d.titulo}</h1>
+  <p class="lede">{d.resumen}</p>
+
+  <div class="columnas">
+    <div>
+      <Content />
+
+      <div class="indicaciones">
+        <strong>Cuándo se indica</strong>
+        <ul>{d.cuando_se_indica.map((s) => <li>{s}</li>)}</ul>
+      </div>
+
+      {d.proceso?.length ? (
+        <>
+          <h2>Cómo es el proceso</h2>
+          <ol class="proceso">
+            {d.proceso.map((p) => (
+              <li>
+                <strong>{p.titulo}</strong>
+                <div>{p.descripcion}</div>
+              </li>
+            ))}
+          </ol>
+        </>
+      ) : null}
+
+      {d.faqs.length ? (
+        <>
+          <h2>Preguntas frecuentes</h2>
+          {d.faqs.map((f) => (
+            <details class="faq">
+              <summary>{f.pregunta}</summary>
+              <p>{f.respuesta}</p>
+            </details>
+          ))}
+        </>
+      ) : null}
+    </div>
+
+    <aside class="ficha">
+      <dl>
+        {d.precio_desde ? (<><dt>Desde</dt><dd>{d.precio_desde} €</dd></>) : null}
+        {d.financiacion_meses ? (<><dt>Financiación</dt><dd>{d.financiacion_meses} meses</dd></>) : null}
+        {d.duracion_sesion ? (<><dt>Sesión</dt><dd>{d.duracion_sesion}</dd></>) : null}
+        {d.numero_sesiones ? (<><dt>Sesiones</dt><dd>{d.numero_sesiones}</dd></>) : null}
+        {d.anestesia ? (<><dt>Anestesia</dt><dd>{anestesias[d.anestesia]}</dd></>) : null}
+      </dl>
+
+      <div class="firma">
+        <strong>{doctor?.data.nombre}</strong>
+        {doctor?.data.cargo} · Col. {doctor?.data.numero_colegiado}
+      </div>
+
+      <a class="cta" href={`https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre ' + d.titulo)}`}>
+        Preguntar por WhatsApp
+      </a>
+    </aside>
+  </div>
+</Base>

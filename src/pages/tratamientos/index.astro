@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
+  .sort((a, b) => a.data.orden - b.data.orden);
+---
+<Base titulo="Tratamientos dentales en Barcelona | Doria Clinic" descripcion="Especialidades y tratamientos de Doria Clinic en el Eixample de Barcelona: implantes, endodoncia, ortodoncia, periodoncia, estética dental y odontología deportiva.">
+  <h1>Tratamientos</h1>
+  <p class="lede">Cada especialidad la lleva el doctor formado en ella. Estas son las áreas en las que trabajamos.</p>
+
+  <div class="rejilla">
+    {especialidades.map((e) => (
+      <a href={`/tratamientos/${e.id.replace(/^es\//, '')}/`}>
+        <h3>{e.data.titulo}</h3>
+        <p>{e.data.resumen}</p>
+      </a>
+    ))}
+  </div>
+</Base>

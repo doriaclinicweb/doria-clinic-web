@@ -1,0 +1,18 @@
+{
+  "nombre": "Doria Clinic",
+  "razon_social": "",
+  "telefono": "",
+  "telefono_urgencias": "",
+  "whatsapp": "",
+  "email": "",
+  "direccion": { "calle": "", "codigo_postal": "", "ciudad": "Barcelona", "barrio": "Eixample" },
+  "coordenadas": { "lat": null, "lng": null },
+  "horarios": [
+    { "dias": "Lunes a viernes", "franja": "" },
+    { "dias": "Sábado", "franja": "" }
+  ],
+  "primera_visita_gratuita": true,
+  "software_citas": "",
+  "google_business_profile": "",
+  "redes": { "instagram": "", "linkedin": "" }
+}

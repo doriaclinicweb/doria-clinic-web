@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import clinica from '../data/clinica.json';
+
+const destacadas = (await getCollection('especialidades', (e) => e.data.idioma === 'es' && e.data.destacada))
+  .sort((a, b) => a.data.orden - b.data.orden);
+---
+<Base titulo="Clínica dental en el Eixample de Barcelona | Doria Clinic" descripcion="Clínica dental en el Eixample de Barcelona especializada en salud bucodental integral, estética dental y atención al deportista. Primera visita gratuita.">
+  <h1>Odontología con rigor y sin prisas, en el Eixample</h1>
+  <p class="lede">
+    Un equipo de especialistas que trabaja coordinado, con tecnología de diagnóstico
+    digital y el tiempo suficiente para explicarte qué te pasa y por qué.
+  </p>
+
+  <div class="rejilla">
+    {destacadas.map((e) => (
+      <a href={`/tratamientos/${e.id.replace(/^es\//, '')}/`}>
+        <h3>{e.data.titulo}</h3>
+        <p>{e.data.resumen}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2>Primera visita sin coste</h2>
+  <p>Valoración inicial, diagnóstico y plan de tratamiento explicado, sin compromiso.</p>
+  <a class="cta" href={`https://wa.me/${clinica.whatsapp}`}>Pedir cita por WhatsApp</a>
+</Base>
