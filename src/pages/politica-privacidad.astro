@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import clinica from '../data/clinica.json';
+
+const titular = clinica.razon_social || clinica.nombre;
+const nif = clinica.nif || 'pendiente de completar';
+const direccion = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
+---
+<Base
+  titulo="Política de privacidad | Doria Clinic"
+  descripcion="Cómo trata Doria Clinic los datos personales de quienes visitan este sitio web y de quienes contactan por WhatsApp, teléfono o correo electrónico."
+  h1="Política de privacidad"
+>
+  <h2>1. Responsable del tratamiento</h2>
+  <ul>
+    <li>Titular: {titular} (nombre comercial «{clinica.nombre}»)</li>
+    <li>NIF: {nif}</li>
+    <li>Domicilio: {direccion}</li>
+    <li>Correo electrónico: {clinica.email}</li>
+    <li>Teléfono: {clinica.telefono}</li>
+  </ul>
+
+  <h2>2. Cómo tratamos tus datos en este sitio web</h2>
+  <p>
+    Este es un sitio web estático e informativo: no incorpora formularios propios de
+    recogida de datos ni una base de datos de pacientes. Cuando contactas con nosotros
+    a través de los botones de WhatsApp, llamada o correo electrónico que aparecen en
+    el sitio, la comunicación se produce directamente entre tú y {clinica.nombre} a
+    través de la aplicación o el servicio que elijas, y no queda ningún dato registrado
+    en este sitio web.
+  </p>
+
+  <h2>3. Datos de pacientes</h2>
+  <p>
+    Los datos de salud que nos facilites al pedir cita o durante tu visita a la
+    clínica se tratan conforme a la normativa de protección de datos y a la normativa
+    sanitaria aplicable (entre otras, la Ley 41/2002, básica reguladora de la autonomía
+    del paciente), y se gestionan al margen de este sitio web, en los sistemas propios
+    de la clínica.
+  </p>
+
+  <h2>4. Finalidad y base de legitimación</h2>
+  <p>
+    Cuando nos escribes por WhatsApp, correo electrónico o teléfono, tratamos los
+    datos que nos facilitas (nombre, teléfono, motivo de consulta) con la finalidad de
+    responder a tu solicitud y, en su caso, gestionar tu cita. La base que legitima
+    este tratamiento es tu propio consentimiento, manifestado al iniciar tú mismo el
+    contacto.
+  </p>
+
+  <h2>5. Destinatarios</h2>
+  <p>
+    No cedemos tus datos a terceros, salvo obligación legal. Si nos escribes por
+    WhatsApp, ten en cuenta que Meta Platforms Ireland Ltd., como proveedor del
+    servicio, trata los metadatos de la comunicación conforme a su propia política de
+    privacidad.
+  </p>
+
+  <h2>6. Tus derechos</h2>
+  <p>
+    Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición,
+    limitación del tratamiento y portabilidad escribiendo a{' '}
+    <a href={'mailto:' + clinica.email}>{clinica.email}</a> o por correo postal a{' '}
+    {direccion}, adjuntando copia de un documento que acredite tu identidad. También
+    puedes reclamar ante la Agencia Española de Protección de Datos
+    (<a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>) si
+    consideras que no hemos atendido correctamente tu solicitud.
+  </p>
+
+  <h2>7. Conservación de los datos</h2>
+  <p>
+    Solo conservamos los datos de las comunicaciones que nos escribes el tiempo
+    necesario para atender tu consulta, salvo que la relación derive en una atención
+    clínica, en cuyo caso se aplican los plazos de conservación de la historia clínica
+    que marca la legislación sanitaria.
+  </p>
+
+  <h2>8. Cookies</h2>
+  <p>
+    Este sitio web utiliza cookies propias y de terceros. Puedes consultar el detalle
+    en nuestra <a href="/politica-cookies/">política de cookies</a>.
+  </p>
+
+  <h2>9. Cambios en esta política</h2>
+  <p>
+    Podemos actualizar esta política de privacidad para adaptarla a novedades
+    legislativas o a cambios en el sitio web. Te recomendamos consultarla
+    periódicamente.
+  </p>
+
+  <p><em>Última actualización: septiembre de 2026.</em></p>
+</Base>
