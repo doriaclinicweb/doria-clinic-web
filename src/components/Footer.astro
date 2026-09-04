@@ -35,7 +35,19 @@ const franjaCa: Record<string, string> = {
   '10:00 – 14:00 y 16:00 – 20:00': '10:00 – 14:00 i 16:00 – 20:00',
   Cerrado: 'Tancat',
 };
+
+const direccionCompleta = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
+const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(direccionCompleta)}&output=embed`;
 ---
+<section class="mapa">
+  <iframe
+    src={mapaSrc}
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title={esCa ? 'Mapa d’ubicació de Doria Clinic' : 'Mapa de ubicación de Doria Clinic'}
+  ></iframe>
+</section>
+
 <footer class="pie" id="contacto">
   <div class="wrap">
     <div class="cuerpo">
