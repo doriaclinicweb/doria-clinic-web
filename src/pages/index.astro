@@ -46,6 +46,19 @@ const schema = {
     <title>Clínica dental en el Eixample de Barcelona | Doria Clinic</title>
     <meta name="description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
     <link rel="canonical" href="https://doria.clinic/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={clinica.nombre} />
+    <meta property="og:url" content="https://doria.clinic/" />
+    <meta property="og:title" content="Clínica dental en el Eixample de Barcelona | Doria Clinic" />
+    <meta property="og:description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
+    <meta property="og:image" content={IMG + '/2025/12/1-10.jpg'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clínica dental en el Eixample de Barcelona | Doria Clinic" />
+    <meta name="twitter:description" content="Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso." />
+    <meta name="twitter:image" content={IMG + '/2025/12/1-10.jpg'} />
+
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
