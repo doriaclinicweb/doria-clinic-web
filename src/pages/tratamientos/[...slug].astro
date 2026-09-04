@@ -45,7 +45,10 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
   schema={schema}
   h1={d.titulo}
   lede={d.resumen}
-  migas={{ href: `/especialidades/${especialidad.id.replace(/^es\//, '')}/`, etiqueta: especialidad?.data.titulo }}
+  migas={[
+    { href: '/especialidades/', etiqueta: 'Especialidades' },
+    { href: `/especialidades/${especialidad.id.replace(/^es\//, '')}/`, etiqueta: especialidad?.data.titulo },
+  ]}
 >
   <div class="columnas">
     <div>

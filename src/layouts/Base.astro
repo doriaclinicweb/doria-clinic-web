@@ -12,7 +12,7 @@ interface Props {
   schema?: object;
   h1: string;
   lede?: string;
-  migas?: { href: string; etiqueta: string };
+  migas?: { href: string; etiqueta: string }[];
   imagen?: string;
 }
 const {
@@ -22,10 +22,22 @@ const {
   schema,
   h1,
   lede,
-  migas,
+  migas = [],
   imagen = imagenPorDefecto,
 } = Astro.props;
 const url = new URL(Astro.url.pathname, Astro.site);
+
+const trail = [{ href: '/', etiqueta: 'Inicio' }, ...migas, { href: Astro.url.pathname, etiqueta: h1 }];
+const schemaMigas = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: trail.map((m, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: m.etiqueta,
+    item: new URL(m.href, Astro.site).toString(),
+  })),
+};
 ---
 <!doctype html>
 <html lang="es">
@@ -50,13 +62,24 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:image" content={imagen} />
 
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(schemaMigas)} />
   </head>
   <body>
     <Header />
 
     <section class="pagina-intro">
       <div class="wrap">
-        {migas && <a class="migas" href={migas.href}>← {migas.etiqueta}</a>}
+        <nav class="migas" aria-label="Migas de pan">
+          <a href="/">Inicio</a>
+          {migas.map((m) => (
+            <>
+              <span class="separador">/</span>
+              <a href={m.href}>{m.etiqueta}</a>
+            </>
+          ))}
+          <span class="separador">/</span>
+          <span class="actual" aria-current="page">{h1}</span>
+        </nav>
         <h1>{h1}</h1>
         {lede && <p class="lede">{lede}</p>}
       </div>

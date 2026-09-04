@@ -36,10 +36,10 @@ a { color: inherit; }
 .wrap { width: min(100% - 2.5rem, 1240px); margin-inline: auto; }
 .seccion { padding: clamp(4rem, 9vw, 8.5rem) 0; }
 
-.cabecera { position: absolute; inset: 0 0 auto; z-index: 3; padding: 1.6rem 0; color: var(--crema); }
-.cabecera .wrap { display: flex; align-items: center; gap: 2rem; }
+.cabecera { position: sticky; top: 0; z-index: 50; background: var(--verde); color: var(--crema); padding: 1.6rem 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+.cabecera .wrap { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
 .cabecera .marca { font-size: 1.55rem; text-decoration: none; margin-right: auto; }
-.cabecera nav { display: flex; gap: 1.8rem; font-size: 0.95rem; }
+.cabecera nav { display: flex; gap: 1.8rem; font-size: 0.95rem; flex-wrap: wrap; }
 .cabecera nav a { text-decoration: none; opacity: 0.9; }
 .cabecera nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 900px) { .cabecera nav { display: none; } }
@@ -145,18 +145,15 @@ a { color: inherit; }
 .ficha .firma strong { display: block; color: var(--tinta); font-family: var(--display); font-weight: 400; font-size: 1.2rem; margin-bottom: 0.3rem; }
 .ficha .firma .colegiado { display: block; margin-top: 0.15rem; font-size: 0.8rem; opacity: 0.85; }
 .ficha .cta { display: block; width: 100%; text-align: center; margin-top: 1.4rem; }
-.cabecera-pagina { background: var(--verde); color: var(--crema); padding: 1.6rem 0; }
-.cabecera-pagina .wrap { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-.cabecera-pagina .marca { font-size: 1.55rem; text-decoration: none; margin-right: auto; }
-.cabecera-pagina nav { display: flex; gap: 1.8rem; font-size: 0.95rem; flex-wrap: wrap; }
-.cabecera-pagina nav a { text-decoration: none; opacity: 0.9; }
-.cabecera-pagina nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-
 .pagina-intro { background: var(--gris); padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem); }
 .pagina-intro h1 { color: var(--verde); font-size: clamp(2.2rem, 5vw, 3.6rem); }
 .pagina-intro .lede { margin-top: 1rem; margin-bottom: 0; }
-.migas { display: inline-block; font-size: 0.85rem; color: #556055; text-decoration: none; margin-bottom: 1.4rem; }
-.migas:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.migas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #556055; margin-bottom: 1.4rem; }
+.migas a { color: inherit; text-decoration: none; }
+.migas a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.migas .actual { color: var(--verde); }
+.migas .separador { opacity: 0.6; }
 
 .contenido { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem); }
 
