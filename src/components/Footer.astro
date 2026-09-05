@@ -1,15 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
 import clinica from '../data/clinica.json';
+import { detectarIdioma, rutaEn, IDIOMAS } from '../utils/idioma';
 
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 const wa = clinica.software_citas;
 
 const pathname = Astro.url.pathname;
-const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
-const idioma = esCa ? 'ca' : 'es';
-const prefijo = esCa ? '/ca' : '';
-const rutaAlterna = esCa ? (pathname.replace(/^\/ca/, '') || '/') : '/ca' + pathname;
+const idioma = detectarIdioma(pathname);
+const prefijo = idioma === 'es' ? '' : '/' + idioma;
 
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
   .sort((a, b) => a.data.orden - b.data.orden);
@@ -20,57 +19,91 @@ const hrefEspecialidad = (e: (typeof especialidades)[number]) =>
 const hrefTratamiento = (t: (typeof tratamientos)[number]) =>
   `${prefijo}/tratamientos/${t.id.replace(new RegExp(`^${idioma}/`), '')}/`;
 
-const t = esCa
-  ? {
-      blurb: "Clínica dental a l'Eixample de Barcelona. Salut bucodental, estètica i atenció a l'esportista.",
-      cita: 'Demanar cita per WhatsApp',
-      especialidades: 'Especialitats',
-      totesEspecialidades: 'Totes les especialitats',
-      tratamientos: 'Tractaments',
-      totsTratamientos: 'Tots els tractaments',
-      donde: 'On som',
-      comoLlegar: 'Com arribar-hi',
-      horarios: 'Horaris',
-      llamar: 'Trucar',
-      googleReview: '5,0 a Google',
-      idiomaAlterno: 'Veure en castellà',
-      legalTitulo: 'Legal',
-      avisoLegal: 'Avís legal',
-      privacidad: 'Política de privacitat',
-      cookies: 'Política de cookies',
-      legal:
-        "El contingut sobre salut d'aquesta web està redactat i revisat per l'equip clínic de Doria Clinic. No rebem finançament extern ni allotgem publicitat de tercers. La informació publicada complementa, però no substitueix, la relació entre el professional sanitari i el pacient.",
-    }
-  : {
-      blurb: 'Clínica dental en el Eixample de Barcelona. Salud bucodental, estética y atención al deportista.',
-      cita: 'Pedir cita por WhatsApp',
-      especialidades: 'Especialidades',
-      totesEspecialidades: 'Todas las especialidades',
-      tratamientos: 'Tratamientos',
-      totsTratamientos: 'Todos los tratamientos',
-      donde: 'Dónde estamos',
-      comoLlegar: 'Cómo llegar',
-      horarios: 'Horarios',
-      llamar: 'Llamar',
-      googleReview: '5,0 en Google',
-      idiomaAlterno: 'Ver en catalán',
-      legalTitulo: 'Legal',
-      avisoLegal: 'Aviso legal',
-      privacidad: 'Política de privacidad',
-      cookies: 'Política de cookies',
-      legal:
-        'El contenido sobre salud de esta web está redactado y revisado por el equipo clínico de Doria Clinic. No recibimos financiación externa ni alojamos publicidad de terceros. La información publicada complementa, pero no sustituye, la relación entre el profesional sanitario y el paciente.',
-    };
+const etiquetasIdioma = { es: 'español', ca: 'català', en: 'English' };
+const verEnLabel = { es: 'Ver en', ca: 'Veure en', en: 'See in' }[idioma];
+const otrosIdiomas = IDIOMAS.filter((i) => i !== idioma).map((i) => ({
+  href: rutaEn(pathname, i),
+  etiqueta: `${verEnLabel} ${etiquetasIdioma[i]}`,
+}));
 
-const diasCa: Record<string, string> = {
-  'Lunes a viernes': 'Dilluns a divendres',
-  'Miércoles por la mañana': 'Dimecres al matí',
-  'Sábado y domingo': 'Dissabte i diumenge',
+const t = {
+  ca: {
+    blurb: "Clínica dental a l'Eixample de Barcelona. Salut bucodental, estètica i atenció a l'esportista.",
+    cita: 'Demanar cita per WhatsApp',
+    especialidades: 'Especialitats',
+    totesEspecialidades: 'Totes les especialitats',
+    tratamientos: 'Tractaments',
+    totsTratamientos: 'Tots els tractaments',
+    donde: 'On som',
+    comoLlegar: 'Com arribar-hi',
+    horarios: 'Horaris',
+    llamar: 'Trucar',
+    googleReview: '5,0 a Google',
+    legalTitulo: 'Legal',
+    avisoLegal: 'Avís legal',
+    privacidad: 'Política de privacitat',
+    cookies: 'Política de cookies',
+    legal:
+      "El contingut sobre salut d'aquesta web està redactat i revisat per l'equip clínic de Doria Clinic. No rebem finançament extern ni allotgem publicitat de tercers. La informació publicada complementa, però no substitueix, la relació entre el professional sanitari i el pacient.",
+  },
+  en: {
+    blurb: 'Dental clinic in the Eixample, Barcelona. Comprehensive oral health, aesthetics and care for athletes.',
+    cita: 'Book by WhatsApp',
+    especialidades: 'Specialties',
+    totesEspecialidades: 'All specialties',
+    tratamientos: 'Treatments',
+    totsTratamientos: 'All treatments',
+    donde: 'Where we are',
+    comoLlegar: 'Get directions',
+    horarios: 'Opening hours',
+    llamar: 'Call',
+    googleReview: '5.0 on Google',
+    legalTitulo: 'Legal',
+    avisoLegal: 'Legal notice',
+    privacidad: 'Privacy policy',
+    cookies: 'Cookie policy',
+    legal:
+      'The health content on this website is written and reviewed by the Doria Clinic clinical team. We receive no external funding and host no third-party advertising. The information published complements, but does not replace, the relationship between healthcare professional and patient.',
+  },
+  es: {
+    blurb: 'Clínica dental en el Eixample de Barcelona. Salud bucodental, estética y atención al deportista.',
+    cita: 'Pedir cita por WhatsApp',
+    especialidades: 'Especialidades',
+    totesEspecialidades: 'Todas las especialidades',
+    tratamientos: 'Tratamientos',
+    totsTratamientos: 'Todos los tratamientos',
+    donde: 'Dónde estamos',
+    comoLlegar: 'Cómo llegar',
+    horarios: 'Horarios',
+    llamar: 'Llamar',
+    googleReview: '5,0 en Google',
+    legalTitulo: 'Legal',
+    avisoLegal: 'Aviso legal',
+    privacidad: 'Política de privacidad',
+    cookies: 'Política de cookies',
+    legal:
+      'El contenido sobre salud de esta web está redactado y revisado por el equipo clínico de Doria Clinic. No recibimos financiación externa ni alojamos publicidad de terceros. La información publicada complementa, pero no sustituye, la relación entre el profesional sanitario y el paciente.',
+  },
+}[idioma];
+
+const diasTraducidos: Record<string, Record<string, string>> = {
+  ca: {
+    'Lunes a viernes': 'Dilluns a divendres',
+    'Miércoles por la mañana': 'Dimecres al matí',
+    'Sábado y domingo': 'Dissabte i diumenge',
+  },
+  en: {
+    'Lunes a viernes': 'Monday to Friday',
+    'Miércoles por la mañana': 'Wednesday morning',
+    'Sábado y domingo': 'Saturday and Sunday',
+  },
 };
-const franjaCa: Record<string, string> = {
-  '10:00 – 14:00 y 16:00 – 20:00': '10:00 – 14:00 i 16:00 – 20:00',
-  Cerrado: 'Tancat',
+const franjaTraducida: Record<string, Record<string, string>> = {
+  ca: { '10:00 – 14:00 y 16:00 – 20:00': '10:00 – 14:00 i 16:00 – 20:00', Cerrado: 'Tancat' },
+  en: { '10:00 – 14:00 y 16:00 – 20:00': '10:00 AM – 2:00 PM and 4:00 PM – 8:00 PM', Cerrado: 'Closed' },
 };
+const diasCa = diasTraducidos[idioma] ?? {};
+const franjaCa = franjaTraducida[idioma] ?? {};
 
 const direccionCompleta = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
 const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(direccionCompleta)}&output=embed`;
@@ -85,7 +118,7 @@ const redes = [
     src={mapaSrc}
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
-    title={esCa ? 'Mapa d’ubicació de Doria Clinic' : 'Mapa de ubicación de Doria Clinic'}
+    title={{ es: 'Mapa de ubicación de Doria Clinic', ca: 'Mapa d’ubicació de Doria Clinic', en: 'Map of Doria Clinic’s location' }[idioma]}
   ></iframe>
 </section>
 
@@ -154,7 +187,7 @@ const redes = [
         <h3>{t.horarios}</h3>
         <ul>
           {clinica.horarios.map((h) => (
-            <li>{esCa ? diasCa[h.dias] ?? h.dias : h.dias}: {esCa ? franjaCa[h.franja] ?? h.franja : h.franja}</li>
+            <li>{diasCa[h.dias] ?? h.dias}: {franjaCa[h.franja] ?? h.franja}</li>
           ))}
         </ul>
         <h3 style="margin-top:1.6rem">{t.legalTitulo}</h3>
@@ -162,7 +195,9 @@ const redes = [
           <li><a href={`${prefijo}/aviso-legal/`}>{t.avisoLegal}</a></li>
           <li><a href={`${prefijo}/politica-privacidad/`}>{t.privacidad}</a></li>
           <li><a href={`${prefijo}/politica-cookies/`}>{t.cookies}</a></li>
-          <li class="idioma-pie"><a href={rutaAlterna}>{t.idiomaAlterno}</a></li>
+          {otrosIdiomas.map((o) => (
+            <li class="idioma-pie"><a href={o.href}>{o.etiqueta}</a></li>
+          ))}
         </ul>
       </div>
     </div>

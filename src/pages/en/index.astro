@@ -1,0 +1,203 @@
+---
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+import clinica from '../../data/clinica.json';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { fotosEquipo } from '../../data/equipo-fotos';
+import { equipoEn } from '../../data/equipo-en';
+
+const IMG = 'https://doria.clinic/wp-content/uploads';
+
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'en'))
+  .sort((a, b) => a.data.orden - b.data.orden);
+const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiva'));
+const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
+
+const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
+const fotos = fotosEquipo;
+
+const url = (e) => '/en/especialidades/' + e.id.replace(/^en\//, '') + '/';
+const wa = clinica.software_citas;
+const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: clinica.nombre,
+  telephone: clinica.telefono,
+  email: clinica.email,
+  url: 'https://doria.clinic',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: clinica.direccion.calle,
+    postalCode: clinica.direccion.codigo_postal,
+    addressLocality: clinica.direccion.ciudad,
+    addressCountry: 'ES',
+  },
+  openingHours: 'Mo-Fr 10:00-14:00, Mo-Fr 16:00-20:00',
+  medicalSpecialty: 'Dentistry',
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dental clinic in the Eixample, Barcelona | Doria Clinic</title>
+    <meta name="description" content="Dental clinic on Carrer Villarroel, Barcelona. Comprehensive oral health, dental aesthetics and care for athletes. Free first visit, no obligation." />
+    <link rel="canonical" href="https://doria.clinic/en/" />
+    <link rel="alternate" hreflang="es" href="https://doria.clinic/" />
+    <link rel="alternate" hreflang="ca" href="https://doria.clinic/ca/" />
+    <link rel="alternate" hreflang="en" href="https://doria.clinic/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://doria.clinic/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={clinica.nombre} />
+    <meta property="og:url" content="https://doria.clinic/en/" />
+    <meta property="og:title" content="Dental clinic in the Eixample, Barcelona | Doria Clinic" />
+    <meta property="og:description" content="Dental clinic on Carrer Villarroel, Barcelona. Comprehensive oral health, dental aesthetics and care for athletes. Free first visit, no obligation." />
+    <meta property="og:image" content={IMG + '/2025/12/1-10.jpg'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dental clinic in the Eixample, Barcelona | Doria Clinic" />
+    <meta name="twitter:description" content="Dental clinic on Carrer Villarroel, Barcelona. Comprehensive oral health, dental aesthetics and care for athletes. Free first visit, no obligation." />
+    <meta name="twitter:image" content={IMG + '/2025/12/1-10.jpg'} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <Header variante="hero" />
+
+    <section class="hero">
+      <img src={IMG + '/2025/12/1-10.jpg'} alt="Doria Clinic reception, with wooden counter and natural light" fetchpriority="high" />
+      <div class="wrap">
+        <h1>Our specialty is your wellbeing</h1>
+        <p class="entradilla">
+          Dental clinic in the Eixample specialising in oral health, aesthetics
+          and care for athletes.
+        </p>
+        <div class="acciones">
+          <a class="boton boton-primario" href={wa}>Book by WhatsApp</a>
+          <a class="boton boton-fantasma" href={tel}>{clinica.telefono}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion intro">
+      <div class="wrap cuerpo">
+        <p>We care for people, not just smiles.</p>
+        <div>
+          <p>
+            We're a team of dentists with our own way of doing things: rigour,
+            warmth and attention to every detail. We believe a visit to the
+            dentist shouldn't cause doubt or discomfort.
+          </p>
+          <p>
+            That's why we offer an experience designed to make you feel
+            comfortable, at ease and well looked after from day one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="tratamientos">
+      <div class="wrap">
+        <h2>Treatments</h2>
+        <div class="especialidades">
+          {deportiva && (
+            <a class="ancha" href={url(deportiva)}>
+              <h3>{deportiva.data.titulo}</h3>
+              <p>{deportiva.data.resumen}</p>
+              <span class="mas">Custom mouthguards and oral health for athletes →</span>
+            </a>
+          )}
+          {resto.map((e) => (
+            <a href={url(e)}>
+              <h3>{e.data.titulo}</h3>
+              <p>{e.data.resumen}</p>
+              <span class="mas">View treatment →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="equipo">
+      <div class="wrap">
+        <h2>More than dentists: your trusted team</h2>
+        <div class="equipo">
+          {equipo.map((d) => (
+            <figure>
+              <img src={fotos[d.id]} alt={d.data.nombre} loading="lazy" />
+              <figcaption>
+                <span class="nombre">{d.data.nombre}</span>
+                <span class="puesto">{equipoEn[d.id]?.cargo ?? d.data.cargo}</span>
+                <ul>{(equipoEn[d.id]?.titulacion ?? d.data.titulacion).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion visita">
+      <div class="wrap cuerpo">
+        <div>
+          <h2>Your first visit</h2>
+          <p>
+            A complete check-up, a personalised diagnosis and a treatment plan
+            tailored to you. We take the time to listen and answer all your
+            questions.
+          </p>
+          <div class="acciones" style="margin-top:2rem">
+            <a class="boton boton-primario" href={wa}>Book by WhatsApp</a>
+          </div>
+        </div>
+        <ul>
+          <li>No obligation, no rush</li>
+          <li>Fixed quote in writing</li>
+          <li>Financing tailored to you</li>
+          <li>Emergencies: {clinica.telefono_urgencias}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="espacio">
+      <div class="wrap">
+        <h2>Facilities</h2>
+        <p style="margin-bottom:2.5rem">
+          Every corner is designed to make you feel comfortable: natural
+          light, warm materials and a calming atmosphere.
+        </p>
+        <div class="espacio">
+          <figure><img src={IMG + '/2025/12/3-10.jpg'} alt="Paediatric dentist explaining the treatment to a child" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/4-9.jpg'} alt="Interior of the clinic" loading="lazy" /></figure>
+          <figure><img src={IMG + '/2025/12/1-10.jpg'} alt="Waiting area" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" style="background:var(--gris)">
+      <div class="wrap">
+        <h2>What our patients say</h2>
+        <div class="opiniones">
+          <blockquote>
+            <q>El trato es cercano, profesional y muy humano. Se nota que sabe lo que hace, siempre salgo encantada con el resultado.</q>
+            <cite>Yvonne Bayer</cite>
+          </blockquote>
+          <blockquote>
+            <q>Equipo honesto y muy profesional. Recomiendo esta clínica tanto para adultos como para niños.</q>
+            <cite>Hugo M. R.</cite>
+          </blockquote>
+          <blockquote>
+            <q>Un trato de 10, ir al dentista así da gusto. Volveremos seguro.</q>
+            <cite>Marta Bestard</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>

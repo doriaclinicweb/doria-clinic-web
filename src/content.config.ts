@@ -1,7 +1,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
-const idiomas = ['es', 'ca'] as const;
+const idiomas = ['es', 'ca', 'en'] as const;
 
 const seo = z.object({
   titulo_seo: z.string().max(60),

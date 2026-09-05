@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+
+const titular = clinica.razon_social || clinica.nombre;
+const nif = clinica.nif || 'to be completed';
+const direccion = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
+---
+<Base
+  titulo="Legal Notice | Doria Clinic"
+  descripcion="Legal notice for the Doria Clinic website: identifying information, terms of use, intellectual property and liability."
+  h1="Legal notice"
+  anchoCompleto
+>
+  <h2>1. Identifying information</h2>
+  <p>
+    In compliance with the information duty set out in Article 10 of Spanish Law
+    34/2002, of 11 July, on Information Society Services and Electronic Commerce
+    (LSSI-CE), please note that the owner of this website is <strong>{titular}</strong>
+    (trading as «{clinica.nombre}»), with tax ID (NIF) {nif} and registered address at
+    {direccion}. You can contact us at{' '}
+    <a href={'mailto:' + clinica.email}>{clinica.email}</a> or by phone at{' '}
+    <a href={'tel:' + clinica.telefono.replace(/\s/g, '')}>{clinica.telefono}</a>.
+  </p>
+
+  <h2>2. Purpose</h2>
+  <p>
+    This legal notice governs the use of the website doria.clinic (hereinafter, «the
+    website»), which {clinica.nombre} makes available to users to provide information
+    about its dental services. Access to the website is free of charge and does not
+    require prior registration.
+  </p>
+
+  <h2>3. Terms of use</h2>
+  <p>
+    Accessing and browsing this website implies acceptance of the terms set out in this
+    legal notice. Users agree to make appropriate use of the content and services
+    offered by {clinica.nombre}, and not to use them to engage in unlawful activities or
+    activities contrary to good faith and the applicable legal system.
+  </p>
+  <p>
+    This website is for informational purposes only. The health information published
+    here complements, but does not replace, the relationship between a patient and
+    their healthcare professional. If you have any doubts about your health, please
+    consult a qualified professional.
+  </p>
+
+  <h2>4. Intellectual and industrial property</h2>
+  <p>
+    All content on this website (text, images, trademarks, logos and other elements)
+    is the property of {clinica.nombre} or of third parties who have authorised its
+    use, and is protected by intellectual and industrial property regulations. Its
+    reproduction, distribution or public communication, in whole or in part, without
+    express authorisation is prohibited.
+  </p>
+
+  <h2>5. Disclaimer of warranties and liability</h2>
+  <p>
+    {clinica.nombre} does not guarantee the availability or continuity of the
+    website's operation, nor is it liable for any damages that may arise from its
+    unavailability or from errors in its content, without prejudice to the fact that
+    the necessary measures will be taken to correct them as quickly as possible.
+  </p>
+
+  <h2>6. Third-party links</h2>
+  <p>
+    This website contains links and content from third-party services, such as
+    WhatsApp or Google Maps. {clinica.nombre} is not responsible for the content,
+    privacy policies or practices of such services, which are governed by their own
+    terms.
+  </p>
+
+  <h2>7. Applicable law</h2>
+  <p>
+    These terms are governed by Spanish law. For the resolution of any dispute, the
+    parties submit to the courts of the user's domicile, unless applicable law provides
+    otherwise.
+  </p>
+
+  <p><em>Last updated: September 2026.</em></p>
+</Base>

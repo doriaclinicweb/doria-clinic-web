@@ -1,5 +1,6 @@
 ---
 import clinica from '../data/clinica.json';
+import { detectarIdioma, rutaEn, inicioDe, IDIOMAS } from '../utils/idioma';
 
 interface Props { variante?: 'hero' | 'solida' }
 const { variante = 'solida' } = Astro.props;
@@ -7,25 +8,34 @@ const enHero = variante === 'hero';
 const wa = clinica.software_citas;
 
 const pathname = Astro.url.pathname;
-const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
-const inicio = esCa ? '/ca/' : '/';
-const rutaAlterna = esCa ? (pathname.replace(/^\/ca/, '') || '/') : '/ca' + pathname;
+const idioma = detectarIdioma(pathname);
+const inicio = inicioDe(idioma);
+const prefijo = idioma === 'es' ? '' : '/' + idioma;
+const etiquetasIdioma = { es: 'ES', ca: 'CA', en: 'EN' };
+const otrosIdiomas = IDIOMAS.filter((i) => i !== idioma).map((i) => ({
+  href: rutaEn(pathname, i),
+  etiqueta: etiquetasIdioma[i],
+}));
 
-const t = esCa
-  ? { especialidades: 'Especialitats', tratamientos: 'Tractaments', equipo: 'Equip', espacio: 'Instal·lacions', contacto: 'Contacte', cita: 'Demanar cita' }
-  : { especialidades: 'Especialidades', tratamientos: 'Tratamientos', equipo: 'Equipo', espacio: 'Instalaciones', contacto: 'Contacto', cita: 'Pedir cita' };
+const t = {
+  es: { especialidades: 'Especialidades', tratamientos: 'Tratamientos', equipo: 'Equipo', espacio: 'Instalaciones', contacto: 'Contacto', cita: 'Pedir cita' },
+  ca: { especialidades: 'Especialitats', tratamientos: 'Tractaments', equipo: 'Equip', espacio: 'Instal·lacions', contacto: 'Contacte', cita: 'Demanar cita' },
+  en: { especialidades: 'Specialties', tratamientos: 'Treatments', equipo: 'Team', espacio: 'Facilities', contacto: 'Contact', cita: 'Book appointment' },
+}[idioma];
 ---
 <header class="cabecera">
   <div class="wrap">
     <a class="marca" href={inicio}><img src="/logo-doria.svg" alt="Doria Clinic" width="111" height="35" /></a>
     <nav id="nav-principal">
-      <a href={esCa ? '/ca/especialidades/' : '/especialidades/'}>{t.especialidades}</a>
-      <a href={esCa ? '/ca/tratamientos/' : '/tratamientos/'}>{t.tratamientos}</a>
+      <a href={prefijo + '/especialidades/'}>{t.especialidades}</a>
+      <a href={prefijo + '/tratamientos/'}>{t.tratamientos}</a>
       <a href={enHero ? '#equipo' : inicio + '#equipo'}>{t.equipo}</a>
       <a href={enHero ? '#espacio' : inicio + '#espacio'}>{t.espacio}</a>
       <a href={enHero ? '#contacto' : inicio + '#contacto'}>{t.contacto}</a>
     </nav>
-    <a class="idioma" href={rutaAlterna}>{esCa ? 'ES' : 'CA'}</a>
+    <div class="idiomas">
+      {otrosIdiomas.map((o) => <a class="idioma" href={o.href}>{o.etiqueta}</a>)}
+    </div>
     <a class="boton boton-fantasma" href={wa}>{t.cita}</a>
     <button class="hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
       <span></span><span></span><span></span>

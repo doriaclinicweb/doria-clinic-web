@@ -1,0 +1,113 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import clinica from '../../../data/clinica.json';
+import { fotosEquipo } from '../../../data/equipo-fotos';
+import { equipoEn } from '../../../data/equipo-en';
+import IntroAccion from '../../../components/IntroAccion.astro';
+
+export async function getStaticPaths() {
+  const especialidades = await getCollection(
+    'especialidades',
+    (e) => e.data.idioma === 'en' && !e.data.seo.noindex
+  );
+  return especialidades.map((e) => ({
+    params: { slug: e.id.replace(/^en\//, '') },
+    props: { especialidad: e },
+  }));
+}
+
+const { especialidad } = Astro.props;
+const d = especialidad.data;
+const { Content } = await render(especialidad);
+const doctor = d.especialista ? await getEntry(d.especialista) : null;
+const cargoEn = doctor ? equipoEn[doctor.id]?.cargo ?? doctor.data.cargo : null;
+
+const tratamientos = await getCollection(
+  'tratamientos',
+  (t) => t.data.especialidad.id === especialidad.id
+);
+
+const wa = (texto) =>
+  `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalSpecialty',
+  name: d.titulo,
+  description: d.resumen,
+  ...(d.faqs.length && {
+    subjectOf: {
+      '@type': 'FAQPage',
+      mainEntity: d.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+      })),
+    },
+  }),
+};
+---
+<Base
+  titulo={d.seo.titulo_seo}
+  descripcion={d.seo.meta_descripcion}
+  noindex={d.seo.noindex}
+  schema={schema}
+  h1={d.titulo}
+  lede={d.subtitulo}
+  migas={[{ href: '/en/especialidades/', etiqueta: 'Specialties' }]}
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="en" mensaje={'Hi, I would like information about ' + d.titulo} />
+  </Fragment>
+
+  <div class="columnas">
+    <div>
+      <Content />
+
+      {tratamientos.length > 0 && (
+        <>
+          <h2>Related treatments</h2>
+          <ol class="proceso">
+            {tratamientos.map((t) => (
+              <li>
+                <a href={`/en/tratamientos/${t.id.replace(/^en\//, '')}/`}><strong>{t.data.titulo}</strong></a>
+                <div>{t.data.resumen}</div>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+
+      {d.faqs.length ? (
+        <>
+          <h2>Frequently asked questions</h2>
+          {d.faqs.map((f) => (
+            <details class="faq">
+              <summary>{f.pregunta}</summary>
+              <p>{f.respuesta}</p>
+            </details>
+          ))}
+        </>
+      ) : null}
+    </div>
+
+    <aside class="ficha">
+      {doctor && fotosEquipo[doctor.id] && (
+        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
+      )}
+      <div class="ficha-info">
+        {doctor && (
+          <div class="firma">
+            <strong>{doctor.data.nombre}</strong>
+            {cargoEn}
+            <span class="colegiado">Reg. no. {doctor.data.numero_colegiado}</span>
+          </div>
+        )}
+        <a class="boton boton-verde cta" href={wa('Hi, I would like information about ' + d.titulo)}>
+          Ask on WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+</Base>

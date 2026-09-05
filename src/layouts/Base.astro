@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import clinica from '../data/clinica.json';
 import { imagenPorDefecto } from '../data/imagenes';
+import { detectarIdioma, rutaEn, inicioDe } from '../utils/idioma';
 
 interface Props {
   titulo: string;
@@ -29,13 +30,13 @@ const {
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
-const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
-const idioma = esCa ? 'ca' : 'es';
-const inicioHref = esCa ? '/ca/' : '/';
-const inicioLabel = esCa ? 'Inici' : 'Inicio';
+const idioma = detectarIdioma(pathname);
+const inicioHref = inicioDe(idioma);
+const inicioLabel = { es: 'Inicio', ca: 'Inici', en: 'Home' }[idioma];
 
-const esPath = (esCa ? pathname.replace(/^\/ca/, '') : pathname) || '/';
-const caPath = esCa ? pathname : '/ca' + pathname;
+const esPath = rutaEn(pathname, 'es');
+const caPath = rutaEn(pathname, 'ca');
+const enPath = rutaEn(pathname, 'en');
 
 const url = new URL(pathname, Astro.site);
 
@@ -62,10 +63,11 @@ const schemaMigas = {
     <link rel="canonical" href={url} />
     <link rel="alternate" hreflang="es" href={new URL(esPath, Astro.site)} />
     <link rel="alternate" hreflang="ca" href={new URL(caPath, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, Astro.site)} />
     <link rel="alternate" hreflang="x-default" href={new URL(esPath, Astro.site)} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={idioma === 'ca' ? 'ca_ES' : 'es_ES'} />
+    <meta property="og:locale" content={{ es: 'es_ES', ca: 'ca_ES', en: 'en_US' }[idioma]} />
     <meta property="og:site_name" content={clinica.nombre} />
     <meta property="og:url" content={url} />
     <meta property="og:title" content={titulo} />
@@ -84,7 +86,7 @@ const schemaMigas = {
 
     <section class="pagina-intro">
       <div class="wrap">
-        <nav class="migas" aria-label="Migas de pan">
+        <nav class="migas" aria-label={{ es: 'Migas de pan', ca: 'Molles de pa', en: 'Breadcrumb' }[idioma]}>
           <a href={inicioHref}>{inicioLabel}</a>
           {migas.map((m) => (
             <>

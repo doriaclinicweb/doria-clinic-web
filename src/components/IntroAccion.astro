@@ -1,31 +1,41 @@
 ---
 import clinica from '../data/clinica.json';
 
-interface Props { idioma: 'es' | 'ca'; mensaje: string }
+interface Props { idioma: 'es' | 'ca' | 'en'; mensaje: string }
 const { idioma, mensaje } = Astro.props;
 
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(mensaje)}`;
 
-const t = idioma === 'ca'
-  ? {
-      cita: 'Demanar cita per WhatsApp',
-      razones: [
-        'Sense compromís i sense presses',
-        'Pressupost tancat per escrit',
-        'Finançament a mida',
-        'Servei d’urgències',
-      ],
-    }
-  : {
-      cita: 'Pedir cita por WhatsApp',
-      razones: [
-        'Sin compromiso y sin prisas',
-        'Presupuesto cerrado por escrito',
-        'Financiación a medida',
-        'Servicio de urgencias',
-      ],
-    };
+const t = {
+  ca: {
+    cita: 'Demanar cita per WhatsApp',
+    razones: [
+      'Sense compromís i sense presses',
+      'Pressupost tancat per escrit',
+      'Finançament a mida',
+      'Servei d’urgències',
+    ],
+  },
+  en: {
+    cita: 'Book appointment by WhatsApp',
+    razones: [
+      'No obligation, no rush',
+      'Fixed quote in writing',
+      'Financing tailored to you',
+      'Emergency service',
+    ],
+  },
+  es: {
+    cita: 'Pedir cita por WhatsApp',
+    razones: [
+      'Sin compromiso y sin prisas',
+      'Presupuesto cerrado por escrito',
+      'Financiación a medida',
+      'Servicio de urgencias',
+    ],
+  },
+}[idioma];
 ---
 <div class="acciones intro-acciones">
   <a class="boton boton-verde" href={wa}>{t.cita}</a>
