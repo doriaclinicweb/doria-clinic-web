@@ -29,14 +29,14 @@ diente en su posición ideal sobre la estructura ósea mejoramos la
 las arcadas. Unos dientes alineados acumulan menos sarro y
 previenen enfermedades dentales.
 
-## Ortodoncia invisible
+## [Ortodoncia invisible](/tratamientos/ortodoncia-invisible/)
 
 Alineadores transparentes fabricados a medida que mueven los dientes de forma gradual.
 Es la opción más demandada por adultos y adolescentes que buscan discreción y comodidad:
 se pueden retirar para comer y cepillarse los dientes, son prácticamente imperceptibles
 y, al no llevar alambres, evitan rozaduras y llagas.
 
-## Brackets
+## [Brackets](/tratamientos/brackets-dentales/)
 
 Siguen siendo la herramienta más precisa para corregir problemas de mordida complejos.
 
@@ -61,3 +61,9 @@ futuros tratamientos y previene problemas respiratorios y de masticación.
 
 Si quieres saber más sobre las revisiones y la prevención en los más pequeños, visita
 [odontopediatría](/especialidades/odontopediatria/).
+
+## Cierre de espacios entre dientes
+
+Cuando el objetivo es cerrar un espacio (diastema) en lugar de corregir toda la
+mordida, valoramos si el [cierre de diastemas](/tratamientos/cierre-de-diastemas/) con
+ortodoncia es la opción más adecuada frente a una solución estética más rápida.

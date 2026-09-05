@@ -30,7 +30,7 @@ Nuestro equipo utiliza planificación digital previa para decidir la posición y
 de fijaciones antes de entrar en boca, con técnicas mínimamente invasivas que garantizan
 resultados precisos y seguros.
 
-## Implantes unitarios
+## [Implantes unitarios](/tratamientos/implantes-unitarios/)
 
 Cuando se pierde un solo diente, el implante unitario cubre ese hueco. Además de la
 mejora estética, es un tratamiento fundamental para mantener la estructura de la boca:
@@ -44,7 +44,7 @@ diente definitivo. Si prefieres no esperar, retiramos las piezas dañadas y colo
 implantes y los dientes fijos en un único día. [Cómo funciona la carga
 inmediata](/tratamientos/carga-inmediata/).
 
-## Implantes de arcada completa
+## [Implantes de arcada completa](/tratamientos/implantes-arcada-completa/)
 
 En las restauraciones de arcada completa no hace falta un implante por cada diente
 perdido. El éxito depende de un estudio previo detallado: calculamos el número óptimo y
@@ -56,6 +56,8 @@ quede equilibrada y las cargas se repartan bien.
 Cuando no hay suficiente hueso para dar estabilidad al implante, aplicamos técnicas de
 injerto óseo antes de la cirugía dentro de nuestra área de
 [cirugía oral](/especialidades/cirugia-oral/), planificadas también de forma digital.
+Como alternativa al injerto en la zona posterior del maxilar superior, valoramos los
+[implantes pterigoideos](/tratamientos/implantes-pterigoideos/).
 
 ## Salud de las encías antes del implante
 

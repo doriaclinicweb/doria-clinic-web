@@ -28,8 +28,10 @@ menos visitas de prueba y ajuste que con el flujo tradicional.
 
 ## Tipos de prótesis
 
-Las prótesis se clasifican según el soporte, sobre dientes naturales o sobre implantes,
-y según el material, porcelana o resina. Además, pueden ser:
+Las prótesis se clasifican según el soporte,
+[sobre dientes naturales](/tratamientos/protesis-sobre-dientes/) o
+[sobre implantes](/tratamientos/protesis-sobre-implantes/), y según el material,
+porcelana o resina. Además, pueden ser:
 
 - **Fijas**: se cementan o atornillan y no las retira el paciente. Incluyen coronas,
   puentes y las prótesis completas sobre [implantes](/especialidades/implantes-dentales/).

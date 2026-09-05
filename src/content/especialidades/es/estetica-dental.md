@@ -30,7 +30,7 @@ Antes de empezar cualquier tratamiento, diseñamos tu sonrisa de forma virtual p
 veas el resultado final, ajustamos cada detalle a tus rasgos faciales y elegimos
 texturas y matices que imitan el esmalte natural.
 
-## Carillas dentales
+## [Carillas dentales](/tratamientos/carillas-dentales/)
 
 Finas láminas de porcelana o composite de alta calidad que se integran con tus dientes
 originales, corrigiendo color, forma o posición de manera mínimamente invasiva.
@@ -43,7 +43,7 @@ originales, corrigiendo color, forma o posición de manera mínimamente invasiva
   del diente natural y es fácil de reparar si sufre algún daño. Requiere un
   mantenimiento anual.
 
-## Blanqueamiento dental
+## [Blanqueamiento dental](/tratamientos/blanqueamiento-dental/)
 
 - **En clínica (sesión flash)**: gel de alta concentración activado con luz profesional,
   con resultados en una sesión de aproximadamente una hora.

@@ -30,7 +30,7 @@ El nostre equip fa servir planificació digital prèvia per decidir la posició 
 nombre de fixacions abans d'entrar a la boca, amb tècniques mínimament invasives que
 garanteixen resultats precisos i segurs.
 
-## Implants unitaris
+## [Implants unitaris](/ca/tratamientos/implantes-unitarios/)
 
 Quan es perd una sola dent, l'implant unitari cobreix aquest buit. A més de la millora
 estètica, és un tractament fonamental per mantenir l'estructura de la boca: si no es
@@ -43,7 +43,7 @@ dent definitiva. Si prefereixes no esperar, retirem les peces malmeses i col·lo
 implants i les dents fixes en un únic dia. [Com funciona la càrrega
 immediata](/ca/tratamientos/carga-inmediata/).
 
-## Implants d'arcada completa
+## [Implants d'arcada completa](/ca/tratamientos/implantes-arcada-completa/)
 
 En les restauracions d'arcada completa no cal un implant per cada dent perduda. L'èxit
 depèn d'un estudi previ detallat: calculem el nombre òptim i la ubicació de les
@@ -55,6 +55,8 @@ les càrregues es reparteixin bé.
 Quan no hi ha prou os per donar estabilitat a l'implant, apliquem tècniques d'empelt
 ossi abans de la cirurgia dins la nostra àrea de
 [cirurgia oral](/ca/especialidades/cirugia-oral/), planificades també de forma digital.
+Com a alternativa a l'empelt a la zona posterior del maxil·lar superior, valorem els
+[implants pterigoideos](/ca/tratamientos/implantes-pterigoideos/).
 
 ## Salut de les genives abans de l'implant
 

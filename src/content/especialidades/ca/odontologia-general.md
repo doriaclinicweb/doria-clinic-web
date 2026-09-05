@@ -41,12 +41,18 @@ bucodental.
   cost, perquè decideixis amb tota la informació.
 - **Sense compromís**: la primera visita és gratuïta i decideixes tu si vols continuar.
 
-## Higiene dental professional
+## [Higiene dental professional](/ca/tratamientos/higiene-dental-profesional/)
 
 La neteja bucal professional elimina la placa bacteriana i el sarro acumulats en zones on
 el raspallat diari no arriba, especialment entre les dents i sota el marge de la geniva.
 És el tractament preventiu més eficaç contra la càries i la malaltia periodontal, i el
 recomanem una o dues vegades l'any segons cada cas.
+
+## Detecció de càncer oral
+
+Cada revisió inclou una exploració de llavis, llengua, genives i mucosa oral per detectar
+a temps qualsevol lesió sospitosa. Més sobre aquesta
+[revisió de prevenció](/ca/tratamientos/prevencion-cancer-oral/).
 
 ## Obturacions (empastaments)
 
@@ -66,3 +72,9 @@ exemple, un [tractament de conducte](/ca/especialidades/endodoncia/), una
 [geniva retreta](/ca/especialidades/periodoncia/) o una
 [maloclusió](/ca/especialidades/ortodoncia/)— t'ho expliquem amb claredat i t'acompanyem
 amb el doctor de l'equip format en aquesta àrea, dins de la mateixa clínica.
+
+## Dolor de mandíbula i bruxisme
+
+Si detectem desgast dental per grinyolar les dents, o ens comentes dolor de mandíbula en
+despertar-te, valorem un [tractament d'ATM i bruxisme](/ca/tratamientos/atm-bruxismo/)
+amb una fèrula de descàrrega a mida.

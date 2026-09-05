@@ -31,11 +31,11 @@ procedimientos complejos.
 ## Extracción de cordales (muelas del juicio)
 
 Las muelas del juicio suelen aparecer entre los 17 y los 25 años y, a menudo, no tienen
-espacio suficiente para salir correctamente. Abordamos su extracción de forma segura,
-incluso cuando están incluidas o impactadas, evitando desplazamientos del resto de
-dientes e infecciones recurrentes. Se recomienda cuando hay falta de espacio, muelas
-impactadas, infecciones repetidas (pericoronaritis) o riesgo de caries por su difícil
-acceso a la higiene.
+espacio suficiente para salir correctamente. Abordamos su
+[extracción](/tratamientos/extraccion-cordales/) de forma segura, incluso cuando están
+incluidas o impactadas, evitando desplazamientos del resto de dientes e infecciones
+recurrentes. Se recomienda cuando hay falta de espacio, muelas impactadas, infecciones
+repetidas (pericoronaritis) o riesgo de caries por su difícil acceso a la higiene.
 
 ## Cirugía de implantes y regeneración ósea
 

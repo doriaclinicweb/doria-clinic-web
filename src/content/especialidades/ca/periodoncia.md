@@ -43,7 +43,11 @@ pèrdua d'os. Es fa per quadrants, amb anestèsia local per a la teva comoditat.
 - **Manteniment periodontal**: revisions regulars per controlar la profunditat de les
   butxaques i evitar recaigudes.
 
-## Allargament de corona
+Quan la periodontitis ja ha destruït part de l'os de suport, valorem una
+[regeneració òssia periodontal](/ca/tratamientos/regeneracion-osea-periodontal/) per
+recuperar l'estabilitat de la dent.
+
+## [Allargament de corona](/ca/tratamientos/alargamiento-de-corona/)
 
 Tècnica quirúrgica que exposa una major quantitat d'estructura dental sana, necessària
 per a l'èxit de certes reconstruccions o [restauracions protètiques](/ca/especialidades/protesis-dental/)
@@ -54,9 +58,15 @@ sobre peces desgastades o malmeses.
 Microcirurgia que redissenya el contorn de la geniva quan cobreix massa la dent,
 indicada en casos de "somriure gingival". És una intervenció ràpida, indolora i
 mínimament invasiva, i sol integrar-se dins d'un pla d'
-[estètica dental](/ca/especialidades/estetica-dental/).
+[estètica dental](/ca/especialidades/estetica-dental/). Si el que busques és aclarir el
+to de la geniva en lloc de remodelar-ne el contorn, consulta
+[correcció de genives fosques](/ca/tratamientos/correccion-encias-oscuras/).
 
-## Empelts de geniva
+Sempre que el cas ho permet, fem aquestes cirurgies amb
+[microcirurgia periodontal](/ca/tratamientos/microcirugia-periodontal/), amb incisions
+mínimes i una recuperació més còmoda.
+
+## [Empelts de geniva](/ca/tratamientos/injerto-de-encia/)
 
 Soluciona la sensibilitat i el desgast estètic de les genives retretes cobrint l'arrel
 exposada amb teixit del mateix pacient, amb tècniques mínimament invasives i anestèsia

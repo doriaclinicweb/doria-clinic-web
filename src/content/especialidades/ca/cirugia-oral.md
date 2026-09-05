@@ -31,11 +31,11 @@ procediments complexos.
 ## Extracció de queixals del seny
 
 Els queixals del seny solen aparèixer entre els 17 i els 25 anys i, sovint, no tenen
-espai suficient per sortir correctament. Abordem la seva extracció de manera segura,
-fins i tot quan estan inclosos o impactats, evitant desplaçaments de la resta de dents
-i infeccions recurrents. Es recomana quan hi ha manca d'espai, queixals impactats,
-infeccions repetides (pericoronaritis) o risc de càries pel seu difícil accés a la
-higiene.
+espai suficient per sortir correctament. Abordem la seva
+[extracció](/ca/tratamientos/extraccion-cordales/) de manera segura, fins i tot quan
+estan inclosos o impactats, evitant desplaçaments de la resta de dents i infeccions
+recurrents. Es recomana quan hi ha manca d'espai, queixals impactats, infeccions
+repetides (pericoronaritis) o risc de càries pel seu difícil accés a la higiene.
 
 ## Cirurgia d'implants i regeneració òssia
 

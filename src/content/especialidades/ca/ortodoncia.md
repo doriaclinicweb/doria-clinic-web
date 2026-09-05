@@ -29,14 +29,14 @@ l'[estètica](/ca/especialidades/estetica-dental/) i facilitem una relació harm
 entre les arcades. Unes dents alineades acumulen menys
 sarro i prevenen malalties dentals.
 
-## Ortodòncia invisible
+## [Ortodòncia invisible](/ca/tratamientos/ortodoncia-invisible/)
 
 Alineadors transparents fabricats a mida que mouen les dents de manera gradual. És
 l'opció més demandada per adults i adolescents que busquen discreció i comoditat: es
 poden treure per menjar i raspallar-se les dents, són pràcticament imperceptibles i, en
 no portar filferros, eviten rascades i nafres.
 
-## Bràquets
+## [Bràquets](/ca/tratamientos/brackets-dentales/)
 
 Continuen sent l'eina més precisa per corregir problemes de mossegada complexos.
 
@@ -61,3 +61,9 @@ futurs tractaments i previu problemes respiratoris i de masticació.
 
 Si vols saber més sobre les revisions i la prevenció en els més petits, visita
 [odontopediatria](/ca/especialidades/odontopediatria/).
+
+## Tancament d'espais entre dents
+
+Quan l'objectiu és tancar un espai (diastema) en lloc de corregir tota la mossegada,
+valorem si el [tancament de diastemes](/ca/tratamientos/cierre-de-diastemas/) amb
+ortodòncia és l'opció més adequada davant d'una solució estètica més ràpida.

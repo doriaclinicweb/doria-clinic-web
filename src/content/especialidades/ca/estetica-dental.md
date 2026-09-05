@@ -30,7 +30,7 @@ Abans de començar qualsevol tractament, dissenyem el teu somriure de forma virt
 perquè vegis el resultat final, ajustem cada detall als teus trets facials i triem
 textures i matisos que imiten l'esmalt natural.
 
-## Carilles dentals
+## [Carilles dentals](/ca/tratamientos/carillas-dentales/)
 
 Fines làmines de porcellana o composite d'alta qualitat que s'integren amb les teves
 dents originals, corregint color, forma o posició de manera mínimament invasiva.
@@ -43,7 +43,7 @@ dents originals, corregint color, forma o posició de manera mínimament invasiv
   de la dent natural i és fàcil de reparar si pateix algun dany. Requereix un
   manteniment anual.
 
-## Blanquejament dental
+## [Blanquejament dental](/ca/tratamientos/blanqueamiento-dental/)
 
 - **A la clínica (sessió flaix)**: gel d'alta concentració activat amb llum
   professional, amb resultats en una sessió d'aproximadament una hora.

@@ -42,12 +42,18 @@ rentable en salud bucodental.
 - **Sin compromiso**: la primera visita es gratuita y decides tú si quieres seguir
   adelante.
 
-## Higiene dental profesional
+## [Higiene dental profesional](/tratamientos/higiene-dental-profesional/)
 
 La limpieza bucal profesional elimina la placa bacteriana y el sarro acumulados en zonas
 donde el cepillado diario no llega, especialmente entre los dientes y bajo el margen de la
 encía. Es el tratamiento preventivo más eficaz contra la caries y la enfermedad
 periodontal, y la recomendamos una o dos veces al año según cada caso.
+
+## Detección de cáncer oral
+
+Cada revisión incluye una exploración de labios, lengua, encías y mucosa oral para
+detectar a tiempo cualquier lesión sospechosa. Más sobre esta
+[revisión de prevención](/tratamientos/prevencion-cancer-oral/).
 
 ## Obturaciones (empastes)
 
@@ -68,3 +74,9 @@ un [tratamiento de conducto](/especialidades/endodoncia/), una
 [encía retraída](/especialidades/periodoncia/) o una
 [maloclusión](/especialidades/ortodoncia/)— te lo explicamos con claridad y te acompañamos
 con el doctor del equipo formado en esa área, dentro de la misma clínica.
+
+## Dolor de mandíbula y bruxismo
+
+Si detectamos desgaste dental por rechinar los dientes, o nos comentas dolor de
+mandíbula al despertar, valoramos un [tratamiento de ATM y bruxismo](/tratamientos/atm-bruxismo/)
+con una férula de descarga a medida.

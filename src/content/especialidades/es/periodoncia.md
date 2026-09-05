@@ -43,7 +43,11 @@ pérdida de hueso. Se realiza por cuadrantes, con anestesia local para tu comodi
 - **Mantenimiento periodontal**: revisiones regulares para controlar la profundidad de
   las bolsas y evitar recaídas.
 
-## Alargamiento de corona
+Cuando la periodontitis ya ha destruido parte del hueso de soporte, valoramos una
+[regeneración ósea periodontal](/tratamientos/regeneracion-osea-periodontal/) para
+recuperar la estabilidad del diente.
+
+## [Alargamiento de corona](/tratamientos/alargamiento-de-corona/)
 
 Técnica quirúrgica que expone una mayor cantidad de estructura dental sana, necesaria
 para el éxito de ciertas reconstrucciones o [restauraciones protésicas](/especialidades/protesis-dental/)
@@ -54,9 +58,15 @@ sobre piezas desgastadas o dañadas.
 Microcirugía que rediseña el contorno de la encía cuando cubre demasiado el diente,
 indicada en casos de "sonrisa gingival". Es una intervención rápida, indolora y
 mínimamente invasiva, y suele integrarse dentro de un plan de
-[estética dental](/especialidades/estetica-dental/).
+[estética dental](/especialidades/estetica-dental/). Si lo que buscas es aclarar el tono
+de la encía en vez de remodelar su contorno, consulta
+[corrección de encías oscuras](/tratamientos/correccion-encias-oscuras/).
 
-## Injertos de encía
+Siempre que el caso lo permite, realizamos estas cirugías con
+[microcirugía periodontal](/tratamientos/microcirugia-periodontal/), con incisiones
+mínimas y una recuperación más cómoda.
+
+## [Injertos de encía](/tratamientos/injerto-de-encia/)
 
 Soluciona la sensibilidad y el desgaste estético de las encías retraídas cubriendo la
 raíz expuesta con tejido del propio paciente, con técnicas mínimamente invasivas y

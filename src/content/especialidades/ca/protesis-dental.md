@@ -28,8 +28,10 @@ visites de prova i ajust que amb el flux tradicional.
 
 ## Tipus de pròtesi
 
-Les pròtesis es classifiquen segons el suport, sobre dents naturals o sobre implants, i
-segons el material, porcellana o resina. A més, poden ser:
+Les pròtesis es classifiquen segons el suport,
+[sobre dents naturals](/ca/tratamientos/protesis-sobre-dientes/) o
+[sobre implants](/ca/tratamientos/protesis-sobre-implantes/), i segons el material,
+porcellana o resina. A més, poden ser:
 
 - **Fixes**: es cimenten o es cargolen i el pacient no les treu. Inclouen corones, ponts
   i les pròtesis completes sobre [implants](/ca/especialidades/implantes-dentales/).
