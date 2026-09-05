@@ -5,7 +5,7 @@ especialidad: ca/odontologia-deportiva
 resumen: "Protectors fabricats per escanejat digital i adaptats en gruix i material a cada disciplina esportiva, perquè no es moguin ni dificultin la respiració."
 precio_desde: null
 financiacion_meses: null
-duracion_sesion: "PENDIENTE"
+duracion_sesion: "15-20 minuts"
 numero_sesiones: "2"
 anestesia: "no"
 especialista: guillermo-doria
@@ -25,6 +25,10 @@ faqs:
     respuesta: "Sí. Es poden incorporar colors de club, nom, dorsal o logotip, integrats de manera permanent al protector."
   - pregunta: "Per què no val un protector estàndard?"
     respuesta: "Els estàndard no s'ajusten a l'anatomia de cada boca, tendeixen a moure's i poden dificultar la parla i la respiració durant l'esforç."
+  - pregunta: "Com es neteja i es guarda?"
+    respuesta: "Es renta amb aigua freda i sabó neutre després de cada ús (l'aigua calenta el pot deformar) i es guarda a l'estoig ventilat, mai en un lloc tancat i humit."
+  - pregunta: "Cada quant s'ha de renovar?"
+    respuesta: "En adults, quan perd ajust o es desgasta, normalment cada 2-3 anys. En nens i adolescents, amb cada canvi rellevant de dentició."
 casos: []
 actualizado: 2026-09-04
 seo:
@@ -35,7 +39,19 @@ seo:
 ## Què és
 
 Un protector bucal fabricat a partir de l'escanejat digital de la teva boca, amb el
-gruix i el nombre de capes ajustats al teu esport.
+gruix i el nombre de capes ajustats al teu esport, dins de
+l'[odontologia esportiva](/ca/especialidades/odontologia-deportiva/).
 
 En encaixar amb precisió, permet parlar i respirar amb normalitat durant l'esforç, que
 és on fallen els protectors estàndard.
+
+## Cura i manteniment
+
+- **Renta el protector amb aigua freda** i sabó neutre després de cada ús; l'aigua
+  calenta pot deformar el material.
+- **Guarda'l sempre a l'estoig ventilat**, mai a la bossa d'esport solt ni en un lloc
+  tancat i humit.
+- **Revisa'l periòdicament**: si notes que perd ajust, que està desgastat o esquerdat,
+  perd part de la seva capacitat d'absorbir impactes.
+- Si pateixes un cop a la boca encara que portis protector, segueix les nostres
+  [recomanacions davant d'un traumatisme dental](/ca/especialidades/traumatologia-dental/).

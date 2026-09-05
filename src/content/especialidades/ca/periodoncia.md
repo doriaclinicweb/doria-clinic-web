@@ -46,17 +46,26 @@ pèrdua d'os. Es fa per quadrants, amb anestèsia local per a la teva comoditat.
 ## Allargament de corona
 
 Tècnica quirúrgica que exposa una major quantitat d'estructura dental sana, necessària
-per a l'èxit de certes reconstruccions o restauracions protètiques sobre peces
-desgastades o malmeses.
+per a l'èxit de certes reconstruccions o [restauracions protètiques](/ca/especialidades/protesis-dental/)
+sobre peces desgastades o malmeses.
 
 ## Gingivectomia
 
 Microcirurgia que redissenya el contorn de la geniva quan cobreix massa la dent,
 indicada en casos de "somriure gingival". És una intervenció ràpida, indolora i
-mínimament invasiva.
+mínimament invasiva, i sol integrar-se dins d'un pla d'
+[estètica dental](/ca/especialidades/estetica-dental/).
 
 ## Empelts de geniva
 
 Soluciona la sensibilitat i el desgast estètic de les genives retretes cobrint l'arrel
 exposada amb teixit del mateix pacient, amb tècniques mínimament invasives i anestèsia
 local.
+
+## Periodòncia i implants
+
+Unes genives sanes són un requisit abans de col·locar
+[implants dentals](/ca/especialidades/implantes-dentales/): la periodontitis no
+tractada és una de les principals causes de fracàs dels implants a llarg termini. Per
+això, si tens antecedents de malaltia periodontal, comencem sempre per estabilitzar les
+teves genives.

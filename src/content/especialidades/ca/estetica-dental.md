@@ -51,3 +51,12 @@ dents originals, corregint color, forma o posició de manera mínimament invasiv
   des de casa, de manera progressiva i còmoda.
 - **Combinat**: la sessió a la clínica juntament amb el reforç a casa. És el
   tractament que més perdura en el temps.
+
+## Quan l'estètica comença per una altra especialitat
+
+Un somriure sa és la base d'un somriure bonic. Si abans de les carilles o el
+blanquejament detectem càries, genives inflamades o dents mal alineades, ho resolem
+primer amb [odontologia general](/ca/especialidades/odontologia-general/),
+[periodòncia](/ca/especialidades/periodoncia/) o [ortodòncia](/ca/especialidades/ortodoncia/).
+Quan falten peces o hi ha més estructura malmesa de la que una carilla pot corregir, la
+solució passa per una [pròtesi dental](/ca/especialidades/protesis-dental/).

@@ -40,13 +40,16 @@ acceso a la higiene.
 ## Cirugía de implantes y regeneración ósea
 
 Si has perdido masa ósea, aplicamos injertos de hueso y elevación de seno maxilar para
-dar la base necesaria a tus futuros implantes, todo planificado digitalmente.
+dar la base necesaria a tus futuros [implantes dentales](/especialidades/implantes-dentales/),
+todo planificado digitalmente. En los casos que lo permiten, esta regeneración se
+combina con la colocación de [implantes de carga inmediata](/tratamientos/carga-inmediata/)
+el mismo día.
 
 ## Frenectomías y cirugía preprotésica
 
 Corregimos frenillos labiales o linguales que afectan al habla o a la posición de los
-dientes, y adecuamos los tejidos de la boca para que prótesis o carillas encajen con
-armonía.
+dientes, y adecuamos los tejidos de la boca para que [prótesis](/especialidades/protesis-dental/)
+o [carillas](/especialidades/estetica-dental/) encajen con armonía.
 
 ## Eliminación de quistes y biopsias
 

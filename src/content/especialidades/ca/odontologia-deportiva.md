@@ -47,9 +47,15 @@ nom, el teu dorsal o el logotip del teu club, integrats de manera permanent.
 ## Salut sistèmica i esport
 
 - **Focus infecciosos**: els bacteris de la boca poden passar al torrent sanguini i
-  provocar inflamacions que deriven en esquinços o sobrecàrregues musculars.
+  provocar inflamacions que deriven en esquinços o sobrecàrregues musculars. Per això
+  cuidar les teves genives a [periodòncia](/ca/especialidades/periodoncia/) també és
+  cuidar el teu rendiment.
 - **Higiene i hidratació**: les begudes isotòniques, els gels energètics i la sequedat
   bucal per l'esforç augmenten el risc de càries i erosió. T'ajudem a compensar-ho
   sense renunciar a la teva nutrició esportiva.
 - **Equilibri oclusal**: una mala alineació pot generar tensions a l'articulació
   temporomandibular que es traslladen a la columna, afectant l'equilibri i la potència.
+
+Si malgrat les mesures de prevenció pateixes un cop durant la pràctica esportiva,
+consulta la nostra [traumatologia dental](/ca/especialidades/traumatologia-dental/) per
+saber com actuar.

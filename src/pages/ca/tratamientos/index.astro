@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
+import IntroAccion from '../../../components/IntroAccion.astro';
 
 const tratamientos = await getCollection(
   'tratamientos',
@@ -9,13 +10,51 @@ const tratamientos = await getCollection(
 const conEspecialidad = await Promise.all(
   tratamientos.map(async (t) => ({ t, especialidad: await getEntry(t.data.especialidad) }))
 );
+
+const faqs = [
+  {
+    pregunta: 'Els preus dels tractaments estan tancats?',
+    respuesta:
+      'Sí. A la primera visita et donem un pressupost per escrit amb el preu tancat abans de començar, sense sorpreses ni càrrecs afegits a mitja tractament.',
+  },
+  {
+    pregunta: 'Oferiu finançament?',
+    respuesta:
+      'Sí, adaptem el finançament a cada cas perquè puguis repartir el pagament del tractament en còmodes quotes mensuals.',
+  },
+  {
+    pregunta: 'Quantes sessions necessito per completar un tractament?',
+    respuesta:
+      'Depèn del tractament i del teu cas concret. A la fitxa de cada tractament indiquem el nombre orientatiu de sessions, i t’ho confirmem amb precisió a la primera visita.',
+  },
+  {
+    pregunta: 'Puc començar un tractament sense comprometre’m a acabar-lo?',
+    respuesta:
+      'Sí. T’expliquem totes les fases i el seu cost abans de començar, i decideixes tu, sense compromís, si vols continuar en cada etapa.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
 ---
 <Base
   titulo="Tractaments dentals a Barcelona | Doria Clinic"
   descripcion="Tractaments concrets de Doria Clinic a l'Eixample de Barcelona, amb preu, durada i procés detallat."
   h1="Tractaments"
-  lede="El detall de preu, durada i procés de cada tractament."
+  lede="El detall de preu, durada i procés de cada tractament, amb pressupost tancat per escrit i sense compromís."
+  schema={schema}
 >
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="ca" mensaje="Hola, vull informació sobre un tractament" />
+  </Fragment>
+
   <p style="margin-top:-1.5rem">
     Per conèixer l'especialitat completa, visita <a href="/ca/especialidades/">especialitats</a>.
   </p>
@@ -29,4 +68,12 @@ const conEspecialidad = await Promise.all(
       </a>
     ))}
   </div>
+
+  <h2>Preguntes freqüents sobre els nostres tractaments</h2>
+  {faqs.map((f) => (
+    <details class="faq">
+      <summary>{f.pregunta}</summary>
+      <p>{f.respuesta}</p>
+    </details>
+  ))}
 </Base>

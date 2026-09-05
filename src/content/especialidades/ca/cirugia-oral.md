@@ -40,12 +40,16 @@ higiene.
 ## Cirurgia d'implants i regeneració òssia
 
 Si has perdut massa òssia, apliquem empelts d'os i elevació de sinus maxil·lar per
-donar la base necessària als teus futurs implants, tot planificat digitalment.
+donar la base necessària als teus futurs [implants dentals](/ca/especialidades/implantes-dentales/),
+tot planificat digitalment. En els casos que ho permeten, aquesta regeneració es
+combina amb la col·locació d'[implants de càrrega immediata](/ca/tratamientos/carga-inmediata/)
+el mateix dia.
 
 ## Frenectomies i cirurgia preprotètica
 
 Corregim frenets labials o linguals que afecten la parla o la posició de les dents, i
-adequem els teixits de la boca perquè pròtesis o carilles encaixin amb harmonia.
+adequem els teixits de la boca perquè [pròtesis](/ca/especialidades/protesis-dental/) o
+[carilles](/ca/especialidades/estetica-dental/) encaixin amb harmonia.
 
 ## Eliminació de quists i biòpsies
 

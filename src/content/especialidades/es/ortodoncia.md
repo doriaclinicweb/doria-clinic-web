@@ -24,8 +24,9 @@ seo:
 
 La ortodoncia va más allá de conseguir una sonrisa bonita: corrige la alineación dental
 para que la boca funcione correctamente y sea más fácil de limpiar. Al colocar cada
-diente en su posición ideal sobre la estructura ósea mejoramos la estética y facilitamos
-una relación armoniosa entre las arcadas. Unos dientes alineados acumulan menos sarro y
+diente en su posición ideal sobre la estructura ósea mejoramos la
+[estética](/especialidades/estetica-dental/) y facilitamos una relación armoniosa entre
+las arcadas. Unos dientes alineados acumulan menos sarro y
 previenen enfermedades dentales.
 
 ## Ortodoncia invisible
@@ -57,3 +58,6 @@ futuros tratamientos y previene problemas respiratorios y de masticación.
   desarrollando, con aparatos removibles o fijos.
 - **Ortodoncia correctiva**: una vez han salido los dientes permanentes, los alinea para
   conseguir estética y funcionalidad óptimas.
+
+Si quieres saber más sobre las revisiones y la prevención en los más pequeños, visita
+[odontopediatría](/especialidades/odontopediatria/).

@@ -23,9 +23,9 @@ la práctica deportiva, especialmente en disciplinas de contacto, hockey, ciclis
 patinaje o actividades al aire libre.
 
 Un traumatismo puede provocar desde una pequeña fisura hasta la fractura o la pérdida
-completa del diente, así como daños en el nervio que requieren una endodoncia. El tiempo
-es determinante: una actuación rápida puede marcar la diferencia entre salvar o perder
-la pieza.
+completa del diente, así como daños en el nervio que requieren una
+[endodoncia](/especialidades/endodoncia/). El tiempo es determinante: una actuación
+rápida puede marcar la diferencia entre salvar o perder la pieza.
 
 ## Urgencia dental
 

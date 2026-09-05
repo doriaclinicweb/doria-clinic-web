@@ -46,17 +46,25 @@ pérdida de hueso. Se realiza por cuadrantes, con anestesia local para tu comodi
 ## Alargamiento de corona
 
 Técnica quirúrgica que expone una mayor cantidad de estructura dental sana, necesaria
-para el éxito de ciertas reconstrucciones o restauraciones protésicas sobre piezas
-desgastadas o dañadas.
+para el éxito de ciertas reconstrucciones o [restauraciones protésicas](/especialidades/protesis-dental/)
+sobre piezas desgastadas o dañadas.
 
 ## Gingivectomía
 
 Microcirugía que rediseña el contorno de la encía cuando cubre demasiado el diente,
 indicada en casos de "sonrisa gingival". Es una intervención rápida, indolora y
-mínimamente invasiva.
+mínimamente invasiva, y suele integrarse dentro de un plan de
+[estética dental](/especialidades/estetica-dental/).
 
 ## Injertos de encía
 
 Soluciona la sensibilidad y el desgaste estético de las encías retraídas cubriendo la
 raíz expuesta con tejido del propio paciente, con técnicas mínimamente invasivas y
 anestesia local.
+
+## Periodoncia e implantes
+
+Unas encías sanas son un requisito antes de colocar [implantes dentales](/especialidades/implantes-dentales/):
+la periodontitis no tratada es una de las principales causas de fracaso de los
+implantes a largo plazo. Por eso, si tienes antecedentes de enfermedad periodontal,
+empezamos siempre por estabilizar tus encías.

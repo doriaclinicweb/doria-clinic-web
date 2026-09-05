@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import { fotosEquipo } from '../../data/equipo-fotos';
+import IntroAccion from '../../components/IntroAccion.astro';
 
 export async function getStaticPaths() {
   const tratamientos = await getCollection(
@@ -53,6 +54,10 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
     { href: `/especialidades/${especialidad.id.replace(/^es\//, '')}/`, etiqueta: especialidad?.data.titulo },
   ]}
 >
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} />
+  </Fragment>
+
   <div class="columnas">
     <div>
       <Content />

@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import IntroAccion from '../../components/IntroAccion.astro';
 
 const tratamientos = await getCollection(
   'tratamientos',
@@ -9,13 +10,51 @@ const tratamientos = await getCollection(
 const conEspecialidad = await Promise.all(
   tratamientos.map(async (t) => ({ t, especialidad: await getEntry(t.data.especialidad) }))
 );
+
+const faqs = [
+  {
+    pregunta: '¿Los precios de los tratamientos están cerrados?',
+    respuesta:
+      'Sí. En la primera visita te damos un presupuesto por escrito con el precio cerrado antes de empezar, sin sorpresas ni cargos añadidos a mitad de tratamiento.',
+  },
+  {
+    pregunta: '¿Ofrecen financiación?',
+    respuesta:
+      'Sí, adaptamos la financiación a cada caso para que puedas repartir el pago del tratamiento en cómodas cuotas mensuales.',
+  },
+  {
+    pregunta: '¿Cuántas sesiones necesito para completar un tratamiento?',
+    respuesta:
+      'Depende del tratamiento y de tu caso concreto. En la ficha de cada tratamiento indicamos el número orientativo de sesiones, y te lo confirmamos con precisión en la primera visita.',
+  },
+  {
+    pregunta: '¿Puedo empezar un tratamiento sin comprometerme a terminarlo?',
+    respuesta:
+      'Sí. Te explicamos todas las fases y su coste antes de empezar, y decides tú, sin compromiso, si quieres continuar en cada etapa.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
 ---
 <Base
   titulo="Tratamientos dentales en Barcelona | Doria Clinic"
   descripcion="Tratamientos concretos de Doria Clinic en el Eixample de Barcelona, con precio, duración y proceso detallado."
   h1="Tratamientos"
-  lede="El detalle de precio, duración y proceso de cada tratamiento."
+  lede="El detalle de precio, duración y proceso de cada tratamiento, con presupuesto cerrado por escrito y sin compromiso."
+  schema={schema}
 >
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje="Hola, quiero información sobre un tratamiento" />
+  </Fragment>
+
   <p style="margin-top:-1.5rem">
     Para conocer la especialidad completa, visita <a href="/especialidades/">especialidades</a>.
   </p>
@@ -29,4 +68,12 @@ const conEspecialidad = await Promise.all(
       </a>
     ))}
   </div>
+
+  <h2>Preguntas frecuentes sobre nuestros tratamientos</h2>
+  {faqs.map((f) => (
+    <details class="faq">
+      <summary>{f.pregunta}</summary>
+      <p>{f.respuesta}</p>
+    </details>
+  ))}
 </Base>

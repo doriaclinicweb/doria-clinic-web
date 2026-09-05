@@ -48,10 +48,18 @@ inmediata](/tratamientos/carga-inmediata/).
 
 En las restauraciones de arcada completa no hace falta un implante por cada diente
 perdido. El éxito depende de un estudio previo detallado: calculamos el número óptimo y
-la ubicación de las fijaciones para que la prótesis quede equilibrada y las cargas se
-repartan bien.
+la ubicación de las fijaciones para que la [prótesis](/especialidades/protesis-dental/)
+quede equilibrada y las cargas se repartan bien.
 
 ## Regeneración ósea
 
 Cuando no hay suficiente hueso para dar estabilidad al implante, aplicamos técnicas de
-injerto óseo antes de la cirugía, planificadas también de forma digital.
+injerto óseo antes de la cirugía dentro de nuestra área de
+[cirugía oral](/especialidades/cirugia-oral/), planificadas también de forma digital.
+
+## Salud de las encías antes del implante
+
+Unas encías sanas son tan importantes como el hueso: la periodontitis no tratada es una
+de las principales causas de fracaso de los implantes a largo plazo. Si tienes
+antecedentes de enfermedad de encías, empezamos por estabilizarlas en
+[periodoncia](/especialidades/periodoncia/) antes de planificar el implante.

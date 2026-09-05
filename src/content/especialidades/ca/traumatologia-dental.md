@@ -23,9 +23,9 @@ esportiva, especialment en disciplines de contacte, hoquei, ciclisme, patinatge 
 activitats a l'aire lliure.
 
 Un traumatisme pot provocar des d'una petita fissura fins a la fractura o la pèrdua
-completa de la dent, així com danys al nervi que requereixen una endodòncia. El temps
-és determinant: una actuació ràpida pot marcar la diferència entre salvar o perdre la
-peça.
+completa de la dent, així com danys al nervi que requereixen una
+[endodòncia](/ca/especialidades/endodoncia/). El temps és determinant: una actuació
+ràpida pot marcar la diferència entre salvar o perdre la peça.
 
 ## Urgència dental
 

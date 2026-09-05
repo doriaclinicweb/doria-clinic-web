@@ -32,13 +32,15 @@ Las prótesis se clasifican según el soporte, sobre dientes naturales o sobre i
 y según el material, porcelana o resina. Además, pueden ser:
 
 - **Fijas**: se cementan o atornillan y no las retira el paciente. Incluyen coronas,
-  puentes y las prótesis completas sobre implantes.
+  puentes y las prótesis completas sobre [implantes](/especialidades/implantes-dentales/).
 - **Removibles**: el propio paciente puede ponerlas y quitarlas para su limpieza. Suelen
   indicarse cuando faltan varias piezas y se busca una solución más económica o cuando el
   estado del hueso no permite todavía otras opciones.
 
 La elección depende de las necesidades concretas de cada caso, que valoramos en la
-primera visita.
+primera visita. Cuando el objetivo principal es mejorar el aspecto de dientes ya
+presentes, sin reponer piezas perdidas, la alternativa suele ser una
+[carilla dental](/especialidades/estetica-dental/) en lugar de una prótesis.
 
 ## Mantenimiento de la prótesis
 

@@ -24,8 +24,9 @@ seo:
 
 L'ortodòncia va molt més enllà d'aconseguir un somriure bonic: corregeix l'alineació
 dental perquè la boca funcioni correctament i sigui més fàcil de netejar. En col·locar
-cada dent en la seva posició ideal sobre l'estructura òssia millorem l'estètica i
-facilitem una relació harmoniosa entre les arcades. Unes dents alineades acumulen menys
+cada dent en la seva posició ideal sobre l'estructura òssia millorem
+l'[estètica](/ca/especialidades/estetica-dental/) i facilitem una relació harmoniosa
+entre les arcades. Unes dents alineades acumulen menys
 sarro i prevenen malalties dentals.
 
 ## Ortodòncia invisible
@@ -57,3 +58,6 @@ futurs tractaments i previu problemes respiratoris i de masticació.
   desenvolupa, amb aparells removibles o fixos.
 - **Ortodòncia correctiva**: un cop han sortit les dents permanents, les alinea per
   aconseguir estètica i funcionalitat òptimes.
+
+Si vols saber més sobre les revisions i la prevenció en els més petits, visita
+[odontopediatria](/ca/especialidades/odontopediatria/).

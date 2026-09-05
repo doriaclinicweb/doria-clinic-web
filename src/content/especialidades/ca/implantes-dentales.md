@@ -47,9 +47,18 @@ immediata](/ca/tratamientos/carga-inmediata/).
 
 En les restauracions d'arcada completa no cal un implant per cada dent perduda. L'èxit
 depèn d'un estudi previ detallat: calculem el nombre òptim i la ubicació de les
-fixacions perquè la pròtesi quedi equilibrada i les càrregues es reparteixin bé.
+fixacions perquè la [pròtesi](/ca/especialidades/protesis-dental/) quedi equilibrada i
+les càrregues es reparteixin bé.
 
 ## Regeneració òssia
 
 Quan no hi ha prou os per donar estabilitat a l'implant, apliquem tècniques d'empelt
-ossi abans de la cirurgia, planificades també de forma digital.
+ossi abans de la cirurgia dins la nostra àrea de
+[cirurgia oral](/ca/especialidades/cirugia-oral/), planificades també de forma digital.
+
+## Salut de les genives abans de l'implant
+
+Unes genives sanes són tan importants com l'os: la periodontitis no tractada és una de
+les principals causes de fracàs dels implants a llarg termini. Si tens antecedents de
+malaltia de genives, comencem per estabilitzar-les a
+[periodòncia](/ca/especialidades/periodoncia/) abans de planificar l'implant.

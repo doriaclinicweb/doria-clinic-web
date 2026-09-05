@@ -51,3 +51,12 @@ originales, corrigiendo color, forma o posición de manera mínimamente invasiva
   casa, de forma progresiva y cómoda.
 - **Combinado**: la sesión en clínica junto con el refuerzo en casa. Es el tratamiento
   que más perdura en el tiempo.
+
+## Cuándo la estética empieza por otra especialidad
+
+Una sonrisa sana es la base de una sonrisa bonita. Si antes de las carillas o el
+blanqueamiento detectamos caries, encías inflamadas o dientes mal alineados, lo
+resolvemos primero con [odontología general](/especialidades/odontologia-general/),
+[periodoncia](/especialidades/periodoncia/) u [ortodoncia](/especialidades/ortodoncia/).
+Cuando faltan piezas o hay más estructura dañada de la que una carilla puede corregir,
+la solución pasa por una [prótesis dental](/especialidades/protesis-dental/).

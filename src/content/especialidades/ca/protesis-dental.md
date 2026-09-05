@@ -32,13 +32,15 @@ Les pròtesis es classifiquen segons el suport, sobre dents naturals o sobre imp
 segons el material, porcellana o resina. A més, poden ser:
 
 - **Fixes**: es cimenten o es cargolen i el pacient no les treu. Inclouen corones, ponts
-  i les pròtesis completes sobre implants.
+  i les pròtesis completes sobre [implants](/ca/especialidades/implantes-dentales/).
 - **Removibles**: el mateix pacient les pot posar i treure per netejar-les. Solen
   indicar-se quan falten diverses peces i es busca una solució més econòmica o quan
   l'estat de l'os encara no permet altres opcions.
 
 L'elecció depèn de les necessitats concretes de cada cas, que valorem a la primera
-visita.
+visita. Quan l'objectiu principal és millorar l'aspecte de dents ja presents, sense
+reposar peces perdudes, l'alternativa sol ser una
+[carilla dental](/ca/especialidades/estetica-dental/) en lloc d'una pròtesi.
 
 ## Manteniment de la pròtesi
 
