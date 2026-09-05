@@ -40,6 +40,7 @@ const especialidades = defineCollection({
       imagen: image().optional(),
       especialista: reference('equipo').optional(),
       destacada: z.boolean().default(false),
+      faqs: z.array(faq).default([]),
       seo,
     }),
 });

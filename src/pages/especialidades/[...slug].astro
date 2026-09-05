@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import { fotosEquipo } from '../../data/equipo-fotos';
+import IntroAccion from '../../components/IntroAccion.astro';
 
 export async function getStaticPaths() {
   const especialidades = await getCollection(
@@ -33,6 +34,16 @@ const schema = {
   '@type': 'MedicalSpecialty',
   name: d.titulo,
   description: d.resumen,
+  ...(d.faqs.length && {
+    subjectOf: {
+      '@type': 'FAQPage',
+      mainEntity: d.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+      })),
+    },
+  }),
 };
 ---
 <Base
@@ -44,6 +55,10 @@ const schema = {
   lede={d.subtitulo}
   migas={[{ href: '/especialidades/', etiqueta: 'Especialidades' }]}
 >
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} />
+  </Fragment>
+
   <div class="columnas">
     <div>
       <Content />
@@ -61,6 +76,18 @@ const schema = {
           </ol>
         </>
       )}
+
+      {d.faqs.length ? (
+        <>
+          <h2>Preguntas frecuentes</h2>
+          {d.faqs.map((f) => (
+            <details class="faq">
+              <summary>{f.pregunta}</summary>
+              <p>{f.respuesta}</p>
+            </details>
+          ))}
+        </>
+      ) : null}
     </div>
 
     <aside class="ficha">

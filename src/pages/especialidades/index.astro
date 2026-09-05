@@ -1,17 +1,56 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import IntroAccion from '../../components/IntroAccion.astro';
 
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === 'es'))
   .sort((a, b) => a.data.orden - b.data.orden);
 const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
+
+const faqs = [
+  {
+    pregunta: '¿Qué especialidades dentales tiene Doria Clinic?',
+    respuesta:
+      'Cubrimos todas las áreas de la salud bucodental: odontología general, ortodoncia, endodoncia, periodoncia, implantes dentales, estética dental, odontopediatría, cirugía oral, prótesis dental, traumatología dental y odontología deportiva. Cada especialidad la lleva el doctor del equipo formado específicamente en ella.',
+  },
+  {
+    pregunta: '¿Tengo que pasar primero por el dentista general?',
+    respuesta:
+      'No es imprescindible. En la primera visita valoramos tu caso y, si necesitas un especialista concreto, te derivamos directamente dentro del mismo equipo, sin perder tiempo ni tener que repetir explicaciones en otra clínica.',
+  },
+  {
+    pregunta: '¿Puedo tratar varias especialidades en la misma clínica?',
+    respuesta:
+      'Sí. Todo el equipo trabaja en el mismo espacio del Eixample, así que puedes coordinar, por ejemplo, ortodoncia y estética dental, o implantes y periodoncia, sin cambiar de clínica ni repetir pruebas.',
+  },
+  {
+    pregunta: '¿La primera visita con el especialista es gratuita?',
+    respuesta:
+      'Sí. La primera visita incluye una revisión completa y un plan de tratamiento por escrito, sin compromiso de continuar.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
 ---
 <Base
   titulo="Especialidades dentales en Barcelona | Doria Clinic"
   descripcion="Especialidades de Doria Clinic en el Eixample de Barcelona: implantes, endodoncia, ortodoncia, periodoncia, estética dental, odontopediatría y odontología deportiva."
   h1="Especialidades"
-  lede="Cada área la lleva el doctor formado en ella. Así trabajamos la salud bucodental de forma integral."
+  lede="Cada área la lleva el doctor formado en ella. Así trabajamos la salud bucodental de forma integral, con primera visita gratuita y sin compromiso."
+  schema={schema}
 >
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje="Hola, quiero pedir cita" />
+  </Fragment>
+
   <div class="especialidades">
     {especialidades.map((e) => (
       <a href={url(e)}>
@@ -21,4 +60,12 @@ const url = (e) => '/especialidades/' + e.id.replace(/^es\//, '') + '/';
       </a>
     ))}
   </div>
+
+  <h2>Preguntas frecuentes sobre nuestras especialidades</h2>
+  {faqs.map((f) => (
+    <details class="faq">
+      <summary>{f.pregunta}</summary>
+      <p>{f.respuesta}</p>
+    </details>
+  ))}
 </Base>
