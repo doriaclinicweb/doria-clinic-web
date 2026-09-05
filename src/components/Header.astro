@@ -17,8 +17,8 @@ const t = esCa
 ---
 <header class="cabecera">
   <div class="wrap">
-    <a class="marca" href={inicio}>Doria</a>
-    <nav>
+    <a class="marca" href={inicio}><img src="/logo-doria.svg" alt="Doria Clinic" width="111" height="35" /></a>
+    <nav id="nav-principal">
       <a href={esCa ? '/ca/especialidades/' : '/especialidades/'}>{t.especialidades}</a>
       <a href={esCa ? '/ca/tratamientos/' : '/tratamientos/'}>{t.tratamientos}</a>
       <a href={enHero ? '#equipo' : inicio + '#equipo'}>{t.equipo}</a>
@@ -27,5 +27,29 @@ const t = esCa
     </nav>
     <a class="idioma" href={rutaAlterna}>{esCa ? 'ES' : 'CA'}</a>
     <a class="boton boton-fantasma" href={wa}>{t.cita}</a>
+    <button class="hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.cabecera').forEach((cabecera) => {
+    const boton = cabecera.querySelector<HTMLButtonElement>('.hamburguesa');
+    const nav = cabecera.querySelector<HTMLElement>('nav');
+    if (!boton || !nav) return;
+
+    const cerrar = () => {
+      cabecera.classList.remove('nav-abierta');
+      boton.setAttribute('aria-expanded', 'false');
+    };
+
+    boton.addEventListener('click', () => {
+      const abierto = cabecera.classList.toggle('nav-abierta');
+      boton.setAttribute('aria-expanded', String(abierto));
+    });
+
+    nav.querySelectorAll('a').forEach((enlace) => enlace.addEventListener('click', cerrar));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrar(); });
+  });
+</script>

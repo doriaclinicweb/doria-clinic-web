@@ -9,6 +9,7 @@ const pathname = Astro.url.pathname;
 const esCa = pathname === '/ca' || pathname.startsWith('/ca/');
 const idioma = esCa ? 'ca' : 'es';
 const prefijo = esCa ? '/ca' : '';
+const rutaAlterna = esCa ? (pathname.replace(/^\/ca/, '') || '/') : '/ca' + pathname;
 
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
   .sort((a, b) => a.data.orden - b.data.orden);
@@ -31,6 +32,8 @@ const t = esCa
       comoLlegar: 'Com arribar-hi',
       horarios: 'Horaris',
       llamar: 'Trucar',
+      googleReview: '5,0 a Google',
+      idiomaAlterno: 'Veure en castellà',
       legalTitulo: 'Legal',
       avisoLegal: 'Avís legal',
       privacidad: 'Política de privacitat',
@@ -49,6 +52,8 @@ const t = esCa
       comoLlegar: 'Cómo llegar',
       horarios: 'Horarios',
       llamar: 'Llamar',
+      googleReview: '5,0 en Google',
+      idiomaAlterno: 'Ver en catalán',
       legalTitulo: 'Legal',
       avisoLegal: 'Aviso legal',
       privacidad: 'Política de privacidad',
@@ -88,7 +93,7 @@ const redes = [
   <div class="wrap">
     <div class="cuerpo">
       <div class="marca-col">
-        <span class="marca">Doria Clinic</span>
+        <a class="marca" href={prefijo || '/'}><img src="/logo-doria.svg" alt="Doria Clinic" width="111" height="35" /></a>
         <p style="color:var(--verde-claro);max-width:34ch">{t.blurb}</p>
         {redes.length > 0 && (
           <div class="redes">
@@ -104,6 +109,14 @@ const redes = [
           </div>
         )}
         <a class="boton boton-verde" style="margin-top:1.4rem" href={wa}>{t.cita}</a>
+        <a class="resena-google" href={clinica.google_business_profile} target="_blank" rel="noopener">
+          <span class="estrellas" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+            ))}
+          </span>
+          {t.googleReview}
+        </a>
       </div>
 
       <div>
@@ -149,6 +162,7 @@ const redes = [
           <li><a href={`${prefijo}/aviso-legal/`}>{t.avisoLegal}</a></li>
           <li><a href={`${prefijo}/politica-privacidad/`}>{t.privacidad}</a></li>
           <li><a href={`${prefijo}/politica-cookies/`}>{t.cookies}</a></li>
+          <li class="idioma-pie"><a href={rutaAlterna}>{t.idiomaAlterno}</a></li>
         </ul>
       </div>
     </div>
