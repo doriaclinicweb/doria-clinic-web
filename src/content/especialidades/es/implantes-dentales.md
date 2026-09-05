@@ -6,6 +6,15 @@ resumen: "Reposición de piezas dentales con implantes de última generación, p
 orden: 1
 destacada: true
 especialista: ines-doria
+faqs:
+  - pregunta: "¿Cuánto dura un implante dental?"
+    respuesta: "Bien mantenido, un implante puede durar toda la vida. Depende sobre todo de una buena higiene diaria y de acudir a las revisiones periódicas para controlar el estado del hueso y la encía que lo rodean."
+  - pregunta: "¿Duele la colocación del implante?"
+    respuesta: "La cirugía se realiza con anestesia local, así que no se siente dolor durante la intervención. Los días posteriores puede haber una molestia leve, similar a una extracción, que se controla con la medicación pautada."
+  - pregunta: "¿Qué pasa si no tengo suficiente hueso para un implante?"
+    respuesta: "Aplicamos técnicas de regeneración ósea o elevación de seno maxilar antes de colocar el implante, siempre planificadas digitalmente para asegurar la base necesaria."
+  - pregunta: "¿En qué se diferencia de la carga inmediata?"
+    respuesta: "El protocolo estándar espera unos dos meses de integración ósea antes de colocar el diente definitivo. La carga inmediata coloca dientes fijos provisionales el mismo día de la cirugía, para quien no puede esperar ese tiempo."
 seo:
   titulo_seo: "Implantes dentales en Barcelona | Doria Clinic"
   meta_descripcion: "Implantes dentales en el Eixample de Barcelona con planificación digital y técnicas mínimamente invasivas. Primera visita gratuita."

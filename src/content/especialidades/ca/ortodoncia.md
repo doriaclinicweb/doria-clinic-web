@@ -6,6 +6,15 @@ resumen: "Ortodòncia invisible, bràquets i ortodòncia infantil. Col·locar ca
 orden: 4
 destacada: true
 especialista: mariana-ettedgui
+faqs:
+  - pregunta: "Quant dura un tractament d'ortodòncia?"
+    respuesta: "Depèn de la complexitat del cas, però sol oscil·lar entre 12 i 24 mesos. A l'estudi inicial et donem una estimació concreta segons el teu diagnòstic."
+  - pregunta: "A partir de quina edat es pot portar ortodòncia invisible?"
+    respuesta: "En adolescents, sempre que ja hagi sortit la dentició definitiva. No hi ha edat màxima: és una de les opcions més demandades per adults."
+  - pregunta: "Els alineadors invisibles són igual d'eficaços que els bràquets?"
+    respuesta: "Per a la majoria de casos de desalineació, sí. En maloclusions més complexes, valorem en l'estudi inicial quina és l'opció més adequada per al teu cas."
+  - pregunta: "Quan hauria de portar el meu fill a l'ortodontista per primera vegada?"
+    respuesta: "Es recomana entre els 6 i els 7 anys, encara que encara tingui dents de llet. Permet detectar a temps problemes de creixement ossi o d'espai."
 seo:
   titulo_seo: "Ortodòncia a Barcelona | Doria Clinic"
   meta_descripcion: "Ortodòncia invisible, bràquets estètics i ortodòncia infantil a l'Eixample de Barcelona. Primera visita gratuïta."

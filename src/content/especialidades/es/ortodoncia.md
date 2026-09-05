@@ -6,6 +6,15 @@ resumen: "Ortodoncia invisible, brackets y ortodoncia infantil. Colocar cada die
 orden: 4
 destacada: true
 especialista: mariana-ettedgui
+faqs:
+  - pregunta: "¿Cuánto dura un tratamiento de ortodoncia?"
+    respuesta: "Depende de la complejidad del caso, pero suele oscilar entre 12 y 24 meses. En el estudio inicial te damos una estimación concreta según tu diagnóstico."
+  - pregunta: "¿A partir de qué edad se puede llevar ortodoncia invisible?"
+    respuesta: "En adolescentes, siempre que ya haya salido la dentición definitiva. No hay edad máxima: es una de las opciones más demandadas por adultos."
+  - pregunta: "¿Los alineadores invisibles son igual de eficaces que los brackets?"
+    respuesta: "Para la mayoría de casos de desalineación, sí. En maloclusiones más complejas, valoramos en el estudio inicial cuál es la opción más adecuada para tu caso."
+  - pregunta: "¿Cuándo debería llevar a mi hijo al ortodoncista por primera vez?"
+    respuesta: "Se recomienda entre los 6 y los 7 años, aunque todavía tenga dientes de leche. Permite detectar a tiempo problemas de crecimiento óseo o de espacio."
 seo:
   titulo_seo: "Ortodoncia en Barcelona | Doria Clinic"
   meta_descripcion: "Ortodoncia invisible, brackets estéticos y ortodoncia infantil en el Eixample de Barcelona. Primera visita gratuita."

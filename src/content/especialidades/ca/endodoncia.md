@@ -6,6 +6,15 @@ resumen: "Tractament de conductes, retractament i microcirurgia apical amb magni
 orden: 2
 destacada: true
 especialista: guillermo-doria
+faqs:
+  - pregunta: "És dolorosa una endodòncia?"
+    respuesta: "No. Es fa amb anestèsia local i, gràcies a la magnificació amb microscopi, és un tractament predictible i còmode. La dent sol fer més mal abans del tractament, per la infecció, que durant o després."
+  - pregunta: "Quantes visites calen?"
+    respuesta: "La majoria de les endodòncies es resolen en una sola visita. Els retractaments o els casos amb anatomies més complexes poden requerir una sessió addicional."
+  - pregunta: "Què passa si no em faig l'endodòncia?"
+    respuesta: "La infecció no desapareix per si sola: progressa cap a l'os que envolta l'arrel i pot acabar provocant la pèrdua de la dent. Com abans es tracta, més senzill és el tractament."
+  - pregunta: "La dent queda feble després del tractament?"
+    respuesta: "La dent perd una mica d'estructura en eliminar el teixit malmès, per la qual cosa en molars sol recomanar-se una corona per protegir-la del desgast de la masticació."
 seo:
   titulo_seo: "Endodòncia a Barcelona | Doria Clinic"
   meta_descripcion: "Endodòncia a Barcelona en una sola visita, amb microscopi i sense dolor. Retractaments i microcirurgia apical. Primera visita gratuïta."

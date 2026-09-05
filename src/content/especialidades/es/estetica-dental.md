@@ -6,6 +6,15 @@ resumen: "Carillas de porcelana y composite y blanqueamiento dental, con planifi
 orden: 6
 destacada: true
 especialista: ines-doria
+faqs:
+  - pregunta: "¿Las carillas dañan el diente natural?"
+    respuesta: "Las de composite apenas requieren preparación del diente. Las de porcelana necesitan un desgaste mínimo de la superficie visible, siempre calculado para preservar la mayor cantidad posible de estructura natural."
+  - pregunta: "¿Cuánto duran las carillas?"
+    respuesta: "Las de porcelana pueden durar más de 10 años con un buen mantenimiento. Las de composite duran menos, en torno a 4-5 años, y son más fáciles y económicas de reparar o renovar."
+  - pregunta: "¿El blanqueamiento dental es seguro?"
+    respuesta: "Sí, siempre que se realice bajo supervisión profesional con las concentraciones adecuadas. No daña el esmalte; puede provocar sensibilidad temporal, que desaparece en pocos días."
+  - pregunta: "¿Puedo ver el resultado antes de empezar el tratamiento?"
+    respuesta: "Sí. Con la planificación digital de la sonrisa diseñamos tu caso de forma virtual antes de tocar ningún diente, para que decidas con el resultado final ya visible."
 seo:
   titulo_seo: "Estética dental en Barcelona | Doria Clinic"
   meta_descripcion: "Carillas dentales y blanqueamiento en Barcelona con planificación digital de la sonrisa. Primera visita gratuita en el Eixample."

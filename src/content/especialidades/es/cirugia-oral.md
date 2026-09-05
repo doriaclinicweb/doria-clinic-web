@@ -5,6 +5,13 @@ subtitulo: "Mínima invasión y recuperación rápida"
 resumen: "Extracción de cordales, regeneración ósea, frenectomías y eliminación de quistes, con planificación digital previa mediante radiografía 3D."
 orden: 9
 especialista: guillermo-doria
+faqs:
+  - pregunta: "¿Es necesario extraer siempre las muelas del juicio?"
+    respuesta: "No. Solo se recomienda cuando hay falta de espacio, están impactadas, provocan infecciones repetidas o dificultan la higiene del resto de dientes. Lo valoramos con una radiografía 3D antes de decidir."
+  - pregunta: "¿Cuánto dura la recuperación de una extracción de cordales?"
+    respuesta: "La molestia principal suele ceder en 2-3 días con la medicación pautada. La recuperación completa de la encía tarda unas dos semanas, según la dificultad de la extracción."
+  - pregunta: "¿La cirugía oral duele?"
+    respuesta: "Se realiza con anestesia local, por lo que no se siente dolor durante la intervención. La planificación digital y las técnicas mínimamente invasivas reducen también la inflamación y las molestias posteriores."
 seo:
   titulo_seo: "Cirugía oral en Barcelona | Muelas del juicio"
   meta_descripcion: "Extracción de muelas del juicio, regeneración ósea y frenectomías en Barcelona con planificación digital 3D. Primera visita gratuita."

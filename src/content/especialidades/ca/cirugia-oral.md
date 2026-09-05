@@ -5,6 +5,13 @@ subtitulo: "Mínima invasió i recuperació ràpida"
 resumen: "Extracció de queixals del seny, regeneració òssia, frenectomies i eliminació de quists, amb planificació digital prèvia mitjançant radiografia 3D."
 orden: 9
 especialista: guillermo-doria
+faqs:
+  - pregunta: "Cal extreure sempre els queixals del seny?"
+    respuesta: "No. Només es recomana quan hi ha manca d'espai, estan impactats, provoquen infeccions repetides o dificulten la higiene de la resta de dents. Ho valorem amb una radiografia 3D abans de decidir."
+  - pregunta: "Quant dura la recuperació d'una extracció de queixals?"
+    respuesta: "La molèstia principal sol cedir en 2-3 dies amb la medicació pautada. La recuperació completa de la geniva triga unes dues setmanes, segons la dificultat de l'extracció."
+  - pregunta: "La cirurgia oral fa mal?"
+    respuesta: "Es fa amb anestèsia local, per la qual cosa no se sent dolor durant la intervenció. La planificació digital i les tècniques mínimament invasives redueixen també la inflamació i les molèsties posteriors."
 seo:
   titulo_seo: "Cirurgia oral a Barcelona | Queixals del seny"
   meta_descripcion: "Extracció de queixals del seny, regeneració òssia i frenectomies a Barcelona amb planificació digital 3D. Primera visita gratuïta."

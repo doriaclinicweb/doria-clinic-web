@@ -6,6 +6,13 @@ resumen: "Protectors bucals a mida per disciplina, detecció de focus infeccioso
 orden: 8
 destacada: true
 especialista: guillermo-doria
+faqs:
+  - pregunta: "Un protector bucal de farmàcia no és suficient?"
+    respuesta: "Els protectors termoconformables genèrics ofereixen menys protecció, dificulten la parla i la respiració, i solen quedar deixats anar. El protector a mida s'escaneja sobre la teva anatomia i s'ajusta a l'esport i nivell d'exigència."
+  - pregunta: "Cada quant s'ha de canviar el protector bucal?"
+    respuesta: "En adults, quan es desgasta o perd ajust, normalment cada 2-3 anys. En nens i adolescents, amb cada canvi rellevant de dentició, ja que la boca continua creixent."
+  - pregunta: "Quina relació hi ha entre la boca i una lesió muscular?"
+    respuesta: "Una infecció dental o una mala oclusió pot generar inflamació i tensió que es trasllada a la musculatura, contribuint a sobrecàrregues o lesions recurrents que, en aparença, no tenen relació amb la boca."
 seo:
   titulo_seo: "Odontologia esportiva a Barcelona | Protectors bucals"
   meta_descripcion: "Protectors bucals a mida i salut bucodental per a esportistes a Barcelona. Escanejat digital i disseny personalitzat per disciplina."

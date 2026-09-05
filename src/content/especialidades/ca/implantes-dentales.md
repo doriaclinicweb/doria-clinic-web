@@ -6,6 +6,15 @@ resumen: "Reposició de peces dentals amb implants d'última generació, planifi
 orden: 1
 destacada: true
 especialista: ines-doria
+faqs:
+  - pregunta: "Quant dura un implant dental?"
+    respuesta: "Ben mantingut, un implant pot durar tota la vida. Depèn sobretot d'una bona higiene diària i d'acudir a les revisions periòdiques per controlar l'estat de l'os i la geniva que l'envolten."
+  - pregunta: "Fa mal la col·locació de l'implant?"
+    respuesta: "La cirurgia es fa amb anestèsia local, així que no se sent dolor durant la intervenció. Els dies posteriors pot haver-hi una molèstia lleu, similar a una extracció, que es controla amb la medicació pautada."
+  - pregunta: "Què passa si no tinc prou os per a un implant?"
+    respuesta: "Apliquem tècniques de regeneració òssia o elevació de si maxil·lar abans de col·locar l'implant, sempre planificades digitalment per assegurar la base necessària."
+  - pregunta: "En què es diferencia de la càrrega immediata?"
+    respuesta: "El protocol estàndard espera uns dos mesos d'integració òssia abans de col·locar la dent definitiva. La càrrega immediata col·loca dents fixes provisionals el mateix dia de la cirurgia, per a qui no pot esperar aquest temps."
 seo:
   titulo_seo: "Implants dentals a Barcelona | Doria Clinic"
   meta_descripcion: "Implants dentals a l'Eixample de Barcelona amb planificació digital i tècniques mínimament invasives. Primera visita gratuïta."

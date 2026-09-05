@@ -5,6 +5,15 @@ subtitulo: "Salut dental infantil"
 resumen: "Revisions, segelladors, fluoració i ortodòncia interceptiva. La prevenció a la infància és la base d'un somriure sa a l'edat adulta."
 orden: 7
 especialista: mariana-ettedgui
+faqs:
+  - pregunta: "Quan ha d'anar el meu fill al dentista per primera vegada?"
+    respuesta: "Al voltant del primer any de vida, o quan surtin les primeres dents de llet. Com abans es familiaritzi amb la consulta, més fàcil serà que les properes visites siguin una experiència tranquil·la."
+  - pregunta: "Cal tractar les càries en dents de llet si es cauran igualment?"
+    respuesta: "Sí. Una càries sense tractar es pot infectar i afectar la dent definitiva que s'està formant a sota, a més de causar dolor i problemes per mastegar mentrestant."
+  - pregunta: "Els segelladors dentals fan mal?"
+    respuesta: "No. És un procediment ràpid i indolor que no requereix anestèsia: es neteja el queixal i s'aplica la resina protectora directament sobre la superfície."
+  - pregunta: "A quina edat es retira el xumet o es corregeix la succió del polze?"
+    respuesta: "L'ideal és haver-ho abandonat abans dels 3-4 anys. Mantenir-ho més enllà pot alterar la posició de les dents i el desenvolupament del paladar."
 seo:
   titulo_seo: "Odontopediatria a Barcelona | Dentista infantil"
   meta_descripcion: "Dentista infantil a l'Eixample de Barcelona: revisions, segelladors i ortodòncia interceptiva. Primera visita gratuïta."

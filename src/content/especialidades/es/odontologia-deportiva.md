@@ -6,6 +6,13 @@ resumen: "Protectores bucales a medida por disciplina, detección de focos infec
 orden: 8
 destacada: true
 especialista: guillermo-doria
+faqs:
+  - pregunta: "¿Un protector bucal de farmacia no es suficiente?"
+    respuesta: "Los protectores termoconformables genéricos ofrecen menos protección, dificultan el habla y la respiración, y suelen quedar sueltos. El protector a medida se escanea sobre tu anatomía y se ajusta al deporte y nivel de exigencia."
+  - pregunta: "¿Cada cuánto hay que cambiar el protector bucal?"
+    respuesta: "En adultos, cuando se desgasta o pierde ajuste, normalmente cada 2-3 años. En niños y adolescentes, con cada cambio relevante de dentición, ya que la boca sigue creciendo."
+  - pregunta: "¿Qué relación hay entre la boca y una lesión muscular?"
+    respuesta: "Una infección dental o una mala oclusión puede generar inflamación y tensión que se traslada a la musculatura, contribuyendo a sobrecargas o lesiones recurrentes que, en apariencia, no tienen relación con la boca."
 seo:
   titulo_seo: "Odontología deportiva en Barcelona | Protectores bucales"
   meta_descripcion: "Protectores bucales a medida y salud bucodental para deportistas en Barcelona. Escaneado digital y diseño personalizado por disciplina."
