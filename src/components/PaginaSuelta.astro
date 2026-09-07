@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { entry: any; idioma: Idioma }
+const { entry, idioma } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+
+const etiquetaActualizado = {
+  es: 'Última actualización',
+  ca: 'Última actualització',
+  en: 'Last updated',
+}[idioma];
+---
+<Base
+  titulo={d.seo.titulo_seo}
+  descripcion={d.seo.meta_descripcion}
+  noindex={d.seo.noindex}
+  h1={d.titulo}
+  lede={d.lede}
+  anchoCompleto
+>
+  <Content />
+  {d.actualizado && (
+    <p><em>{etiquetaActualizado}: {d.actualizado}.</em></p>
+  )}
+</Base>

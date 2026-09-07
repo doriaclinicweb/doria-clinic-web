@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import PaginaSuelta from '../../components/PaginaSuelta.astro';
+
+export async function getStaticPaths() {
+  const paginas = await getCollection('paginas', (p) => p.data.idioma === 'ca');
+  return paginas.map((p) => ({ params: { pagina: p.data.ruta }, props: { entry: p } }));
+}
+
+const { entry } = Astro.props;
+---
+<PaginaSuelta entry={entry} idioma="ca" />

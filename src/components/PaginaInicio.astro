@@ -1,0 +1,200 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import '../styles/global.css';
+import clinica from '../data/clinica.json';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import type { Idioma } from '../utils/idioma';
+import { inicioDe } from '../utils/idioma';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+
+const home = await getEntry('home', idioma);
+if (!home) throw new Error(`Falta src/content/home/${idioma}.md`);
+const d = home.data;
+
+const prefijo = idioma === 'es' ? '' : '/' + idioma;
+const base = inicioDe(idioma);
+const canonical = `https://doria.clinic${base}`;
+
+const cargoDe = (doc) =>
+  idioma === 'ca' ? doc.cargo_ca || doc.cargo : idioma === 'en' ? doc.cargo_en || doc.cargo : doc.cargo;
+const titulacionDe = (doc) => {
+  if (idioma === 'ca' && doc.titulacion_ca && doc.titulacion_ca.length) return doc.titulacion_ca;
+  if (idioma === 'en' && doc.titulacion_en && doc.titulacion_en.length) return doc.titulacion_en;
+  return doc.titulacion;
+};
+
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
+  .sort((a, b) => a.data.orden - b.data.orden);
+const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiva'));
+const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
+const urlEsp = (e) =>
+  `${prefijo}/especialidades/${e.id.replace(new RegExp('^' + idioma + '/'), '')}/`;
+
+const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
+
+const wa = clinica.software_citas;
+const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
+
+const puntos = d.primera_visita_puntos.map((p) =>
+  p.replace('{telefono_urgencias}', clinica.telefono_urgencias).replace('{telefono}', clinica.telefono)
+);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: clinica.nombre,
+  telephone: clinica.telefono,
+  email: clinica.email,
+  url: 'https://doria.clinic',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: clinica.direccion.calle,
+    postalCode: clinica.direccion.codigo_postal,
+    addressLocality: clinica.direccion.ciudad,
+    addressCountry: 'ES',
+  },
+  openingHours: 'Mo-Fr 10:00-14:00, Mo-Fr 16:00-20:00',
+  medicalSpecialty: 'Dentistry',
+};
+---
+<!doctype html>
+<html lang={idioma}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{d.seo.titulo_seo}</title>
+    <meta name="description" content={d.seo.meta_descripcion} />
+    {d.seo.noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href="https://doria.clinic/" />
+    <link rel="alternate" hreflang="ca" href="https://doria.clinic/ca/" />
+    <link rel="alternate" hreflang="en" href="https://doria.clinic/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://doria.clinic/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={{ es: 'es_ES', ca: 'ca_ES', en: 'en_US' }[idioma]} />
+    <meta property="og:site_name" content={clinica.nombre} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={d.seo.titulo_seo} />
+    <meta property="og:description" content={d.seo.meta_descripcion} />
+    <meta property="og:image" content={`https://doria.clinic${d.hero_imagen.src}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={d.seo.titulo_seo} />
+    <meta name="twitter:description" content={d.seo.meta_descripcion} />
+    <meta name="twitter:image" content={`https://doria.clinic${d.hero_imagen.src}`} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <Header variante="hero" />
+
+    <section class="hero">
+      <img src={d.hero_imagen.src} alt={d.hero_imagen.alt} fetchpriority="high" />
+      <div class="wrap">
+        <h1>{d.hero_titular}</h1>
+        <p class="entradilla">{d.hero_entradilla}</p>
+        <div class="acciones">
+          <a class="boton boton-primario" href={wa}>{d.cta_texto}</a>
+          <a class="boton boton-fantasma" href={tel}>{clinica.telefono}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion intro">
+      <div class="wrap cuerpo">
+        <p>{d.intro_frase}</p>
+        <div>
+          {d.intro_parrafos.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="tratamientos">
+      <div class="wrap">
+        <h2>{d.tratamientos_titulo}</h2>
+        <div class="especialidades">
+          {deportiva && (
+            <a class="ancha" href={urlEsp(deportiva)}>
+              <h3>{deportiva.data.titulo}</h3>
+              <p>{deportiva.data.resumen}</p>
+              <span class="mas">{d.tratamientos_card_destacada}</span>
+            </a>
+          )}
+          {resto.map((e) => (
+            <a href={urlEsp(e)}>
+              <h3>{e.data.titulo}</h3>
+              <p>{e.data.resumen}</p>
+              <span class="mas">{d.tratamientos_card_resto}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="equipo">
+      <div class="wrap">
+        <h2>{d.equipo_titulo}</h2>
+        <div class="equipo">
+          {equipo.map((doc) => (
+            <figure>
+              {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
+              <figcaption>
+                <span class="nombre">{doc.data.nombre}</span>
+                <span class="puesto">{cargoDe(doc.data)}</span>
+                <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion visita">
+      <div class="wrap cuerpo">
+        <div>
+          <h2>{d.primera_visita_titulo}</h2>
+          <p>{d.primera_visita_texto}</p>
+          <div class="acciones" style="margin-top:2rem">
+            <a class="boton boton-primario" href={wa}>{d.primera_visita_cta}</a>
+          </div>
+        </div>
+        <ul>
+          {puntos.map((p) => <li>{p}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="espacio">
+      <div class="wrap">
+        <h2>{d.instalaciones_titulo}</h2>
+        <p style="margin-bottom:2.5rem">{d.instalaciones_texto}</p>
+        <div class="espacio">
+          {d.instalaciones_imagenes.map((img) => (
+            <figure><img src={img.src} alt={img.alt} loading="lazy" /></figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {d.opiniones.length > 0 && (
+      <section class="seccion" style="background:var(--gris)">
+        <div class="wrap">
+          <h2>{d.opiniones_titulo}</h2>
+          <div class="opiniones">
+            {d.opiniones.map((o) => (
+              <blockquote>
+                <q>{o.texto}</q>
+                <cite>{o.autor}</cite>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <Footer />
+  </body>
+</html>

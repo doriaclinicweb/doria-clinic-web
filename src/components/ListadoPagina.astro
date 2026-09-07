@@ -1,0 +1,104 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import IntroAccion from './IntroAccion.astro';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma; pagina: 'especialidades' | 'tratamientos' }
+const { idioma, pagina } = Astro.props;
+
+const cfg = await getEntry('listados', `${idioma}-${pagina}`);
+if (!cfg) throw new Error(`Falta src/content/listados/${idioma}-${pagina}.md`);
+const d = cfg.data;
+
+const prefijo = idioma === 'es' ? '' : '/' + idioma;
+const sinIdioma = (id: string) => id.replace(new RegExp(`^${idioma}/`), '');
+
+const mensajeCita = {
+  es: pagina === 'tratamientos' ? 'Hola, quiero información sobre un tratamiento' : 'Hola, quiero pedir cita',
+  ca: pagina === 'tratamientos' ? 'Hola, vull informació sobre un tractament' : 'Hola, vull demanar cita',
+  en: pagina === 'tratamientos' ? "Hi, I'd like information about a treatment" : "Hi, I'd like to book an appointment",
+}[idioma];
+
+const verEsp = { es: 'Ver especialidad →', ca: 'Veure especialitat →', en: 'View specialty →' }[idioma];
+const enlaceEsp = {
+  es: 'Para conocer la especialidad completa, visita',
+  ca: "Per conèixer l'especialitat completa, visita",
+  en: 'To see the full specialty, visit',
+}[idioma];
+const enlaceEspTexto = { es: 'especialidades', ca: 'especialitats', en: 'specialties' }[idioma];
+
+let especialidades: any[] = [];
+let conEspecialidad: { t: any; especialidad: any }[] = [];
+
+if (pagina === 'especialidades') {
+  especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
+    .sort((a, b) => a.data.orden - b.data.orden);
+} else {
+  const tratamientos = await getCollection(
+    'tratamientos',
+    (t) => t.data.idioma === idioma && !t.data.seo.noindex
+  );
+  conEspecialidad = await Promise.all(
+    tratamientos.map(async (t) => ({ t, especialidad: await getEntry(t.data.especialidad) }))
+  );
+}
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
+---
+<Base
+  titulo={d.seo.titulo_seo}
+  descripcion={d.seo.meta_descripcion}
+  noindex={d.seo.noindex}
+  h1={d.h1}
+  lede={d.lede}
+  schema={d.faqs.length > 0 ? schema : undefined}
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma={idioma} mensaje={mensajeCita} />
+  </Fragment>
+
+  {pagina === 'tratamientos' && (
+    <p style="margin-top:-1.5rem">
+      {enlaceEsp} <a href={`${prefijo}/especialidades/`}>{enlaceEspTexto}</a>.
+    </p>
+  )}
+
+  <div class="especialidades">
+    {pagina === 'especialidades'
+      ? especialidades.map((e) => (
+          <a href={`${prefijo}/especialidades/${sinIdioma(e.id)}/`}>
+            <h3>{e.data.titulo}</h3>
+            <p>{e.data.resumen}</p>
+            <span class="mas">{verEsp}</span>
+          </a>
+        ))
+      : conEspecialidad.map(({ t, especialidad }) => (
+          <a href={`${prefijo}/tratamientos/${sinIdioma(t.id)}/`}>
+            <h3>{t.data.titulo}</h3>
+            <p>{t.data.resumen}</p>
+            <span class="mas">{especialidad?.data.titulo} →</span>
+          </a>
+        ))}
+  </div>
+
+  {d.faqs.length > 0 && (
+    <>
+      <h2>{d.faqs_titulo}</h2>
+      {d.faqs.map((f) => (
+        <details class="faq">
+          <summary>{f.pregunta}</summary>
+          <p>{f.respuesta}</p>
+        </details>
+      ))}
+    </>
+  )}
+</Base>

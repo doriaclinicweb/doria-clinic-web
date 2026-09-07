@@ -2,7 +2,6 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
-import { fotosEquipo } from '../../data/equipo-fotos';
 import IntroAccion from '../../components/IntroAccion.astro';
 
 export async function getStaticPaths() {
@@ -95,8 +94,8 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
     </div>
 
     <aside class="ficha">
-      {doctor && fotosEquipo[doctor.id] && (
-        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
+      {doctor && doctor.data.foto && (
+        <img class="foto" src={doctor.data.foto} alt={doctor.data.nombre} loading="lazy" />
       )}
       <div class="ficha-info">
         <dl>

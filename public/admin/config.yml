@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.doriaclinicweb.workers.dev
 
-media_folder: "src/assets/img"
+media_folder: "public/img"
 public_folder: "/img"
 
 i18n:
@@ -141,19 +141,144 @@ collections:
     summary: "{{nombre}} — {{cargo}}"
     fields:
       - { name: nombre, label: "Nombre", widget: string }
-      - { name: cargo, label: "Cargo", widget: string }
       - { name: numero_colegiado, label: "Número de colegiado", widget: string }
+      - { name: orden, label: "Orden", widget: number, value_type: int }
+      - { name: foto, label: "Foto", widget: image, required: false }
+      - { name: cargo, label: "Cargo (ES)", widget: string }
+      - { name: cargo_ca, label: "Cargo (CA)", widget: string, required: false }
+      - { name: cargo_en, label: "Cargo (EN)", widget: string, required: false }
       - name: titulacion
-        label: "Titulación"
+        label: "Titulación (ES)"
         widget: list
         field: { name: titulo, label: "Título", widget: string }
+      - name: titulacion_ca
+        label: "Titulación (CA)"
+        widget: list
+        required: false
+        field: { name: titulo, label: "Títol", widget: string }
+      - name: titulacion_en
+        label: "Titulación (EN)"
+        widget: list
+        required: false
+        field: { name: titulo, label: "Qualification", widget: string }
       - name: especialidades
         label: "Especialidades"
         widget: list
+        required: false
         field: { name: nombre, label: "Especialidad", widget: string }
-      - { name: foto, label: "Foto", widget: image, required: false }
-      - { name: orden, label: "Orden", widget: number, value_type: int }
-      - { name: body, label: "Descripción", widget: markdown }
+      - { name: bio, label: "Descripción (ES)", widget: text, required: false }
+      - { name: bio_ca, label: "Descripción (CA)", widget: text, required: false }
+      - { name: bio_en, label: "Descripción (EN)", widget: text, required: false }
+
+  - name: home
+    label: "Inicio"
+    label_singular: "Inicio"
+    folder: "src/content/home"
+    create: false
+    extension: md
+    identifier_field: idioma
+    summary: "{{idioma}}"
+    fields:
+      - { name: idioma, label: "Idioma", widget: select, options: [es, ca, en] }
+      - { name: hero_titular, label: "Titular", widget: string }
+      - { name: hero_entradilla, label: "Entradilla", widget: text }
+      - name: hero_imagen
+        label: "Imagen del hero"
+        widget: object
+        fields:
+          - { name: src, label: "Imagen", widget: image }
+          - { name: alt, label: "Texto alternativo", widget: string }
+      - { name: cta_texto, label: "Texto del botón principal", widget: string }
+      - { name: intro_frase, label: "Frase de introducción", widget: string }
+      - name: intro_parrafos
+        label: "Párrafos de introducción"
+        widget: list
+        field: { name: parrafo, label: "Párrafo", widget: text }
+      - { name: tratamientos_titulo, label: "Título sección Tratamientos", widget: string }
+      - { name: tratamientos_card_destacada, label: "Texto tarjeta destacada", widget: string }
+      - { name: tratamientos_card_resto, label: "Texto resto de tarjetas", widget: string }
+      - { name: equipo_titulo, label: "Título sección Equipo", widget: string }
+      - { name: primera_visita_titulo, label: "Título Primera visita", widget: string }
+      - { name: primera_visita_texto, label: "Texto Primera visita", widget: text }
+      - { name: primera_visita_cta, label: "Botón Primera visita", widget: string }
+      - name: primera_visita_puntos
+        label: "Puntos de Primera visita"
+        widget: list
+        field: { name: punto, label: "Punto", widget: string }
+      - { name: instalaciones_titulo, label: "Título Instalaciones", widget: string }
+      - { name: instalaciones_texto, label: "Texto Instalaciones", widget: text }
+      - name: instalaciones_imagenes
+        label: "Imágenes de Instalaciones"
+        widget: list
+        fields:
+          - { name: src, label: "Imagen", widget: image }
+          - { name: alt, label: "Texto alternativo", widget: string }
+      - { name: opiniones_titulo, label: "Título Opiniones", widget: string }
+      - name: opiniones
+        label: "Opiniones"
+        widget: list
+        required: false
+        fields:
+          - { name: texto, label: "Opinión", widget: text }
+          - { name: autor, label: "Autor", widget: string }
+      - name: seo
+        label: "Google"
+        widget: object
+        fields:
+          - { name: titulo_seo, label: "Título en Google", widget: string, pattern: ['^.{1,60}$', 'Máximo 60 caracteres'] }
+          - { name: meta_descripcion, label: "Descripción en Google", widget: text, pattern: ['^.{1,155}$', 'Máximo 155 caracteres'] }
+          - { name: noindex, label: "Ocultar de Google", widget: boolean, default: false }
+
+  - name: listados
+    label: "Páginas de listado"
+    label_singular: "Página de listado"
+    folder: "src/content/listados"
+    create: false
+    extension: md
+    summary: "{{pagina}} ({{idioma}})"
+    fields:
+      - { name: idioma, label: "Idioma", widget: select, options: [es, ca, en] }
+      - { name: pagina, label: "Página", widget: select, options: [especialidades, tratamientos] }
+      - { name: h1, label: "Título de la página", widget: string }
+      - { name: lede, label: "Entradilla", widget: text }
+      - { name: faqs_titulo, label: "Título de las preguntas frecuentes", widget: string }
+      - name: faqs
+        label: "Preguntas frecuentes"
+        widget: list
+        required: false
+        fields:
+          - { name: pregunta, label: "Pregunta", widget: string }
+          - { name: respuesta, label: "Respuesta", widget: text }
+      - name: seo
+        label: "Google"
+        widget: object
+        fields:
+          - { name: titulo_seo, label: "Título en Google", widget: string, pattern: ['^.{1,60}$', 'Máximo 60 caracteres'] }
+          - { name: meta_descripcion, label: "Descripción en Google", widget: text, pattern: ['^.{1,155}$', 'Máximo 155 caracteres'] }
+          - { name: noindex, label: "Ocultar de Google", widget: boolean, default: false }
+
+  - name: paginas
+    label: "Páginas sueltas"
+    label_singular: "Página"
+    folder: "src/content/paginas"
+    create: true
+    extension: md
+    slug: "{{idioma}}-{{ruta}}"
+    summary: "{{titulo}} ({{idioma}})"
+    fields:
+      - { name: idioma, label: "Idioma", widget: select, options: [es, ca, en] }
+      - { name: ruta, label: "Ruta (URL)", widget: string, hint: "Sin barras. Ej.: aviso-legal, contacto" }
+      - { name: titulo, label: "Título (H1)", widget: string }
+      - { name: lede, label: "Entradilla", widget: text, required: false }
+      - { name: actualizado, label: "Última actualización", widget: string, required: false, hint: "Ej.: septiembre de 2026" }
+      - name: seo
+        label: "Google"
+        widget: object
+        fields:
+          - { name: titulo_seo, label: "Título en Google", widget: string, pattern: ['^.{1,60}$', 'Máximo 60 caracteres'] }
+          - { name: meta_descripcion, label: "Descripción en Google", widget: text, pattern: ['^.{1,155}$', 'Máximo 155 caracteres'] }
+          - { name: noindex, label: "Ocultar de Google", widget: boolean, default: false }
+      - { name: body, label: "Contenido", widget: markdown }
 
   - name: ajustes
     label: "Datos de la clínica"

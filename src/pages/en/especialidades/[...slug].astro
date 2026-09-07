@@ -2,8 +2,6 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import clinica from '../../../data/clinica.json';
-import { fotosEquipo } from '../../../data/equipo-fotos';
-import { equipoEn } from '../../../data/equipo-en';
 import IntroAccion from '../../../components/IntroAccion.astro';
 
 export async function getStaticPaths() {
@@ -21,7 +19,7 @@ const { especialidad } = Astro.props;
 const d = especialidad.data;
 const { Content } = await render(especialidad);
 const doctor = d.especialista ? await getEntry(d.especialista) : null;
-const cargoEn = doctor ? equipoEn[doctor.id]?.cargo ?? doctor.data.cargo : null;
+const cargoEn = doctor ? doctor.data.cargo_en || doctor.data.cargo : null;
 
 const tratamientos = await getCollection(
   'tratamientos',
@@ -93,8 +91,8 @@ const schema = {
     </div>
 
     <aside class="ficha">
-      {doctor && fotosEquipo[doctor.id] && (
-        <img class="foto" src={fotosEquipo[doctor.id]} alt={doctor.data.nombre} loading="lazy" />
+      {doctor && doctor.data.foto && (
+        <img class="foto" src={doctor.data.foto} alt={doctor.data.nombre} loading="lazy" />
       )}
       <div class="ficha-info">
         {doctor && (
