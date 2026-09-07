@@ -2,6 +2,7 @@ backend:
   name: github
   repo: ignaciorodesg/doria-clinic-web
   branch: main
+  base_url: https://sveltia-cms-auth.doriaclinicweb.workers.dev
 
 media_folder: "src/assets/img"
 public_folder: "/img"
