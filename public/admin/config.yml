@@ -9,7 +9,7 @@ public_folder: "/img"
 
 i18n:
   structure: multiple_folders
-  locales: [es, ca]
+  locales: [es, ca, en]
   default_locale: es
 
 collections:
