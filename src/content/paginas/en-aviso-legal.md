@@ -1,17 +1,18 @@
 ---
 idioma: en
 ruta: aviso-legal
-titulo: "Legal notice"
-actualizado: "September 2026"
+titulo: Legal notice
+lede: ''
+actualizado: September 2026
 seo:
-  titulo_seo: "Legal Notice | Doria Clinic"
-  meta_descripcion: "Legal notice for the Doria Clinic website: identifying information, terms of use, intellectual property and liability."
+  titulo_seo: Legal Notice | Doria Clinic
+  meta_descripcion: 'Legal notice for the Doria Clinic website: identifying information, terms of use, intellectual property and liability.'
   noindex: false
 ---
 
 ## 1. Identifying information
 
-In compliance with the information duty set out in Article 10 of Spanish Law 34/2002, of 11 July, on Information Society Services and Electronic Commerce (LSSI-CE), please note that the owner of this website is **Doria Clinic** (trading as «Doria Clinic»), with tax ID (NIF) to be completed and registered address at Carrer Villarroel, 221, 08036 Barcelona. You can contact us at [info@doria.clinic](mailto:info@doria.clinic) or by phone at [+34 933 534 840](tel:+34933534840).
+In compliance with the information duty set out in Article 10 of Spanish Law 34/2002, of 11 July, on Information Society Services and Electronic Commerce (LSSI-CE), please note that the owner of this website is **DORIMA DENTAL SLP** (trading as «Doria Clinic»), with tax ID **B22758023** to be completed and registered address at Carrer Villarroel, 221, 08036 Barcelona. You can contact us at [info@doria.clinic](mailto:info@doria.clinic) or by phone at [+34 933 534 840](tel:+34933534840).
 
 ## 2. Purpose
 
