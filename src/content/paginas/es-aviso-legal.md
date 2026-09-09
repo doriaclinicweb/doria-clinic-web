@@ -1,17 +1,18 @@
 ---
 idioma: es
 ruta: aviso-legal
-titulo: "Aviso legal"
-actualizado: "septiembre de 2026"
+titulo: Aviso legal
+lede: ''
+actualizado: septiembre de 2026
 seo:
-  titulo_seo: "Aviso legal | Doria Clinic"
-  meta_descripcion: "Aviso legal del sitio web de Doria Clinic: datos identificativos, condiciones de uso, propiedad intelectual y responsabilidad."
+  titulo_seo: Aviso legal | Doria Clinic
+  meta_descripcion: 'Aviso legal del sitio web de Doria Clinic: datos identificativos, condiciones de uso, propiedad intelectual y responsabilidad.'
   noindex: false
 ---
 
 ## 1. Datos identificativos
 
-En cumplimiento del deber de información del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que el titular de este sitio web es **Doria Clinic** (nombre comercial «Doria Clinic»), con NIF pendiente de completar y domicilio en Carrer Villarroel, 221, 08036 Barcelona. Puedes contactar con nosotros en [info@doria.clinic](mailto:info@doria.clinic) o en el teléfono [+34 933 534 840](tel:+34933534840).
+En cumplimiento del deber de información del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que el titular de este sitio web es **DORIMA DENTAL SLP** (nombre comercial «Doria Clinic»), con NIF B22758023 y domicilio en Carrer Villarroel, 221, 08036 Barcelona. Puedes contactar con nosotros en [info@doria.clinic](mailto:info@doria.clinic) o en el teléfono [+34 933 534 840](tel:+34933534840).
 
 ## 2. Objeto
 
