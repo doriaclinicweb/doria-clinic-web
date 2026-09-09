@@ -1,25 +1,40 @@
 {
   "nombre": "Doria Clinic",
   "razon_social": "",
-  "nif": "",
   "telefono": "+34 933 534 840",
   "telefono_urgencias": "+34 619 186 579",
   "whatsapp": "34619186579",
   "email": "info@doria.clinic",
   "direccion": {
-    "calle": "Carrer Villarroel, 221",
+    "calle": "Carrer Villarroel, 221 Local 2",
     "codigo_postal": "08036",
     "ciudad": "Barcelona",
     "barrio": "Eixample"
   },
-  "coordenadas": { "lat": null, "lng": null },
+  "coordenadas": {
+    "lat": null,
+    "lng": null
+  },
   "horarios": [
-    { "dias": "Lunes a viernes", "franja": "10:00 – 14:00 y 16:00 – 20:00" },
-    { "dias": "Miércoles por la mañana", "franja": "Cerrado" },
-    { "dias": "Sábado y domingo", "franja": "Cerrado" }
+    {
+      "dias": "Lunes a viernes",
+      "franja": "10:00 – 14:00 y 16:00 – 20:00"
+    },
+    {
+      "dias": "Miércoles por la mañana",
+      "franja": "Cerrado"
+    },
+    {
+      "dias": "Sábado y domingo",
+      "franja": "Cerrado"
+    }
   ],
   "primera_visita_gratuita": true,
   "software_citas": "https://wa.me/34619186579?text=Hola,%20quiero%20pedir%20hora",
   "google_business_profile": "https://maps.app.goo.gl/i2ZHAKuvi7EWEi8S6",
-  "redes": { "instagram": "https://www.instagram.com/doriaclinic/", "linkedin": "" }
+  "redes": {
+    "instagram": "https://www.instagram.com/doriaclinic/",
+    "linkedin": "https://www.linkedin.com/company/111295000/admin/dashboard/"
+  },
+  "nif": ""
 }
