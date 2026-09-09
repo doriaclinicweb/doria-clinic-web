@@ -47,3 +47,6 @@ Cada guardado es un commit y dispara la publicación.
 - Traducción al catalán en `src/content/*/ca/`.
 - Páginas `/equipo/`, `/la-clinica/` y `/contacto/`.
 - Aviso legal, política de privacidad y de cookies antes de publicar.
+
+<!-- prueba de acceso de edición/publicación: 2026-09-09 -->
+
