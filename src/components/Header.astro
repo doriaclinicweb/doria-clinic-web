@@ -23,9 +23,9 @@ const t = {
   en: { especialidades: 'Specialties', tratamientos: 'Treatments', equipo: 'Team', espacio: 'Facilities', contacto: 'Contact', cita: 'Book appointment' },
 }[idioma];
 ---
-<header class="cabecera">
+<header class={`cabecera ${enHero ? 'cabecera-hero' : ''}`}>
   <div class="wrap">
-    <a class="marca" href={inicio}><img src="/logo-doria.svg" alt="Doria Clinic" width="111" height="35" /></a>
+    <a class="marca" href={inicio} aria-label="Doria Clinic"><span class="logo"></span></a>
     <nav id="nav-principal">
       <a href={prefijo + '/especialidades/'}>{t.especialidades}</a>
       <a href={prefijo + '/tratamientos/'}>{t.tratamientos}</a>
@@ -47,16 +47,32 @@ const t = {
   document.querySelectorAll<HTMLElement>('.cabecera').forEach((cabecera) => {
     const boton = cabecera.querySelector<HTMLButtonElement>('.hamburguesa');
     const nav = cabecera.querySelector<HTMLElement>('nav');
+    const esHero = cabecera.classList.contains('cabecera-hero');
+
+    // En la home, el header nace transparente sobre el hero y se vuelve
+    // opaco (fondo crema, texto verde) al hacer scroll, igual que en
+    // doria.clinic.
+    const actualizarOpacidad = () => {
+      if (!esHero) return;
+      cabecera.classList.toggle('cabecera-opaca', window.scrollY > 10 || cabecera.classList.contains('nav-abierta'));
+    };
+    if (esHero) {
+      actualizarOpacidad();
+      window.addEventListener('scroll', actualizarOpacidad, { passive: true });
+    }
+
     if (!boton || !nav) return;
 
     const cerrar = () => {
       cabecera.classList.remove('nav-abierta');
       boton.setAttribute('aria-expanded', 'false');
+      actualizarOpacidad();
     };
 
     boton.addEventListener('click', () => {
       const abierto = cabecera.classList.toggle('nav-abierta');
       boton.setAttribute('aria-expanded', String(abierto));
+      actualizarOpacidad();
     });
 
     nav.querySelectorAll('a').forEach((enlace) => enlace.addEventListener('click', cerrar));
