@@ -41,9 +41,9 @@ a { color: inherit; }
 .cabecera .wrap { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
 .cabecera .marca { display: block; text-decoration: none; margin-right: auto; }
 .cabecera .logo { display: block; width: calc(111 * (100vw / 1920)); aspect-ratio: 111 / 35; background-color: currentColor; transition: background-color .4s; -webkit-mask: url(/logo-doria.svg) no-repeat center / contain; mask: url(/logo-doria.svg) no-repeat center / contain; }
-.cabecera nav { display: flex; gap: 1.8rem; font-size: 0.95rem; flex-wrap: wrap; }
+.cabecera nav { display: flex; gap: calc(68 * (100vw / 1920)); font-size: calc(0.95rem + 2px); flex-wrap: wrap; }
 .cabecera nav a { text-decoration: none; opacity: 0.9; }
-.cabecera nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.cabecera nav a:hover { opacity: 1; }
 .cabecera .idiomas { display: flex; gap: 0.5rem; }
 .cabecera .idioma { font-size: 0.8rem; letter-spacing: 0.02em; opacity: 0.9; text-decoration: none; border: 1px solid currentColor; border-radius: 999px; padding: 0.35rem 0.7rem; }
 .cabecera .idioma:hover { opacity: 1; background: rgba(255,254,247,.14); }
