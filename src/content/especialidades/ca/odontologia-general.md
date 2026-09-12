@@ -4,7 +4,6 @@ titulo: "Odontologia general"
 subtitulo: "La base de la teva salut bucodental"
 resumen: "Revisions, netejes dentals, obturacions i extraccions simples a l'Eixample de Barcelona. Detectar i tractar a temps és el que evita que un problema petit acabi sent un tractament llarg i car."
 orden: 1
-destacada: true
 especialista: guillermo-doria
 faqs:
   - pregunta: "Cada quant de temps he de fer una revisió dental?"

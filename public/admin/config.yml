@@ -112,7 +112,7 @@ collections:
       - { name: subtitulo, label: "Subtítulo", widget: string, required: false, i18n: true }
       - { name: resumen, label: "Resumen", widget: text, i18n: true }
       - { name: orden, label: "Orden en el menú", widget: number, value_type: int }
-      - { name: destacada, label: "Destacar en la home", widget: boolean, default: false }
+      - { name: mostrar_en_home, label: "Mostrar en la home", widget: boolean, default: true }
       - name: especialista
         label: "Especialista responsable"
         widget: relation
@@ -195,8 +195,7 @@ collections:
         widget: list
         field: { name: parrafo, label: "Párrafo", widget: text }
       - { name: tratamientos_titulo, label: "Título sección Tratamientos", widget: string }
-      - { name: tratamientos_card_destacada, label: "Texto tarjeta destacada", widget: string }
-      - { name: tratamientos_card_resto, label: "Texto resto de tarjetas", widget: string }
+      - { name: tratamientos_card_resto, label: "Texto de las tarjetas", widget: string }
       - { name: equipo_titulo, label: "Título sección Equipo", widget: string }
       - { name: primera_visita_titulo, label: "Título Primera visita", widget: string }
       - { name: primera_visita_texto, label: "Texto Primera visita", widget: text }

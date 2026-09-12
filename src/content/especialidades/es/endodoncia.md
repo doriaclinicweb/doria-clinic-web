@@ -4,7 +4,6 @@ titulo: "Endodoncia"
 subtitulo: "Conservar el diente en lugar de extraerlo"
 resumen: "Tratamiento de conductos, retratamiento y microcirugía apical bajo magnificación para salvar dientes dañados o infectados y eliminar el dolor."
 orden: 2
-destacada: true
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Es dolorosa una endodoncia?"

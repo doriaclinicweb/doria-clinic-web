@@ -4,7 +4,6 @@ titulo: "Odontología deportiva"
 subtitulo: "El rendimiento empieza en la boca"
 resumen: "Protectores bucales a medida por disciplina, detección de focos infecciosos y equilibrio oclusal para deportistas de cualquier nivel."
 orden: 8
-destacada: true
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Un protector bucal de farmacia no es suficiente?"

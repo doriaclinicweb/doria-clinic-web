@@ -11,7 +11,6 @@ intro_parrafos:
   - "Somos un equipo de odontólogos con una manera propia de hacer las cosas: con rigor, cercanía y atención a cada detalle. Creemos que venir al dentista no debería generar dudas ni incomodidad."
   - "Por eso te ofrecemos una experiencia pensada para que te sientas cómodo, tranquilo y bien acompañado desde el primer día."
 tratamientos_titulo: "Tratamientos"
-tratamientos_card_destacada: "Protectores bucales a medida y salud oral del deportista →"
 tratamientos_card_resto: "Ver tratamiento →"
 equipo_titulo: "Más que dentistas: tu equipo de confianza"
 primera_visita_titulo: "Tu primera visita"

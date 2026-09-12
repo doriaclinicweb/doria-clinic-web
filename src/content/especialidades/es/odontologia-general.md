@@ -4,7 +4,6 @@ titulo: "Odontología general"
 subtitulo: "La base de tu salud bucodental"
 resumen: "Revisiones, limpiezas dentales, obturaciones y extracciones simples en el Eixample de Barcelona. Detectar y tratar a tiempo es lo que evita que un problema pequeño acabe siendo un tratamiento largo y caro."
 orden: 1
-destacada: true
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Cada cuánto tiempo debo hacer una revisión dental?"

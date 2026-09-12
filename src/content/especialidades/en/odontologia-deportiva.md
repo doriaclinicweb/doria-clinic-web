@@ -4,7 +4,6 @@ titulo: "Sports Dentistry"
 subtitulo: "Performance starts in the mouth"
 resumen: "Custom mouthguards by discipline, detection of infection sources and bite balance for athletes of any level."
 orden: 8
-destacada: true
 especialista: guillermo-doria
 faqs:
   - pregunta: "Isn't a pharmacy mouthguard enough?"

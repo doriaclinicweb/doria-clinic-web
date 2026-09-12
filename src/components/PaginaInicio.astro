@@ -26,7 +26,7 @@ const titulacionDe = (doc) => {
   return doc.titulacion;
 };
 
-const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
+const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma && e.data.mostrar_en_home))
   .sort((a, b) => a.data.orden - b.data.orden);
 const urlEsp = (e) =>
   `${prefijo}/especialidades/${e.id.replace(new RegExp('^' + idioma + '/'), '')}/`;

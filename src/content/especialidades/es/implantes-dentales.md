@@ -4,7 +4,6 @@ titulo: "Implantes dentales"
 subtitulo: "Especialistas en implantología avanzada"
 resumen: "Reposición de piezas dentales con implantes de última generación, planificación digital y técnicas mínimamente invasivas para recuperar función y estética."
 orden: 3
-destacada: true
 especialista: ines-doria
 faqs:
   - pregunta: "¿Cuánto dura un implante dental?"
