@@ -81,8 +81,11 @@ a { color: inherit; }
   .cabecera.nav-abierta nav { display: flex; }
 }
 
-.hero { position: relative; min-height: min(92vh, 820px); display: flex; align-items: center; overflow: hidden; }
-.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero { position: relative; height: 100vh; height: 100dvh; display: flex; align-items: center; overflow: hidden; }
+.hero-slider { position: absolute; inset: 0; overflow: hidden; }
+.hero-slider .pista { display: flex; width: 100%; height: 100%; transition: transform .3s ease; }
+.hero-slider img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) { .hero-slider .pista { transition: none; } }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.55) 0%, rgba(26,31,26,.3) 45%, rgba(26,31,26,.55) 100%); }
 .hero .wrap { position: relative; z-index: 2; color: var(--crema); }
 .hero h1 { max-width: 15ch; }

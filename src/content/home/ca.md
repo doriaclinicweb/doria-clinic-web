@@ -2,9 +2,13 @@
 idioma: ca
 hero_titular: "La nostra especialitat és el teu benestar"
 hero_entradilla: "Clínica dental a l'Eixample especialitzada en salut bucodental, estètica i atenció a l'esportista."
-hero_imagen:
-  src: "/img/1-10.jpg"
-  alt: "Recepció de Doria Clinic, amb taulell de fusta i llum natural"
+hero_imagenes:
+  - src: "/img/1-10.jpg"
+    alt: "Recepció de Doria Clinic, amb taulell de fusta i llum natural"
+  - src: "/img/4-9.jpg"
+    alt: "Interior de la clínica"
+  - src: "/img/3-10.jpg"
+    alt: "Odontopediatra explicant el tractament a un nen"
 cta_texto: "Demanar cita per WhatsApp"
 intro_frase: "Cuidem persones, no només somriures."
 intro_parrafos:

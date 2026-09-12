@@ -96,7 +96,7 @@ const home = defineCollection({
     idioma: z.enum(idiomas),
     hero_titular: z.string(),
     hero_entradilla: z.string(),
-    hero_imagen: imagen,
+    hero_imagenes: z.array(imagen).min(1),
     cta_texto: z.string(),
     intro_frase: z.string(),
     intro_parrafos: z.array(z.string()).min(1),

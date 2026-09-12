@@ -2,9 +2,13 @@
 idioma: en
 hero_titular: "Our specialty is your wellbeing"
 hero_entradilla: "Dental clinic in the Eixample specialising in oral health, aesthetics and care for athletes."
-hero_imagen:
-  src: "/img/1-10.jpg"
-  alt: "Doria Clinic reception, with wooden counter and natural light"
+hero_imagenes:
+  - src: "/img/1-10.jpg"
+    alt: "Doria Clinic reception, with wooden counter and natural light"
+  - src: "/img/4-9.jpg"
+    alt: "Interior of the clinic"
+  - src: "/img/3-10.jpg"
+    alt: "Paediatric dentist explaining the treatment to a child"
 cta_texto: "Book by WhatsApp"
 intro_frase: "We care for people, not just smiles."
 intro_parrafos:

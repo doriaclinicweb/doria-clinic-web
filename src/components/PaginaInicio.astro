@@ -78,11 +78,11 @@ const schema = {
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={d.seo.titulo_seo} />
     <meta property="og:description" content={d.seo.meta_descripcion} />
-    <meta property="og:image" content={`https://doria.clinic${d.hero_imagen.src}`} />
+    <meta property="og:image" content={`https://doria.clinic${d.hero_imagenes[0].src}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={d.seo.titulo_seo} />
     <meta name="twitter:description" content={d.seo.meta_descripcion} />
-    <meta name="twitter:image" content={`https://doria.clinic${d.hero_imagen.src}`} />
+    <meta name="twitter:image" content={`https://doria.clinic${d.hero_imagenes[0].src}`} />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
   </head>
@@ -90,7 +90,21 @@ const schema = {
     <Header variante="hero" />
 
     <section class="hero">
-      <img src={d.hero_imagen.src} alt={d.hero_imagen.alt} fetchpriority="high" />
+      <div class="hero-slider" data-intervalo="4500">
+        <div class="pista">
+          {d.hero_imagenes.map((img, i) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading={i === 0 ? undefined : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : undefined}
+            />
+          ))}
+          {d.hero_imagenes.length > 1 && (
+            <img src={d.hero_imagenes[0].src} alt="" aria-hidden="true" loading="lazy" />
+          )}
+        </div>
+      </div>
       <div class="wrap">
         <h1>{d.hero_titular}</h1>
         <p class="entradilla">{d.hero_entradilla}</p>
@@ -187,5 +201,43 @@ const schema = {
     )}
 
     <Footer />
+
+    <script>
+      // Slider de fotos del hero: avanza sola, en bucle, sin flechas ni puntos.
+      // El último elemento de la pista es un clon de la primera foto: al
+      // llegar a él, saltamos sin transición de vuelta al principio, con lo
+      // que el bucle se ve continuo.
+      document.querySelectorAll<HTMLElement>('.hero-slider').forEach((slider) => {
+        const pista = slider.querySelector<HTMLElement>('.pista');
+        if (!pista || pista.children.length <= 2) return; // 1 foto real + su clon: no hace falta animar
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const fotosReales = pista.children.length - 1; // sin contar el clon
+        const intervalo = Number(slider.dataset.intervalo) || 4500;
+        let actual = 0; // siempre 0..fotosReales-1: con módulo, nunca puede salirse de rango
+
+        setInterval(() => {
+          const siguiente = (actual + 1) % fotosReales;
+          if (siguiente === 0) {
+            // Vuelta al principio: deslizamos hasta el clon (una posición más
+            // allá de la última foto real) y, pasada la transición (300ms, ver
+            // .hero-slider .pista en global.css), saltamos sin animación a la
+            // primera foto. Temporizador fijo, no "transitionend": así el
+            // bucle nunca se queda colgado si el navegador no llega a
+            // disparar el evento.
+            pista.style.transform = `translateX(-${fotosReales * 100}%)`;
+            setTimeout(() => {
+              pista.style.transition = 'none';
+              pista.style.transform = 'translateX(0%)';
+              void pista.offsetWidth;
+              pista.style.transition = '';
+            }, 320);
+          } else {
+            pista.style.transform = `translateX(-${siguiente * 100}%)`;
+          }
+          actual = siguiente;
+        }, intervalo);
+      });
+    </script>
   </body>
 </html>

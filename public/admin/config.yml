@@ -182,9 +182,11 @@ collections:
       - { name: idioma, label: "Idioma", widget: select, options: [es, ca, en] }
       - { name: hero_titular, label: "Titular", widget: string }
       - { name: hero_entradilla, label: "Entradilla", widget: text }
-      - name: hero_imagen
-        label: "Imagen del hero"
-        widget: object
+      - name: hero_imagenes
+        label: "Fotos del slider de portada"
+        hint: "Se muestran en bucle, una tras otra. El orden aquí es el orden en el que se ven."
+        widget: list
+        min: 1
         fields:
           - { name: src, label: "Imagen", widget: image }
           - { name: alt, label: "Texto alternativo", widget: string }
