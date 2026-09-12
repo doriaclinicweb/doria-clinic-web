@@ -4,6 +4,7 @@ titulo: "Dental Aesthetics"
 subtitulo: "A balance between health and harmony"
 resumen: "Porcelain and composite veneers and teeth whitening, with digital smile planning so you can see the result before starting treatment."
 orden: 5
+icono: "/img/iconos/estetica-dental.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "Do veneers damage the natural tooth?"

@@ -4,6 +4,7 @@ titulo: "Estética dental"
 subtitulo: "Equilibrio entre salud y armonía"
 resumen: "Carillas de porcelana y composite y blanqueamiento dental, con planificación digital de la sonrisa para ver el resultado antes de empezar el tratamiento."
 orden: 5
+icono: "/img/iconos/estetica-dental.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Las carillas dañan el diente natural?"

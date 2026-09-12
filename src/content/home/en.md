@@ -15,7 +15,6 @@ intro_parrafos:
   - "We're a team of dentists with our own way of doing things: rigour, warmth and attention to every detail. We believe a visit to the dentist shouldn't cause doubt or discomfort."
   - "That's why we offer an experience designed to make you feel comfortable, at ease and well looked after from day one."
 tratamientos_titulo: "Treatments"
-tratamientos_card_resto: "View treatment →"
 equipo_titulo: "More than dentists: your trusted team"
 primera_visita_titulo: "Your first visit"
 primera_visita_texto: "A complete check-up, a personalised diagnosis and a treatment plan tailored to you. We take the time to listen and answer all your questions."

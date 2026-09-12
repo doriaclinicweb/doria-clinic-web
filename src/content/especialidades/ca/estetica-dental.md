@@ -4,6 +4,7 @@ titulo: "Estètica dental"
 subtitulo: "Equilibri entre salut i harmonia"
 resumen: "Carilles de porcellana i composite i blanquejament dental, amb planificació digital del somriure per veure el resultat abans de començar el tractament."
 orden: 5
+icono: "/img/iconos/estetica-dental.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "Les carilles fan malbé la dent natural?"

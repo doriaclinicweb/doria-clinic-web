@@ -4,6 +4,7 @@ titulo: "Oral Surgery"
 subtitulo: "Minimal invasion, fast recovery"
 resumen: "Wisdom tooth extraction, bone regeneration, frenectomies and cyst removal, with prior digital planning using 3D X-rays."
 orden: 10
+icono: "/img/iconos/cirugia-oral.svg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Do wisdom teeth always need to be extracted?"

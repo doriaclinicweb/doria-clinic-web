@@ -4,6 +4,7 @@ titulo: "Implants dentals"
 subtitulo: "Especialistes en implantologia avançada"
 resumen: "Reposició de peces dentals amb implants d'última generació, planificació digital i tècniques mínimament invasives per recuperar funció i estètica."
 orden: 3
+icono: "/img/iconos/implantes-dentales.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "Quant dura un implant dental?"

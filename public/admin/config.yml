@@ -113,6 +113,7 @@ collections:
       - { name: resumen, label: "Resumen", widget: text, i18n: true }
       - { name: orden, label: "Orden en el menú", widget: number, value_type: int }
       - { name: mostrar_en_home, label: "Mostrar en la home", widget: boolean, default: true }
+      - { name: icono, label: "Icono (cuadrícula de la home)", widget: image, required: false, hint: "SVG a una tinta, sin fondo. Si se deja vacío, la tarjeta se muestra sin icono." }
       - name: especialista
         label: "Especialista responsable"
         widget: relation
@@ -197,7 +198,6 @@ collections:
         widget: list
         field: { name: parrafo, label: "Párrafo", widget: text }
       - { name: tratamientos_titulo, label: "Título sección Tratamientos", widget: string }
-      - { name: tratamientos_card_resto, label: "Texto de las tarjetas", widget: string }
       - { name: equipo_titulo, label: "Título sección Equipo", widget: string }
       - { name: primera_visita_titulo, label: "Título Primera visita", widget: string }
       - { name: primera_visita_texto, label: "Texto Primera visita", widget: text }

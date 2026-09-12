@@ -51,6 +51,7 @@ a { color: inherit; }
 /* Home: header flotante y transparente sobre el hero, opaco al hacer scroll (igual que doria.clinic) */
 .cabecera.cabecera-hero { position: fixed; top: 0; left: 0; width: 100%; background: transparent; box-shadow: none; }
 .cabecera.cabecera-hero.cabecera-opaca { background: var(--crema); color: var(--verde); box-shadow: 0 4px 8px rgba(0,0,0,.3); }
+.cabecera.cabecera-hero.cabecera-opaca .boton { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 
 @media (max-width: 740px) { .cabecera .logo { width: calc(55 * (100vw / 430)); } }
 
@@ -88,8 +89,8 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .hero-slider .pista { transition: none; } }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.55) 0%, rgba(26,31,26,.3) 45%, rgba(26,31,26,.55) 100%); }
 .hero .wrap { position: relative; z-index: 2; color: var(--crema); }
-.hero h1 { max-width: 15ch; }
-.hero .entradilla { font-size: clamp(1.05rem, 1.6vw, 1.3rem); max-width: 46ch; margin: 1.5rem 0 2.2rem; opacity: 0.95; }
+.hero h1 { max-width: 15ch; font-family: "Tiempos Text", serif; }
+.hero .entradilla { font-family: "PP Fragment Sans", Helvetica, Arial, sans-serif; font-size: clamp(1.05rem, 1.6vw, 1.3rem); max-width: 46ch; margin: 1.5rem 0 1.4rem; opacity: 0.95; }
 
 .acciones { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 @media (max-width: 900px) { .hero .acciones { display: none; } }
@@ -109,18 +110,34 @@ a { color: inherit; }
 .intro .cuerpo > div p { font-family: var(--texto); font-size: 1.0625rem; max-width: var(--medida); color: var(--tinta); }
 @media (max-width: 800px) { .intro .cuerpo { grid-template-columns: 1fr; } .intro p { max-width: none; } }
 
-.especialidades { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--verde-claro); border-left: 1px solid var(--verde-claro); margin-bottom: 3rem; }
-.especialidades a { background: var(--crema); padding: 2rem 1.8rem 2.4rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.5rem; transition: background .18s; border-right: 1px solid var(--verde-claro); border-bottom: 1px solid var(--verde-claro); }
-.especialidades a:hover { background: var(--gris); }
-.especialidades a p { font-size: 0.95rem; color: #556055; margin: 0; }
-.especialidades a .mas { margin-top: auto; padding-top: 1.4rem; font-family: var(--display); color: var(--verde); font-size: 0.92rem; }
-.especialidades .ancha { grid-column: span 2; background: var(--verde); color: var(--crema); }
-.especialidades .ancha:hover { background: #43523F; }
-.especialidades .ancha h3 { font-size: 1.9rem; max-width: 16ch; }
-.especialidades .ancha p { color: rgba(255,254,247,.85); font-size: 1.05rem; max-width: 44ch; }
-.especialidades .ancha .mas { color: var(--crema); }
-@media (max-width: 900px) { .especialidades { grid-template-columns: 1fr 1fr; } .especialidades .ancha { grid-column: span 2; } }
-@media (max-width: 560px) { .especialidades { grid-template-columns: 1fr; } .especialidades .ancha { grid-column: span 1; } }
+/* Carrusel de tratamientos de la home: panel gris con tarjetas apaisadas
+   deslizables, igual que en doria.clinic. */
+.carrusel-tratamientos { position: relative; background: var(--gris); border-radius: 1.4rem; padding: 2.4rem clamp(1.2rem, 5vw, 4.2rem); margin-top: 2.5rem; }
+.carrusel-lineas { position: absolute; inset: 2.4rem clamp(1.2rem, 5vw, 4.2rem); pointer-events: none; }
+.carrusel-lineas span { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--verde-claro); }
+.carrusel-lineas span:nth-child(1) { left: 25%; }
+.carrusel-lineas span:nth-child(2) { left: 50%; }
+.carrusel-lineas span:nth-child(3) { left: 75%; }
+.carrusel-pista { display: flex; gap: clamp(1.5rem, 4vw, 3.8rem); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 2px; }
+.carrusel-pista::-webkit-scrollbar { display: none; }
+.tratamiento { flex: 0 0 clamp(11rem, 22vw, 16.5rem); aspect-ratio: 1 / 1.48; scroll-snap-align: start; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.tratamiento-titulo { font-family: var(--display); font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.15; }
+.tratamiento-cuerpo { margin-top: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.tratamiento-icono { width: clamp(2.6rem, 7vw, 4.4rem); height: auto; }
+.tratamiento-cuerpo p { margin: 0; min-height: 4.6em; font-size: 0.92rem; color: #556055; }
+.carrusel-flecha { position: absolute; top: 50%; translate: 0 -50%; width: 2.2rem; height: 2.2rem; border: 0; background: transparent; cursor: pointer; padding: 0; }
+.carrusel-flecha::before { content: ""; display: block; width: 0; height: 0; border-top: 0.65rem solid transparent; border-bottom: 0.65rem solid transparent; }
+.carrusel-flecha.anterior { left: 0.4rem; }
+.carrusel-flecha.anterior::before { border-right: 1.1rem solid var(--verde); }
+.carrusel-flecha.siguiente { right: 0.4rem; }
+.carrusel-flecha.siguiente::before { border-left: 1.1rem solid var(--verde); }
+.carrusel-flecha:disabled { opacity: 0.25; cursor: default; }
+@media (max-width: 740px) {
+  .carrusel-tratamientos { padding: 1.6rem 1.1rem; border-radius: 1.1rem; }
+  .carrusel-lineas { display: none; }
+  .tratamiento { flex-basis: 8.5rem; aspect-ratio: 1 / 1.3; }
+  .carrusel-flecha { top: 45%; }
+}
 
 .equipo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
 .equipo figure { margin: 0; }

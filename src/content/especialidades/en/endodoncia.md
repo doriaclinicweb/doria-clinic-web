@@ -4,6 +4,7 @@ titulo: "Endodontics"
 subtitulo: "Saving the tooth instead of extracting it"
 resumen: "Root canal treatment, retreatment and apical microsurgery under magnification to save damaged or infected teeth and eliminate pain."
 orden: 2
+icono: "/img/iconos/endodoncia.svg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Is root canal treatment painful?"

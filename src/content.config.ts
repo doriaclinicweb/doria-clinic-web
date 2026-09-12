@@ -101,7 +101,6 @@ const home = defineCollection({
     intro_frase: z.string(),
     intro_parrafos: z.array(z.string()).min(1),
     tratamientos_titulo: z.string(),
-    tratamientos_card_resto: z.string(),
     equipo_titulo: z.string(),
     instalaciones_titulo: z.string(),
     instalaciones_texto: z.string(),

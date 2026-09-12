@@ -4,6 +4,7 @@ titulo: "Dental Implants"
 subtitulo: "Specialists in advanced implantology"
 resumen: "Replacing missing teeth with the latest-generation implants, digital planning and minimally invasive techniques to restore function and aesthetics."
 orden: 3
+icono: "/img/iconos/implantes-dentales.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "How long does a dental implant last?"

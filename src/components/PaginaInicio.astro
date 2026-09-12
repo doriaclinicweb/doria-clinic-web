@@ -127,14 +127,21 @@ const schema = {
     <section class="seccion" id="tratamientos">
       <div class="wrap">
         <h2>{d.tratamientos_titulo}</h2>
-        <div class="especialidades">
-          {especialidades.map((e) => (
-            <a href={urlEsp(e)}>
-              <h3>{e.data.titulo}</h3>
-              <p>{e.data.resumen}</p>
-              <span class="mas">{d.tratamientos_card_resto}</span>
-            </a>
-          ))}
+        <div class="carrusel-tratamientos">
+          <div class="carrusel-lineas" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="carrusel-pista">
+            {especialidades.map((e) => (
+              <a href={urlEsp(e)} class="tratamiento">
+                <span class="tratamiento-titulo">{e.data.titulo}</span>
+                <div class="tratamiento-cuerpo">
+                  {e.data.icono && <img class="tratamiento-icono" src={e.data.icono} alt="" loading="lazy" />}
+                  <p>{e.data.resumen}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
+          <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
         </div>
       </div>
     </section>
@@ -203,6 +210,33 @@ const schema = {
     <Footer />
 
     <script>
+      // Carrusel de tratamientos: las flechas desplazan la pista una tarjeta
+      // (más el hueco) cada vez. Se deshabilitan solas al llegar a un extremo.
+      document.querySelectorAll<HTMLElement>('.carrusel-tratamientos').forEach((carrusel) => {
+        const pista = carrusel.querySelector<HTMLElement>('.carrusel-pista');
+        const anterior = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.anterior');
+        const siguiente = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.siguiente');
+        if (!pista || !anterior || !siguiente) return;
+
+        const actualizarFlechas = () => {
+          const maximo = pista.scrollWidth - pista.clientWidth - 1;
+          anterior.disabled = pista.scrollLeft <= 0;
+          siguiente.disabled = pista.scrollLeft >= maximo;
+        };
+
+        const desplazar = (dir: number) => {
+          const tarjeta = pista.querySelector<HTMLElement>('.tratamiento');
+          const paso = tarjeta ? tarjeta.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).gap || '0') : pista.clientWidth;
+          pista.scrollBy({ left: dir * paso, behavior: 'smooth' });
+        };
+
+        anterior.addEventListener('click', () => desplazar(-1));
+        siguiente.addEventListener('click', () => desplazar(1));
+        pista.addEventListener('scroll', actualizarFlechas, { passive: true });
+        window.addEventListener('resize', actualizarFlechas);
+        actualizarFlechas();
+      });
+
       // Slider de fotos del hero: avanza sola, en bucle, sin flechas ni puntos.
       // El último elemento de la pista es un clon de la primera foto: al
       // llegar a él, saltamos sin transición de vuelta al principio, con lo

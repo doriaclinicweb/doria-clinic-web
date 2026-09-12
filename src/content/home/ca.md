@@ -15,7 +15,6 @@ intro_parrafos:
   - "Som un equip d'odontòlegs amb una manera pròpia de fer les coses: amb rigor, proximitat i atenció a cada detall. Creiem que anar al dentista no hauria de generar dubtes ni incomoditat."
   - "Per això t'oferim una experiència pensada perquè et sentis còmode, tranquil i ben acompanyat des del primer dia."
 tratamientos_titulo: "Tractaments"
-tratamientos_card_resto: "Veure tractament →"
 equipo_titulo: "Més que dentistes: el teu equip de confiança"
 primera_visita_titulo: "La teva primera visita"
 primera_visita_texto: "Revisió completa, diagnòstic personalitzat i un pla de tractament adaptat a tu. Ens prenem el temps d'escoltar-te i de resoldre tots els teus dubtes."

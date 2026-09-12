@@ -4,6 +4,7 @@ titulo: "Endodòncia"
 subtitulo: "Conservar la dent en lloc d'extreure-la"
 resumen: "Tractament de conductes, retractament i microcirurgia apical amb magnificació per salvar dents malmeses o infectades i eliminar el dolor."
 orden: 2
+icono: "/img/iconos/endodoncia.svg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "És dolorosa una endodòncia?"

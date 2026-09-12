@@ -4,6 +4,7 @@ titulo: "Periodoncia"
 subtitulo: "Salud de las encías y del hueso que sostiene los dientes"
 resumen: "Prevención, diagnóstico y tratamiento de gingivitis y periodontitis, la principal causa de pérdida dental en adultos. Cirugía periodontal e injertos de encía."
 orden: 7
+icono: "/img/iconos/periodoncia.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Cómo sé si tengo enfermedad periodontal?"
