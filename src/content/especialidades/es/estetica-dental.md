@@ -3,7 +3,7 @@ idioma: es
 titulo: "Estética dental"
 subtitulo: "Equilibrio entre salud y armonía"
 resumen: "Carillas de porcelana y composite y blanqueamiento dental, con planificación digital de la sonrisa para ver el resultado antes de empezar el tratamiento."
-orden: 6
+orden: 5
 destacada: true
 especialista: ines-doria
 faqs:

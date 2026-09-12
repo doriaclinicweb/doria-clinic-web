@@ -3,7 +3,7 @@ idioma: ca
 titulo: "Ortodòncia"
 subtitulo: "Alineació per a la salut, no només per a l'estètica"
 resumen: "Ortodòncia invisible, bràquets i ortodòncia infantil. Col·locar cada dent en la seva posició millora la funció masticatòria i facilita la higiene diària."
-orden: 4
+orden: 6
 destacada: true
 especialista: mariana-ettedgui
 faqs:

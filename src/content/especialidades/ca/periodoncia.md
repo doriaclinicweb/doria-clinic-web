@@ -3,7 +3,7 @@ idioma: ca
 titulo: "Periodòncia"
 subtitulo: "Salut de les genives i de l'os que sosté les dents"
 resumen: "Prevenció, diagnòstic i tractament de gingivitis i periodontitis, la principal causa de pèrdua dental en adults. Cirurgia periodontal i empelts de geniva."
-orden: 5
+orden: 7
 especialista: ines-doria
 faqs:
   - pregunta: "Com sé si tinc malaltia periodontal?"

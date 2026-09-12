@@ -28,8 +28,6 @@ const titulacionDe = (doc) => {
 
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma))
   .sort((a, b) => a.data.orden - b.data.orden);
-const deportiva = especialidades.find((e) => e.id.endsWith('odontologia-deportiva'));
-const resto = especialidades.filter((e) => e !== deportiva).slice(0, 7);
 const urlEsp = (e) =>
   `${prefijo}/especialidades/${e.id.replace(new RegExp('^' + idioma + '/'), '')}/`;
 
@@ -116,14 +114,7 @@ const schema = {
       <div class="wrap">
         <h2>{d.tratamientos_titulo}</h2>
         <div class="especialidades">
-          {deportiva && (
-            <a class="ancha" href={urlEsp(deportiva)}>
-              <h3>{deportiva.data.titulo}</h3>
-              <p>{deportiva.data.resumen}</p>
-              <span class="mas">{d.tratamientos_card_destacada}</span>
-            </a>
-          )}
-          {resto.map((e) => (
+          {especialidades.map((e) => (
             <a href={urlEsp(e)}>
               <h3>{e.data.titulo}</h3>
               <p>{e.data.resumen}</p>

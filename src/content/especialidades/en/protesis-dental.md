@@ -3,7 +3,7 @@ idioma: en
 titulo: "Dental Prosthetics"
 subtitulo: "A fully digital workflow"
 resumen: "Fixed and removable prostheses on natural teeth or implants, designed with intraoral scanning and CAD/CAM manufacturing instead of traditional impressions."
-orden: 10
+orden: 11
 especialista: ines-doria
 faqs:
   - pregunta: "What's the difference between a fixed and a removable prosthesis?"

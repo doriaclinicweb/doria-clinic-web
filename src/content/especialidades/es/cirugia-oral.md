@@ -3,7 +3,7 @@ idioma: es
 titulo: "Cirugía oral"
 subtitulo: "Mínima invasión y recuperación rápida"
 resumen: "Extracción de cordales, regeneración ósea, frenectomías y eliminación de quistes, con planificación digital previa mediante radiografía 3D."
-orden: 9
+orden: 10
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Es necesario extraer siempre las muelas del juicio?"

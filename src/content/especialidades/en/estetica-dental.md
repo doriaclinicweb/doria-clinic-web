@@ -3,7 +3,7 @@ idioma: en
 titulo: "Dental Aesthetics"
 subtitulo: "A balance between health and harmony"
 resumen: "Porcelain and composite veneers and teeth whitening, with digital smile planning so you can see the result before starting treatment."
-orden: 6
+orden: 5
 destacada: true
 especialista: ines-doria
 faqs:

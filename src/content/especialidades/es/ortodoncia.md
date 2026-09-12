@@ -3,7 +3,7 @@ idioma: es
 titulo: "Ortodoncia"
 subtitulo: "Alineación para la salud, no solo para la estética"
 resumen: "Ortodoncia invisible, brackets y ortodoncia infantil. Colocar cada diente en su posición mejora la función masticatoria y facilita la higiene diaria."
-orden: 4
+orden: 6
 destacada: true
 especialista: mariana-ettedgui
 faqs:

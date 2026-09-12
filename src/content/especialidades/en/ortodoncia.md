@@ -3,7 +3,7 @@ idioma: en
 titulo: "Orthodontics"
 subtitulo: "Alignment for health, not just aesthetics"
 resumen: "Invisible orthodontics, braces and children's orthodontics. Putting each tooth in its proper position improves chewing function and makes daily hygiene easier."
-orden: 4
+orden: 6
 destacada: true
 especialista: mariana-ettedgui
 faqs:

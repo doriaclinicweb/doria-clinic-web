@@ -3,7 +3,7 @@ idioma: en
 titulo: "Periodontics"
 subtitulo: "Health of the gums and the bone that supports your teeth"
 resumen: "Prevention, diagnosis and treatment of gingivitis and periodontitis, the leading cause of tooth loss in adults. Periodontal surgery and gum grafts."
-orden: 5
+orden: 7
 especialista: ines-doria
 faqs:
   - pregunta: "How do I know if I have gum disease?"

@@ -3,7 +3,7 @@ idioma: ca
 titulo: "Estètica dental"
 subtitulo: "Equilibri entre salut i harmonia"
 resumen: "Carilles de porcellana i composite i blanquejament dental, amb planificació digital del somriure per veure el resultat abans de començar el tractament."
-orden: 6
+orden: 5
 destacada: true
 especialista: ines-doria
 faqs:
