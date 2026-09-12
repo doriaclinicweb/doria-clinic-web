@@ -33,7 +33,8 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; line-height: 1.2; }
 p { max-width: var(--medida); }
 a { color: inherit; }
 
-.wrap { width: min(100% - 2.5rem, 1240px); margin-inline: auto; }
+.wrap { width: 94.8%; margin-inline: auto; }
+@media (max-width: 740px) { .wrap { width: 90.7%; } }
 .seccion { padding: clamp(4rem, 9vw, 8.5rem) 0; }
 
 .cabecera { position: sticky; top: 0; z-index: 50; background: var(--verde); color: var(--crema); padding: 1.6rem 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
