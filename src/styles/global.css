@@ -129,6 +129,11 @@ a { color: inherit; }
 .tratamiento-titulo { font-family: var(--display); font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.15; }
 .tratamiento-cuerpo { margin-top: auto; display: flex; flex-direction: column; gap: 1.5rem; }
 .tratamiento-icono { align-self: flex-start; height: clamp(2.6rem, 6vw, 4rem); width: auto; max-width: 100%; }
+/* El icono de estética dental es muy apaisado (168x75) y se veía más
+   grande que el resto a igual altura: se reduce al 50% y, al escalar
+   desde el centro (transform, no cambia el tamaño de su caja), queda
+   centrado verticalmente sin desplazar el texto de debajo. */
+.tratamiento-icono[src*="estetica-dental"] { transform: scale(0.5); }
 /* Máximo 4 líneas y SIEMPRE la misma altura (no "min-height"): si el
    texto varía de longitud entre tarjetas, el bloque icono+texto (pegado
    abajo con margin-top:auto) cambia de alto y descuadra los iconos entre
