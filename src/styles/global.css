@@ -273,6 +273,17 @@ a { color: inherit; }
 .contenido-ancho h2 { margin-top: 2.5rem; }
 
 .lede { font-family: var(--display); font-size: clamp(1.15rem,2vw,1.45rem); line-height: 1.4; color: var(--verde); max-width: 44ch; }
+/* Cuadrícula de las páginas de listado /especialidades/ y /tratamientos/
+   (ListadoPagina.astro). Distinta del carrusel de tratamientos de la
+   home: aquí cada especialidad/tratamiento es una tarjeta con borde. */
+.especialidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--verde-claro); border: 1px solid var(--verde-claro); margin: 2.5rem 0; }
+.especialidades a { background: var(--crema); padding: 1.8rem 1.6rem 2.2rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.5rem; transition: background .18s; }
+.especialidades a:hover { background: var(--gris); }
+.especialidades a h3 { margin: 0; }
+.especialidades a p { font-size: 0.95rem; color: #556055; margin: 0; }
+.especialidades a .mas { margin-top: auto; padding-top: 1.4rem; font-family: var(--display); color: var(--verde); font-size: 0.92rem; }
+@media (max-width: 900px) { .especialidades { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .especialidades { grid-template-columns: 1fr; } }
 .indicaciones { border-left: 2px solid var(--verde); padding-left: 1.4rem; margin: 2.5rem 0; }
 .indicaciones ul { padding-left: 1.1rem; margin: 0.6rem 0 0; }
 .proceso { list-style: none; padding: 0; counter-reset: paso; }
