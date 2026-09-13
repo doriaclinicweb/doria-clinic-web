@@ -12,8 +12,8 @@
     "barrio": "Eixample"
   },
   "coordenadas": {
-    "lat": null,
-    "lng": null
+    "lat": 41.3904,
+    "lng": 2.1495586
   },
   "horarios": [
     {
@@ -31,7 +31,7 @@
   ],
   "primera_visita_gratuita": true,
   "software_citas": "https://wa.me/34619186579?text=Hola,%20quiero%20pedir%20hora",
-  "google_business_profile": "https://maps.app.goo.gl/i2ZHAKuvi7EWEi8S6",
+  "google_business_profile": "https://maps.app.goo.gl/evyvMBmimQb3Lrjp9",
   "redes": {
     "instagram": "https://www.instagram.com/doriaclinic/",
     "linkedin": "https://www.linkedin.com/company/111295000/admin/dashboard/"
