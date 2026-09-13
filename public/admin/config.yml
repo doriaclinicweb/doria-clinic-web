@@ -200,6 +200,14 @@ collections:
         field: { name: parrafo, label: "Párrafo", widget: text }
       - { name: tratamientos_titulo, label: "Título sección Tratamientos", widget: string }
       - { name: equipo_titulo, label: "Título sección Equipo", widget: string }
+      - { name: elegirnos_titulo, label: "Título Por qué elegirnos", widget: string }
+      - name: elegirnos
+        label: "Por qué elegirnos (razones)"
+        widget: list
+        min: 1
+        fields:
+          - { name: titulo, label: "Razón", widget: string }
+          - { name: texto, label: "Descripción", widget: text }
       - { name: primera_visita_titulo, label: "Título Primera visita", widget: string }
       - { name: primera_visita_texto, label: "Texto Primera visita", widget: text }
       - { name: primera_visita_cta, label: "Botón Primera visita", widget: string }

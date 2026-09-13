@@ -114,6 +114,10 @@ a { color: inherit; }
 
 /* Carrusel de tratamientos de la home: panel gris con tarjetas apaisadas
    deslizables, igual que en doria.clinic. */
+.encabezado-tratamientos { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.encabezado-tratamientos h2 { margin-bottom: 0; }
+.ver-todas { font-family: var(--display); color: var(--verde); text-decoration: none; white-space: nowrap; }
+.ver-todas:hover { text-decoration: underline; text-underline-offset: 4px; }
 .carrusel-tratamientos { position: relative; background: var(--gris); border-radius: 1.4rem; padding: 2.4rem clamp(1.2rem, 5vw, 4.2rem); margin-top: 2.5rem; }
 .carrusel-pista { display: flex; gap: clamp(1.5rem, 4vw, 3.8rem); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 2px; }
 .carrusel-pista::-webkit-scrollbar { display: none; }
@@ -155,11 +159,20 @@ a { color: inherit; }
 .equipo li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 4px; height: 4px; background: var(--verde-claro); border-radius: 50%; }
 @media (max-width: 900px) { .equipo { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 
+.elegirnos { background: var(--verde); color: var(--crema); }
+.elegirnos-lista { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; margin-top: 2rem; }
+.elegirnos-lista h3 { font-family: var(--display); font-weight: 400; font-size: 1.15rem; margin: 0 0 0.5rem; }
+.elegirnos-lista p { margin: 0; font-size: 0.92rem; color: rgba(255,254,247,.85); }
+@media (max-width: 900px) { .elegirnos-lista { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .elegirnos-lista { grid-template-columns: 1fr; } }
+
 .visita { background: var(--verde); color: var(--crema); }
 .visita .cuerpo { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .visita p { color: rgba(255,254,247,.9); }
-.visita ul { list-style: none; padding: 0; margin: 2rem 0 0; }
-.visita li { border-top: 1px solid rgba(255,254,247,.25); padding: 0.9rem 0; font-family: var(--display); }
+.insignia-gratis { display: inline-block; margin-bottom: 1rem; padding: 0.4rem 0.9rem; border-radius: 999px; background: var(--crema); color: var(--verde); font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.02em; }
+.visita ul { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.visita li { position: relative; padding-left: 1.7rem; font-family: var(--display); }
+.visita li::before { content: "✓"; position: absolute; left: 0; top: 0.05em; }
 @media (max-width: 800px) { .visita .cuerpo { grid-template-columns: 1fr; } }
 
 /* Filmstrip de instalaciones: desfila solo en bucle continuo. La pista
@@ -179,6 +192,12 @@ a { color: inherit; }
 .opiniones cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.88rem; color: #556055; }
 @media (max-width: 800px) { .opiniones { grid-template-columns: 1fr; gap: 2rem; } }
 
+.rrss { background: var(--gris); padding: 1.4rem 0; }
+.rrss-tarjeta { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--tinta); }
+.rrss-texto { display: flex; flex-direction: column; gap: 0.2rem; }
+.rrss-texto strong { font-family: var(--display); font-weight: 400; font-size: 1.05rem; }
+.rrss-texto span:last-child { font-size: 0.88rem; color: #556055; }
+.rrss-flecha { margin-left: auto; font-family: var(--display); font-size: 1.2rem; }
 .mapa { width: 100%; height: clamp(300px, 32vw, 440px); overflow: hidden; filter: grayscale(55%) sepia(8%) contrast(1.05) brightness(0.98); }
 .mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
 

@@ -33,6 +33,9 @@ const urlEsp = (e) =>
 
 const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
 
+const verTodas = { es: 'Todas las especialidades', ca: 'Totes les especialitats', en: 'All specialties' }[idioma];
+const textoGratis = { es: '100% gratuita', ca: '100% gratuïta', en: '100% free' }[idioma];
+
 const wa = clinica.software_citas;
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 
@@ -124,27 +127,6 @@ const schema = {
       </div>
     </section>
 
-    <section class="seccion" id="tratamientos">
-      <div class="wrap">
-        <h2>{d.tratamientos_titulo}</h2>
-        <div class="carrusel-tratamientos">
-          <div class="carrusel-pista">
-            {especialidades.map((e) => (
-              <a href={urlEsp(e)} class="tratamiento">
-                <span class="tratamiento-titulo">{e.data.titulo}</span>
-                <div class="tratamiento-cuerpo">
-                  {e.data.icono && <img class="tratamiento-icono" src={e.data.icono} alt="" loading="lazy" />}
-                  <p>{e.data.resumen_corto || e.data.resumen}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-          <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
-          <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
-        </div>
-      </div>
-    </section>
-
     <section class="seccion" id="equipo">
       <div class="wrap">
         <h2>{d.equipo_titulo}</h2>
@@ -163,9 +145,48 @@ const schema = {
       </div>
     </section>
 
+    <section class="seccion elegirnos">
+      <div class="wrap">
+        <h2>{d.elegirnos_titulo}</h2>
+        <div class="elegirnos-lista">
+          {d.elegirnos.map((r) => (
+            <div>
+              <h3>{r.titulo}</h3>
+              <p>{r.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="tratamientos">
+      <div class="wrap">
+        <div class="encabezado-tratamientos">
+          <h2>{d.tratamientos_titulo}</h2>
+          <a class="ver-todas" href={`${prefijo}/especialidades/`}>{verTodas} →</a>
+        </div>
+        <div class="carrusel-tratamientos">
+          <div class="carrusel-pista">
+            {especialidades.map((e) => (
+              <a href={urlEsp(e)} class="tratamiento">
+                <span class="tratamiento-titulo">{e.data.titulo}</span>
+                <div class="tratamiento-cuerpo">
+                  {e.data.icono && <img class="tratamiento-icono" src={e.data.icono} alt="" loading="lazy" />}
+                  <p>{e.data.resumen_corto || e.data.resumen}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
+          <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
+        </div>
+      </div>
+    </section>
+
     <section class="seccion visita">
       <div class="wrap cuerpo">
         <div>
+          {clinica.primera_visita_gratuita && <span class="insignia-gratis">{textoGratis}</span>}
           <h2>{d.primera_visita_titulo}</h2>
           <p>{d.primera_visita_texto}</p>
           <div class="acciones" style="margin-top:2rem">
