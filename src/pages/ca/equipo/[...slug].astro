@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import clinica from '../../../data/clinica.json';
+import IntroAccion from '../../../components/IntroAccion.astro';
+
+export async function getStaticPaths() {
+  const equipo = await getCollection('equipo', (e) => !e.data.noindex);
+  return equipo.map((doc) => ({
+    params: { slug: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const d = doc.data;
+const cargoCa = d.cargo_ca || d.cargo;
+const trayectoriaCa = d.trayectoria_ca.length ? d.trayectoria_ca : d.trayectoria;
+const titulacionCa = d.titulacion_ca.length ? d.titulacion_ca : d.titulacion;
+const agendaCa = d.agenda_ca.length ? d.agenda_ca : d.agenda;
+
+// El campo "especialidades" del doctor solo existe en español (no se
+// traduce), así que hay que emparejar por slug contra las especialidades
+// en español y luego mostrar la versión en catalán de esos mismos slugs
+// (comparar título contra título fallaría: "Ortodoncia" no es "Ortodòncia").
+const especialidadesEs = await getCollection('especialidades', (e) => e.data.idioma === 'es');
+const slugsRelacionados = especialidadesEs
+  .filter((e) => d.especialidades.some((nombre: string) => nombre.toLowerCase() === e.data.titulo.toLowerCase()))
+  .map((e) => e.id.replace(/^es\//, ''));
+const especialidadesTodas = await getCollection('especialidades', (e) => e.data.idioma === 'ca');
+const especialidadesRelacionadas = especialidadesTodas.filter((e) =>
+  slugsRelacionados.includes(e.id.replace(/^ca\//, ''))
+);
+const urlEsp = (e: (typeof especialidadesTodas)[number]) => `/ca/especialidades/${e.id.replace(/^ca\//, '')}/`;
+
+const wa = (texto: string) => `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: d.nombre,
+  jobTitle: cargoCa,
+  ...(d.foto && { image: `https://doria.clinic${d.foto}` }),
+  description: d.bio_ca || d.bio,
+  worksFor: { '@type': 'Dentist', name: clinica.nombre, url: 'https://doria.clinic' },
+};
+---
+<Base
+  titulo={`${d.nombre} — ${clinica.nombre}`}
+  descripcion={d.bio_ca || d.bio || cargoCa}
+  noindex={d.noindex}
+  schema={schema}
+  h1={d.nombre}
+  lede={cargoCa}
+  migas={[{ href: '/ca/equipo/', etiqueta: 'Equip' }]}
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="ca" mensaje={`Hola, voldria demanar cita amb ${d.nombre}`} />
+  </Fragment>
+
+  <div class="columnas">
+    <div>
+      {trayectoriaCa.map((p: string) => <p>{p}</p>)}
+
+      {titulacionCa.length > 0 && (
+        <>
+          <h2>Formació</h2>
+          <ul class="lista-formacion">
+            {titulacionCa.map((t: string) => <li>{t}</li>)}
+          </ul>
+        </>
+      )}
+
+      {agendaCa.length > 0 && (
+        <>
+          <h2>Agenda i trajectòria</h2>
+          <ol class="agenda">
+            {agendaCa.map((h: { fecha: string; texto: string; enlace?: string }) => (
+              <li>
+                <span class="agenda-fecha">{h.fecha}</span>
+                {h.enlace ? <a href={h.enlace} target="_blank" rel="noopener">{h.texto}</a> : <span>{h.texto}</span>}
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+
+      {especialidadesRelacionadas.length > 0 && (
+        <>
+          <h2>Especialitats</h2>
+          <div class="especialidades">
+            {especialidadesRelacionadas.map((e) => (
+              <a href={urlEsp(e)}>
+                <h3>{e.data.titulo}</h3>
+                <p>{e.data.resumen}</p>
+                <span class="mas">Veure especialitat →</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+
+    <aside class="ficha">
+      {d.foto && <img class="foto" src={d.foto} alt={d.nombre} loading="lazy" />}
+      <div class="ficha-info">
+        <div class="firma">
+          <strong>{d.nombre}</strong>
+          {cargoCa}
+          <span class="colegiado">Col. {d.numero_colegiado}</span>
+        </div>
+        <a class="boton boton-verde cta" href={wa(`Hola, voldria demanar cita amb ${d.nombre}`)}>
+          Demanar cita per WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+</Base>

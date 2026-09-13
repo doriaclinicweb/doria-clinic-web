@@ -168,9 +168,51 @@ collections:
         widget: list
         required: false
         field: { name: nombre, label: "Especialidad", widget: string }
-      - { name: bio, label: "Descripción (ES)", widget: text, required: false }
-      - { name: bio_ca, label: "Descripción (CA)", widget: text, required: false }
-      - { name: bio_en, label: "Descripción (EN)", widget: text, required: false }
+      - { name: bio, label: "Descripción corta (ES)", widget: text, required: false, hint: "La que sale en la home y en la ficha lateral de las páginas de especialidad." }
+      - { name: bio_ca, label: "Descripción corta (CA)", widget: text, required: false }
+      - { name: bio_en, label: "Descripción corta (EN)", widget: text, required: false }
+      - name: trayectoria
+        label: "Trayectoria, página propia (ES)"
+        hint: "Uno o varios párrafos. Es el texto principal de su página /equipo/."
+        widget: list
+        required: false
+        field: { name: parrafo, label: "Párrafo", widget: text }
+      - name: trayectoria_ca
+        label: "Trayectoria, página propia (CA)"
+        widget: list
+        required: false
+        field: { name: parrafo, label: "Paràgraf", widget: text }
+      - name: trayectoria_en
+        label: "Trayectoria, página propia (EN)"
+        widget: list
+        required: false
+        field: { name: parrafo, label: "Paragraph", widget: text }
+      - name: agenda
+        label: "Agenda: congresos, cursos, ponencias (ES)"
+        hint: "Cada línea es un hito con su fecha. El enlace es opcional."
+        widget: list
+        required: false
+        fields:
+          - { name: fecha, label: "Fecha", widget: string }
+          - { name: texto, label: "Texto", widget: string }
+          - { name: enlace, label: "Enlace", widget: string, required: false }
+      - name: agenda_ca
+        label: "Agenda (CA)"
+        widget: list
+        required: false
+        fields:
+          - { name: fecha, label: "Data", widget: string }
+          - { name: texto, label: "Text", widget: string }
+          - { name: enlace, label: "Enllaç", widget: string, required: false }
+      - name: agenda_en
+        label: "Agenda (EN)"
+        widget: list
+        required: false
+        fields:
+          - { name: fecha, label: "Date", widget: string }
+          - { name: texto, label: "Text", widget: string }
+          - { name: enlace, label: "Link", widget: string, required: false }
+      - { name: noindex, label: "Ocultar su página de Google", widget: boolean, default: false }
 
   - name: home
     label: "Inicio"

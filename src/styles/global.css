@@ -163,6 +163,19 @@ a { color: inherit; }
 .equipo li { padding-left: 0.9rem; position: relative; line-height: 1.45; margin-bottom: 0.2rem; }
 .equipo li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 4px; height: 4px; background: var(--verde-claro); border-radius: 50%; }
 @media (max-width: 900px) { .equipo { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+.equipo-tarjeta { text-decoration: none; color: inherit; display: block; }
+.equipo-tarjeta img { transition: opacity .18s; }
+.equipo-tarjeta:hover img { opacity: 0.85; }
+
+/* Página propia de cada doctor: formación (lista de puntos) y agenda
+   (congresos, cursos, ponencias) en /equipo/<slug>/. */
+.lista-formacion { list-style: none; padding: 0; margin: 0 0 1.6rem; max-width: var(--medida); }
+.lista-formacion li { padding-left: 1.1rem; position: relative; margin-bottom: 0.5rem; line-height: 1.5; }
+.lista-formacion li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 4px; height: 4px; background: var(--verde-claro); border-radius: 50%; }
+.agenda { list-style: none; padding: 0; margin: 0 0 1.6rem; max-width: var(--medida); }
+.agenda li { border-top: 1px solid var(--verde-claro); padding: 1rem 0; display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; }
+.agenda-fecha { font-family: var(--display); color: var(--verde); font-size: 0.9rem; }
+@media (max-width: 560px) { .agenda li { grid-template-columns: 1fr; gap: 0.3rem; } }
 
 .elegirnos { background: var(--verde); color: var(--crema); }
 .elegirnos-lista { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; margin-top: 2rem; }

@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+import IntroAccion from '../../components/IntroAccion.astro';
+
+export async function getStaticPaths() {
+  const equipo = await getCollection('equipo', (e) => !e.data.noindex);
+  return equipo.map((doc) => ({
+    params: { slug: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const d = doc.data;
+
+const especialidadesTodas = await getCollection('especialidades', (e) => e.data.idioma === 'es');
+const especialidadesRelacionadas = especialidadesTodas.filter((e) =>
+  d.especialidades.some((nombre) => nombre.toLowerCase() === e.data.titulo.toLowerCase())
+);
+const urlEsp = (e: (typeof especialidadesTodas)[number]) => `/especialidades/${e.id.replace(/^es\//, '')}/`;
+
+const wa = (texto: string) => `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: d.nombre,
+  jobTitle: d.cargo,
+  ...(d.foto && { image: `https://doria.clinic${d.foto}` }),
+  description: d.bio,
+  worksFor: { '@type': 'Dentist', name: clinica.nombre, url: 'https://doria.clinic' },
+};
+---
+<Base
+  titulo={`${d.nombre} — ${clinica.nombre}`}
+  descripcion={d.bio || d.cargo}
+  noindex={d.noindex}
+  schema={schema}
+  h1={d.nombre}
+  lede={d.cargo}
+  migas={[{ href: '/equipo/', etiqueta: 'Equipo' }]}
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje={`Hola, quería pedir cita con ${d.nombre}`} />
+  </Fragment>
+
+  <div class="columnas">
+    <div>
+      {d.trayectoria.map((p: string) => <p>{p}</p>)}
+
+      {d.titulacion.length > 0 && (
+        <>
+          <h2>Formación</h2>
+          <ul class="lista-formacion">
+            {d.titulacion.map((t: string) => <li>{t}</li>)}
+          </ul>
+        </>
+      )}
+
+      {d.agenda.length > 0 && (
+        <>
+          <h2>Agenda y trayectoria</h2>
+          <ol class="agenda">
+            {d.agenda.map((h: { fecha: string; texto: string; enlace?: string }) => (
+              <li>
+                <span class="agenda-fecha">{h.fecha}</span>
+                {h.enlace ? <a href={h.enlace} target="_blank" rel="noopener">{h.texto}</a> : <span>{h.texto}</span>}
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+
+      {especialidadesRelacionadas.length > 0 && (
+        <>
+          <h2>Especialidades</h2>
+          <div class="especialidades">
+            {especialidadesRelacionadas.map((e) => (
+              <a href={urlEsp(e)}>
+                <h3>{e.data.titulo}</h3>
+                <p>{e.data.resumen}</p>
+                <span class="mas">Ver especialidad →</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+
+    <aside class="ficha">
+      {d.foto && <img class="foto" src={d.foto} alt={d.nombre} loading="lazy" />}
+      <div class="ficha-info">
+        <div class="firma">
+          <strong>{d.nombre}</strong>
+          {d.cargo}
+          <span class="colegiado">Col. {d.numero_colegiado}</span>
+        </div>
+        <a class="boton boton-verde cta" href={wa(`Hola, quería pedir cita con ${d.nombre}`)}>
+          Pedir cita por WhatsApp
+        </a>
+      </div>
+    </aside>
+  </div>
+</Base>

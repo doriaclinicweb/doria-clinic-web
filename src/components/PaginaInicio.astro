@@ -132,14 +132,16 @@ const schema = {
         <h2>{d.equipo_titulo}</h2>
         <div class="equipo">
           {equipo.map((doc) => (
-            <figure>
-              {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
-              <figcaption>
-                <span class="nombre">{doc.data.nombre}</span>
-                <span class="puesto">{cargoDe(doc.data)}</span>
-                <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
-              </figcaption>
-            </figure>
+            <a class="equipo-tarjeta" href={`${prefijo}/equipo/${doc.id}/`}>
+              <figure>
+                {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
+                <figcaption>
+                  <span class="nombre">{doc.data.nombre}</span>
+                  <span class="puesto">{cargoDe(doc.data)}</span>
+                  <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+                </figcaption>
+              </figure>
+            </a>
           ))}
         </div>
       </div>

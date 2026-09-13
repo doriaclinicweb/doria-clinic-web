@@ -27,6 +27,12 @@ const caso = z.object({
   consentimiento_firmado: z.literal(true),
 });
 
+const hito = z.object({
+  fecha: z.string(),
+  texto: z.string(),
+  enlace: z.string().optional(),
+});
+
 const especialidades = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/especialidades' }),
   schema: z.object({
@@ -85,6 +91,13 @@ const equipo = defineCollection({
     bio: z.string().optional(),
     bio_ca: z.string().optional(),
     bio_en: z.string().optional(),
+    trayectoria: z.array(z.string()).default([]),
+    trayectoria_ca: z.array(z.string()).default([]),
+    trayectoria_en: z.array(z.string()).default([]),
+    agenda: z.array(hito).default([]),
+    agenda_ca: z.array(hito).default([]),
+    agenda_en: z.array(hito).default([]),
+    noindex: z.boolean().default(false),
   }),
 });
 

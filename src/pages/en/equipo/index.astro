@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import IntroAccion from '../../../components/IntroAccion.astro';
+
+const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
+  (a, b) => a.data.orden - b.data.orden
+);
+---
+<Base
+  titulo="Team — Doria Clinic"
+  descripcion="The team of doctors and specialists at Doria Clinic in the Eixample, Barcelona: each one's training, specialty and background."
+  h1="Team"
+  lede="A team of specialists, each trained in their own field, working together to look after your oral health as a whole."
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="en" mensaje="Hi, I'd like to book an appointment" />
+  </Fragment>
+
+  <div class="equipo">
+    {equipo.map((doc) => (
+      <a class="equipo-tarjeta" href={`/en/equipo/${doc.id}/`}>
+        <figure>
+          {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
+          <figcaption>
+            <span class="nombre">{doc.data.nombre}</span>
+            <span class="puesto">{doc.data.cargo_en || doc.data.cargo}</span>
+          </figcaption>
+        </figure>
+      </a>
+    ))}
+  </div>
+</Base>
