@@ -133,7 +133,7 @@ a { color: inherit; }
    grande que el resto a igual altura: se reduce al 50% y, al escalar
    desde el centro (transform, no cambia el tamaño de su caja), queda
    centrado verticalmente sin desplazar el texto de debajo. */
-.tratamiento-icono[src*="estetica-dental"] { transform: scale(0.5); }
+.tratamiento-icono[src*="estetica-dental"], .tratamiento-icono[src*="odontopediatria"] { transform: scale(0.5); }
 /* Máximo 4 líneas y SIEMPRE la misma altura (no "min-height"): si el
    texto varía de longitud entre tarjetas, el bloque icono+texto (pegado
    abajo con margin-top:auto) cambia de alto y descuadra los iconos entre
@@ -210,6 +210,9 @@ a { color: inherit; }
 .opiniones cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.88rem; color: #556055; }
 @media (max-width: 800px) { .opiniones { grid-template-columns: 1fr; gap: 2rem; } }
 
+.financiacion-banner { background: var(--verde); padding: 1.4rem 0; }
+.financiacion-banner .rrss-tarjeta { color: var(--crema); }
+.financiacion-banner .rrss-texto span:last-child { color: rgba(255,254,247,.8); }
 .rrss { background: var(--gris); padding: 1.4rem 0; }
 .rrss-tarjeta { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--tinta); }
 .rrss-texto { display: flex; flex-direction: column; gap: 0.2rem; }
@@ -305,3 +308,16 @@ a { color: inherit; }
 .faq { border-top: 1px solid var(--verde-claro); padding: 1.2rem 0; max-width: var(--medida); }
 .faq summary { cursor: pointer; font-family: var(--display); font-size: 1.08rem; }
 .faq p { margin: 0.7rem 0 0; color: #556055; }
+
+/* Página /financiacion/ */
+.destacado-financiacion { background: var(--verde); color: var(--crema); border-radius: calc(20 * var(--size)); padding: 2rem clamp(1.4rem, 4vw, 2.6rem); margin: 2rem 0 2.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.destacado-financiacion strong { font-family: var(--display); font-weight: 400; font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.25; }
+.destacado-financiacion span { color: rgba(255,254,247,.85); font-size: 0.95rem; }
+.sello-tmf { display: flex; align-items: center; gap: 1.8rem; background: var(--gris); border-radius: calc(20 * var(--size)); padding: 1.8rem clamp(1.2rem, 4vw, 2.2rem); margin: 2.5rem 0; }
+.sello-insignia { flex: 0 0 auto; width: 5.5rem; height: 5.5rem; border-radius: 50%; border: 2px solid var(--verde); display: flex; align-items: center; justify-content: center; text-align: center; }
+.sello-insignia span { font-family: var(--display); font-size: 0.8rem; line-height: 1.2; color: var(--verde); }
+.sello-tmf strong { font-family: var(--display); font-weight: 400; font-size: 1.1rem; display: block; margin-bottom: 0.4rem; }
+.sello-tmf p { margin: 0 0 0.5rem; color: #556055; font-size: 0.92rem; }
+.sello-tmf a { color: var(--verde); }
+.letra-pequena { font-size: 0.78rem; color: #7a8a7a; max-width: none; border-top: 1px solid var(--verde-claro); padding-top: 1.2rem; }
+@media (max-width: 560px) { .sello-tmf { flex-direction: column; text-align: center; } }

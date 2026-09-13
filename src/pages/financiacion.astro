@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import clinica from '../data/clinica.json';
+import IntroAccion from '../components/IntroAccion.astro';
+
+const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre la financiación de mi tratamiento')}`;
+const telTmf = 'tel:936476424';
+
+const pasos = [
+  {
+    titulo: 'Primera visita y presupuesto',
+    texto: 'Valoramos tu caso sin compromiso y te damos un presupuesto cerrado por escrito.',
+  },
+  {
+    titulo: 'Simulación con Tu Medicina Financiada',
+    texto: 'Haces una simulación orientativa de tu financiación. Es meramente informativa: tus datos no se usan sin tu autorización.',
+  },
+  {
+    titulo: 'Aportas tu documentación',
+    texto: 'Solo hace falta tu última nómina, tu DNI y una cuenta bancaria.',
+  },
+  {
+    titulo: 'Confirmación ágil y segura',
+    texto: 'Tu Medicina Financiada gestiona el trámite con la seguridad de un Centro Premium certificado.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Qué documentación necesito para financiar mi tratamiento?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Tu última nómina, tu DNI y una cuenta bancaria.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Hasta cuántos meses puedo financiar mi tratamiento dental?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Puedes financiar hasta el 100% del tratamiento en un plazo de hasta 12 meses, a través de Tu Medicina Financiada.' },
+    },
+  ],
+};
+---
+<Base
+  titulo="Financiación de tratamientos dentales — Doria Clinic"
+  descripcion="Financia tu tratamiento dental hasta en 12 meses, sin intereses, con Tu Medicina Financiada. Trámite ágil y seguro, sin compromiso."
+  schema={schema}
+  h1="Financia tu tratamiento"
+  lede="Creemos que la salud bucodental debería estar al alcance de todos. Por eso, junto con Tu Medicina Financiada, te damos facilidades de pago sin intereses para tus tratamientos."
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="es" mensaje="Hola, quería información sobre la financiación de mi tratamiento" />
+  </Fragment>
+
+  <div class="destacado-financiacion">
+    <strong>Financia hasta el 100% de tu tratamiento en 12 meses</strong>
+    <span>Sin intereses. Trámite ágil y seguro con Tu Medicina Financiada, Centro Premium.</span>
+  </div>
+
+  <p>
+    Te recomendamos hacer una primera visita para poder personalizar tu presupuesto y elegir juntos
+    el plan que mejor se adapte a tus necesidades. Desde Doria Clinic te ofrecemos la posibilidad de
+    financiar tu tratamiento a través de una simulación con Tu Medicina Financiada: rápida, segura y
+    sin compromiso.
+  </p>
+
+  <h2>Cómo funciona</h2>
+  <ol class="proceso">
+    {pasos.map((p) => (
+      <li>
+        <strong>{p.titulo}</strong>
+        <div>{p.texto}</div>
+      </li>
+    ))}
+  </ol>
+
+  <h2>Documentación necesaria</h2>
+  <div class="indicaciones">
+    <p>Tramitamos la financiación de tu tratamiento únicamente con:</p>
+    <ul>
+      <li>Última nómina</li>
+      <li>DNI</li>
+      <li>Cuenta bancaria</li>
+    </ul>
+  </div>
+
+  <div class="sello-tmf">
+    <div class="sello-insignia" aria-hidden="true">
+      <span>Centro<br />Premium</span>
+    </div>
+    <div>
+      <strong>Tu Medicina Financiada</strong>
+      <p>
+        Doria Clinic colabora con Tu Medicina Financiada, Centro Premium con sello de calidad y
+        satisfacción garantizada, especializada en el acceso a la financiación de tratamientos de
+        salud.
+      </p>
+      <a href="https://www.tumedicinafinanciada.com" target="_blank" rel="noopener">tumedicinafinanciada.com →</a>
+    </div>
+  </div>
+
+  <div class="acciones" style="margin: 2.5rem 0">
+    <a class="boton boton-verde" href={telTmf}>Llamar a Tu Medicina Financiada</a>
+    <a class="boton boton-contorno" href={wa}>Pedir tu primera visita</a>
+  </div>
+
+  <p class="letra-pequena">
+    Ejemplo representativo: para un préstamo de 1.200 € en un plazo de 12 meses. Precio al contado
+    1.200 €. TIN 0 %. TAE 0 %. Importe a financiar 1.200 €. 12 cuotas de 100 €. Importe total
+    financiado: 1.200 €. Precio total a plazos e importe total adeudado 1.200 €. Sistema de
+    amortización francés. Financiación ofrecida por Sabadell Consumer Finance, S.A.U. y sujeta a su
+    aprobación. Oferta exclusiva para colaboradores de Tu Medicina Financiada.
+  </p>
+</Base>

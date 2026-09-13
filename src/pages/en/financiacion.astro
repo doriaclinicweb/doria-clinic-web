@@ -1,0 +1,113 @@
+---
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+import IntroAccion from '../../components/IntroAccion.astro';
+
+const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent("Hi, I'd like information about financing my treatment")}`;
+const telTmf = 'tel:936476424';
+
+const pasos = [
+  {
+    titulo: 'First visit and quote',
+    texto: 'We assess your case with no obligation and give you a fixed quote in writing.',
+  },
+  {
+    titulo: 'Simulation with Tu Medicina Financiada',
+    texto: "You get an indicative financing simulation. It's purely informative: your data isn't used without your authorisation.",
+  },
+  {
+    titulo: 'You provide your documents',
+    texto: 'You only need your latest payslip, your ID and a bank account.',
+  },
+  {
+    titulo: 'Fast, secure confirmation',
+    texto: 'Tu Medicina Financiada handles the process with the assurance of a certified Premium Centre.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What documents do I need to finance my treatment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Your latest payslip, your ID and a bank account.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Over how many months can I finance my dental treatment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'You can finance up to 100% of the treatment over up to 12 months, through Tu Medicina Financiada.' },
+    },
+  ],
+};
+---
+<Base
+  titulo="Dental treatment financing — Doria Clinic"
+  descripcion="Finance your dental treatment over up to 12 months, interest-free, with Tu Medicina Financiada. A fast, secure process, no obligation."
+  schema={schema}
+  h1="Finance your treatment"
+  lede="We believe oral health should be within everyone's reach. That's why, together with Tu Medicina Financiada, we offer interest-free payment facilities for your treatments."
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="en" mensaje="Hi, I'd like information about financing my treatment" />
+  </Fragment>
+
+  <div class="destacado-financiacion">
+    <strong>Finance up to 100% of your treatment over 12 months</strong>
+    <span>Interest-free. Fast, secure process with Tu Medicina Financiada, a Premium Centre.</span>
+  </div>
+
+  <p>
+    We recommend booking a first visit so we can personalise your quote and choose together the plan
+    that best suits your needs. At Doria Clinic we offer you the option of financing your treatment
+    through a simulation with Tu Medicina Financiada: fast, secure and with no obligation.
+  </p>
+
+  <h2>How it works</h2>
+  <ol class="proceso">
+    {pasos.map((p) => (
+      <li>
+        <strong>{p.titulo}</strong>
+        <div>{p.texto}</div>
+      </li>
+    ))}
+  </ol>
+
+  <h2>Documents you'll need</h2>
+  <div class="indicaciones">
+    <p>We process your treatment financing with just:</p>
+    <ul>
+      <li>Latest payslip</li>
+      <li>ID document</li>
+      <li>Bank account</li>
+    </ul>
+  </div>
+
+  <div class="sello-tmf">
+    <div class="sello-insignia" aria-hidden="true">
+      <span>Premium<br />Centre</span>
+    </div>
+    <div>
+      <strong>Tu Medicina Financiada</strong>
+      <p>
+        Doria Clinic works with Tu Medicina Financiada, a Premium Centre with a quality seal and
+        guaranteed satisfaction, specialising in access to healthcare treatment financing.
+      </p>
+      <a href="https://www.tumedicinafinanciada.com" target="_blank" rel="noopener">tumedicinafinanciada.com →</a>
+    </div>
+  </div>
+
+  <div class="acciones" style="margin: 2.5rem 0">
+    <a class="boton boton-verde" href={telTmf}>Call Tu Medicina Financiada</a>
+    <a class="boton boton-contorno" href={wa}>Book your first visit</a>
+  </div>
+
+  <p class="letra-pequena">
+    Representative example: for a loan of €1,200 over 12 months. Cash price €1,200. Fixed rate 0%.
+    APR 0%. Amount financed €1,200. 12 instalments of €100. Total amount financed: €1,200. Total
+    instalment price and total amount payable €1,200. French amortisation system. Financing offered
+    by Sabadell Consumer Finance, S.A.U. and subject to approval. Exclusive offer for Tu Medicina
+    Financiada partners.
+  </p>
+</Base>

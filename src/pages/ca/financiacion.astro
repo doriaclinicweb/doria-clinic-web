@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import clinica from '../../data/clinica.json';
+import IntroAccion from '../../components/IntroAccion.astro';
+
+const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, voldria informació sobre el finançament del meu tractament')}`;
+const telTmf = 'tel:936476424';
+
+const pasos = [
+  {
+    titulo: 'Primera visita i pressupost',
+    texto: 'Valorem el teu cas sense compromís i et donem un pressupost tancat per escrit.',
+  },
+  {
+    titulo: 'Simulació amb Tu Medicina Financiada',
+    texto: 'Fas una simulació orientativa del teu finançament. És merament informativa: les teves dades no s\'utilitzen sense la teva autorització.',
+  },
+  {
+    titulo: 'Aportes la teva documentació',
+    texto: 'Només cal la teva última nòmina, el teu DNI i un compte bancari.',
+  },
+  {
+    titulo: 'Confirmació àgil i segura',
+    texto: 'Tu Medicina Financiada gestiona el tràmit amb la seguretat d\'un Centre Premium certificat.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quina documentació necessito per finançar el meu tractament?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La teva última nòmina, el teu DNI i un compte bancari.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Fins a quants mesos puc finançar el meu tractament dental?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Pots finançar fins al 100% del tractament en un termini de fins a 12 mesos, a través de Tu Medicina Financiada.' },
+    },
+  ],
+};
+---
+<Base
+  titulo="Finançament de tractaments dentals — Doria Clinic"
+  descripcion="Finança el teu tractament dental fins en 12 mesos, sense interessos, amb Tu Medicina Financiada. Tràmit àgil i segur, sense compromís."
+  schema={schema}
+  h1="Finança el teu tractament"
+  lede="Creiem que la salut bucodental hauria d'estar a l'abast de tothom. Per això, juntament amb Tu Medicina Financiada, et donem facilitats de pagament sense interessos per als teus tractaments."
+>
+  <Fragment slot="intro-extra">
+    <IntroAccion idioma="ca" mensaje="Hola, voldria informació sobre el finançament del meu tractament" />
+  </Fragment>
+
+  <div class="destacado-financiacion">
+    <strong>Finança fins al 100% del teu tractament en 12 mesos</strong>
+    <span>Sense interessos. Tràmit àgil i segur amb Tu Medicina Financiada, Centre Premium.</span>
+  </div>
+
+  <p>
+    Et recomanem fer una primera visita per poder personalitzar el teu pressupost i triar junts el
+    pla que millor s'adapti a les teves necessitats. Des de Doria Clinic t'oferim la possibilitat de
+    finançar el teu tractament a través d'una simulació amb Tu Medicina Financiada: ràpida, segura i
+    sense compromís.
+  </p>
+
+  <h2>Com funciona</h2>
+  <ol class="proceso">
+    {pasos.map((p) => (
+      <li>
+        <strong>{p.titulo}</strong>
+        <div>{p.texto}</div>
+      </li>
+    ))}
+  </ol>
+
+  <h2>Documentació necessària</h2>
+  <div class="indicaciones">
+    <p>Tramitem el finançament del teu tractament únicament amb:</p>
+    <ul>
+      <li>Última nòmina</li>
+      <li>DNI</li>
+      <li>Compte bancari</li>
+    </ul>
+  </div>
+
+  <div class="sello-tmf">
+    <div class="sello-insignia" aria-hidden="true">
+      <span>Centre<br />Premium</span>
+    </div>
+    <div>
+      <strong>Tu Medicina Financiada</strong>
+      <p>
+        Doria Clinic col·labora amb Tu Medicina Financiada, Centre Premium amb segell de qualitat i
+        satisfacció garantida, especialitzada en l'accés al finançament de tractaments de salut.
+      </p>
+      <a href="https://www.tumedicinafinanciada.com" target="_blank" rel="noopener">tumedicinafinanciada.com →</a>
+    </div>
+  </div>
+
+  <div class="acciones" style="margin: 2.5rem 0">
+    <a class="boton boton-verde" href={telTmf}>Trucar a Tu Medicina Financiada</a>
+    <a class="boton boton-contorno" href={wa}>Demanar la teva primera visita</a>
+  </div>
+
+  <p class="letra-pequena">
+    Exemple representatiu: per a un préstec de 1.200 € en un termini de 12 mesos. Preu al comptat
+    1.200 €. TIN 0 %. TAE 0 %. Import a finançar 1.200 €. 12 quotes de 100 €. Import total finançat:
+    1.200 €. Preu total a terminis i import total degut 1.200 €. Sistema d'amortització francès.
+    Finançament ofert per Sabadell Consumer Finance, S.A.U. i subjecte a la seva aprovació. Oferta
+    exclusiva per a col·laboradors de Tu Medicina Financiada.
+  </p>
+</Base>
