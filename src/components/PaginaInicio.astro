@@ -183,9 +183,13 @@ const schema = {
         <h2>{d.instalaciones_titulo}</h2>
         <p style="margin-bottom:2.5rem">{d.instalaciones_texto}</p>
         <div class="espacio">
-          {d.instalaciones_imagenes.map((img) => (
-            <figure><img src={img.src} alt={img.alt} loading="lazy" /></figure>
-          ))}
+          <div class="espacio-pista">
+            {[...d.instalaciones_imagenes, ...d.instalaciones_imagenes].map((img, i) => (
+              i < d.instalaciones_imagenes.length
+                ? <img src={img.src} alt={img.alt} loading="lazy" />
+                : <img src={img.src} alt="" aria-hidden="true" loading="lazy" />
+            ))}
+          </div>
         </div>
       </div>
     </section>
