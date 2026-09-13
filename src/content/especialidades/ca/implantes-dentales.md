@@ -3,6 +3,7 @@ idioma: ca
 titulo: "Implants dentals"
 subtitulo: "Especialistes en implantologia avançada"
 resumen: "Reposició de peces dentals amb implants d'última generació, planificació digital i tècniques mínimament invasives per recuperar funció i estètica."
+resumen_corto: "Reposició de peces dentals amb implants d'última generació i tècniques mínimament invasives."
 orden: 3
 icono: "/img/iconos/implantes-dentales.svg"
 especialista: ines-doria

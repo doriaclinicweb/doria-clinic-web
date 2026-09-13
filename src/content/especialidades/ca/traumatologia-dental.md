@@ -3,7 +3,9 @@ idioma: ca
 titulo: "Traumatologia dental"
 subtitulo: "Atenció immediata davant de cops i accidents"
 resumen: "Diagnòstic i tractament de lesions en dents, genives i os per cops o accidents, amb telèfon d'urgència dental per a esportistes i pacients de qualsevol edat."
+resumen_corto: "Diagnòstic i tractament de lesions en dents, genives i os per cops o accidents, amb urgències."
 orden: 4
+icono: "/img/iconos/odontologia-general.svg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Se m'ha caigut una dent sencera, què faig?"

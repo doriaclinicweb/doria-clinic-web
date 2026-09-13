@@ -3,6 +3,7 @@ idioma: ca
 titulo: "Odontologia general"
 subtitulo: "La base de la teva salut bucodental"
 resumen: "Revisions, netejes dentals, obturacions i extraccions simples a l'Eixample de Barcelona. Detectar i tractar a temps és el que evita que un problema petit acabi sent un tractament llarg i car."
+resumen_corto: "Revisions, netejes, obturacions i extraccions simples per prevenir i tractar a temps qualsevol problema dental."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
 especialista: guillermo-doria

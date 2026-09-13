@@ -111,6 +111,7 @@ collections:
       - { name: titulo, label: "Título", widget: string, i18n: true }
       - { name: subtitulo, label: "Subtítulo", widget: string, required: false, i18n: true }
       - { name: resumen, label: "Resumen", widget: text, i18n: true }
+      - { name: resumen_corto, label: "Resumen corto (tarjeta de la home)", widget: text, i18n: true, required: false, pattern: ['^.{1,130}$', 'Máximo 130 caracteres: no debe ocupar más de 4 líneas en la tarjeta'], hint: "Si se deja vacío, se usa el Resumen normal (puede no caber en 4 líneas)." }
       - { name: orden, label: "Orden en el menú", widget: number, value_type: int }
       - { name: mostrar_en_home, label: "Mostrar en la home", widget: boolean, default: true }
       - { name: icono, label: "Icono (cuadrícula de la home)", widget: image, required: false, hint: "SVG a una tinta, sin fondo. Si se deja vacío, la tarjeta se muestra sin icono." }

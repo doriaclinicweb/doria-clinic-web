@@ -3,7 +3,9 @@ idioma: es
 titulo: "Prótesis dental"
 subtitulo: "Flujo digital de principio a fin"
 resumen: "Prótesis fijas y removibles sobre dientes naturales o implantes, diseñadas con escaneado intraoral y fabricación CAD/CAM en lugar de impresiones tradicionales."
+resumen_corto: "Prótesis fijas y removibles sobre dientes naturales o implantes, con escaneado intraoral y CAD/CAM."
 orden: 11
+icono: "/img/iconos/odontologia-general.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Qué diferencia hay entre una prótesis fija y una removible?"

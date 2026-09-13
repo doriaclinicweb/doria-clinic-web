@@ -3,6 +3,7 @@ idioma: en
 titulo: "Dental Implants"
 subtitulo: "Specialists in advanced implantology"
 resumen: "Replacing missing teeth with the latest-generation implants, digital planning and minimally invasive techniques to restore function and aesthetics."
+resumen_corto: "Replacing missing teeth with the latest-generation implants and minimally invasive techniques."
 orden: 3
 icono: "/img/iconos/implantes-dentales.svg"
 especialista: ines-doria

@@ -34,6 +34,7 @@ const especialidades = defineCollection({
     titulo: z.string(),
     subtitulo: z.string().optional(),
     resumen: z.string().min(80).max(300),
+    resumen_corto: z.string().max(130).optional(),
     orden: z.number(),
     mostrar_en_home: z.boolean().default(true),
     icono: z.string().optional(),

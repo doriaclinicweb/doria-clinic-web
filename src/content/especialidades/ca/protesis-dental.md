@@ -3,7 +3,9 @@ idioma: ca
 titulo: "Pròtesi dental"
 subtitulo: "Flux digital de principi a fi"
 resumen: "Pròtesis fixes i removibles sobre dents naturals o implants, dissenyades amb escanejat intraoral i fabricació CAD/CAM en lloc d'impressions tradicionals."
+resumen_corto: "Pròtesis fixes i removibles sobre dents naturals o implants, amb escanejat intraoral i CAD/CAM."
 orden: 11
+icono: "/img/iconos/odontologia-general.svg"
 especialista: ines-doria
 faqs:
   - pregunta: "Quina diferència hi ha entre una pròtesi fixa i una de removible?"

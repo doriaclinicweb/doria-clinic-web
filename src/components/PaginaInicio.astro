@@ -134,7 +134,7 @@ const schema = {
                 <span class="tratamiento-titulo">{e.data.titulo}</span>
                 <div class="tratamiento-cuerpo">
                   {e.data.icono && <img class="tratamiento-icono" src={e.data.icono} alt="" loading="lazy" />}
-                  <p>{e.data.resumen}</p>
+                  <p>{e.data.resumen_corto || e.data.resumen}</p>
                 </div>
               </a>
             ))}

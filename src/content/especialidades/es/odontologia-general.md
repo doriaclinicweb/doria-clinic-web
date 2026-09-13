@@ -3,6 +3,7 @@ idioma: es
 titulo: "Odontología general"
 subtitulo: "La base de tu salud bucodental"
 resumen: "Revisiones, limpiezas dentales, obturaciones y extracciones simples en el Eixample de Barcelona. Detectar y tratar a tiempo es lo que evita que un problema pequeño acabe siendo un tratamiento largo y caro."
+resumen_corto: "Revisiones, limpiezas, obturaciones y extracciones simples para prevenir y tratar a tiempo cualquier problema dental."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
 especialista: guillermo-doria

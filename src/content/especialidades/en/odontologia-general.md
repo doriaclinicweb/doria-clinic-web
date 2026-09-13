@@ -3,6 +3,7 @@ idioma: en
 titulo: "General Dentistry"
 subtitulo: "The foundation of your oral health"
 resumen: "Check-ups, dental cleanings, fillings and simple extractions in the Eixample, Barcelona. Catching and treating problems early is what stops a small issue turning into a long, expensive treatment."
+resumen_corto: "Check-ups, cleanings, fillings and simple extractions to prevent and treat dental problems early."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
 especialista: guillermo-doria

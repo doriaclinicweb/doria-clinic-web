@@ -3,7 +3,9 @@ idioma: en
 titulo: "Dental Trauma"
 subtitulo: "Immediate care for knocks and accidents"
 resumen: "Diagnosis and treatment of injuries to teeth, gums and bone from knocks or accidents, with a dental emergency phone line for athletes and patients of any age."
+resumen_corto: "Diagnosis and treatment of injuries to teeth, gums and bone from knocks or accidents, with emergency care."
 orden: 4
+icono: "/img/iconos/odontologia-general.svg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "A whole tooth has fallen out, what do I do?"
