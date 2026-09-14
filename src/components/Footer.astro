@@ -187,7 +187,7 @@ const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').p
             ))}
           </div>
         )}
-        <a class="boton boton-verde" style="margin-top:1.4rem" href={wa}>{t.cita}</a>
+        <a class="boton boton-verde" style="margin-top:1.4rem" href={wa} target="_blank" rel="noopener noreferrer">{t.cita}</a>
         <a class="resena-google" href={clinica.google_business_profile} target="_blank" rel="noopener">
           <span class="estrellas" aria-hidden="true">
             {Array.from({ length: 5 }).map(() => (
@@ -256,5 +256,5 @@ const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').p
 
 <div class="flotante">
   <a href={tel}>{t.llamar}</a>
-  <a href={wa}>WhatsApp</a>
+  <a href={wa} target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </div>

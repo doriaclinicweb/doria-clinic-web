@@ -113,7 +113,7 @@ const anestesias = { no: 'No anaesthesia', local: 'Local anaesthesia', sedacion:
           <span class="colegiado">Reg. no. {doctor?.data.numero_colegiado}</span>
         </div>
 
-        <a class="boton boton-verde cta" href={`https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hi, I would like information about ' + d.titulo)}`}>
+        <a class="boton boton-verde cta" href={`https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hi, I would like information about ' + d.titulo)}`} target="_blank" rel="noopener noreferrer">
           Ask on WhatsApp
         </a>
       </div>
