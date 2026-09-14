@@ -97,7 +97,9 @@ const schema = {
       )}
     </div>
 
-    <aside class="ficha">
+    <div class="ficha-envoltorio">
+
+      <aside class="ficha">
       {doctor && doctor.data.foto && (
         <img class="foto" src={doctor.data.foto} alt={doctor.data.nombre} loading="lazy" />
       )}
@@ -114,6 +116,7 @@ const schema = {
         </a>
       </div>
     </aside>
+    </div>
   </div>
 
   <Fragment slot="despues-contenido">

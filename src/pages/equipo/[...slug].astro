@@ -89,7 +89,9 @@ const schema = {
       )}
     </div>
 
-    <aside class="ficha">
+    <div class="ficha-envoltorio">
+
+      <aside class="ficha">
       {d.foto && <img class="foto" src={d.foto} alt={d.nombre} loading="lazy" />}
       <div class="ficha-info">
         <div class="firma">
@@ -102,5 +104,6 @@ const schema = {
         </a>
       </div>
     </aside>
+    </div>
   </div>
 </Base>

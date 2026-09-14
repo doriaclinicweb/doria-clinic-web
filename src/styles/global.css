@@ -256,9 +256,19 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; }
 .hero :focus-visible, .visita :focus-visible, .pie :focus-visible { outline-color: var(--crema); }
 
-.columnas { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 4rem; align-items: start; margin: 3rem 0 5rem; }
-@media (max-width: 900px) { .columnas { grid-template-columns: 1fr; gap: 2.5rem; } }
+/* .columnas: el texto marca la altura de la sección; la ficha del
+   doctor no debe estirarla (si el texto es corto, antes se quedaba un
+   hueco enorme igualando la altura de la ficha). La ficha se saca del
+   flujo con un envoltorio absoluto y solo ella queda "sticky" dentro. */
+.columnas { position: relative; margin: 3rem 0 5rem; }
+.columnas > div:first-child { max-width: calc(100% - 320px - 4rem); }
+.ficha-envoltorio { position: absolute; top: 0; right: 0; width: 320px; height: 100%; }
 .ficha { position: sticky; top: 2rem; }
+@media (max-width: 900px) {
+  .columnas { display: flex; flex-direction: column; gap: 2.5rem; }
+  .columnas > div:first-child { max-width: none; }
+  .ficha-envoltorio { position: static; width: auto; height: auto; }
+}
 .ficha .foto { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; border-radius: calc(20 * var(--size)); }
 .ficha-info { padding: 1.4rem 0 0; }
 .ficha dl { margin: 0 0 1.4rem; display: grid; grid-template-columns: 1fr auto; gap: 0.6rem 1rem; font-size: 0.92rem; }
@@ -295,7 +305,7 @@ a { color: inherit; }
 
 .intro-acciones { margin-top: 1.8rem; }
 .razones { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 2.2rem; max-width: 46rem; }
-.razones li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; }
+.razones li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: calc(0.95rem + 2px); }
 .razones svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 0.15rem; color: var(--verde); }
 @media (max-width: 560px) { .razones { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .pagina-intro-cuerpo .razones { flex-basis: 100%; grid-template-columns: repeat(2, 1fr); } }
@@ -308,7 +318,7 @@ a { color: inherit; }
 
 .contenido { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem); }
 .contenido-ancho p, .contenido-ancho li { max-width: none; }
-.contenido-ancho h2 { margin-top: 2.5rem; }
+.contenido h2 { margin-top: 2.5rem; }
 
 /* Especialidades y tratamientos: texto al doble de ancho (124ch) y
    centrado dentro de su columna (dentro de .columnas, que sigue

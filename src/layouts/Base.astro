@@ -88,7 +88,7 @@ const schemaMigas = {
     <script type="application/ld+json" set:html={JSON.stringify(schemaMigas)} />
   </head>
   <body>
-    <Header />
+    <Header variante={imagenCabecera ? 'hero' : 'solida'} />
 
     <section class:list={['pagina-intro', { 'pagina-intro-imagen': !!imagenCabecera }]}>
       {imagenCabecera && <img class="pagina-intro-fondo" src={imagenCabecera.src} alt={imagenCabecera.alt} />}
