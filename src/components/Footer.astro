@@ -130,20 +130,25 @@ const redes = [
   clinica.redes.linkedin && { nombre: 'LinkedIn', url: clinica.redes.linkedin, icono: 'linkedin' },
 ].filter(Boolean) as { nombre: string; url: string; icono: string }[];
 const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').pop();
+const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
 ---
 {clinica.redes.instagram && (
-  <section class="financiacion-banner">
-    <div class="wrap">
-      <a class="rrss-tarjeta" href={`${prefijo}/financiacion/`}>
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2.5"/><path d="M2 10.5h20"/><path d="M6 15h4"/></svg>
-        <span class="rrss-texto">
-          <strong>{t.financiacionTitulo}</strong>
-          <span>{t.financiacionTexto}</span>
-        </span>
-        <span class="rrss-flecha" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
+  <Fragment>
+  {!esPaginaFinanciacion && (
+    <section class="financiacion-banner">
+      <div class="wrap">
+        <a class="rrss-tarjeta" href={`${prefijo}/financiacion/`}>
+          <img class="financiacion-icono" src="/img/sello-tmf.png" alt="" width="52" height="52" loading="lazy" />
+          <span class="rrss-texto">
+            <strong>{t.financiacionTitulo}</strong>
+            <span>{t.financiacionTexto}</span>
+          </span>
+          <img class="financiacion-logo-tmf" src="/img/logo-tmf-blanco.png" alt="Tu Medicina Financiada" loading="lazy" />
+          <span class="rrss-flecha" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  )}
 
   <section class="rrss">
     <div class="wrap">
@@ -157,6 +162,7 @@ const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').p
       </a>
     </div>
   </section>
+  </Fragment>
 )}
 
 <section class="mapa">

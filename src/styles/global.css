@@ -210,9 +210,12 @@ a { color: inherit; }
 .opiniones cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.88rem; color: #556055; }
 @media (max-width: 800px) { .opiniones { grid-template-columns: 1fr; gap: 2rem; } }
 
-.financiacion-banner { background: var(--verde); padding: 1.4rem 0; }
+.financiacion-banner { background: var(--verde); padding: 1.6rem 0; }
 .financiacion-banner .rrss-tarjeta { color: var(--crema); }
 .financiacion-banner .rrss-texto span:last-child { color: rgba(255,254,247,.8); }
+.financiacion-banner .financiacion-icono { flex: 0 0 auto; width: 3.2rem; height: 3.2rem; border-radius: 50%; }
+.financiacion-banner .financiacion-logo-tmf { flex: 0 0 auto; width: 130px; height: auto; margin-left: auto; }
+@media (max-width: 700px) { .financiacion-banner .financiacion-logo-tmf { display: none; } }
 .rrss { background: var(--gris); padding: 1.4rem 0; }
 .rrss-tarjeta { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--tinta); }
 .rrss-texto { display: flex; flex-direction: column; gap: 0.2rem; }
@@ -342,7 +345,13 @@ a { color: inherit; }
 .contenido-doble > p,
 .contenido-doble > h2,
 .contenido-doble > .faq,
-.contenido-doble > .especialidades { max-width: calc(var(--medida) * 2); margin-left: auto; margin-right: auto; }
+.contenido-doble > .especialidades,
+.contenido-doble > .proceso,
+.contenido-doble > .indicaciones,
+.contenido-doble > .destacado-financiacion,
+.contenido-doble > .sello-tmf,
+.contenido-doble > .acciones,
+.contenido-doble > .letra-pequena { max-width: calc(var(--medida) * 2); margin-left: auto; margin-right: auto; }
 
 .lede { font-family: var(--display); font-size: clamp(1.15rem,2vw,1.45rem); line-height: 1.4; color: var(--verde); max-width: 44ch; }
 /* Cuadrícula de las páginas de listado /especialidades/ y /tratamientos/
@@ -366,12 +375,16 @@ a { color: inherit; }
 .faq p { margin: 0.7rem 0 0; color: #556055; }
 
 /* Página /financiacion/ */
-.destacado-financiacion { background: var(--verde); color: var(--crema); border-radius: calc(20 * var(--size)); padding: 2rem clamp(1.4rem, 4vw, 2.6rem); margin: 2rem 0 2.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.destacado-financiacion { background: var(--verde); color: var(--crema); border-radius: calc(20 * var(--size)); padding: 2rem clamp(1.4rem, 4vw, 2.6rem); margin: 2rem 0 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
 .destacado-financiacion strong { font-family: var(--display); font-weight: 400; font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.25; }
 .destacado-financiacion span { color: rgba(255,254,247,.85); font-size: 0.95rem; }
+.destacado-financiacion .logo-tmf { flex: 0 0 auto; width: 150px; height: auto; }
+@media (min-width: 700px) {
+  .destacado-financiacion { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
+  .destacado-financiacion .logo-tmf { width: 170px; }
+}
 .sello-tmf { display: flex; align-items: center; gap: 1.8rem; background: var(--gris); border-radius: calc(20 * var(--size)); padding: 1.8rem clamp(1.2rem, 4vw, 2.2rem); margin: 2.5rem 0; }
-.sello-insignia { flex: 0 0 auto; width: 5.5rem; height: 5.5rem; border-radius: 50%; border: 2px solid var(--verde); display: flex; align-items: center; justify-content: center; text-align: center; }
-.sello-insignia span { font-family: var(--display); font-size: 0.8rem; line-height: 1.2; color: var(--verde); }
+.sello-insignia { flex: 0 0 auto; width: 5.5rem; height: 5.5rem; }
 .sello-tmf strong { font-family: var(--display); font-weight: 400; font-size: 1.1rem; display: block; margin-bottom: 0.4rem; }
 .sello-tmf p { margin: 0 0 0.5rem; color: #556055; font-size: 0.92rem; }
 .sello-tmf a { color: var(--verde); }

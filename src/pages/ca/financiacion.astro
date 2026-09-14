@@ -48,14 +48,23 @@ const schema = {
   schema={schema}
   h1="Finança el teu tractament"
   lede="Creiem que la salut bucodental hauria d'estar a l'abast de tothom. Per això, juntament amb Tu Medicina Financiada, et donem facilitats de pagament sense interessos per als teus tractaments."
+  imagenCabecera={{ src: '/img/instalaciones/02-recepcion-espera.jpg', alt: 'Finançament de tractaments dentals a Doria Clinic' }}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma="ca" mensaje="Hola, voldria informació sobre el finançament del meu tractament" />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma="ca" mensaje="Hola, voldria informació sobre el finançament del meu tractament" parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma="ca" mensaje="Hola, voldria informació sobre el finançament del meu tractament" parte="razones" />
   </Fragment>
 
   <div class="destacado-financiacion">
-    <strong>Finança fins al 100% del teu tractament en 12 mesos SENSE INTERESSOS al 0% TAE*</strong>
-    <span>Tràmit àgil i segur amb Tu Medicina Financiada, Centre Premium.</span>
+    <div>
+      <strong>Finança fins al 100% del teu tractament en 12 mesos SENSE INTERESSOS al 0% TAE*</strong>
+      <span>Tràmit àgil i segur amb Tu Medicina Financiada, Centre Premium.</span>
+    </div>
+    <img class="logo-tmf" src="/img/logo-tmf-blanco.png" alt="Tu Medicina Financiada" loading="lazy" />
   </div>
 
   <p>
@@ -86,9 +95,7 @@ const schema = {
   </div>
 
   <div class="sello-tmf">
-    <div class="sello-insignia" aria-hidden="true">
-      <span>Centre<br />Premium</span>
-    </div>
+    <img class="sello-insignia" src="/img/sello-tmf.png" alt="Centre Premium, segell de qualitat de Tu Medicina Financiada" loading="lazy" />
     <div>
       <strong>Tu Medicina Financiada</strong>
       <p>

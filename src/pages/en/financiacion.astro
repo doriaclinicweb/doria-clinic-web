@@ -48,14 +48,23 @@ const schema = {
   schema={schema}
   h1="Finance your treatment"
   lede="We believe oral health should be within everyone's reach. That's why, together with Tu Medicina Financiada, we offer interest-free payment facilities for your treatments."
+  imagenCabecera={{ src: '/img/instalaciones/02-recepcion-espera.jpg', alt: 'Dental treatment financing at Doria Clinic' }}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma="en" mensaje="Hi, I'd like information about financing my treatment" />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma="en" mensaje="Hi, I'd like information about financing my treatment" parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma="en" mensaje="Hi, I'd like information about financing my treatment" parte="razones" />
   </Fragment>
 
   <div class="destacado-financiacion">
-    <strong>Finance up to 100% of your treatment over 12 months INTEREST-FREE at 0% APR*</strong>
-    <span>Fast, secure process with Tu Medicina Financiada, a Premium Centre.</span>
+    <div>
+      <strong>Finance up to 100% of your treatment over 12 months INTEREST-FREE at 0% APR*</strong>
+      <span>Fast, secure process with Tu Medicina Financiada, a Premium Centre.</span>
+    </div>
+    <img class="logo-tmf" src="/img/logo-tmf-blanco.png" alt="Tu Medicina Financiada" loading="lazy" />
   </div>
 
   <p>
@@ -85,9 +94,7 @@ const schema = {
   </div>
 
   <div class="sello-tmf">
-    <div class="sello-insignia" aria-hidden="true">
-      <span>Premium<br />Centre</span>
-    </div>
+    <img class="sello-insignia" src="/img/sello-tmf.png" alt="Premium Centre, Tu Medicina Financiada quality seal" loading="lazy" />
     <div>
       <strong>Tu Medicina Financiada</strong>
       <p>
