@@ -260,7 +260,7 @@ a { color: inherit; }
    doctor no debe estirarla (si el texto es corto, antes se quedaba un
    hueco enorme igualando la altura de la ficha). La ficha se saca del
    flujo con un envoltorio absoluto y solo ella queda "sticky" dentro. */
-.columnas { position: relative; margin: 3rem 0 5rem; }
+.columnas { position: relative; margin: 3rem 0 0; }
 .columnas > div:first-child { max-width: calc(100% - 320px - 4rem); }
 .ficha-envoltorio { position: absolute; top: 0; right: 0; width: 320px; height: 100%; }
 .ficha { position: sticky; top: 2rem; }
@@ -317,6 +317,12 @@ a { color: inherit; }
 .migas .separador { opacity: 0.6; }
 
 .contenido { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem); }
+/* Cuando a .contenido le sigue otra sección completa (equipo,
+   financiación...) su propio padding inferior se suma al padding
+   superior de esa sección de al lado, dejando un hueco enorme entre
+   ambas. Aquí se controla ese hueco con un solo valor exacto. */
+.contenido.contenido-seguido { padding-bottom: 0; }
+.despues-contenido > .seccion:first-child { padding-top: 20px; }
 .contenido-ancho p, .contenido-ancho li { max-width: none; }
 .contenido h2 { margin-top: 2.5rem; }
 

@@ -134,11 +134,13 @@ const schemaMigas = {
       </div>
     </section>
 
-    <main class:list={['wrap', 'contenido', { 'contenido-ancho': anchoCompleto, 'contenido-doble': anchoDoble }]}>
+    <main class:list={['wrap', 'contenido', { 'contenido-ancho': anchoCompleto, 'contenido-doble': anchoDoble, 'contenido-seguido': Astro.slots.has('despues-contenido') }]}>
       <slot />
     </main>
 
-    <slot name="despues-contenido" />
+    <div class="despues-contenido">
+      <slot name="despues-contenido" />
+    </div>
 
     <Footer />
   </body>
