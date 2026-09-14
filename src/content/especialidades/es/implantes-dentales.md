@@ -6,6 +6,7 @@ resumen: "Reposición de piezas dentales con implantes de última generación, p
 resumen_corto: "Reposición de piezas dentales con implantes de última generación y técnicas mínimamente invasivas."
 orden: 3
 icono: "/img/iconos/implantes-dentales.svg"
+imagen: "/img/instalaciones/11-equipo-rayos.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Cuánto dura un implante dental?"

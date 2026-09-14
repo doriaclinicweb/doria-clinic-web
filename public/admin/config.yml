@@ -86,7 +86,7 @@ collections:
           - { name: despues, label: "Después", widget: image }
           - { name: descripcion, label: "Descripción", widget: string }
           - { name: consentimiento_firmado, label: "Consentimiento firmado y archivado", widget: boolean, default: false }
-      - { name: imagen, label: "Imagen principal", widget: image, required: false }
+      - { name: imagen, label: "Imagen de cabecera", widget: image, required: false, hint: "Si se deja vacía, se usa la imagen de cabecera de la especialidad." }
       - { name: actualizado, label: "Última revisión", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
       - name: seo
         label: "Google"
@@ -123,7 +123,7 @@ collections:
         search_fields: [nombre]
         value_field: "{{slug}}"
         display_fields: [nombre]
-      - { name: imagen, label: "Imagen", widget: image, required: false }
+      - { name: imagen, label: "Imagen de cabecera", widget: image, required: false, hint: "Fondo de la cabecera de esta página (donde está el título). Si se deja vacía, la cabecera se ve como ahora, sin foto." }
       - name: seo
         label: "Google"
         widget: object

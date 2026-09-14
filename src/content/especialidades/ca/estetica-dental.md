@@ -6,6 +6,7 @@ resumen: "Carilles de porcellana i composite i blanquejament dental, amb planifi
 resumen_corto: "Carilles de porcellana i composite, i blanquejament dental, amb planificació digital del somriure."
 orden: 5
 icono: "/img/iconos/estetica-dental.svg"
+imagen: "/img/instalaciones/17-prueba-protesis.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "Les carilles fan malbé la dent natural?"

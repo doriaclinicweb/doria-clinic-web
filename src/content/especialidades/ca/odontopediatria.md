@@ -5,6 +5,7 @@ subtitulo: "Salut dental infantil"
 resumen: "Revisions, segelladors, fluoració i ortodòncia interceptiva. La prevenció a la infància és la base d'un somriure sa a l'edat adulta."
 orden: 9
 icono: "/img/iconos/odontopediatria.svg"
+imagen: "/img/instalaciones/03-pasillo-banco.jpg"
 especialista: mariana-ettedgui
 faqs:
   - pregunta: "Quan ha d'anar el meu fill al dentista per primera vegada?"

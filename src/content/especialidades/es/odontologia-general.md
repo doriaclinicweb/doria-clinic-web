@@ -6,6 +6,7 @@ resumen: "Revisiones, limpiezas dentales, obturaciones y extracciones simples en
 resumen_corto: "Revisiones, limpiezas, obturaciones y extracciones simples para prevenir y tratar a tiempo cualquier problema dental."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/02-recepcion-espera.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Cada cuánto tiempo debo hacer una revisión dental?"

@@ -6,6 +6,7 @@ resumen: "Diagnóstico y tratamiento de lesiones en dientes, encías y hueso por
 resumen_corto: "Diagnóstico y tratamiento de lesiones en dientes, encías y hueso por golpes o accidentes, con urgencias."
 orden: 4
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/12-sala-radiografias.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Se me ha caído un diente entero, ¿qué hago?"

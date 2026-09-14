@@ -6,6 +6,7 @@ resumen: "Diagnòstic i tractament de lesions en dents, genives i os per cops o 
 resumen_corto: "Diagnòstic i tractament de lesions en dents, genives i os per cops o accidents, amb urgències."
 orden: 4
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/12-sala-radiografias.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Se m'ha caigut una dent sencera, què faig?"

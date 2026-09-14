@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import IntroAccion from '../../components/IntroAccion.astro';
+import EquipoModulo from '../../components/EquipoModulo.astro';
 
 export async function getStaticPaths() {
   const especialidades = await getCollection(
@@ -25,7 +26,7 @@ const tratamientos = await getCollection(
   (t) => t.data.especialidad.id === especialidad.id
 );
 
-const wa = (texto) =>
+const wa = (texto: string) =>
   `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(texto)}`;
 
 const schema = {
@@ -53,32 +54,24 @@ const schema = {
   h1={d.titulo}
   lede={d.subtitulo}
   migas={[{ href: '/especialidades/', etiqueta: 'Especialidades' }]}
+  imagenCabecera={d.imagen ? { src: d.imagen, alt: d.titulo } : undefined}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} parte="razones" />
   </Fragment>
 
   <div class="columnas">
     <div>
       <Content />
 
-      {tratamientos.length > 0 && (
-        <>
-          <h2>Tratamientos relacionados</h2>
-          <ol class="proceso">
-            {tratamientos.map((t) => (
-              <li>
-                <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}><strong>{t.data.titulo}</strong></a>
-                <div>{t.data.resumen}</div>
-              </li>
-            ))}
-          </ol>
-        </>
-      )}
-
       {d.faqs.length ? (
         <>
-          <h2>Preguntas frecuentes</h2>
+          <h2>Preguntas frecuentes sobre {d.titulo}</h2>
           {d.faqs.map((f) => (
             <details class="faq">
               <summary>{f.pregunta}</summary>
@@ -87,6 +80,21 @@ const schema = {
           ))}
         </>
       ) : null}
+
+      {tratamientos.length > 0 && (
+        <>
+          <h2>Tratamientos relacionados con {d.titulo}</h2>
+          <div class="especialidades">
+            {tratamientos.map((t) => (
+              <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}>
+                <h3>{t.data.titulo}</h3>
+                <p>{t.data.resumen}</p>
+                <span class="mas">Ver tratamiento →</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
     </div>
 
     <aside class="ficha">
@@ -107,4 +115,8 @@ const schema = {
       </div>
     </aside>
   </div>
+
+  <Fragment slot="despues-contenido">
+    <EquipoModulo idioma="es" titulo="Nuestro equipo" />
+  </Fragment>
 </Base>

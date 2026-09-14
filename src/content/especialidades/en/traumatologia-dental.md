@@ -6,6 +6,7 @@ resumen: "Diagnosis and treatment of injuries to teeth, gums and bone from knock
 resumen_corto: "Diagnosis and treatment of injuries to teeth, gums and bone from knocks or accidents, with emergency care."
 orden: 4
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/12-sala-radiografias.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "A whole tooth has fallen out, what do I do?"

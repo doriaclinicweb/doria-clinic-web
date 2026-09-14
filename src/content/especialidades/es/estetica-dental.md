@@ -6,6 +6,7 @@ resumen: "Carillas de porcelana y composite y blanqueamiento dental, con planifi
 resumen_corto: "Carillas de porcelana y composite, y blanqueamiento dental, con planificación digital de la sonrisa."
 orden: 5
 icono: "/img/iconos/estetica-dental.svg"
+imagen: "/img/instalaciones/17-prueba-protesis.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Las carillas dañan el diente natural?"

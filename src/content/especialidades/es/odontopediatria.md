@@ -5,6 +5,7 @@ subtitulo: "Salud dental infantil"
 resumen: "Revisiones, selladores, fluorización y ortodoncia interceptiva. La prevención en la infancia es la base de una sonrisa sana en la edad adulta."
 orden: 9
 icono: "/img/iconos/odontopediatria.svg"
+imagen: "/img/instalaciones/03-pasillo-banco.jpg"
 especialista: mariana-ettedgui
 faqs:
   - pregunta: "¿Cuándo debe ir mi hijo al dentista por primera vez?"

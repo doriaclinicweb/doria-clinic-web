@@ -5,6 +5,7 @@ subtitulo: "Mínima invasió i recuperació ràpida"
 resumen: "Extracció de queixals del seny, regeneració òssia, frenectomies i eliminació de quists, amb planificació digital prèvia mitjançant radiografia 3D."
 orden: 10
 icono: "/img/iconos/cirugia-oral.svg"
+imagen: "/img/instalaciones/08-sillon-dental.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Cal extreure sempre els queixals del seny?"

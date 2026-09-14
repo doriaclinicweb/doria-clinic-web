@@ -6,6 +6,7 @@ resumen: "Prótesis fijas y removibles sobre dientes naturales o implantes, dise
 resumen_corto: "Prótesis fijas y removibles sobre dientes naturales o implantes, con escaneado intraoral y CAD/CAM."
 orden: 11
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/14-escaneado-3d-pantalla.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "¿Qué diferencia hay entre una prótesis fija y una removible?"

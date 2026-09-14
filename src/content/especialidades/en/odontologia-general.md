@@ -6,6 +6,7 @@ resumen: "Check-ups, dental cleanings, fillings and simple extractions in the Ei
 resumen_corto: "Check-ups, cleanings, fillings and simple extractions to prevent and treat dental problems early."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/02-recepcion-espera.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "How often should I have a dental check-up?"

@@ -6,6 +6,7 @@ resumen: "Revisions, netejes dentals, obturacions i extraccions simples a l'Eixa
 resumen_corto: "Revisions, netejes, obturacions i extraccions simples per prevenir i tractar a temps qualsevol problema dental."
 orden: 1
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/02-recepcion-espera.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Cada quant de temps he de fer una revisió dental?"

@@ -5,6 +5,7 @@ subtitulo: "El rendiment comença a la boca"
 resumen: "Protectors bucals a mida per disciplina, detecció de focus infecciosos i equilibri oclusal per a esportistes de qualsevol nivell."
 orden: 8
 icono: "/img/iconos/odontologia-deportiva.svg"
+imagen: "/img/instalaciones/09-box-tratamiento.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Un protector bucal de farmàcia no és suficient?"

@@ -6,6 +6,7 @@ resumen: "Pròtesis fixes i removibles sobre dents naturals o implants, dissenya
 resumen_corto: "Pròtesis fixes i removibles sobre dents naturals o implants, amb escanejat intraoral i CAD/CAM."
 orden: 11
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/14-escaneado-3d-pantalla.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "Quina diferència hi ha entre una pròtesi fixa i una de removible?"

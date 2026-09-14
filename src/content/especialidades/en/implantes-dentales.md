@@ -6,6 +6,7 @@ resumen: "Replacing missing teeth with the latest-generation implants, digital p
 resumen_corto: "Replacing missing teeth with the latest-generation implants and minimally invasive techniques."
 orden: 3
 icono: "/img/iconos/implantes-dentales.svg"
+imagen: "/img/instalaciones/11-equipo-rayos.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "How long does a dental implant last?"

@@ -53,6 +53,9 @@ const schema = {
     acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
   })),
 };
+
+const imagenCabecera =
+  pagina === 'especialidades' ? '/img/instalaciones/01-recepcion-mostrador.jpg' : '/img/instalaciones/09-box-tratamiento.jpg';
 ---
 <Base
   titulo={d.seo.titulo_seo}
@@ -61,9 +64,15 @@ const schema = {
   h1={d.h1}
   lede={d.lede}
   schema={d.faqs.length > 0 ? schema : undefined}
+  imagenCabecera={{ src: imagenCabecera, alt: d.h1 }}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma={idioma} mensaje={mensajeCita} />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma={idioma} mensaje={mensajeCita} parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma={idioma} mensaje={mensajeCita} parte="razones" />
   </Fragment>
 
   {pagina === 'tratamientos' && (

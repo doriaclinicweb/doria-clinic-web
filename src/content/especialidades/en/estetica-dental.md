@@ -6,6 +6,7 @@ resumen: "Porcelain and composite veneers and teeth whitening, with digital smil
 resumen_corto: "Porcelain and composite veneers and teeth whitening, with digital smile planning."
 orden: 5
 icono: "/img/iconos/estetica-dental.svg"
+imagen: "/img/instalaciones/17-prueba-protesis.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "Do veneers damage the natural tooth?"

@@ -6,6 +6,7 @@ resumen: "Reposició de peces dentals amb implants d'última generació, planifi
 resumen_corto: "Reposició de peces dentals amb implants d'última generació i tècniques mínimament invasives."
 orden: 3
 icono: "/img/iconos/implantes-dentales.svg"
+imagen: "/img/instalaciones/11-equipo-rayos.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "Quant dura un implant dental?"

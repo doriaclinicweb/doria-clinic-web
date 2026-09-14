@@ -5,6 +5,7 @@ subtitulo: "Health of the gums and the bone that supports your teeth"
 resumen: "Prevention, diagnosis and treatment of gingivitis and periodontitis, the leading cause of tooth loss in adults. Periodontal surgery and gum grafts."
 orden: 7
 icono: "/img/iconos/periodoncia.svg"
+imagen: "/img/instalaciones/19-esterilizador-2.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "How do I know if I have gum disease?"

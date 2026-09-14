@@ -4,6 +4,7 @@ import '../styles/global.css';
 import clinica from '../data/clinica.json';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import EquipoModulo from './EquipoModulo.astro';
 import type { Idioma } from '../utils/idioma';
 import { inicioDe } from '../utils/idioma';
 
@@ -18,20 +19,10 @@ const prefijo = idioma === 'es' ? '' : '/' + idioma;
 const base = inicioDe(idioma);
 const canonical = `https://doria.clinic${base}`;
 
-const cargoDe = (doc) =>
-  idioma === 'ca' ? doc.cargo_ca || doc.cargo : idioma === 'en' ? doc.cargo_en || doc.cargo : doc.cargo;
-const titulacionDe = (doc) => {
-  if (idioma === 'ca' && doc.titulacion_ca && doc.titulacion_ca.length) return doc.titulacion_ca;
-  if (idioma === 'en' && doc.titulacion_en && doc.titulacion_en.length) return doc.titulacion_en;
-  return doc.titulacion;
-};
-
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma && e.data.mostrar_en_home))
   .sort((a, b) => a.data.orden - b.data.orden);
 const urlEsp = (e) =>
   `${prefijo}/especialidades/${e.id.replace(new RegExp('^' + idioma + '/'), '')}/`;
-
-const equipo = (await getCollection('equipo')).sort((a, b) => a.data.orden - b.data.orden);
 
 const verTodas = { es: 'Todas las especialidades', ca: 'Totes les especialitats', en: 'All specialties' }[idioma];
 const textoGratis = { es: '100% gratuita', ca: '100% gratuïta', en: '100% free' }[idioma];
@@ -127,25 +118,7 @@ const schema = {
       </div>
     </section>
 
-    <section class="seccion" id="equipo">
-      <div class="wrap">
-        <h2>{d.equipo_titulo}</h2>
-        <div class="equipo">
-          {equipo.map((doc) => (
-            <a class="equipo-tarjeta" href={`${prefijo}/equipo/${doc.id}/`}>
-              <figure>
-                {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
-                <figcaption>
-                  <span class="nombre">{doc.data.nombre}</span>
-                  <span class="puesto">{cargoDe(doc.data)}</span>
-                  <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
-                </figcaption>
-              </figure>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
+    <EquipoModulo idioma={idioma} titulo={d.equipo_titulo} />
 
     <section class="seccion elegirnos">
       <div class="wrap">

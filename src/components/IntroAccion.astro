@@ -1,8 +1,8 @@
 ---
 import clinica from '../data/clinica.json';
 
-interface Props { idioma: 'es' | 'ca' | 'en'; mensaje: string }
-const { idioma, mensaje } = Astro.props;
+interface Props { idioma: 'es' | 'ca' | 'en'; mensaje: string; parte?: 'acciones' | 'razones' }
+const { idioma, mensaje, parte } = Astro.props;
 
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent(mensaje)}`;
@@ -37,15 +37,19 @@ const t = {
   },
 }[idioma];
 ---
-<div class="acciones intro-acciones">
-  <a class="boton boton-verde" href={wa} target="_blank" rel="noopener noreferrer">{t.cita}</a>
-  <a class="boton boton-contorno" href={tel}>{clinica.telefono}</a>
-</div>
-<ul class="razones">
-  {t.razones.map((r) => (
-    <li>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-      <span>{r}</span>
-    </li>
-  ))}
-</ul>
+{parte !== 'razones' && (
+  <div class="acciones intro-acciones">
+    <a class="boton boton-verde" href={wa} target="_blank" rel="noopener noreferrer">{t.cita}</a>
+    <a class="boton boton-contorno" href={tel}>{clinica.telefono}</a>
+  </div>
+)}
+{parte !== 'acciones' && (
+  <ul class="razones">
+    {t.razones.map((r) => (
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>{r}</span>
+      </li>
+    ))}
+  </ul>
+)}

@@ -57,7 +57,7 @@ a { color: inherit; }
 
 @media (max-width: 740px) { .cabecera .logo { width: calc(55 * (100vw / 430)); } }
 
-.hamburguesa { display: none; width: 2.2rem; height: 2.2rem; padding: 0; border: 0; background: transparent; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+.hamburguesa { display: none; width: 2.2rem; height: 2.2rem; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
 .hamburguesa span { display: block; width: 1.6rem; height: 2px; background: currentColor; transition: transform .2s ease, opacity .2s ease, background-color .4s; }
 .cabecera.nav-abierta .hamburguesa span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .cabecera.nav-abierta .hamburguesa span:nth-child(2) { opacity: 0; }
@@ -258,9 +258,9 @@ a { color: inherit; }
 
 .columnas { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 4rem; align-items: start; margin: 3rem 0 5rem; }
 @media (max-width: 900px) { .columnas { grid-template-columns: 1fr; gap: 2.5rem; } }
-.ficha { border: 1px solid var(--verde-claro); background: var(--gris); position: sticky; top: 2rem; overflow: hidden; }
+.ficha { position: sticky; top: 2rem; }
 .ficha .foto { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; border-radius: calc(20 * var(--size)); }
-.ficha-info { padding: 1.6rem; }
+.ficha-info { padding: 1.4rem 0 0; }
 .ficha dl { margin: 0 0 1.4rem; display: grid; grid-template-columns: 1fr auto; gap: 0.6rem 1rem; font-size: 0.92rem; }
 .ficha dt { color: #556055; }
 .ficha dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
@@ -268,15 +268,37 @@ a { color: inherit; }
 .ficha .firma strong { display: block; color: var(--tinta); font-family: var(--display); font-weight: 400; font-size: 1.2rem; margin-bottom: 0.3rem; }
 .ficha .firma .colegiado { display: block; margin-top: 0.15rem; font-size: 0.8rem; opacity: 0.85; }
 .ficha .cta { display: block; width: 100%; text-align: center; margin-top: 1.4rem; }
-.pagina-intro { background: var(--gris); padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.75rem, 3.5vw, 2.5rem); }
+.pagina-intro { position: relative; background: var(--gris); padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.75rem, 3.5vw, 2.5rem); }
 .pagina-intro h1 { color: var(--verde); font-size: clamp(2rem, 4.4vw, 3.1rem); }
 .pagina-intro .lede { margin-top: 1rem; margin-bottom: 0; }
+
+/* Cabecera con foto de fondo: overlay oscuro + texto en crema, igual
+   que el hero de la home. */
+.pagina-intro-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.pagina-intro-imagen { padding-top: clamp(3.5rem, 7vw, 5.5rem); padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+.pagina-intro-imagen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.72) 0%, rgba(26,31,26,.4) 60%, rgba(26,31,26,.55) 100%); z-index: 1; }
+.pagina-intro-imagen .wrap { position: relative; z-index: 2; }
+.pagina-intro-imagen h1 { color: var(--crema); }
+.pagina-intro-imagen .lede { color: var(--crema); opacity: 0.92; }
+.pagina-intro-imagen .migas { color: rgba(255,254,247,.75); }
+.pagina-intro-imagen .migas .actual { color: var(--crema); }
+.pagina-intro-imagen .razones { color: var(--crema); }
+.pagina-intro-imagen .razones svg { color: var(--crema); }
+.pagina-intro-imagen .boton-contorno { border-color: var(--crema); color: var(--crema); }
+.pagina-intro-imagen .boton-contorno:hover { background: var(--crema); color: var(--verde); }
+
+/* Cabecera en dos columnas: título+párrafo+botones a la izquierda,
+   ticks a la derecha, ambos centrados verticalmente entre sí. */
+.pagina-intro-cuerpo { display: flex; align-items: center; justify-content: space-between; gap: clamp(2rem, 5vw, 4rem); flex-wrap: wrap; }
+.pagina-intro-texto { flex: 1 1 28rem; }
+.pagina-intro-cuerpo .razones { flex: 0 1 22rem; grid-template-columns: 1fr; margin-top: 0; }
 
 .intro-acciones { margin-top: 1.8rem; }
 .razones { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 2.2rem; max-width: 46rem; }
 .razones li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; }
 .razones svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 0.15rem; color: var(--verde); }
 @media (max-width: 560px) { .razones { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .pagina-intro-cuerpo .razones { flex-basis: 100%; grid-template-columns: repeat(2, 1fr); } }
 
 .migas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #556055; margin-bottom: 1.4rem; }
 .migas a { color: inherit; text-decoration: none; }
@@ -288,11 +310,29 @@ a { color: inherit; }
 .contenido-ancho p, .contenido-ancho li { max-width: none; }
 .contenido-ancho h2 { margin-top: 2.5rem; }
 
+/* Especialidades y tratamientos: texto al doble de ancho (124ch) y
+   centrado dentro de su columna (dentro de .columnas, que sigue
+   reservando la ficha del doctor a la derecha). */
+.contenido-doble .columnas > div > p,
+.contenido-doble .columnas > div > ul,
+.contenido-doble .columnas > div > ol,
+.contenido-doble .columnas > div > h2,
+.contenido-doble .columnas > div > .faq,
+.contenido-doble .columnas > div > .proceso,
+.contenido-doble .columnas > div > .indicaciones,
+.contenido-doble .columnas > div > .especialidades,
+/* páginas de listado (/especialidades/, /tratamientos/): sin .columnas,
+   el contenido cuelga directamente de .contenido */
+.contenido-doble > p,
+.contenido-doble > h2,
+.contenido-doble > .faq,
+.contenido-doble > .especialidades { max-width: calc(var(--medida) * 2); margin-left: auto; margin-right: auto; }
+
 .lede { font-family: var(--display); font-size: clamp(1.15rem,2vw,1.45rem); line-height: 1.4; color: var(--verde); max-width: 44ch; }
 /* Cuadrícula de las páginas de listado /especialidades/ y /tratamientos/
    (ListadoPagina.astro). Distinta del carrusel de tratamientos de la
    home: aquí cada especialidad/tratamiento es una tarjeta con borde. */
-.especialidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--verde-claro); border: 1px solid var(--verde-claro); margin: 2.5rem 0; }
+.especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: var(--verde-claro); border: 1px solid var(--verde-claro); margin: 2.5rem 0; }
 .especialidades a { background: var(--crema); padding: 1.8rem 1.6rem 2.2rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.5rem; transition: background .18s; }
 .especialidades a:hover { background: var(--gris); }
 .especialidades a h3 { margin: 0; }

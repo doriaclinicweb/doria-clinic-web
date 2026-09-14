@@ -5,6 +5,7 @@ subtitulo: "Performance starts in the mouth"
 resumen: "Custom mouthguards by discipline, detection of infection sources and bite balance for athletes of any level."
 orden: 8
 icono: "/img/iconos/odontologia-deportiva.svg"
+imagen: "/img/instalaciones/09-box-tratamiento.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "Isn't a pharmacy mouthguard enough?"

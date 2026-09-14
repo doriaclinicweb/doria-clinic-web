@@ -5,6 +5,7 @@ subtitulo: "Alignment for health, not just aesthetics"
 resumen: "Invisible orthodontics, braces and children's orthodontics. Putting each tooth in its proper position improves chewing function and makes daily hygiene easier."
 orden: 6
 icono: "/img/iconos/ortodoncia.svg"
+imagen: "/img/instalaciones/15-escaner-intraoral-1.jpg"
 especialista: mariana-ettedgui
 faqs:
   - pregunta: "How long does an orthodontic treatment take?"

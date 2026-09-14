@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import IntroAccion from '../../components/IntroAccion.astro';
+import EquipoModulo from '../../components/EquipoModulo.astro';
 
 export async function getStaticPaths() {
   const tratamientos = await getCollection(
@@ -20,6 +21,13 @@ const d = tratamiento.data;
 const { Content } = await render(tratamiento);
 const especialidad = await getEntry(d.especialidad);
 const doctor = await getEntry(d.especialista);
+
+const relacionados = (
+  await getCollection(
+    'tratamientos',
+    (t) => t.data.idioma === 'es' && t.data.especialidad.id === d.especialidad.id && t.id !== tratamiento.id
+  )
+);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -40,6 +48,7 @@ const schema = {
 };
 
 const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'Sedación' };
+const imagenCabecera = d.imagen || especialidad?.data.imagen;
 ---
 <Base
   titulo={d.seo.titulo_seo}
@@ -52,9 +61,15 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
     { href: '/especialidades/', etiqueta: 'Especialidades' },
     { href: `/especialidades/${especialidad.id.replace(/^es\//, '')}/`, etiqueta: especialidad?.data.titulo },
   ]}
+  imagenCabecera={imagenCabecera ? { src: imagenCabecera, alt: d.titulo } : undefined}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma="es" mensaje={'Hola, quería información sobre ' + d.titulo} parte="razones" />
   </Fragment>
 
   <div class="columnas">
@@ -62,13 +77,13 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
       <Content />
 
       <div class="indicaciones">
-        <strong>Cuándo se indica</strong>
+        <strong>Cuándo se indica {d.titulo}</strong>
         <ul>{d.cuando_se_indica.map((s) => <li>{s}</li>)}</ul>
       </div>
 
       {d.proceso?.length ? (
         <>
-          <h2>Cómo es el proceso</h2>
+          <h2>Cómo es el proceso de {d.titulo}</h2>
           <ol class="proceso">
             {d.proceso.map((p) => (
               <li>
@@ -82,7 +97,7 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
 
       {d.faqs.length ? (
         <>
-          <h2>Preguntas frecuentes</h2>
+          <h2>Preguntas frecuentes sobre {d.titulo}</h2>
           {d.faqs.map((f) => (
             <details class="faq">
               <summary>{f.pregunta}</summary>
@@ -91,6 +106,21 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
           ))}
         </>
       ) : null}
+
+      {relacionados.length > 0 && (
+        <>
+          <h2>Tratamientos relacionados con {d.titulo}</h2>
+          <div class="especialidades">
+            {relacionados.map((t) => (
+              <a href={`/tratamientos/${t.id.replace(/^es\//, '')}/`}>
+                <h3>{t.data.titulo}</h3>
+                <p>{t.data.resumen}</p>
+                <span class="mas">Ver tratamiento →</span>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
     </div>
 
     <aside class="ficha">
@@ -118,4 +148,8 @@ const anestesias = { no: 'Sin anestesia', local: 'Anestesia local', sedacion: 'S
       </div>
     </aside>
   </div>
+
+  <Fragment slot="despues-contenido">
+    <EquipoModulo idioma="es" titulo="Nuestro equipo" />
+  </Fragment>
 </Base>

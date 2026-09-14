@@ -5,6 +5,7 @@ subtitulo: "Mínima invasión y recuperación rápida"
 resumen: "Extracción de cordales, regeneración ósea, frenectomías y eliminación de quistes, con planificación digital previa mediante radiografía 3D."
 orden: 10
 icono: "/img/iconos/cirugia-oral.svg"
+imagen: "/img/instalaciones/08-sillon-dental.jpg"
 especialista: guillermo-doria
 faqs:
   - pregunta: "¿Es necesario extraer siempre las muelas del juicio?"

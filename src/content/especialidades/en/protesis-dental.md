@@ -6,6 +6,7 @@ resumen: "Fixed and removable prostheses on natural teeth or implants, designed 
 resumen_corto: "Fixed and removable prostheses on natural teeth or implants, with intraoral scanning and CAD/CAM."
 orden: 11
 icono: "/img/iconos/odontologia-general.svg"
+imagen: "/img/instalaciones/14-escaneado-3d-pantalla.jpg"
 especialista: ines-doria
 faqs:
   - pregunta: "What's the difference between a fixed and a removable prosthesis?"

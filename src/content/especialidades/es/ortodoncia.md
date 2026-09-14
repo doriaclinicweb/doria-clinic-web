@@ -5,6 +5,7 @@ subtitulo: "Alineación para la salud, no solo para la estética"
 resumen: "Ortodoncia invisible, brackets y ortodoncia infantil. Colocar cada diente en su posición mejora la función masticatoria y facilita la higiene diaria."
 orden: 6
 icono: "/img/iconos/ortodoncia.svg"
+imagen: "/img/instalaciones/15-escaner-intraoral-1.jpg"
 especialista: mariana-ettedgui
 faqs:
   - pregunta: "¿Cuánto dura un tratamiento de ortodoncia?"

@@ -5,6 +5,7 @@ subtitulo: "Children's dental health"
 resumen: "Check-ups, sealants, fluoride treatment and interceptive orthodontics. Prevention in childhood is the foundation of a healthy smile in adulthood."
 orden: 9
 icono: "/img/iconos/odontopediatria.svg"
+imagen: "/img/instalaciones/03-pasillo-banco.jpg"
 especialista: mariana-ettedgui
 faqs:
   - pregunta: "When should my child first go to the dentist?"

@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma; titulo: string }
+const { idioma, titulo } = Astro.props;
+const prefijo = idioma === 'es' ? '' : '/' + idioma;
+
+const cargoDe = (doc) =>
+  idioma === 'ca' ? doc.cargo_ca || doc.cargo : idioma === 'en' ? doc.cargo_en || doc.cargo : doc.cargo;
+const titulacionDe = (doc) => {
+  if (idioma === 'ca' && doc.titulacion_ca?.length) return doc.titulacion_ca;
+  if (idioma === 'en' && doc.titulacion_en?.length) return doc.titulacion_en;
+  return doc.titulacion;
+};
+
+const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
+  (a, b) => a.data.orden - b.data.orden
+);
+---
+<section class="seccion" id="equipo">
+  <div class="wrap">
+    <h2>{titulo}</h2>
+    <div class="equipo">
+      {equipo.map((doc) => (
+        <a class="equipo-tarjeta" href={`${prefijo}/equipo/${doc.id}/`}>
+          <figure>
+            {doc.data.foto && <img src={doc.data.foto} alt={doc.data.nombre} loading="lazy" />}
+            <figcaption>
+              <span class="nombre">{doc.data.nombre}</span>
+              <span class="puesto">{cargoDe(doc.data)}</span>
+              <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+            </figcaption>
+          </figure>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

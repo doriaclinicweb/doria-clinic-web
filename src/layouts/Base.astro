@@ -15,7 +15,10 @@ interface Props {
   lede?: string;
   migas?: { href: string; etiqueta: string }[];
   imagen?: string;
+  imagenCabecera?: { src: string; alt: string };
   anchoCompleto?: boolean;
+  anchoDoble?: boolean;
+  introDosColumnas?: boolean;
 }
 const {
   titulo,
@@ -25,8 +28,11 @@ const {
   h1,
   lede,
   migas = [],
-  imagen = imagenPorDefecto,
+  imagenCabecera,
+  imagen = imagenCabecera?.src || imagenPorDefecto,
   anchoCompleto = false,
+  anchoDoble = false,
+  introDosColumnas = false,
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
@@ -84,28 +90,55 @@ const schemaMigas = {
   <body>
     <Header />
 
-    <section class="pagina-intro">
+    <section class:list={['pagina-intro', { 'pagina-intro-imagen': !!imagenCabecera }]}>
+      {imagenCabecera && <img class="pagina-intro-fondo" src={imagenCabecera.src} alt={imagenCabecera.alt} />}
       <div class="wrap">
-        <nav class="migas" aria-label={{ es: 'Migas de pan', ca: 'Molles de pa', en: 'Breadcrumb' }[idioma]}>
-          <a href={inicioHref}>{inicioLabel}</a>
-          {migas.map((m) => (
-            <>
+        {introDosColumnas ? (
+          <div class="pagina-intro-cuerpo">
+            <div class="pagina-intro-texto">
+              <nav class="migas" aria-label={{ es: 'Migas de pan', ca: 'Molles de pa', en: 'Breadcrumb' }[idioma]}>
+                <a href={inicioHref}>{inicioLabel}</a>
+                {migas.map((m) => (
+                  <>
+                    <span class="separador">/</span>
+                    <a href={m.href}>{m.etiqueta}</a>
+                  </>
+                ))}
+                <span class="separador">/</span>
+                <span class="actual" aria-current="page">{h1}</span>
+              </nav>
+              <h1>{h1}</h1>
+              {lede && <p class="lede">{lede}</p>}
+              <slot name="intro-acciones" />
+            </div>
+            <slot name="intro-razones" />
+          </div>
+        ) : (
+          <>
+            <nav class="migas" aria-label={{ es: 'Migas de pan', ca: 'Molles de pa', en: 'Breadcrumb' }[idioma]}>
+              <a href={inicioHref}>{inicioLabel}</a>
+              {migas.map((m) => (
+                <>
+                  <span class="separador">/</span>
+                  <a href={m.href}>{m.etiqueta}</a>
+                </>
+              ))}
               <span class="separador">/</span>
-              <a href={m.href}>{m.etiqueta}</a>
-            </>
-          ))}
-          <span class="separador">/</span>
-          <span class="actual" aria-current="page">{h1}</span>
-        </nav>
-        <h1>{h1}</h1>
-        {lede && <p class="lede">{lede}</p>}
-        <slot name="intro-extra" />
+              <span class="actual" aria-current="page">{h1}</span>
+            </nav>
+            <h1>{h1}</h1>
+            {lede && <p class="lede">{lede}</p>}
+            <slot name="intro-extra" />
+          </>
+        )}
       </div>
     </section>
 
-    <main class:list={['wrap', 'contenido', { 'contenido-ancho': anchoCompleto }]}>
+    <main class:list={['wrap', 'contenido', { 'contenido-ancho': anchoCompleto, 'contenido-doble': anchoDoble }]}>
       <slot />
     </main>
+
+    <slot name="despues-contenido" />
 
     <Footer />
   </body>
