@@ -1,0 +1,87 @@
+---
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+
+const t = {
+  ca: {
+    texto: 'Utilitzem galetes pròpies i de tercers (Google Maps, Google Analytics) per millorar la teva experiència i analitzar el trànsit.',
+    mas: 'Més informació',
+    href: '/ca/politica-cookies/',
+    rechazar: 'Rebutjar',
+    aceptar: 'Acceptar',
+  },
+  en: {
+    texto: 'We use our own and third-party cookies (Google Maps, Google Analytics) to improve your experience and analyse traffic.',
+    mas: 'More information',
+    href: '/en/politica-cookies/',
+    rechazar: 'Reject',
+    aceptar: 'Accept',
+  },
+  es: {
+    texto: 'Usamos cookies propias y de terceros (Google Maps, Google Analytics) para mejorar tu experiencia y analizar el tráfico.',
+    mas: 'Más información',
+    href: '/politica-cookies/',
+    rechazar: 'Rechazar',
+    aceptar: 'Aceptar',
+  },
+}[idioma];
+
+const gaId = 'G-WG0JW6FWEC';
+---
+<div id="doria-cookie-banner" class="cookie-banner" hidden>
+  <div class="cookie-banner-cuerpo">
+    <p>{t.texto} <a href={t.href}>{t.mas}</a></p>
+    <div class="cookie-banner-acciones">
+      <button type="button" onclick="window.doriaRechazarCookies()">{t.rechazar}</button>
+      <button type="button" class="aceptar" onclick="window.doriaAceptarCookies()">{t.aceptar}</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ gaId }}>
+  (function () {
+    function cargarGA() {
+      if (window.__gaCargado) return;
+      window.__gaCargado = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', gaId, { anonymize_ip: true });
+    }
+
+    var consentimiento;
+    try { consentimiento = localStorage.getItem('doria-cookies'); } catch (e) { consentimiento = null; }
+
+    if (consentimiento === 'granted') cargarGA();
+
+    window.doriaAceptarCookies = function () {
+      try { localStorage.setItem('doria-cookies', 'granted'); } catch (e) {}
+      cargarGA();
+      var el = document.getElementById('doria-cookie-banner');
+      if (el) el.hidden = true;
+    };
+    window.doriaRechazarCookies = function () {
+      try { localStorage.setItem('doria-cookies', 'denied'); } catch (e) {}
+      var el = document.getElementById('doria-cookie-banner');
+      if (el) el.hidden = true;
+    };
+
+    if (!consentimiento) {
+      var mostrar = function () {
+        var el = document.getElementById('doria-cookie-banner');
+        if (el) el.hidden = false;
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', mostrar);
+      } else {
+        mostrar();
+      }
+    }
+  })();
+</script>

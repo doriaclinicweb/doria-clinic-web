@@ -403,3 +403,12 @@ a { color: inherit; }
 .sello-tmf a { color: var(--verde); }
 .letra-pequena { font-size: 0.78rem; color: #7a8a7a; max-width: none; border-top: 1px solid var(--verde-claro); padding-top: 1.2rem; }
 @media (max-width: 560px) { .sello-tmf { flex-direction: column; text-align: center; } }
+
+.cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: var(--verde); color: var(--crema); padding: 1.1rem clamp(1rem, 4vw, 2rem); box-shadow: 0 -4px 16px rgba(0,0,0,.15); }
+.cookie-banner-cuerpo { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.cookie-banner p { margin: 0; font-size: 0.9rem; max-width: 68ch; color: rgba(255,254,247,.9); }
+.cookie-banner a { color: var(--crema); }
+.cookie-banner-acciones { display: flex; gap: 0.6rem; flex: 0 0 auto; }
+.cookie-banner button { font-family: var(--display); font-size: 0.9rem; padding: 0.55rem 1.2rem; border-radius: 999px; border: 1px solid var(--crema); background: transparent; color: var(--crema); cursor: pointer; }
+.cookie-banner button.aceptar { background: var(--crema); color: var(--verde); }
+.cookie-banner button:hover { opacity: 0.85; }

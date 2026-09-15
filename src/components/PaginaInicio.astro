@@ -4,6 +4,7 @@ import '../styles/global.css';
 import clinica from '../data/clinica.json';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import CookieBanner from './CookieBanner.astro';
 import EquipoModulo from './EquipoModulo.astro';
 import type { Idioma } from '../utils/idioma';
 import { inicioDe } from '../utils/idioma';
@@ -210,6 +211,7 @@ const schema = {
     )}
 
     <Footer />
+    <CookieBanner idioma={idioma} />
 
     <script>
       // Carrusel de tratamientos: las flechas desplazan la pista una tarjeta
