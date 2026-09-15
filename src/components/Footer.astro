@@ -49,6 +49,7 @@ const t = {
     siguenosTexto: "El dia a dia de la clínica, casos i consells, a l'Instagram.",
     financiacionTitulo: 'Finança el teu tractament sense interessos',
     financiacionTexto: 'Fins al 100% en 12 mesos, amb Tu Medicina Financiada.',
+    financiacionCta: 'Veure com finançar',
   },
   en: {
     blurb: 'Dental clinic in the Eixample, Barcelona. Comprehensive oral health, aesthetics and care for athletes.',
@@ -72,6 +73,7 @@ const t = {
     siguenosTexto: "The clinic's day to day, cases and tips, on Instagram.",
     financiacionTitulo: 'Finance your treatment interest-free',
     financiacionTexto: 'Up to 100% over 12 months, with Tu Medicina Financiada.',
+    financiacionCta: 'See how to finance',
   },
   es: {
     blurb: 'Clínica dental en el Eixample de Barcelona. Salud bucodental, estética y atención al deportista.',
@@ -95,6 +97,7 @@ const t = {
     siguenosTexto: 'El día a día de la clínica, casos y consejos, en Instagram.',
     financiacionTitulo: 'Financia tu tratamiento sin intereses',
     financiacionTexto: 'Hasta el 100% en 12 meses, con Tu Medicina Financiada.',
+    financiacionCta: 'Ver cómo financiar',
   },
 }[idioma];
 
@@ -137,14 +140,12 @@ const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
   {!esPaginaFinanciacion && (
     <section class="financiacion-banner">
       <div class="wrap">
-        <a class="rrss-tarjeta" href={`${prefijo}/financiacion/`}>
-          <img class="financiacion-icono" src="/img/sello-tmf.png" alt="" width="52" height="52" loading="lazy" />
-          <span class="rrss-texto">
-            <strong>{t.financiacionTitulo}</strong>
-            <span>{t.financiacionTexto}</span>
-          </span>
+        <a class="financiacion-destacada" href={`${prefijo}/financiacion/`}>
+          <img class="financiacion-icono" src="/img/sello-tmf.png" alt="" width="64" height="64" loading="lazy" />
+          <strong>{t.financiacionTitulo}</strong>
+          <span>{t.financiacionTexto}</span>
           <img class="financiacion-logo-tmf" src="/img/logo-tmf-blanco.png" alt="Tu Medicina Financiada" loading="lazy" />
-          <span class="rrss-flecha" aria-hidden="true">→</span>
+          <span class="financiacion-cta">{t.financiacionCta} <span aria-hidden="true">→</span></span>
         </a>
       </div>
     </section>

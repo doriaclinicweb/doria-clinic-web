@@ -210,12 +210,14 @@ a { color: inherit; }
 .opiniones cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.88rem; color: #556055; }
 @media (max-width: 800px) { .opiniones { grid-template-columns: 1fr; gap: 2rem; } }
 
-.financiacion-banner { background: var(--verde); padding: 1.6rem 0; }
-.financiacion-banner .rrss-tarjeta { color: var(--crema); }
-.financiacion-banner .rrss-texto span:last-child { color: rgba(255,254,247,.8); }
-.financiacion-banner .financiacion-icono { flex: 0 0 auto; width: 3.2rem; height: 3.2rem; border-radius: 50%; }
-.financiacion-banner .financiacion-logo-tmf { flex: 0 0 auto; width: 130px; height: auto; margin-left: auto; }
-@media (max-width: 700px) { .financiacion-banner .financiacion-logo-tmf { display: none; } }
+.financiacion-banner { background: var(--verde); padding: clamp(3rem, 7vw, 5rem) 0; }
+.financiacion-banner .financiacion-destacada { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.9rem; text-decoration: none; color: var(--crema); max-width: 40rem; margin: 0 auto; }
+.financiacion-banner .financiacion-icono { flex: 0 0 auto; width: 4.2rem; height: 4.2rem; border-radius: 50%; }
+.financiacion-banner strong { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 3.2vw, 2.1rem); line-height: 1.25; }
+.financiacion-banner .financiacion-destacada > span:not(.financiacion-cta) { color: rgba(255,254,247,.82); font-size: 1.02rem; max-width: 34ch; }
+.financiacion-banner .financiacion-logo-tmf { width: 160px; height: auto; margin-top: 0.3rem; }
+.financiacion-banner .financiacion-cta { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.6rem; border: 1px solid var(--crema); border-radius: 999px; padding: 0.7rem 1.6rem; font-family: var(--display); font-size: 0.98rem; transition: background-color .2s, color .2s; }
+.financiacion-banner .financiacion-destacada:hover .financiacion-cta { background: var(--crema); color: var(--verde); }
 .rrss { background: var(--gris); padding: 1.4rem 0; }
 .rrss-tarjeta { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--tinta); }
 .rrss-texto { display: flex; flex-direction: column; gap: 0.2rem; }
@@ -289,6 +291,7 @@ a { color: inherit; }
    que el hero de la home. */
 .pagina-intro-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .pagina-intro-imagen { padding-top: clamp(3.5rem, 7vw, 5.5rem); padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+@media (min-width: 801px) { .pagina-intro-imagen { min-height: 600px; display: flex; align-items: center; } }
 .pagina-intro-imagen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.72) 0%, rgba(26,31,26,.4) 60%, rgba(26,31,26,.55) 100%); z-index: 1; }
 .pagina-intro-imagen .wrap { position: relative; z-index: 2; }
 .pagina-intro-imagen h1 { color: var(--crema); }
@@ -320,6 +323,10 @@ a { color: inherit; }
 .migas .separador { opacity: 0.6; }
 
 .contenido { padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem); }
+/* Cuando el primer bloque es el destacado de financiación (justo tras
+   la foto de cabecera), el padding superior estándar deja un hueco
+   demasiado grande entre dos bloques de color; se recorta a 2rem. */
+.contenido > .destacado-financiacion:first-child { margin-top: calc(2rem - clamp(3rem, 6vw, 5rem)); }
 /* Cuando a .contenido le sigue otra sección completa (equipo,
    financiación...) su propio padding inferior se suma al padding
    superior de esa sección de al lado, dejando un hueco enorme entre
@@ -329,10 +336,17 @@ a { color: inherit; }
 .contenido-ancho p, .contenido-ancho li { max-width: none; }
 .contenido h2 { margin-top: 2.5rem; }
 
-/* Especialidades y tratamientos: texto al doble de ancho (124ch) y
-   centrado dentro de su columna (dentro de .columnas, que sigue
-   reservando la ficha del doctor a la derecha). */
+/* Especialidades y tratamientos: párrafos al doble de ancho (124ch) y
+   centrados dentro de su columna (dentro de .columnas, que sigue
+   reservando la ficha del doctor a la derecha). Solo se aplica a texto
+   corrido: "ch" depende del tamaño de fuente de cada elemento, así que
+   aplicarlo también a bloques con otra tipografía (h2, tarjetas,
+   botones...) los dejaba más estrechos y descentrados respecto al
+   resto. Esos bloques simplemente ocupan el 100% del contenedor, que
+   es lo que ya hacía un h2 al superar su propio ancho disponible. */
 .contenido-doble .columnas > div > p,
+.contenido-doble > p { max-width: calc(var(--medida) * 2); margin-left: auto; margin-right: auto; }
+
 .contenido-doble .columnas > div > ul,
 .contenido-doble .columnas > div > ol,
 .contenido-doble .columnas > div > h2,
@@ -342,7 +356,6 @@ a { color: inherit; }
 .contenido-doble .columnas > div > .especialidades,
 /* páginas de listado (/especialidades/, /tratamientos/): sin .columnas,
    el contenido cuelga directamente de .contenido */
-.contenido-doble > p,
 .contenido-doble > h2,
 .contenido-doble > .faq,
 .contenido-doble > .especialidades,
@@ -351,7 +364,7 @@ a { color: inherit; }
 .contenido-doble > .destacado-financiacion,
 .contenido-doble > .sello-tmf,
 .contenido-doble > .acciones,
-.contenido-doble > .letra-pequena { max-width: calc(var(--medida) * 2); margin-left: auto; margin-right: auto; }
+.contenido-doble > .letra-pequena { max-width: none; }
 
 .lede { font-family: var(--display); font-size: clamp(1.15rem,2vw,1.45rem); line-height: 1.4; color: var(--verde); max-width: 44ch; }
 /* Cuadrícula de las páginas de listado /especialidades/ y /tratamientos/
