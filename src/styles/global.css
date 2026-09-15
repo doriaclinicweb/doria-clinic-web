@@ -77,6 +77,7 @@ a { color: inherit; }
     flex-direction: column;
     gap: 0;
     background: var(--verde);
+    color: var(--crema);
     padding: 0.5rem 0 1.5rem;
     box-shadow: 0 12px 16px -8px rgba(0,0,0,.18);
   }
