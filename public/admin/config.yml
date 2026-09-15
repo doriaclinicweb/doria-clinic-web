@@ -369,6 +369,8 @@ collections:
           - { name: software_citas, label: "Enlace para pedir cita", widget: string, required: false }
           - { name: google_business_profile, label: "Perfil de Google Business", widget: string, required: false }
           - { name: nombre_google_maps, label: "Nombre exacto en Google Maps", widget: string, required: false, hint: "Tal cual aparece en la ficha de Google Business (Perfil de Empresa). Se usa para que el mapa incrustado muestre el pin con el nombre. Si se deja vacío, el mapa mostrará un pin sin etiqueta en las coordenadas exactas." }
+          - { name: google_valoracion, label: "Valoración media en Google (de 0 a 5)", widget: number, value_type: float, min: 0, max: 5, default: 5 }
+          - { name: google_num_resenas, label: "Número de reseñas en Google", widget: number, value_type: int, min: 0, hint: "Actualízalo de vez en cuando para que coincida con el número real en tu ficha de Google." }
           - name: redes
             label: "Redes"
             widget: object

@@ -207,11 +207,18 @@ a { color: inherit; }
 @keyframes espacio-desfile { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .espacio-pista { animation: none; overflow-x: auto; } }
 
-.opiniones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-.opiniones blockquote { margin: 0; border-top: 2px solid var(--verde); padding-top: 1.4rem; }
-.opiniones q { font-family: var(--display); font-size: 1.15rem; line-height: 1.42; display: block; }
-.opiniones cite { display: block; margin-top: 1rem; font-style: normal; font-size: 0.88rem; color: #556055; }
-@media (max-width: 800px) { .opiniones { grid-template-columns: 1fr; gap: 2rem; } }
+.resenas-estrellas { display: inline-flex; gap: 1px; color: #F2B01E; }
+.resenas-estrellas svg { width: 0.95em; height: 0.95em; fill: currentColor; }
+.resenas-resumen { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.6rem; font-size: 0.95rem; color: #556055; }
+.resenas-resumen strong { font-family: var(--display); color: var(--verde); }
+.resenas-carrusel { background: transparent; padding: 0 clamp(1.6rem, 4vw, 2.6rem); margin-top: 2.5rem; }
+@media (max-width: 700px) { .resenas-carrusel { padding: 0 1.6rem; } }
+.resenas-tarjeta { flex: 0 0 clamp(16rem, 30vw, 20rem); scroll-snap-align: start; background: var(--crema); border-radius: calc(20 * var(--size)); padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
+.resenas-cabecera { display: flex; align-items: center; justify-content: space-between; }
+.resenas-cabecera .resenas-estrellas svg { width: 1.05em; height: 1.05em; }
+.resenas-marca { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; }
+.resenas-tarjeta q { font-family: var(--display); font-size: 1.05rem; line-height: 1.45; quotes: none; }
+.resenas-tarjeta cite { font-style: normal; font-size: 0.88rem; color: #556055; }
 
 .financiacion-banner { background: var(--verde); padding: clamp(3rem, 7vw, 5rem) 0; }
 .financiacion-banner .financiacion-destacada { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.9rem; text-decoration: none; color: var(--crema); max-width: 40rem; margin: 0 auto; }
