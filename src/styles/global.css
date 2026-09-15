@@ -162,6 +162,8 @@ a { color: inherit; }
 .equipo ul { list-style: none; padding: 0; margin: 0.7rem 0 0; font-size: 0.82rem; color: #556055; }
 .equipo li { padding-left: 0.9rem; position: relative; line-height: 1.45; margin-bottom: 0.2rem; }
 .equipo li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 4px; height: 4px; background: var(--verde-claro); border-radius: 50%; }
+.equipo .mas { display: block; margin-top: 0.9rem; font-family: var(--display); color: var(--verde); font-size: 0.88rem; transition: opacity .18s; }
+.equipo-tarjeta:hover .mas { opacity: 0.7; }
 @media (max-width: 900px) { .equipo { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 .equipo-tarjeta { text-decoration: none; color: inherit; display: block; }
 .equipo-tarjeta img { transition: opacity .18s; }

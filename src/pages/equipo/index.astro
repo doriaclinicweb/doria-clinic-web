@@ -25,6 +25,7 @@ const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
           <figcaption>
             <span class="nombre">{doc.data.nombre}</span>
             <span class="puesto">{doc.data.cargo}</span>
+            <span class="mas">Ver ficha →</span>
           </figcaption>
         </figure>
       </a>

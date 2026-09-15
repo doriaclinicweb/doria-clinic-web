@@ -5,6 +5,7 @@ import type { Idioma } from '../utils/idioma';
 interface Props { idioma: Idioma; titulo: string }
 const { idioma, titulo } = Astro.props;
 const prefijo = idioma === 'es' ? '' : '/' + idioma;
+const verFicha = { es: 'Ver ficha', ca: 'Veure fitxa', en: 'View profile' }[idioma];
 
 const cargoDe = (doc) =>
   idioma === 'ca' ? doc.cargo_ca || doc.cargo : idioma === 'en' ? doc.cargo_en || doc.cargo : doc.cargo;
@@ -30,6 +31,7 @@ const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
               <span class="nombre">{doc.data.nombre}</span>
               <span class="puesto">{cargoDe(doc.data)}</span>
               <ul>{titulacionDe(doc.data).slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+              <span class="mas">{verFicha} →</span>
             </figcaption>
           </figure>
         </a>
