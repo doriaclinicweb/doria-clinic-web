@@ -22,7 +22,7 @@ proceso:
     descripcion: "We carry out the chosen treatment and review the result to ensure a harmonious smile."
 faqs:
   - pregunta: "What's better, orthodontics or veneers, to close a diastema?"
-    respuesta: "It depends on the case: orthodontics moves the tooth to its ideal position more permanently; veneers or composite close the gap visually in a single session, but without correcting the tooth's actual position."
+    respuesta: 'It depends on the case: <a href="/en/especialidades/ortodoncia/">orthodontics</a> moves the tooth to its ideal position more permanently; <a href="/en/tratamientos/carillas-dentales/">veneers</a> or composite close the gap visually in a single session, but without correcting the tooth''s actual position.'
   - pregunta: "Can the diastema reopen after orthodontics?"
     respuesta: "It can happen, especially if there's a prominent lip frenum that hasn't been corrected. That's why we assess this possibility before deciding on treatment."
   - pregunta: "Is it only a cosmetic treatment?"
@@ -38,7 +38,8 @@ seo:
 
 A diastema is a visible gap between two teeth, most often between the upper
 central incisors. It can be due to a mismatch between tooth size and jaw size, a
-prominent lip frenum, or the loss of a neighbouring tooth.
+prominent [lip frenum](/en/especialidades/cirugia-oral/), or the loss of a
+neighbouring tooth.
 
 ## How it's closed
 

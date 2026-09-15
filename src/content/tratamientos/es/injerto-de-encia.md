@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Duele la recuperación?"
     respuesta: "Se realiza con anestesia local. Las molestias posteriores son similares a una pequeña herida en el paladar o la encía, y se controlan con la medicación pautada."
   - pregunta: "¿La encía puede volver a retraerse tras el injerto?"
-    respuesta: "Con una buena técnica de cepillado y revisiones periódicas, el resultado es estable a largo plazo, aunque factores como el bruxismo o una técnica de cepillado agresiva pueden favorecer una nueva recesión."
+    respuesta: 'Con una buena técnica de cepillado y revisiones periódicas, el resultado es estable a largo plazo, aunque factores como el <a href="/tratamientos/atm-bruxismo/">bruxismo</a> o una técnica de cepillado agresiva pueden favorecer una nueva recesión.'
 casos: []
 actualizado: 2026-09-05
 seo:

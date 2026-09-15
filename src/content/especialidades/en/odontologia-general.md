@@ -16,7 +16,7 @@ faqs:
   - pregunta: "Do fillings hurt?"
     respuesta: "No. They're carried out under local anaesthesia, so you won't feel pain during treatment. It's common to feel some sensitivity for the first few days, which goes away on its own."
   - pregunta: "What happens if I need more specific treatment?"
-    respuesta: "If we detect something that requires a specialist — root canal treatment, a receding gum, a bite misalignment — we'll explain it clearly and refer you internally to the team doctor trained in that area, without changing clinics."
+    respuesta: 'If we detect something that requires a specialist — <a href="/en/especialidades/endodoncia/">root canal treatment</a>, a <a href="/en/especialidades/periodoncia/">receding gum</a>, a <a href="/en/especialidades/ortodoncia/">bite misalignment</a> — we''ll explain it clearly and refer you internally to the team doctor trained in that area, without changing clinics.'
 seo:
   titulo_seo: "General Dentist in the Eixample, Barcelona | Doria Clinic"
   meta_descripcion: "Check-ups, cleanings and fillings on Carrer Villarroel, Barcelona. First visit with a full check-up and treatment plan, no obligation."
@@ -47,8 +47,9 @@ oral health.
 
 Professional teeth cleaning removes bacterial plaque and tartar built up in areas
 daily brushing doesn't reach, especially between teeth and beneath the gumline. It's
-the most effective preventive treatment against decay and gum disease, and we
-recommend it once or twice a year depending on the case.
+the most effective preventive treatment against decay and
+[gum disease](/en/especialidades/periodoncia/), and we recommend it once or twice a
+year depending on the case.
 
 ## Oral cancer screening
 

@@ -78,7 +78,7 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
 
       <div class="indicaciones">
         <strong>Cuándo se indica {d.titulo}</strong>
-        <ul>{d.cuando_se_indica.map((s) => <li>{s}</li>)}</ul>
+        <ul>{d.cuando_se_indica.map((s) => <li set:html={s} />)}</ul>
       </div>
 
       {d.proceso?.length ? (
@@ -88,7 +88,7 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
             {d.proceso.map((p) => (
               <li>
                 <strong>{p.titulo}</strong>
-                <div>{p.descripcion}</div>
+                <div set:html={p.descripcion} />
               </li>
             ))}
           </ol>
@@ -101,7 +101,7 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
           {d.faqs.map((f) => (
             <details class="faq">
               <summary>{f.pregunta}</summary>
-              <p>{f.respuesta}</p>
+              <p set:html={f.respuesta} />
             </details>
           ))}
         </>

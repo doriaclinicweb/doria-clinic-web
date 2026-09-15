@@ -50,7 +50,7 @@ inmediata](/tratamientos/carga-inmediata/).
 
 En las restauraciones de arcada completa no hace falta un implante por cada diente
 perdido. El éxito depende de un estudio previo detallado: calculamos el número óptimo y
-la ubicación de las fijaciones para que la [prótesis](/especialidades/protesis-dental/)
+la ubicación de las fijaciones para que la [prótesis sobre implantes](/tratamientos/protesis-sobre-implantes/)
 quede equilibrada y las cargas se repartan bien.
 
 ## Regeneración ósea

@@ -26,7 +26,7 @@ faqs:
   - pregunta: "What happens if I don't replace the missing tooth?"
     respuesta: "The neighbouring teeth tend to shift into the empty space over time, which can alter your bite and complicate future treatment."
   - pregunta: "How long until I have the final tooth?"
-    respuesta: "The standard protocol waits about two months for bone integration. If you'd rather not wait, we assess whether your case is suitable for immediate loading."
+    respuesta: 'The standard protocol waits about two months for bone integration. If you''d rather not wait, we assess whether your case is suitable for <a href="/en/tratamientos/carga-inmediata/">immediate loading</a>.'
 casos: []
 actualizado: 2026-09-05
 seo:

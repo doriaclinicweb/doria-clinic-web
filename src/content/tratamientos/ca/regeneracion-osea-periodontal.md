@@ -24,7 +24,7 @@ faqs:
   - pregunta: "Es recupera tot l'os perdut?"
     respuesta: "No sempre en la seva totalitat, però en molts casos es recupera una part significativa del suport ossi, suficient per estabilitzar la dent i aturar la seva mobilitat."
   - pregunta: "En què es diferencia de la regeneració òssia per a implants?"
-    respuesta: "L'objectiu és diferent: aquí es tracta de salvar una dent natural amb periodontitis, mentre que la regeneració prèvia a un implant prepara una zona sense dents per poder col·locar-lo."
+    respuesta: 'L''objectiu és diferent: aquí es tracta de salvar una dent natural amb periodontitis, mentre que la regeneració prèvia a un <a href="/ca/especialidades/implantes-dentales/">implant</a> prepara una zona sense dents per poder col·locar-lo.'
   - pregunta: "Cal un manteniment especial després?"
     respuesta: "Sí. El manteniment periodontal periòdic és imprescindible perquè l'os regenerat es mantingui estable a llarg termini."
 casos: []

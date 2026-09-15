@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Els bràquets fan mal?"
     respuesta: "La col·locació no fa mal, encara que és normal notar molèstia o pressió els primers dies després de cada ajust, que es controla amb analgèsics habituals si cal."
   - pregunta: "Puc portar bràquets si practico esport de contacte?"
-    respuesta: "Sí, amb un protector bucal adaptat a portar bràquets, dins de la nostra àrea d'odontologia esportiva."
+    respuesta: 'Sí, amb un <a href="/ca/tratamientos/protectores-bucales/">protector bucal</a> adaptat a portar bràquets, dins de la nostra àrea d''<a href="/ca/especialidades/odontologia-deportiva/">odontologia esportiva</a>.'
 casos: []
 actualizado: 2026-09-05
 seo:

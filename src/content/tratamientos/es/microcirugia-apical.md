@@ -10,9 +10,9 @@ numero_sesiones: "1"
 anestesia: local
 especialista: guillermo-doria
 cuando_se_indica:
-  - "La infección persiste después de una endodoncia o un retratamiento"
+  - 'La infección persiste después de una <a href="/especialidades/endodoncia/">endodoncia</a> o un retratamiento'
   - "Hay una lesión en el ápice que no responde al tratamiento por el interior del conducto"
-  - "La alternativa realista es la extracción de la pieza"
+  - 'La alternativa realista es la <a href="/especialidades/cirugia-oral/">extracción</a> de la pieza'
 proceso:
   - titulo: "Planificación digital 3D"
     descripcion: "Radiografía 3D para localizar el foco de infección y planificar el acceso antes de la intervención."

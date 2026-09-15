@@ -10,8 +10,8 @@ numero_sesiones: "1 (compòsit) o 2-3 (porcellana)"
 anestesia: local
 especialista: ines-doria
 cuando_se_indica:
-  - "Dents amb taques, desgast o forma irregular que no milloren amb blanquejament"
-  - "Petits espais o malposicions que no requereixen ortodòncia completa"
+  - 'Dents amb taques, desgast o forma irregular que no milloren amb <a href="/ca/tratamientos/blanqueamiento-dental/">blanquejament</a>'
+  - 'Petits espais o malposicions que no requereixen <a href="/ca/especialidades/ortodoncia/">ortodòncia</a> completa'
   - "Desig de millorar el somriure preservant la màxima quantitat de dent natural possible"
 proceso:
   - titulo: "Planificació digital del somriure"

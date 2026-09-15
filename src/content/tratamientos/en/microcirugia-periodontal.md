@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Is it more expensive than conventional surgery?"
     respuesta: "The cost may be somewhat higher due to the time and technology involved, but the result and post-operative comfort usually make up for it. We give you the exact quote at your first visit."
   - pregunta: "What cases is it especially recommended for?"
-    respuesta: "It's particularly valuable for gum grafts and other procedures where the final aesthetic result is a priority, such as with very visible smiles."
+    respuesta: 'It''s particularly valuable for <a href="/en/tratamientos/injerto-de-encia/">gum grafts</a> and other procedures where the final aesthetic result is a priority, such as with very visible smiles.'
 casos: []
 actualizado: 2026-09-05
 seo:

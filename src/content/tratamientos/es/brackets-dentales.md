@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Los brackets duelen?"
     respuesta: "La colocación no duele, aunque es normal notar molestia o presión los primeros días tras cada ajuste, que se controla con analgésicos habituales si hace falta."
   - pregunta: "¿Puedo llevar brackets si practico deporte de contacto?"
-    respuesta: "Sí, con un protector bucal adaptado a llevar brackets, dentro de nuestra área de odontología deportiva."
+    respuesta: 'Sí, con un <a href="/tratamientos/protectores-bucales/">protector bucal</a> adaptado a llevar brackets, dentro de nuestra área de <a href="/especialidades/odontologia-deportiva/">odontología deportiva</a>.'
 casos: []
 actualizado: 2026-09-05
 seo:

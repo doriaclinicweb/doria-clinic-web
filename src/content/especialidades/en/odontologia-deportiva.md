@@ -54,8 +54,9 @@ number or your club's logo, permanently built in.
 - **Hygiene and hydration**: isotonic drinks, energy gels and the dry mouth caused
   by exertion increase the risk of decay and erosion. We help you offset this
   without giving up your sports nutrition.
-- **Bite balance**: poor alignment can create tension in the temporomandibular
-  joint that carries through to the spine, affecting balance and power.
+- **Bite balance**: poor alignment can create tension in the
+  [temporomandibular joint](/en/tratamientos/atm-bruxismo/) that carries through to the
+  spine, affecting balance and power.
 
 If, despite preventive measures, you suffer a knock while playing sport, see our
 [dental trauma](/en/especialidades/traumatologia-dental/) page to know how to act.

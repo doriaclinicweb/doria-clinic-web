@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Qué pasa si no repongo el diente perdido?"
     respuesta: "Los dientes vecinos tienden a desplazarse hacia el espacio vacío con el tiempo, lo que puede alterar la mordida y complicar tratamientos futuros."
   - pregunta: "¿Cuánto tiempo pasa hasta tener el diente definitivo?"
-    respuesta: "El protocolo estándar espera unos dos meses de integración ósea. Si prefieres no esperar, valoramos si tu caso es apto para carga inmediata."
+    respuesta: 'El protocolo estándar espera unos dos meses de integración ósea. Si prefieres no esperar, valoramos si tu caso es apto para <a href="/tratamientos/carga-inmediata/">carga inmediata</a>.'
 casos: []
 actualizado: 2026-09-05
 seo:

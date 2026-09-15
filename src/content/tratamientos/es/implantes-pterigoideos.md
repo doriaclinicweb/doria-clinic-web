@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Pérdida de hueso importante en la zona posterior del maxilar superior"
   - "El paciente quiere evitar una elevación de seno maxilar o un injerto óseo"
-  - "Necesidad de dar soporte posterior estable a una prótesis de arcada completa"
+  - 'Necesidad de dar soporte posterior estable a una <a href="/tratamientos/implantes-arcada-completa/">prótesis de arcada completa</a>'
 proceso:
   - titulo: "Estudio 3D"
     descripcion: "Radiografía 3D para localizar con precisión el hueso pterigoideo y planificar el ángulo exacto de inserción del implante."

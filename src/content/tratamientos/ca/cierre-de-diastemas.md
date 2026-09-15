@@ -22,7 +22,7 @@ proceso:
     descripcion: "Executem el tractament triat i revisem el resultat per assegurar un somriure harmoniós."
 faqs:
   - pregunta: "Què és millor, ortodòncia o carilles per tancar un diastema?"
-    respuesta: "Depèn del cas: l'ortodòncia mou la dent a la seva posició ideal de manera més definitiva; les carilles o el compòsit tanquen l'espai visualment en una sola sessió, però sense corregir la posició real de la dent."
+    respuesta: 'Depèn del cas: l''<a href="/ca/especialidades/ortodoncia/">ortodòncia</a> mou la dent a la seva posició ideal de manera més definitiva; les <a href="/ca/tratamientos/carillas-dentales/">carilles</a> o el compòsit tanquen l''espai visualment en una sola sessió, però sense corregir la posició real de la dent.'
   - pregunta: "El diastema pot tornar a obrir-se després de l'ortodòncia?"
     respuesta: "Pot passar, sobretot si hi ha un fre labial prominent sense corregir. Per això valorem aquesta possibilitat abans de decidir el tractament."
   - pregunta: "És un tractament només estètic?"
@@ -38,7 +38,8 @@ seo:
 
 Un diastema és un espai visible entre dues dents, amb més freqüència entre els incisius
 centrals superiors. Pot ser degut a la desproporció entre la mida de les dents i de l'os,
-a un fre labial prominent, o a la pèrdua d'una peça veïna.
+a un [fre labial](/ca/especialidades/cirugia-oral/) prominent, o a la pèrdua d'una peça
+veïna.
 
 ## Com es tanca
 

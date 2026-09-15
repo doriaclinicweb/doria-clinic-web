@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Puedo tener dientes fijos el mismo día de la cirugía?"
     respuesta: "En muchos casos sí, mediante el protocolo de carga inmediata, que coloca una prótesis provisional fija el mismo día."
   - pregunta: "¿Qué pasa si no tengo suficiente hueso?"
-    respuesta: "Se valoran alternativas como la regeneración ósea en cirugía oral o los implantes pterigoideos, que aprovechan zonas de hueso más denso sin necesidad de injerto."
+    respuesta: 'Se valoran alternativas como la regeneración ósea en <a href="/especialidades/cirugia-oral/">cirugía oral</a> o los <a href="/tratamientos/implantes-pterigoideos/">implantes pterigoideos</a>, que aprovechan zonas de hueso más denso sin necesidad de injerto.'
 casos: []
 actualizado: 2026-09-05
 seo:
@@ -44,7 +44,7 @@ pieza perdida.
 ## Cómo se planifica
 
 El éxito depende de un estudio 3D detallado: calculamos el número óptimo y la ubicación
-de las fijaciones para que la prótesis quede equilibrada y las cargas masticatorias se
-repartan bien entre todos los implantes. Cuando el hueso posterior es limitado,
+de las fijaciones para que la [prótesis sobre implantes](/tratamientos/protesis-sobre-implantes/)
+quede equilibrada y las cargas masticatorias se repartan bien entre todos los implantes. Cuando el hueso posterior es limitado,
 valoramos [implantes pterigoideos](/tratamientos/implantes-pterigoideos/) como
 alternativa al injerto óseo.

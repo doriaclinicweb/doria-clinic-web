@@ -24,7 +24,7 @@ faqs:
   - pregunta: "Does all the lost bone grow back?"
     respuesta: "Not always in full, but in many cases a significant part of the bone support is recovered, enough to stabilise the tooth and stop it being loose."
   - pregunta: "How is it different from bone regeneration for implants?"
-    respuesta: "The goal is different: here it's about saving a natural tooth affected by periodontitis, whereas regeneration before an implant prepares a toothless area so an implant can be placed."
+    respuesta: 'The goal is different: here it''s about saving a natural tooth affected by periodontitis, whereas regeneration before an <a href="/en/especialidades/implantes-dentales/">implant</a> prepares a toothless area so an implant can be placed.'
   - pregunta: "Is special maintenance needed afterwards?"
     respuesta: "Yes. Regular periodontal maintenance is essential for the regenerated bone to stay stable in the long term."
 casos: []

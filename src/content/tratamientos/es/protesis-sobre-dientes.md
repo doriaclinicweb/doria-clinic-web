@@ -22,7 +22,7 @@ proceso:
     descripcion: "Ajustamos la prótesis en boca y la cementamos o entregamos, según sea fija o removible."
 faqs:
   - pregunta: "¿Es mejor una prótesis sobre dientes que sobre implantes?"
-    respuesta: "Depende del caso: sobre dientes naturales suele ser más rápida y económica cuando esos dientes están sanos, mientras que sobre implantes evita desgastarlos, pero requiere una cirugía previa."
+    respuesta: 'Depende del caso: sobre dientes naturales suele ser más rápida y económica cuando esos dientes están sanos, mientras que <a href="/tratamientos/protesis-sobre-implantes/">sobre implantes</a> evita desgastarlos, pero requiere una cirugía previa.'
   - pregunta: "¿Hay que tallar mucho los dientes de soporte?"
     respuesta: "En las prótesis fijas se requiere un tallado moderado de los dientes de soporte para dar espacio a la corona; en las removibles, apenas se modifican."
   - pregunta: "¿Cuánto dura este tipo de prótesis?"

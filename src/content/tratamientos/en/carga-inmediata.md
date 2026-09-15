@@ -24,7 +24,7 @@ proceso:
     descripcion: "Once the implant has integrated, the provisional is replaced with the final prosthesis."
 faqs:
   - pregunta: "Is every case suitable for immediate loading?"
-    respuesta: "No. Enough bone is needed for the implant to be stable from day one. The prior study with a 3D X-ray determines whether it's viable; if bone is lacking, bone regeneration is considered first."
+    respuesta: 'No. Enough bone is needed for the implant to be stable from day one. The prior study with a 3D X-ray determines whether it''s viable; if bone is lacking, <a href="/en/especialidades/cirugia-oral/">bone regeneration</a> is considered first.'
   - pregunta: "How is it different from the standard protocol?"
     respuesta: "The standard protocol waits about two months of bone integration before placing the tooth. With immediate loading, the provisional tooth is placed on the same day."
   - pregunta: "Can I go about my normal life on the day of surgery?"

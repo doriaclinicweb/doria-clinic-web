@@ -46,7 +46,7 @@ porcelain or resin. They can also be:
 The choice depends on the specific needs of each case, which we assess at the first
 visit. When the main goal is improving the look of teeth that are still present,
 without replacing missing ones, the alternative is usually a
-[dental veneer](/en/especialidades/estetica-dental/) rather than a prosthesis.
+[dental veneer](/en/tratamientos/carillas-dentales/) rather than a prosthesis.
 
 ## Caring for your prosthesis
 

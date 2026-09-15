@@ -12,7 +12,7 @@ especialista: laura-rojas
 cuando_se_indica:
   - "Revisió i manteniment preventiu recomanat una o dues vegades l'any"
   - "Sarro visible o sensació d'aspror a les dents"
-  - "Abans de tractaments estètics com el blanquejament o les carilles"
+  - 'Abans de tractaments estètics com el <a href="/ca/tratamientos/blanqueamiento-dental/">blanquejament</a> o les <a href="/ca/tratamientos/carillas-dentales/">carilles</a>'
 proceso:
   - titulo: "Diagnòstic"
     descripcion: "Valorem l'estat de genives i dents abans de començar la neteja."

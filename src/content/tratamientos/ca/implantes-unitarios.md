@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Què passa si no reposo la dent perduda?"
     respuesta: "Les dents veïnes tendeixen a desplaçar-se cap a l'espai buit amb el temps, cosa que pot alterar la mossegada i complicar tractaments futurs."
   - pregunta: "Quant de temps passa fins a tenir la dent definitiva?"
-    respuesta: "El protocol estàndard espera uns dos mesos d'integració òssia. Si prefereixes no esperar, valorem si el teu cas és apte per a càrrega immediata."
+    respuesta: 'El protocol estàndard espera uns dos mesos d''integració òssia. Si prefereixes no esperar, valorem si el teu cas és apte per a <a href="/ca/tratamientos/carga-inmediata/">càrrega immediata</a>.'
 casos: []
 actualizado: 2026-09-05
 seo:

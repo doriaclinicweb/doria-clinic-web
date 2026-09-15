@@ -10,8 +10,8 @@ numero_sesiones: "1 (composite) or 2-3 (porcelain)"
 anestesia: local
 especialista: ines-doria
 cuando_se_indica:
-  - "Teeth with stains, wear or an irregular shape that whitening doesn't improve"
-  - "Small gaps or malpositions that don't require full orthodontics"
+  - 'Teeth with stains, wear or an irregular shape that <a href="/en/tratamientos/blanqueamiento-dental/">whitening</a> doesn''t improve'
+  - 'Small gaps or malpositions that don''t require full <a href="/en/especialidades/ortodoncia/">orthodontics</a>'
   - "Wanting to improve the smile while preserving as much natural tooth as possible"
 proceso:
   - titulo: "Digital smile planning"

@@ -22,7 +22,7 @@ proceso:
     descripcion: "Ejecutamos el tratamiento elegido y revisamos el resultado para asegurar una sonrisa armoniosa."
 faqs:
   - pregunta: "¿Qué es mejor, ortodoncia o carillas para cerrar un diastema?"
-    respuesta: "Depende del caso: la ortodoncia mueve el diente a su posición ideal de forma más definitiva; las carillas o el composite cierran el espacio visualmente en una sola sesión, pero sin corregir la posición real del diente."
+    respuesta: 'Depende del caso: la <a href="/especialidades/ortodoncia/">ortodoncia</a> mueve el diente a su posición ideal de forma más definitiva; las <a href="/tratamientos/carillas-dentales/">carillas</a> o el composite cierran el espacio visualmente en una sola sesión, pero sin corregir la posición real del diente.'
   - pregunta: "¿El diastema puede volver a abrirse tras la ortodoncia?"
     respuesta: "Puede ocurrir, sobre todo si hay un frenillo labial prominente sin corregir. Por eso valoramos esa posibilidad antes de decidir el tratamiento."
   - pregunta: "¿Es un tratamiento solo estético?"
@@ -38,7 +38,8 @@ seo:
 
 Un diastema es un espacio visible entre dos dientes, con mayor frecuencia entre los
 incisivos centrales superiores. Puede deberse a la desproporción entre el tamaño de los
-dientes y del hueso, a un frenillo labial prominente, o a la pérdida de una pieza vecina.
+dientes y del hueso, a un [frenillo labial](/especialidades/cirugia-oral/) prominente, o
+a la pérdida de una pieza vecina.
 
 ## Cómo se cierra
 

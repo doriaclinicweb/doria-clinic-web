@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Fa mal la recuperació?"
     respuesta: "Es fa amb anestèsia local. Les molèsties posteriors són similars a una petita ferida al paladar o la geniva, i es controlen amb la medicació pautada."
   - pregunta: "La geniva pot tornar a retreure's després de l'empelt?"
-    respuesta: "Amb una bona tècnica de raspallat i revisions periòdiques, el resultat és estable a llarg termini, encara que factors com el bruxisme o una tècnica de raspallat agressiva poden afavorir una nova recessió."
+    respuesta: 'Amb una bona tècnica de raspallat i revisions periòdiques, el resultat és estable a llarg termini, encara que factors com el <a href="/ca/tratamientos/atm-bruxismo/">bruxisme</a> o una tècnica de raspallat agressiva poden afavorir una nova recessió.'
 casos: []
 actualizado: 2026-09-05
 seo:

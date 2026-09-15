@@ -24,7 +24,7 @@ faqs:
   - pregunta: "¿Se recupera todo el hueso perdido?"
     respuesta: "No siempre en su totalidad, pero en muchos casos se recupera una parte significativa del soporte óseo, suficiente para estabilizar el diente y detener su movilidad."
   - pregunta: "¿En qué se diferencia de la regeneración ósea para implantes?"
-    respuesta: "El objetivo es distinto: aquí se trata de salvar un diente natural con periodontitis, mientras que la regeneración previa a un implante prepara una zona sin dientes para poder colocarlo."
+    respuesta: 'El objetivo es distinto: aquí se trata de salvar un diente natural con periodontitis, mientras que la regeneración previa a un <a href="/especialidades/implantes-dentales/">implante</a> prepara una zona sin dientes para poder colocarlo.'
   - pregunta: "¿Es necesario un mantenimiento especial después?"
     respuesta: "Sí. El mantenimiento periodontal periódico es imprescindible para que el hueso regenerado se mantenga estable a largo plazo."
 casos: []

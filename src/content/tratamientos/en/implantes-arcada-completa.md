@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Can I have fixed teeth on the same day as surgery?"
     respuesta: "In many cases yes, through the immediate-loading protocol, which fits a fixed provisional prosthesis on the same day."
   - pregunta: "What happens if I don't have enough bone?"
-    respuesta: "Alternatives such as bone regeneration in oral surgery, or pterygoid implants, which make use of denser bone areas without needing a graft, are considered."
+    respuesta: 'Alternatives such as bone regeneration in <a href="/en/especialidades/cirugia-oral/">oral surgery</a>, or <a href="/en/tratamientos/implantes-pterigoideos/">pterygoid implants</a>, which make use of denser bone areas without needing a graft, are considered.'
 casos: []
 actualizado: 2026-09-05
 seo:
@@ -43,7 +43,7 @@ rather than one per missing tooth.
 ## How it's planned
 
 Success depends on a detailed 3D study: we calculate the optimal number and
-placement of fixtures so the prosthesis is well balanced and chewing loads are
-distributed well across all the implants. When the posterior bone is limited, we
+placement of fixtures so the [implant-supported prosthesis](/en/tratamientos/protesis-sobre-implantes/)
+is well balanced and chewing loads are distributed well across all the implants. When the posterior bone is limited, we
 consider [pterygoid implants](/en/tratamientos/implantes-pterigoideos/) as an
 alternative to a bone graft.

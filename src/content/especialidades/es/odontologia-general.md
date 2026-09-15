@@ -16,7 +16,7 @@ faqs:
   - pregunta: "¿Las obturaciones (empastes) duelen?"
     respuesta: "No. Se realizan con anestesia local, así que no notarás dolor durante el tratamiento. Es habitual sentir algo de sensibilidad los primeros días, que desaparece por sí sola."
   - pregunta: "¿Qué pasa si necesito un tratamiento más específico?"
-    respuesta: "Si detectamos algo que requiere un especialista —una endodoncia, una encía retraída, una maloclusión—, te lo explicamos con claridad y te derivamos internamente al doctor del equipo formado en esa área, sin cambiar de clínica."
+    respuesta: 'Si detectamos algo que requiere un especialista —una <a href="/especialidades/endodoncia/">endodoncia</a>, una <a href="/especialidades/periodoncia/">encía retraída</a>, una <a href="/especialidades/ortodoncia/">maloclusión</a>—, te lo explicamos con claridad y te derivamos internamente al doctor del equipo formado en esa área, sin cambiar de clínica.'
 seo:
   titulo_seo: "Dentista general en el Eixample de Barcelona | Doria Clinic"
   meta_descripcion: "Revisiones, limpiezas y empastes en Carrer Villarroel, Barcelona. Primera visita con revisión completa y plan de tratamiento, sin compromiso."
@@ -48,8 +48,9 @@ rentable en salud bucodental.
 
 La limpieza bucal profesional elimina la placa bacteriana y el sarro acumulados en zonas
 donde el cepillado diario no llega, especialmente entre los dientes y bajo el margen de la
-encía. Es el tratamiento preventivo más eficaz contra la caries y la enfermedad
-periodontal, y la recomendamos una o dos veces al año según cada caso.
+encía. Es el tratamiento preventivo más eficaz contra la caries y la
+[enfermedad periodontal](/especialidades/periodoncia/), y la recomendamos una o dos
+veces al año según cada caso.
 
 ## Detección de cáncer oral
 

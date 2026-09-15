@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Es más cara que la cirugía convencional?"
     respuesta: "El coste puede ser algo mayor por el tiempo y la tecnología empleados, pero el resultado y la comodidad postoperatoria suelen compensarlo. Te damos el presupuesto exacto en la primera visita."
   - pregunta: "¿Para qué casos se recomienda especialmente?"
-    respuesta: "Es especialmente valiosa en injertos de encía y otros procedimientos donde el resultado estético final es prioritario, como en sonrisas muy visibles."
+    respuesta: 'Es especialmente valiosa en <a href="/tratamientos/injerto-de-encia/">injertos de encía</a> y otros procedimientos donde el resultado estético final es prioritario, como en sonrisas muy visibles.'
 casos: []
 actualizado: 2026-09-05
 seo:

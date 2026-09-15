@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Is it a painful treatment?"
     respuesta: "It's carried out under local anaesthesia, so you won't feel pain. Healing is similar to a small wound on the gum."
   - pregunta: "Can it be combined with other cosmetic treatments?"
-    respuesta: "Yes. It's often combined with teeth whitening or veneers as part of a comprehensive aesthetic plan."
+    respuesta: 'Yes. It''s often combined with <a href="/en/tratamientos/blanqueamiento-dental/">teeth whitening</a> or <a href="/en/tratamientos/carillas-dentales/">veneers</a> as part of a comprehensive aesthetic plan.'
 casos: []
 actualizado: 2026-09-05
 seo:

@@ -26,7 +26,7 @@ faqs:
   - pregunta: "És un tractament dolorós?"
     respuesta: "Es fa amb anestèsia local, així que no se sent dolor. La cicatrització és similar a una petita ferida a la geniva."
   - pregunta: "Es pot combinar amb altres tractaments estètics?"
-    respuesta: "Sí. És habitual combinar-lo amb blanquejament dental o carilles dins d'un pla d'estètica integral."
+    respuesta: 'Sí. És habitual combinar-lo amb <a href="/ca/tratamientos/blanqueamiento-dental/">blanquejament dental</a> o <a href="/ca/tratamientos/carillas-dentales/">carilles</a> dins d''un pla d''estètica integral.'
 casos: []
 actualizado: 2026-09-05
 seo:

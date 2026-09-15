@@ -22,7 +22,7 @@ proceso:
     descripcion: "We adjust the prosthesis in the mouth and cement it or hand it over, depending on whether it's fixed or removable."
 faqs:
   - pregunta: "Is a prosthesis on natural teeth better than one on implants?"
-    respuesta: "It depends on the case: on natural teeth it's usually faster and more affordable when those teeth are healthy, while on implants it avoids wearing them down, but requires prior surgery."
+    respuesta: 'It depends on the case: on natural teeth it''s usually faster and more affordable when those teeth are healthy, while <a href="/en/tratamientos/protesis-sobre-implantes/">on implants</a> it avoids wearing them down, but requires prior surgery.'
   - pregunta: "Do the supporting teeth need a lot of shaping?"
     respuesta: "Fixed prostheses require moderate shaping of the supporting teeth to make room for the crown; removable ones are barely altered."
   - pregunta: "How long does this type of prosthesis last?"

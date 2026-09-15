@@ -49,8 +49,8 @@ immediata](/ca/tratamientos/carga-inmediata/).
 
 En les restauracions d'arcada completa no cal un implant per cada dent perduda. L'èxit
 depèn d'un estudi previ detallat: calculem el nombre òptim i la ubicació de les
-fixacions perquè la [pròtesi](/ca/especialidades/protesis-dental/) quedi equilibrada i
-les càrregues es reparteixin bé.
+fixacions perquè la [pròtesi sobre implants](/ca/tratamientos/protesis-sobre-implantes/)
+quedi equilibrada i les càrregues es reparteixin bé.
 
 ## Regeneració òssia
 

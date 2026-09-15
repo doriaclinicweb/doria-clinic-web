@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Dents grogues o enfosquides pel pas del temps, cafè, vi o tabac"
   - "Boca sana, sense càries ni genives inflamades, abans d'iniciar el blanquejament"
-  - "Desig d'aclarir el to dental sense tractaments més invasius com les carilles"
+  - 'Desig d''aclarir el to dental sense tractaments més invasius com les <a href="/ca/tratamientos/carillas-dentales/">carilles</a>'
 proceso:
   - titulo: "Revisió prèvia"
     descripcion: "Comprovem que no hi hagi càries ni genives inflamades abans de blanquejar, per evitar sensibilitat innecessària."
@@ -26,7 +26,7 @@ faqs:
   - pregunta: "El blanquejament fa malbé l'esmalt?"
     respuesta: "No, fet sota supervisió professional amb les concentracions adequades. Pot provocar sensibilitat temporal, que desapareix en pocs dies."
   - pregunta: "Serveix per a tots els tipus de taques?"
-    respuesta: "És eficaç per a l'enfosquiment generalitzat de la dent. Algunes taques internes o per tetraciclines responen pitjor i poden necessitar carilles per a un resultat òptim."
+    respuesta: 'És eficaç per a l''enfosquiment generalitzat de la dent. Algunes taques internes o per tetraciclines responen pitjor i poden necessitar <a href="/ca/tratamientos/carillas-dentales/">carilles</a> per a un resultat òptim.'
 casos: []
 actualizado: 2026-09-05
 seo:

@@ -12,7 +12,7 @@ especialista: laura-rojas
 cuando_se_indica:
   - "Revisión y mantenimiento preventivo recomendado una o dos veces al año"
   - "Sarro visible o sensación de aspereza en los dientes"
-  - "Antes de tratamientos estéticos como blanqueamiento o carillas"
+  - 'Antes de tratamientos estéticos como <a href="/tratamientos/blanqueamiento-dental/">blanqueamiento</a> o <a href="/tratamientos/carillas-dentales/">carillas</a>'
 proceso:
   - titulo: "Diagnóstico"
     descripcion: "Valoramos el estado de encías y dientes antes de empezar la limpieza."

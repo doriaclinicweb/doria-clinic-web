@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Does recovery hurt?"
     respuesta: "It's carried out under local anaesthesia. The after-effects are similar to a small wound on the palate or gum, and are managed with the prescribed medication."
   - pregunta: "Can the gum recede again after the graft?"
-    respuesta: "With good brushing technique and regular check-ups, the result is stable long-term, although factors such as bruxism or aggressive brushing can encourage a new recession."
+    respuesta: 'With good brushing technique and regular check-ups, the result is stable long-term, although factors such as <a href="/en/tratamientos/atm-bruxismo/">bruxism</a> or aggressive brushing can encourage a new recession.'
 casos: []
 actualizado: 2026-09-05
 seo:

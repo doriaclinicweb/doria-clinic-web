@@ -26,7 +26,7 @@ faqs:
   - pregunta: "És més cara que la cirurgia convencional?"
     respuesta: "El cost pot ser una mica més gran pel temps i la tecnologia emprats, però el resultat i la comoditat postoperatòria solen compensar-ho. Et donem el pressupost exacte a la primera visita."
   - pregunta: "Per a quins casos es recomana especialment?"
-    respuesta: "És especialment valuosa en empelts de geniva i altres procediments on el resultat estètic final és prioritari, com en somriures molt visibles."
+    respuesta: 'És especialment valuosa en <a href="/ca/tratamientos/injerto-de-encia/">empelts de geniva</a> i altres procediments on el resultat estètic final és prioritari, com en somriures molt visibles.'
 casos: []
 actualizado: 2026-09-05
 seo:

@@ -54,8 +54,9 @@ nom, el teu dorsal o el logotip del teu club, integrats de manera permanent.
 - **Higiene i hidratació**: les begudes isotòniques, els gels energètics i la sequedat
   bucal per l'esforç augmenten el risc de càries i erosió. T'ajudem a compensar-ho
   sense renunciar a la teva nutrició esportiva.
-- **Equilibri oclusal**: una mala alineació pot generar tensions a l'articulació
-  temporomandibular que es traslladen a la columna, afectant l'equilibri i la potència.
+- **Equilibri oclusal**: una mala alineació pot generar tensions a
+  l'[articulació temporomandibular](/ca/tratamientos/atm-bruxismo/) que es traslladen a
+  la columna, afectant l'equilibri i la potència.
 
 Si malgrat les mesures de prevenció pateixes un cop durant la pràctica esportiva,
 consulta la nostra [traumatologia dental](/ca/especialidades/traumatologia-dental/) per

@@ -54,9 +54,9 @@ tu dorsal o el logotipo de tu club, integrados de forma permanente.
 - **Higiene e hidratación**: las bebidas isotónicas, los geles energéticos y la sequedad
   bucal por el esfuerzo aumentan el riesgo de caries y erosión. Te ayudamos a
   compensarlo sin renunciar a tu nutrición deportiva.
-- **Equilibrio oclusal**: una mala alineación puede generar tensiones en la articulación
-  temporomandibular que se trasladan a la columna, afectando al equilibrio y a la
-  potencia.
+- **Equilibrio oclusal**: una mala alineación puede generar tensiones en la
+  [articulación temporomandibular](/tratamientos/atm-bruxismo/) que se trasladan a la
+  columna, afectando al equilibrio y a la potencia.
 
 Si a pesar de las medidas de prevención sufres un golpe durante la práctica deportiva,
 consulta nuestra [traumatología dental](/especialidades/traumatologia-dental/) para

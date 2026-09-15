@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Dientes amarillentos u oscurecidos por el paso del tiempo, café, vino o tabaco"
   - "Boca sana, sin caries ni encías inflamadas, antes de iniciar el blanqueamiento"
-  - "Deseo de aclarar el tono dental sin tratamientos más invasivos como las carillas"
+  - 'Deseo de aclarar el tono dental sin tratamientos más invasivos como las <a href="/tratamientos/carillas-dentales/">carillas</a>'
 proceso:
   - titulo: "Revisión previa"
     descripcion: "Comprobamos que no haya caries ni encías inflamadas antes de blanquear, para evitar sensibilidad innecesaria."
@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿El blanqueamiento daña el esmalte?"
     respuesta: "No, realizado bajo supervisión profesional con las concentraciones adecuadas. Puede provocar sensibilidad temporal, que desaparece en pocos días."
   - pregunta: "¿Sirve para todos los tipos de manchas?"
-    respuesta: "Es eficaz para el oscurecimiento generalizado del diente. Algunas manchas internas o por tetraciclinas responden peor y pueden necesitar carillas para un resultado óptimo."
+    respuesta: 'Es eficaz para el oscurecimiento generalizado del diente. Algunas manchas internas o por tetraciclinas responden peor y pueden necesitar <a href="/tratamientos/carillas-dentales/">carillas</a> para un resultado óptimo.'
 casos: []
 actualizado: 2026-09-05
 seo:

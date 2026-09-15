@@ -16,7 +16,7 @@ faqs:
   - pregunta: "Les obturacions (empastaments) fan mal?"
     respuesta: "No. Es fan amb anestèsia local, així que no notaràs dolor durant el tractament. És habitual sentir una mica de sensibilitat els primers dies, que desapareix per si sola."
   - pregunta: "Què passa si necessito un tractament més específic?"
-    respuesta: "Si detectem alguna cosa que requereix un especialista —una endodòncia, una geniva retreta, una maloclusió—, t'ho expliquem amb claredat i et derivem internament al doctor de l'equip format en aquesta àrea, sense canviar de clínica."
+    respuesta: 'Si detectem alguna cosa que requereix un especialista —una <a href="/ca/especialidades/endodoncia/">endodòncia</a>, una <a href="/ca/especialidades/periodoncia/">geniva retreta</a>, una <a href="/ca/especialidades/ortodoncia/">maloclusió</a>—, t''ho expliquem amb claredat i et derivem internament al doctor de l''equip format en aquesta àrea, sense canviar de clínica.'
 seo:
   titulo_seo: "Dentista general a l'Eixample de Barcelona | Doria Clinic"
   meta_descripcion: "Revisions, netejes i empastaments a Carrer Villarroel, Barcelona. Primera visita amb revisió completa i pla de tractament, sense compromís."
@@ -47,8 +47,9 @@ bucodental.
 
 La neteja bucal professional elimina la placa bacteriana i el sarro acumulats en zones on
 el raspallat diari no arriba, especialment entre les dents i sota el marge de la geniva.
-És el tractament preventiu més eficaç contra la càries i la malaltia periodontal, i el
-recomanem una o dues vegades l'any segons cada cas.
+És el tractament preventiu més eficaç contra la càries i la
+[malaltia periodontal](/ca/especialidades/periodoncia/), i el recomanem una o dues
+vegades l'any segons cada cas.
 
 ## Detecció de càncer oral
 

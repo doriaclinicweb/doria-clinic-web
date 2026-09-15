@@ -12,7 +12,7 @@ especialista: laura-rojas
 cuando_se_indica:
   - "Preventive check-up and maintenance recommended once or twice a year"
   - "Visible tartar or a rough feeling on the teeth"
-  - "Before cosmetic treatments such as whitening or veneers"
+  - 'Before cosmetic treatments such as <a href="/en/tratamientos/blanqueamiento-dental/">whitening</a> or <a href="/en/tratamientos/carillas-dentales/">veneers</a>'
 proceso:
   - titulo: "Assessment"
     descripcion: "We assess the condition of the gums and teeth before starting the cleaning."

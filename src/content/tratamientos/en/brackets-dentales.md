@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Do braces hurt?"
     respuesta: "Fitting them doesn't hurt, although it's normal to feel discomfort or pressure for the first few days after each adjustment, which can be managed with regular painkillers if needed."
   - pregunta: "Can I wear braces if I play contact sports?"
-    respuesta: "Yes, with a mouthguard adapted to fit over braces, within our sports dentistry area."
+    respuesta: 'Yes, with a <a href="/en/tratamientos/protectores-bucales/">mouthguard</a> adapted to fit over braces, within our <a href="/en/especialidades/odontologia-deportiva/">sports dentistry</a> area.'
 casos: []
 actualizado: 2026-09-05
 seo:

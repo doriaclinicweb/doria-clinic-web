@@ -26,7 +26,7 @@ faqs:
   - pregunta: "¿Es un tratamiento doloroso?"
     respuesta: "Se realiza con anestesia local, así que no se siente dolor. La cicatrización es similar a una pequeña herida en la encía."
   - pregunta: "¿Se puede combinar con otros tratamientos estéticos?"
-    respuesta: "Sí. Es habitual combinarlo con blanqueamiento dental o carillas dentro de un plan de estética integral."
+    respuesta: 'Sí. Es habitual combinarlo con <a href="/tratamientos/blanqueamiento-dental/">blanqueamiento dental</a> o <a href="/tratamientos/carillas-dentales/">carillas</a> dentro de un plan de estética integral.'
 casos: []
 actualizado: 2026-09-05
 seo:

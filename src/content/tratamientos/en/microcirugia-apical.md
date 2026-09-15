@@ -10,9 +10,9 @@ numero_sesiones: "1"
 anestesia: local
 especialista: guillermo-doria
 cuando_se_indica:
-  - "The infection persists after root canal treatment or a retreatment"
+  - 'The infection persists after <a href="/en/especialidades/endodoncia/">root canal treatment</a> or a retreatment'
   - "There's a lesion at the root tip that doesn't respond to treatment through the canal"
-  - "The realistic alternative is extracting the tooth"
+  - 'The realistic alternative is <a href="/en/especialidades/cirugia-oral/">extracting</a> the tooth'
 proceso:
   - titulo: "3D digital planning"
     descripcion: "3D X-ray to locate the source of infection and plan the approach before the procedure."

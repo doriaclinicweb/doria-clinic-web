@@ -10,8 +10,8 @@ numero_sesiones: "1 (composite) o 2-3 (porcelana)"
 anestesia: local
 especialista: ines-doria
 cuando_se_indica:
-  - "Dientes con manchas, desgaste o forma irregular que no mejoran con blanqueamiento"
-  - "Pequeños espacios o malposiciones que no requieren ortodoncia completa"
+  - 'Dientes con manchas, desgaste o forma irregular que no mejoran con <a href="/tratamientos/blanqueamiento-dental/">blanqueamiento</a>'
+  - 'Pequeños espacios o malposiciones que no requieren <a href="/especialidades/ortodoncia/">ortodoncia</a> completa'
   - "Deseo de mejorar la sonrisa preservando la mayor cantidad de diente natural posible"
 proceso:
   - titulo: "Planificación digital de la sonrisa"

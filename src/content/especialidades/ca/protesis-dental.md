@@ -45,7 +45,7 @@ porcellana o resina. A més, poden ser:
 L'elecció depèn de les necessitats concretes de cada cas, que valorem a la primera
 visita. Quan l'objectiu principal és millorar l'aspecte de dents ja presents, sense
 reposar peces perdudes, l'alternativa sol ser una
-[carilla dental](/ca/especialidades/estetica-dental/) en lloc d'una pròtesi.
+[carilla dental](/ca/tratamientos/carillas-dentales/) en lloc d'una pròtesi.
 
 ## Manteniment de la pròtesi
 

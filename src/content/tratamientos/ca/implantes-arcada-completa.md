@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Puc tenir dents fixes el mateix dia de la cirurgia?"
     respuesta: "En molts casos sí, mitjançant el protocol de càrrega immediata, que col·loca una pròtesi provisional fixa el mateix dia."
   - pregunta: "Què passa si no tinc prou os?"
-    respuesta: "Es valoren alternatives com la regeneració òssia a cirurgia oral o els implants pterigoideos, que aprofiten zones d'os més dens sense necessitat d'empelt."
+    respuesta: 'Es valoren alternatives com la regeneració òssia a <a href="/ca/especialidades/cirugia-oral/">cirurgia oral</a> o els <a href="/ca/tratamientos/implantes-pterigoideos/">implants pterigoideos</a>, que aprofiten zones d''os més dens sense necessitat d''empelt.'
 casos: []
 actualizado: 2026-09-05
 seo:
@@ -44,7 +44,7 @@ perduda.
 ## Com es planifica
 
 L'èxit depèn d'un estudi 3D detallat: calculem el nombre òptim i la ubicació de les
-fixacions perquè la pròtesi quedi equilibrada i les càrregues masticatòries es
-reparteixin bé entre tots els implants. Quan l'os posterior és limitat, valorem
+fixacions perquè la [pròtesi sobre implants](/ca/tratamientos/protesis-sobre-implantes/)
+quedi equilibrada i les càrregues masticatòries es reparteixin bé entre tots els implants. Quan l'os posterior és limitat, valorem
 [implants pterigoideos](/ca/tratamientos/implantes-pterigoideos/) com a alternativa a
 l'empelt ossi.

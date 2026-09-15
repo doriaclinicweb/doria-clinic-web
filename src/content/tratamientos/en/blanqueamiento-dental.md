@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Teeth yellowed or darkened over time, or by coffee, wine or tobacco"
   - "A healthy mouth, with no decay or inflamed gums, before starting whitening"
-  - "Wanting to lighten the shade of your teeth without more invasive treatments such as veneers"
+  - 'Wanting to lighten the shade of your teeth without more invasive treatments such as <a href="/en/tratamientos/carillas-dentales/">veneers</a>'
 proceso:
   - titulo: "Prior check-up"
     descripcion: "We check there's no decay or inflamed gums before whitening, to avoid unnecessary sensitivity."
@@ -26,7 +26,7 @@ faqs:
   - pregunta: "Does whitening damage the enamel?"
     respuesta: "No, when carried out under professional supervision with the right concentrations. It can cause temporary sensitivity, which goes away within a few days."
   - pregunta: "Does it work on all types of stains?"
-    respuesta: "It's effective for general darkening of the tooth. Some internal stains, or those caused by tetracycline, respond less well and may need veneers for an optimal result."
+    respuesta: 'It''s effective for general darkening of the tooth. Some internal stains, or those caused by tetracycline, respond less well and may need <a href="/en/tratamientos/carillas-dentales/">veneers</a> for an optimal result.'
 casos: []
 actualizado: 2026-09-05
 seo:

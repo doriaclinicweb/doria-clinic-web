@@ -24,7 +24,7 @@ proceso:
     descripcion: "Un cop integrat l'implant, se substitueix la provisional per la definitiva."
 faqs:
   - pregunta: "Tots els casos són aptes per a càrrega immediata?"
-    respuesta: "No. Cal os suficient perquè l'implant quedi estable des del primer dia. L'estudi previ amb radiografia 3D determina si és viable; si falta os, primer es valora una regeneració òssia."
+    respuesta: 'No. Cal os suficient perquè l''implant quedi estable des del primer dia. L''estudi previ amb radiografia 3D determina si és viable; si falta os, primer es valora una <a href="/ca/especialidades/cirugia-oral/">regeneració òssia</a>.'
   - pregunta: "En què es diferencia del protocol estàndard?"
     respuesta: "El protocol estàndard espera uns dos mesos d'integració òssia abans de col·locar la dent. En càrrega immediata la dent provisional es col·loca el mateix dia."
   - pregunta: "Puc fer vida normal el mateix dia de la cirurgia?"

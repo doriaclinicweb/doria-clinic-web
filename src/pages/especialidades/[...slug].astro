@@ -75,7 +75,7 @@ const schema = {
           {d.faqs.map((f) => (
             <details class="faq">
               <summary>{f.pregunta}</summary>
-              <p>{f.respuesta}</p>
+              <p set:html={f.respuesta} />
             </details>
           ))}
         </>

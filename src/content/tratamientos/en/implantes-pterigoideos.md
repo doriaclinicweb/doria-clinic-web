@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Significant bone loss at the back of the upper jaw"
   - "The patient wants to avoid a sinus lift or a bone graft"
-  - "Need for stable posterior support for a full-arch prosthesis"
+  - 'Need for stable posterior support for a <a href="/en/tratamientos/implantes-arcada-completa/">full-arch prosthesis</a>'
 proceso:
   - titulo: "3D study"
     descripcion: "3D X-ray to precisely locate the pterygoid bone and plan the exact angle for inserting the implant."

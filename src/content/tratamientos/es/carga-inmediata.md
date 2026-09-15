@@ -24,7 +24,7 @@ proceso:
     descripcion: "Una vez integrado el implante, se sustituye la provisional por la definitiva."
 faqs:
   - pregunta: "¿Todos los casos son aptos para carga inmediata?"
-    respuesta: "No. Hace falta hueso suficiente para que el implante quede estable desde el primer día. El estudio previo con radiografía 3D determina si es viable; si falta hueso, primero se valora una regeneración ósea."
+    respuesta: 'No. Hace falta hueso suficiente para que el implante quede estable desde el primer día. El estudio previo con radiografía 3D determina si es viable; si falta hueso, primero se valora una <a href="/especialidades/cirugia-oral/">regeneración ósea</a>.'
   - pregunta: "¿En qué se diferencia del protocolo estándar?"
     respuesta: "El protocolo estándar espera unos dos meses de integración ósea antes de colocar el diente. En carga inmediata el diente provisional se coloca el mismo día."
   - pregunta: "¿Puedo hacer vida normal el mismo día de la cirugía?"

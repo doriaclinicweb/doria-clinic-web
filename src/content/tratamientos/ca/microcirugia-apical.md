@@ -10,9 +10,9 @@ numero_sesiones: "1"
 anestesia: local
 especialista: guillermo-doria
 cuando_se_indica:
-  - "La infecció persisteix després d'una endodòncia o un retractament"
+  - 'La infecció persisteix després d''una <a href="/ca/especialidades/endodoncia/">endodòncia</a> o un retractament'
   - "Hi ha una lesió a l'àpex que no respon al tractament per l'interior del conducte"
-  - "L'alternativa realista és l'extracció de la peça"
+  - 'L''alternativa realista és l''<a href="/ca/especialidades/cirugia-oral/">extracció</a> de la peça'
 proceso:
   - titulo: "Planificació digital 3D"
     descripcion: "Radiografia 3D per localitzar el focus d'infecció i planificar l'accés abans de la intervenció."

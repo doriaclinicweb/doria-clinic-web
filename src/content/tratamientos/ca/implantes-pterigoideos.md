@@ -12,7 +12,7 @@ especialista: ines-doria
 cuando_se_indica:
   - "Pèrdua d'os important a la zona posterior del maxil·lar superior"
   - "El pacient vol evitar una elevació de sinus maxil·lar o un empelt ossi"
-  - "Necessitat de donar suport posterior estable a una pròtesi d'arcada completa"
+  - 'Necessitat de donar suport posterior estable a una <a href="/ca/tratamientos/implantes-arcada-completa/">pròtesi d''arcada completa</a>'
 proceso:
   - titulo: "Estudi 3D"
     descripcion: "Radiografia 3D per localitzar amb precisió l'os pterigoideo i planificar l'angle exacte d'inserció de l'implant."

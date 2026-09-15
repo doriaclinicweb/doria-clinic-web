@@ -50,8 +50,8 @@ works](/en/tratamientos/carga-inmediata/).
 
 Full-arch restorations don't need one implant per missing tooth. Success depends on
 a detailed prior study: we calculate the optimal number and placement of fixtures so
-the [prosthesis](/en/especialidades/protesis-dental/) is well balanced and loads are
-distributed correctly.
+the [implant-supported prosthesis](/en/tratamientos/protesis-sobre-implantes/) is well
+balanced and loads are distributed correctly.
 
 ## Bone regeneration
 

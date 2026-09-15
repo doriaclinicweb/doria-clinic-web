@@ -22,7 +22,7 @@ proceso:
     descripcion: "Ajustem la pròtesi a la boca i la cimentem o lliurem, segons sigui fixa o removible."
 faqs:
   - pregunta: "És millor una pròtesi sobre dents que sobre implants?"
-    respuesta: "Depèn del cas: sobre dents naturals sol ser més ràpida i econòmica quan aquestes dents estan sanes, mentre que sobre implants evita desgastar-les, però requereix una cirurgia prèvia."
+    respuesta: 'Depèn del cas: sobre dents naturals sol ser més ràpida i econòmica quan aquestes dents estan sanes, mentre que <a href="/ca/tratamientos/protesis-sobre-implantes/">sobre implants</a> evita desgastar-les, però requereix una cirurgia prèvia.'
   - pregunta: "Cal llimar molt les dents de suport?"
     respuesta: "A les pròtesis fixes cal un tallat moderat de les dents de suport per donar espai a la corona; a les removibles, gairebé no es modifiquen."
   - pregunta: "Quant dura aquest tipus de pròtesi?"

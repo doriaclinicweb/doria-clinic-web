@@ -45,7 +45,7 @@ porcelana o resina. Además, pueden ser:
 La elección depende de las necesidades concretas de cada caso, que valoramos en la
 primera visita. Cuando el objetivo principal es mejorar el aspecto de dientes ya
 presentes, sin reponer piezas perdidas, la alternativa suele ser una
-[carilla dental](/especialidades/estetica-dental/) en lugar de una prótesis.
+[carilla dental](/tratamientos/carillas-dentales/) en lugar de una prótesis.
 
 ## Mantenimiento de la prótesis
 
