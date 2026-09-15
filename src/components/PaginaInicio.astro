@@ -287,8 +287,8 @@ const schema = {
           let auto: ReturnType<typeof setInterval> | null = null;
           const avanzar = () => {
             const maximo = pista.scrollWidth - pista.clientWidth - 1;
-            if (pista.scrollLeft >= maximo) pista.scrollTo({ left: 0, behavior: 'smooth' });
-            else desplazar(1);
+            if (pista.scrollLeft <= 0) pista.scrollTo({ left: maximo, behavior: 'auto' });
+            else desplazar(-1);
           };
           const iniciar = () => { if (!auto) auto = setInterval(avanzar, 4500); };
           const detener = () => { if (auto) { clearInterval(auto); auto = null; } };
