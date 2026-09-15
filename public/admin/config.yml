@@ -374,3 +374,4 @@ collections:
             fields:
               - { name: instagram, label: "Instagram", widget: string, required: false }
               - { name: linkedin, label: "LinkedIn", widget: string, required: false }
+          - { name: google_analytics_id, label: "ID de Google Analytics (G-XXXXXXXXXX)", widget: string, required: false, hint: "Déjalo vacío para desactivar Google Analytics en todo el sitio. Solo se carga si el visitante acepta las cookies analíticas." }

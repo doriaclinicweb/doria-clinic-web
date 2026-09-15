@@ -1,8 +1,10 @@
 ---
 import type { Idioma } from '../utils/idioma';
+import clinica from '../data/clinica.json';
 
 interface Props { idioma: Idioma }
 const { idioma } = Astro.props;
+const gaId = clinica.google_analytics_id;
 
 const t = {
   ca: {
@@ -27,9 +29,9 @@ const t = {
     aceptar: 'Aceptar',
   },
 }[idioma];
-
-const gaId = 'G-WG0JW6FWEC';
 ---
+{gaId && (
+<Fragment>
 <div id="doria-cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-banner-cuerpo">
     <p>{t.texto} <a href={t.href}>{t.mas}</a></p>
@@ -85,3 +87,5 @@ const gaId = 'G-WG0JW6FWEC';
     }
   })();
 </script>
+</Fragment>
+)}
