@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ReviewsModulo from './ReviewsModulo.astro';
+import PorQueElegirnosModulo from './PorQueElegirnosModulo.astro';
 import PrimeraVisitaModulo from './PrimeraVisitaModulo.astro';
 import type { Idioma } from '../utils/idioma';
 
@@ -32,5 +33,6 @@ const etiquetaActualizado = {
   <Fragment slot="despues-contenido">
     <PrimeraVisitaModulo idioma={idioma} />
     <ReviewsModulo idioma={idioma} />
+    <PorQueElegirnosModulo idioma={idioma} />
   </Fragment>
 </Base>

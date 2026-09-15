@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import clinica from '../data/clinica.json';
 import IntroAccion from '../components/IntroAccion.astro';
 import ReviewsModulo from '../components/ReviewsModulo.astro';
+import PorQueElegirnosModulo from '../components/PorQueElegirnosModulo.astro';
 import PrimeraVisitaModulo from '../components/PrimeraVisitaModulo.astro';
 
 const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre la financiación de mi tratamiento')}`;
@@ -127,5 +128,6 @@ const schema = {
   <Fragment slot="despues-contenido">
     <PrimeraVisitaModulo idioma="es" />
     <ReviewsModulo idioma="es" />
+    <PorQueElegirnosModulo idioma="es" />
   </Fragment>
 </Base>

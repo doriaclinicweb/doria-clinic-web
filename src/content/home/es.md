@@ -16,18 +16,6 @@ intro_parrafos:
   - "Por eso te ofrecemos una experiencia pensada para que te sientas cómodo, tranquilo y bien acompañado desde el primer día."
 tratamientos_titulo: "Tratamientos"
 equipo_titulo: "Más que dentistas: tu equipo de confianza"
-elegirnos_titulo: "¿Por qué elegirnos?"
-elegirnos:
-  - titulo: "Cercanía"
-    texto: "Te hacemos sentir como en casa, desde el primer día."
-  - titulo: "Confianza"
-    texto: "Te escuchamos, te explicamos y te acompañamos."
-  - titulo: "Innovación"
-    texto: "Tecnología avanzada al servicio de tu salud y tu comodidad."
-  - titulo: "Honestidad"
-    texto: "Siempre con transparencia y sin sorpresas."
-  - titulo: "Profesionalidad"
-    texto: "Más de 15 años de experiencia, cuidado y pasión por lo que hacemos."
 instalaciones_titulo: "Instalaciones"
 instalaciones_texto: "Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma."
 instalaciones_imagenes:

@@ -242,14 +242,6 @@ collections:
         field: { name: parrafo, label: "Párrafo", widget: text }
       - { name: tratamientos_titulo, label: "Título sección Tratamientos", widget: string }
       - { name: equipo_titulo, label: "Título sección Equipo", widget: string }
-      - { name: elegirnos_titulo, label: "Título Por qué elegirnos", widget: string }
-      - name: elegirnos
-        label: "Por qué elegirnos (razones)"
-        widget: list
-        min: 1
-        fields:
-          - { name: titulo, label: "Razón", widget: string }
-          - { name: texto, label: "Descripción", widget: text }
       - { name: instalaciones_titulo, label: "Título Instalaciones", widget: string }
       - { name: instalaciones_texto, label: "Texto Instalaciones", widget: text }
       - name: instalaciones_imagenes
@@ -367,6 +359,30 @@ collections:
               - { name: puntos, label: "Puntos (español)", widget: list, field: { name: punto, label: "Punto", widget: string } }
               - { name: puntos_ca, label: "Punts (català)", widget: list, field: { name: punt, label: "Punt", widget: string } }
               - { name: puntos_en, label: "Points (English)", widget: list, field: { name: point, label: "Point", widget: string } }
+          - { name: elegirnos_titulo, label: "Título \"Por qué elegirnos\" (español, todas las páginas)", widget: string }
+          - { name: elegirnos_titulo_ca, label: "Títol (català)", widget: string }
+          - { name: elegirnos_titulo_en, label: "Title (English)", widget: string }
+          - name: elegirnos
+            label: "Por qué elegirnos: razones (español)"
+            widget: list
+            min: 1
+            fields:
+              - { name: titulo, label: "Razón", widget: string }
+              - { name: texto, label: "Descripción", widget: text }
+          - name: elegirnos_ca
+            label: "Por qué elegirnos: raons (català)"
+            widget: list
+            min: 1
+            fields:
+              - { name: titulo, label: "Raó", widget: string }
+              - { name: texto, label: "Descripció", widget: text }
+          - name: elegirnos_en
+            label: "Why choose us: reasons (English)"
+            widget: list
+            min: 1
+            fields:
+              - { name: titulo, label: "Reason", widget: string }
+              - { name: texto, label: "Description", widget: text }
           - { name: software_citas, label: "Enlace para pedir cita", widget: string, required: false }
           - { name: google_business_profile, label: "Perfil de Google Business", widget: string, required: false }
           - { name: nombre_google_maps, label: "Nombre exacto en Google Maps", widget: string, required: false, hint: "Tal cual aparece en la ficha de Google Business (Perfil de Empresa). Se usa para que el mapa incrustado muestre el pin con el nombre. Si se deja vacío, el mapa mostrará un pin sin etiqueta en las coordenadas exactas." }

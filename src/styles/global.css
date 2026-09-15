@@ -308,6 +308,11 @@ a { color: inherit; }
 .pagina-intro-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .pagina-intro-imagen { padding-top: clamp(3.5rem, 7vw, 5.5rem); padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
 @media (min-width: 801px) { .pagina-intro-imagen { min-height: 600px; display: flex; align-items: center; } }
+/* En móvil, la cabecera fija (logo + botón "Pedir cita" + hamburguesa)
+   mide más que el padding-top mínimo del clamp de arriba: las migas de
+   pan y el h1 quedaban tapados debajo de ella, más o menos según lo
+   larga que fuera la miga de esa página. */
+@media (max-width: 900px) { .pagina-intro-imagen { padding-top: 7rem; } }
 .pagina-intro-imagen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.72) 0%, rgba(26,31,26,.4) 60%, rgba(26,31,26,.55) 100%); z-index: 1; }
 .pagina-intro-imagen .wrap { position: relative; z-index: 2; }
 .pagina-intro-imagen h1 { color: var(--crema); }

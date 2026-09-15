@@ -8,6 +8,7 @@ import CookieBanner from './CookieBanner.astro';
 import EquipoModulo from './EquipoModulo.astro';
 import ReviewsModulo from './ReviewsModulo.astro';
 import PrimeraVisitaModulo from './PrimeraVisitaModulo.astro';
+import PorQueElegirnosModulo from './PorQueElegirnosModulo.astro';
 import type { Idioma } from '../utils/idioma';
 import { inicioDe } from '../utils/idioma';
 
@@ -121,20 +122,6 @@ const schema = {
 
     <EquipoModulo idioma={idioma} titulo={d.equipo_titulo} />
 
-    <section class="seccion elegirnos">
-      <div class="wrap">
-        <h2>{d.elegirnos_titulo}</h2>
-        <div class="elegirnos-lista">
-          {d.elegirnos.map((r) => (
-            <div>
-              <h3>{r.titulo}</h3>
-              <p>{r.texto}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <section class="seccion" id="tratamientos">
       <div class="wrap">
         <div class="encabezado-tratamientos">
@@ -162,6 +149,8 @@ const schema = {
     <PrimeraVisitaModulo idioma={idioma} />
 
     <ReviewsModulo idioma={idioma} />
+
+    <PorQueElegirnosModulo idioma={idioma} />
 
     <section class="seccion" id="espacio">
       <div class="wrap">

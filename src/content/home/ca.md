@@ -16,18 +16,6 @@ intro_parrafos:
   - "Per això t'oferim una experiència pensada perquè et sentis còmode, tranquil i ben acompanyat des del primer dia."
 tratamientos_titulo: "Tractaments"
 equipo_titulo: "Més que dentistes: el teu equip de confiança"
-elegirnos_titulo: "Per què triar-nos?"
-elegirnos:
-  - titulo: "Proximitat"
-    texto: "Et fem sentir com a casa, des del primer dia."
-  - titulo: "Confiança"
-    texto: "T'escoltem, t'ho expliquem i t'acompanyem."
-  - titulo: "Innovació"
-    texto: "Tecnologia avançada al servei de la teva salut i la teva comoditat."
-  - titulo: "Honestedat"
-    texto: "Sempre amb transparència i sense sorpreses."
-  - titulo: "Professionalitat"
-    texto: "Més de 15 anys d'experiència, cura i passió per la feina que fem."
 instalaciones_titulo: "Instal·lacions"
 instalaciones_texto: "Cada racó està pensat perquè et sentis còmode: llum natural, materials càlids i un ambient que transmet calma."
 instalaciones_imagenes:

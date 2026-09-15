@@ -5,6 +5,7 @@ import clinica from '../../../data/clinica.json';
 import IntroAccion from '../../../components/IntroAccion.astro';
 import EquipoModulo from '../../../components/EquipoModulo.astro';
 import ReviewsModulo from '../../../components/ReviewsModulo.astro';
+import PorQueElegirnosModulo from '../../../components/PorQueElegirnosModulo.astro';
 import PrimeraVisitaModulo from '../../../components/PrimeraVisitaModulo.astro';
 
 export async function getStaticPaths() {
@@ -158,6 +159,7 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
   <Fragment slot="despues-contenido">
     <PrimeraVisitaModulo idioma="en" />
     <ReviewsModulo idioma="en" />
+    <PorQueElegirnosModulo idioma="en" />
     <EquipoModulo idioma="en" titulo="Our team" />
   </Fragment>
 </Base>

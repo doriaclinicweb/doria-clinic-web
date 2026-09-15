@@ -16,18 +16,6 @@ intro_parrafos:
   - "That's why we offer an experience designed to make you feel comfortable, at ease and well looked after from day one."
 tratamientos_titulo: "Treatments"
 equipo_titulo: "More than dentists: your trusted team"
-elegirnos_titulo: "Why choose us?"
-elegirnos:
-  - titulo: "Warmth"
-    texto: "We make you feel at home, from day one."
-  - titulo: "Trust"
-    texto: "We listen, explain and support you."
-  - titulo: "Innovation"
-    texto: "Advanced technology serving your health and comfort."
-  - titulo: "Honesty"
-    texto: "Always transparent, no surprises."
-  - titulo: "Professionalism"
-    texto: "Over 15 years of experience, care and passion for what we do."
 instalaciones_titulo: "Facilities"
 instalaciones_texto: "Every corner is designed to make you feel comfortable: natural light, warm materials and a calming atmosphere."
 instalaciones_imagenes:

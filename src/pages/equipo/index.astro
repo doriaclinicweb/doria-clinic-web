@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import IntroAccion from '../../components/IntroAccion.astro';
 import ReviewsModulo from '../../components/ReviewsModulo.astro';
+import PorQueElegirnosModulo from '../../components/PorQueElegirnosModulo.astro';
 import PrimeraVisitaModulo from '../../components/PrimeraVisitaModulo.astro';
 
 const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
@@ -43,5 +44,6 @@ const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
   <Fragment slot="despues-contenido">
     <PrimeraVisitaModulo idioma="es" />
     <ReviewsModulo idioma="es" />
+    <PorQueElegirnosModulo idioma="es" />
   </Fragment>
 </Base>

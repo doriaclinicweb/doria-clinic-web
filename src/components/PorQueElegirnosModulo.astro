@@ -1,0 +1,23 @@
+---
+import clinica from '../data/clinica.json';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+
+const titulo = idioma === 'ca' ? clinica.elegirnos_titulo_ca : idioma === 'en' ? clinica.elegirnos_titulo_en : clinica.elegirnos_titulo;
+const razones = idioma === 'ca' ? clinica.elegirnos_ca : idioma === 'en' ? clinica.elegirnos_en : clinica.elegirnos;
+---
+<section class="seccion elegirnos">
+  <div class="wrap">
+    <h2>{titulo}</h2>
+    <div class="elegirnos-lista">
+      {razones.map((r: { titulo: string; texto: string }) => (
+        <div>
+          <h3>{r.titulo}</h3>
+          <p>{r.texto}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
