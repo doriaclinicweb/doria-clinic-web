@@ -278,6 +278,25 @@ const schema = {
         pista.addEventListener('scroll', actualizarFlechas, { passive: true });
         window.addEventListener('resize', actualizarFlechas);
         actualizarFlechas();
+
+        // El carrusel de reseñas, además, avanza solo: al llegar al final
+        // vuelve al principio en vez de quedarse parado. Se pausa mientras
+        // el ratón está encima (o hay un dedo en pantalla) para poder leer
+        // con calma, y no se activa si el usuario prefiere menos movimiento.
+        if (carrusel.classList.contains('resenas-carrusel') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          let auto: ReturnType<typeof setInterval> | null = null;
+          const avanzar = () => {
+            const maximo = pista.scrollWidth - pista.clientWidth - 1;
+            if (pista.scrollLeft >= maximo) pista.scrollTo({ left: 0, behavior: 'smooth' });
+            else desplazar(1);
+          };
+          const iniciar = () => { if (!auto) auto = setInterval(avanzar, 4500); };
+          const detener = () => { if (auto) { clearInterval(auto); auto = null; } };
+          iniciar();
+          carrusel.addEventListener('mouseenter', detener);
+          carrusel.addEventListener('mouseleave', iniciar);
+          carrusel.addEventListener('touchstart', detener, { passive: true });
+        }
       });
 
       // Slider de fotos del hero: avanza sola, en bucle, sin flechas ni puntos.
