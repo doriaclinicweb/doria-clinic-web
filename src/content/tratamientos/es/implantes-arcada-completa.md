@@ -17,7 +17,7 @@ proceso:
   - titulo: "Estudio 3D completo"
     descripcion: "Planificamos el número óptimo de implantes y su ubicación exacta para repartir bien las cargas masticatorias."
   - titulo: "Cirugía de colocación"
-    descripcion: "Colocamos los implantes en una única intervención, en ocasiones combinada con implantes pterigoideos si el hueso posterior es limitado."
+    descripcion: 'Colocamos los implantes en una única intervención, en ocasiones combinada con <a href="/tratamientos/implantes-pterigoideos/">implantes pterigoideos</a> si el hueso posterior es limitado.'
   - titulo: "Prótesis fija completa"
     descripcion: "Una vez integrados los implantes, se coloca la prótesis definitiva que sustituye a toda la arcada."
 faqs:

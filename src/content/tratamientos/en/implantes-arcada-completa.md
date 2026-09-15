@@ -17,7 +17,7 @@ proceso:
   - titulo: "Full 3D study"
     descripcion: "We plan the optimal number of implants and their exact placement to distribute chewing loads well."
   - titulo: "Placement surgery"
-    descripcion: "We place the implants in a single procedure, sometimes combined with pterygoid implants if the posterior bone is limited."
+    descripcion: 'We place the implants in a single procedure, sometimes combined with <a href="/en/tratamientos/implantes-pterigoideos/">pterygoid implants</a> if the posterior bone is limited.'
   - titulo: "Full fixed prosthesis"
     descripcion: "Once the implants have integrated, the final prosthesis that replaces the whole arch is fitted."
 faqs:

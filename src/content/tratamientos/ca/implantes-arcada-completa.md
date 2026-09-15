@@ -17,7 +17,7 @@ proceso:
   - titulo: "Estudi 3D complet"
     descripcion: "Planifiquem el nombre òptim d'implants i la seva ubicació exacta per repartir bé les càrregues masticatòries."
   - titulo: "Cirurgia de col·locació"
-    descripcion: "Col·loquem els implants en una única intervenció, en ocasions combinada amb implants pterigoideos si l'os posterior és limitat."
+    descripcion: 'Col·loquem els implants en una única intervenció, en ocasions combinada amb <a href="/ca/tratamientos/implantes-pterigoideos/">implants pterigoideos</a> si l''os posterior és limitat.'
   - titulo: "Pròtesi fixa completa"
     descripcion: "Un cop integrats els implants, es col·loca la pròtesi definitiva que substitueix tota l'arcada."
 faqs:
