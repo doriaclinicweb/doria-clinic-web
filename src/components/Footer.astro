@@ -121,11 +121,15 @@ const diasCa = diasTraducidos[idioma] ?? {};
 const franjaCa = franjaTraducida[idioma] ?? {};
 
 const direccionCompleta = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
-// Con lat/lng apuntamos al pin exacto de la ficha de Doria Clinic en Google
-// (evita que Google geolocalice mal el texto de la dirección). Si algún día
-// se vacían desde el panel, cae de nuevo a buscar por texto de dirección.
+// Buscamos por el nombre exacto de la ficha de Google Business (no solo
+// "Doria Clinic": es ambiguo y el mapa no devuelve ningún resultado). Así
+// el mapa muestra el pin con el nombre y la tarjeta de la ficha real, en
+// vez de un pin sin etiqueta. Si ese campo se vaciara, caemos a las
+// coordenadas exactas (sin etiqueta) y, en último caso, a la dirección.
 const { lat, lng } = clinica.coordenadas;
-const mapaQuery = lat != null && lng != null ? `${lat},${lng}(${clinica.nombre})` : direccionCompleta;
+const mapaQuery =
+  clinica.nombre_google_maps ||
+  (lat != null && lng != null ? `${lat},${lng}(${clinica.nombre})` : direccionCompleta);
 const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapaQuery)}&output=embed`;
 
 const redes = [

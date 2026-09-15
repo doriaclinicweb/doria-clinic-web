@@ -368,6 +368,7 @@ collections:
           - { name: primera_visita_gratuita, label: "Primera visita gratuita", widget: boolean, default: true }
           - { name: software_citas, label: "Enlace para pedir cita", widget: string, required: false }
           - { name: google_business_profile, label: "Perfil de Google Business", widget: string, required: false }
+          - { name: nombre_google_maps, label: "Nombre exacto en Google Maps", widget: string, required: false, hint: "Tal cual aparece en la ficha de Google Business (Perfil de Empresa). Se usa para que el mapa incrustado muestre el pin con el nombre. Si se deja vacío, el mapa mostrará un pin sin etiqueta en las coordenadas exactas." }
           - name: redes
             label: "Redes"
             widget: object
