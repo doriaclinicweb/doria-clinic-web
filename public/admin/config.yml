@@ -250,13 +250,6 @@ collections:
         fields:
           - { name: titulo, label: "Razón", widget: string }
           - { name: texto, label: "Descripción", widget: text }
-      - { name: primera_visita_titulo, label: "Título Primera visita", widget: string }
-      - { name: primera_visita_texto, label: "Texto Primera visita", widget: text }
-      - { name: primera_visita_cta, label: "Botón Primera visita", widget: string }
-      - name: primera_visita_puntos
-        label: "Puntos de Primera visita"
-        widget: list
-        field: { name: punto, label: "Punto", widget: string }
       - { name: instalaciones_titulo, label: "Título Instalaciones", widget: string }
       - { name: instalaciones_texto, label: "Texto Instalaciones", widget: text }
       - name: instalaciones_imagenes
@@ -265,14 +258,6 @@ collections:
         fields:
           - { name: src, label: "Imagen", widget: image }
           - { name: alt, label: "Texto alternativo", widget: string }
-      - { name: opiniones_titulo, label: "Título Opiniones", widget: string }
-      - name: opiniones
-        label: "Opiniones"
-        widget: list
-        required: false
-        fields:
-          - { name: texto, label: "Opinión", widget: text }
-          - { name: autor, label: "Autor", widget: string }
       - name: seo
         label: "Google"
         widget: object
@@ -366,6 +351,22 @@ collections:
               - { name: dias, label: "Días", widget: string }
               - { name: franja, label: "Horario", widget: string }
           - { name: primera_visita_gratuita, label: "Primera visita gratuita", widget: boolean, default: true }
+          - name: primera_visita
+            label: "Módulo \"Tu primera visita\" (todas las páginas)"
+            widget: object
+            fields:
+              - { name: titulo, label: "Título (español)", widget: string }
+              - { name: titulo_ca, label: "Título (català)", widget: string }
+              - { name: titulo_en, label: "Title (English)", widget: string }
+              - { name: texto, label: "Texto (español)", widget: text }
+              - { name: texto_ca, label: "Texto (català)", widget: text }
+              - { name: texto_en, label: "Text (English)", widget: text }
+              - { name: cta, label: "Botón (español)", widget: string }
+              - { name: cta_ca, label: "Botó (català)", widget: string }
+              - { name: cta_en, label: "Button (English)", widget: string }
+              - { name: puntos, label: "Puntos (español)", widget: list, field: { name: punto, label: "Punto", widget: string } }
+              - { name: puntos_ca, label: "Punts (català)", widget: list, field: { name: punt, label: "Punt", widget: string } }
+              - { name: puntos_en, label: "Points (English)", widget: list, field: { name: point, label: "Point", widget: string } }
           - { name: software_citas, label: "Enlace para pedir cita", widget: string, required: false }
           - { name: google_business_profile, label: "Perfil de Google Business", widget: string, required: false }
           - { name: nombre_google_maps, label: "Nombre exacto en Google Maps", widget: string, required: false, hint: "Tal cual aparece en la ficha de Google Business (Perfil de Empresa). Se usa para que el mapa incrustado muestre el pin con el nombre. Si se deja vacío, el mapa mostrará un pin sin etiqueta en las coordenadas exactas." }
@@ -378,3 +379,16 @@ collections:
               - { name: instagram, label: "Instagram", widget: string, required: false }
               - { name: linkedin, label: "LinkedIn", widget: string, required: false }
           - { name: google_analytics_id, label: "ID de Google Analytics (G-XXXXXXXXXX)", widget: string, required: false, hint: "Déjalo vacío para desactivar Google Analytics en todo el sitio. Solo se carga si el visitante acepta las cookies analíticas." }
+      - name: resenas
+        label: "Reseñas de Google (carrusel)"
+        file: "src/data/resenas.json"
+        fields:
+          - name: resenas
+            label: "Reseñas"
+            widget: list
+            summary: "{{fields.autor}}"
+            fields:
+              - { name: autor, label: "Autor", widget: string }
+              - { name: texto_es, label: "Texto (español)", widget: text }
+              - { name: texto_ca, label: "Texto (català)", widget: text }
+              - { name: texto_en, label: "Texto (English)", widget: text }

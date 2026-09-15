@@ -1,0 +1,110 @@
+---
+import clinica from '../data/clinica.json';
+import resenasData from '../data/resenas.json';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma }
+const { idioma } = Astro.props;
+
+const titulo = { es: 'Qué dicen nuestros pacientes', ca: 'Què diuen els nostres pacients', en: 'What our patients say' }[idioma];
+const verResenas = { es: 'Ver todas en Google →', ca: 'Veure-les totes a Google →', en: 'See all on Google →' }[idioma];
+const numResenasTexto = {
+  es: `· ${clinica.google_num_resenas} reseñas en Google`,
+  ca: `· ${clinica.google_num_resenas} ressenyes a Google`,
+  en: `· ${clinica.google_num_resenas} reviews on Google`,
+}[idioma];
+const valoracionFormateada = clinica.google_valoracion.toFixed(1).replace('.', idioma === 'en' ? '.' : ',');
+
+const resenas = resenasData.resenas.map((r) => ({
+  autor: r.autor,
+  texto: idioma === 'ca' ? r.texto_ca : idioma === 'en' ? r.texto_en : r.texto_es,
+}));
+---
+<section class="seccion" style="background:var(--gris)">
+  <div class="wrap">
+    <div class="encabezado-tratamientos">
+      <div>
+        <h2>{titulo}</h2>
+        <div class="resenas-resumen">
+          <span class="resenas-estrellas" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+            ))}
+          </span>
+          <strong>{valoracionFormateada}</strong>
+          <span>{numResenasTexto}</span>
+        </div>
+      </div>
+      <a class="ver-todas" href={clinica.google_business_profile} target="_blank" rel="noopener">{verResenas}</a>
+    </div>
+    <div class="carrusel-tratamientos resenas-carrusel" data-auto-carrusel data-dir-auto="-1">
+      <div class="carrusel-pista">
+        {resenas.map((r) => (
+          <div class="resenas-tarjeta">
+            <div class="resenas-cabecera">
+              <span class="resenas-estrellas" aria-hidden="true">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
+                ))}
+              </span>
+              <span class="google-wordmark" aria-hidden="true">
+                <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+              </span>
+            </div>
+            <q>{r.texto}</q>
+            <cite>{r.autor}</cite>
+          </div>
+        ))}
+      </div>
+      <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
+      <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Carrusel de reseñas: flechas manuales + avance automático en bucle
+  // (hacia atrás, "a la derecha"). Se pausa con el ratón encima o el
+  // dedo en pantalla, y no se activa con prefers-reduced-motion. Puede
+  // aparecer varias veces en la misma página (cada instancia es
+  // independiente) y no depende de ningún otro script de la página.
+  document.querySelectorAll<HTMLElement>('[data-auto-carrusel]').forEach((carrusel) => {
+    const pista = carrusel.querySelector<HTMLElement>('.carrusel-pista');
+    const anterior = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.anterior');
+    const siguiente = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.siguiente');
+    if (!pista || !anterior || !siguiente) return;
+
+    const actualizarFlechas = () => {
+      const maximo = pista.scrollWidth - pista.clientWidth - 1;
+      anterior.disabled = pista.scrollLeft <= 0;
+      siguiente.disabled = pista.scrollLeft >= maximo;
+    };
+
+    const desplazar = (dir: number) => {
+      const tarjeta = pista.firstElementChild as HTMLElement | null;
+      const paso = tarjeta ? tarjeta.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).gap || '0') : pista.clientWidth;
+      pista.scrollBy({ left: dir * paso, behavior: 'smooth' });
+    };
+
+    anterior.addEventListener('click', () => desplazar(-1));
+    siguiente.addEventListener('click', () => desplazar(1));
+    pista.addEventListener('scroll', actualizarFlechas, { passive: true });
+    window.addEventListener('resize', actualizarFlechas);
+    actualizarFlechas();
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let auto: ReturnType<typeof setInterval> | null = null;
+      const avanzar = () => {
+        const maximo = pista.scrollWidth - pista.clientWidth - 1;
+        if (pista.scrollLeft <= 0) pista.scrollTo({ left: maximo, behavior: 'auto' });
+        else desplazar(-1);
+      };
+      const iniciar = () => { if (!auto) auto = setInterval(avanzar, 4500); };
+      const detener = () => { if (auto) { clearInterval(auto); auto = null; } };
+      iniciar();
+      carrusel.addEventListener('mouseenter', detener);
+      carrusel.addEventListener('mouseleave', iniciar);
+      carrusel.addEventListener('touchstart', detener, { passive: true });
+    }
+  });
+</script>

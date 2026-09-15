@@ -6,6 +6,8 @@ import Header from './Header.astro';
 import Footer from './Footer.astro';
 import CookieBanner from './CookieBanner.astro';
 import EquipoModulo from './EquipoModulo.astro';
+import ReviewsModulo from './ReviewsModulo.astro';
+import PrimeraVisitaModulo from './PrimeraVisitaModulo.astro';
 import type { Idioma } from '../utils/idioma';
 import { inicioDe } from '../utils/idioma';
 
@@ -26,22 +28,9 @@ const urlEsp = (e) =>
   `${prefijo}/especialidades/${e.id.replace(new RegExp('^' + idioma + '/'), '')}/`;
 
 const verTodas = { es: 'Todas las especialidades', ca: 'Totes les especialitats', en: 'All specialties' }[idioma];
-const textoGratis = { es: '100% gratuita', ca: '100% gratuïta', en: '100% free' }[idioma];
-
-const verResenas = { es: 'Ver todas en Google', ca: 'Veure-les totes a Google', en: 'See all on Google' }[idioma];
-const numResenasTexto = {
-  es: `· ${clinica.google_num_resenas} reseñas en Google`,
-  ca: `· ${clinica.google_num_resenas} ressenyes a Google`,
-  en: `· ${clinica.google_num_resenas} reviews on Google`,
-}[idioma];
-const valoracionFormateada = clinica.google_valoracion.toFixed(1).replace('.', idioma === 'en' ? '.' : ',');
 
 const wa = clinica.software_citas;
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
-
-const puntos = d.primera_visita_puntos.map((p) =>
-  p.replace('{telefono_urgencias}', clinica.telefono_urgencias).replace('{telefono}', clinica.telefono)
-);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -170,21 +159,9 @@ const schema = {
       </div>
     </section>
 
-    <section class="seccion visita">
-      <div class="wrap cuerpo">
-        <div>
-          {clinica.primera_visita_gratuita && <span class="insignia-gratis">{textoGratis}</span>}
-          <h2>{d.primera_visita_titulo}</h2>
-          <p>{d.primera_visita_texto}</p>
-          <div class="acciones" style="margin-top:2rem">
-            <a class="boton boton-primario" href={wa} target="_blank" rel="noopener noreferrer">{d.primera_visita_cta}</a>
-          </div>
-        </div>
-        <ul>
-          {puntos.map((p) => <li>{p}</li>)}
-        </ul>
-      </div>
-    </section>
+    <PrimeraVisitaModulo idioma={idioma} />
+
+    <ReviewsModulo idioma={idioma} />
 
     <section class="seccion" id="espacio">
       <div class="wrap">
@@ -202,60 +179,16 @@ const schema = {
       </div>
     </section>
 
-    {d.opiniones.length > 0 && (
-      <section class="seccion" style="background:var(--gris)">
-        <div class="wrap">
-          <div class="encabezado-tratamientos">
-            <div>
-              <h2>{d.opiniones_titulo}</h2>
-              <div class="resenas-resumen">
-                <span class="resenas-estrellas" aria-hidden="true">
-                  {Array.from({ length: 5 }).map(() => (
-                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-                  ))}
-                </span>
-                <strong>{valoracionFormateada}</strong>
-                <span>{numResenasTexto}</span>
-              </div>
-            </div>
-            <a class="ver-todas" href={clinica.google_business_profile} target="_blank" rel="noopener">{verResenas}</a>
-          </div>
-          <div class="carrusel-tratamientos resenas-carrusel">
-            <div class="carrusel-pista">
-              {d.opiniones.map((o) => (
-                <div class="resenas-tarjeta">
-                  <div class="resenas-cabecera">
-                    <span class="resenas-estrellas" aria-hidden="true">
-                      {Array.from({ length: 5 }).map(() => (
-                        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 19.771l-7.416 3.642 1.48-8.279L0 9.306l8.332-1.151z"/></svg>
-                      ))}
-                    </span>
-                    <svg class="resenas-marca" viewBox="0 0 48 48" aria-hidden="true">
-                      <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                      <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                      <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88z"/>
-                      <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                    </svg>
-                  </div>
-                  <q>{o.texto}</q>
-                  <cite>{o.autor}</cite>
-                </div>
-              ))}
-            </div>
-            <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
-            <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
-          </div>
-        </div>
-      </section>
-    )}
-
     <Footer />
     <CookieBanner idioma={idioma} />
 
     <script>
       // Carrusel de tratamientos: las flechas desplazan la pista una tarjeta
       // (más el hueco) cada vez. Se deshabilitan solas al llegar a un extremo.
-      document.querySelectorAll<HTMLElement>('.carrusel-tratamientos').forEach((carrusel) => {
+      // El carrusel de reseñas (data-auto-carrusel) lleva su propia copia de
+      // este script dentro de ReviewsModulo.astro, con avance automático
+      // incluido: se excluye aquí para no wirearlo dos veces.
+      document.querySelectorAll<HTMLElement>('.carrusel-tratamientos:not([data-auto-carrusel])').forEach((carrusel) => {
         const pista = carrusel.querySelector<HTMLElement>('.carrusel-pista');
         const anterior = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.anterior');
         const siguiente = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.siguiente');
@@ -278,25 +211,6 @@ const schema = {
         pista.addEventListener('scroll', actualizarFlechas, { passive: true });
         window.addEventListener('resize', actualizarFlechas);
         actualizarFlechas();
-
-        // El carrusel de reseñas, además, avanza solo: al llegar al final
-        // vuelve al principio en vez de quedarse parado. Se pausa mientras
-        // el ratón está encima (o hay un dedo en pantalla) para poder leer
-        // con calma, y no se activa si el usuario prefiere menos movimiento.
-        if (carrusel.classList.contains('resenas-carrusel') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          let auto: ReturnType<typeof setInterval> | null = null;
-          const avanzar = () => {
-            const maximo = pista.scrollWidth - pista.clientWidth - 1;
-            if (pista.scrollLeft <= 0) pista.scrollTo({ left: maximo, behavior: 'auto' });
-            else desplazar(-1);
-          };
-          const iniciar = () => { if (!auto) auto = setInterval(avanzar, 4500); };
-          const detener = () => { if (auto) { clearInterval(auto); auto = null; } };
-          iniciar();
-          carrusel.addEventListener('mouseenter', detener);
-          carrusel.addEventListener('mouseleave', iniciar);
-          carrusel.addEventListener('touchstart', detener, { passive: true });
-        }
       });
 
       // Slider de fotos del hero: avanza sola, en bucle, sin flechas ni puntos.

@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import clinica from '../data/clinica.json';
 import IntroAccion from '../components/IntroAccion.astro';
+import ReviewsModulo from '../components/ReviewsModulo.astro';
+import PrimeraVisitaModulo from '../components/PrimeraVisitaModulo.astro';
 
 const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent('Hola, quería información sobre la financiación de mi tratamiento')}`;
 const telTmf = 'tel:936476424';
@@ -121,4 +123,9 @@ const schema = {
     amortización francés. Financiación ofrecida por Sabadell Consumer Finance, S.A.U. y sujeta a su
     aprobación. Oferta exclusiva para colaboradores de Tu Medicina Financiada.
   </p>
+
+  <Fragment slot="despues-contenido">
+    <PrimeraVisitaModulo idioma="es" />
+    <ReviewsModulo idioma="es" />
+  </Fragment>
 </Base>

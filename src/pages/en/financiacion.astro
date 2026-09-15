@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import IntroAccion from '../../components/IntroAccion.astro';
+import ReviewsModulo from '../../components/ReviewsModulo.astro';
+import PrimeraVisitaModulo from '../../components/PrimeraVisitaModulo.astro';
 
 const wa = `https://wa.me/${clinica.whatsapp}?text=${encodeURIComponent("Hi, I'd like information about financing my treatment")}`;
 const telTmf = 'tel:936476424';
@@ -120,4 +122,9 @@ const schema = {
     by Sabadell Consumer Finance, S.A.U. and subject to approval. Exclusive offer for Tu Medicina
     Financiada partners.
   </p>
+
+  <Fragment slot="despues-contenido">
+    <PrimeraVisitaModulo idioma="en" />
+    <ReviewsModulo idioma="en" />
+  </Fragment>
 </Base>

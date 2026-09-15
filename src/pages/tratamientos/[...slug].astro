@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import clinica from '../../data/clinica.json';
 import IntroAccion from '../../components/IntroAccion.astro';
 import EquipoModulo from '../../components/EquipoModulo.astro';
+import ReviewsModulo from '../../components/ReviewsModulo.astro';
+import PrimeraVisitaModulo from '../../components/PrimeraVisitaModulo.astro';
 
 export async function getStaticPaths() {
   const tratamientos = await getCollection(
@@ -153,6 +155,8 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
   </div>
 
   <Fragment slot="despues-contenido">
+    <PrimeraVisitaModulo idioma="es" />
+    <ReviewsModulo idioma="es" />
     <EquipoModulo idioma="es" titulo="Nuestro equipo" />
   </Fragment>
 </Base>

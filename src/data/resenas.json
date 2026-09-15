@@ -1,0 +1,82 @@
+{
+  "resenas": [
+    {
+      "autor": "Ana BS",
+      "texto_es": "Como mi dentista se ha jubilado he probado Doria Clinic. Y me ha encantado. El Dr. Guillermo Doria me ha explicado con paciencia y claridad lo que me iba haciendo. Una endodoncia. No me he enterado ni del pinchazo de la anestesia.",
+      "texto_ca": "Com que la meva dentista s'ha jubilat, he provat Doria Clinic. I m'ha encantat. El Dr. Guillermo Doria m'ha explicat amb paciència i claredat el que m'anava fent. Una endodòncia. No m'he adonat ni de la punxada de l'anestèsia.",
+      "texto_en": "Since my dentist retired, I tried Doria Clinic. And I loved it. Dr. Guillermo Doria explained everything he was doing with patience and clarity — a root canal. I didn't even notice the anaesthesia injection."
+    },
+    {
+      "autor": "Natalia Varea",
+      "texto_es": "Súper buen trato y una experiencia muy recomendada, sus servicios tienen un resultado de 10. Sin duda mi dentista de confianza.",
+      "texto_ca": "Tracte súper bo i una experiència molt recomanada, els seus serveis tenen un resultat de 10. Sens dubte la meva dentista de confiança.",
+      "texto_en": "Excellent service and a highly recommended experience, their treatments give a 10/10 result. Without a doubt my trusted dentist."
+    },
+    {
+      "autor": "Alejandro Doria Palos",
+      "texto_es": "Clínica dental excelente. Profesionalismo 10/10, gran atención al detalle, seguimiento continuo perfecto y trato humano genial. Muy recomendable.",
+      "texto_ca": "Clínica dental excel·lent. Professionalitat 10/10, gran atenció al detall, seguiment continu perfecte i tracte humà genial. Molt recomanable.",
+      "texto_en": "Excellent dental clinic. 10/10 professionalism, great attention to detail, perfect ongoing follow-up and a wonderful personal touch. Highly recommended."
+    },
+    {
+      "autor": "Alba Lladó",
+      "texto_es": "Estoy encantada con Doria Clinic, tanto para mis hijos como para mí. La profesionalidad, trato, cercanía y honestidad del Dr. Doria (y del resto del equipo) son lo que más destacaría. Me siento súper bien atendida en comparación con otras clínicas a las que he ido, y recomiendo 100%.",
+      "texto_ca": "Estic encantada amb Doria Clinic, tant per als meus fills com per a mi. La professionalitat, el tracte, la proximitat i l'honestedat del Dr. Doria (i de la resta de l'equip) són el que més destacaria. Em sento súper ben atesa en comparació amb altres clíniques a què he anat, i ho recomano 100%.",
+      "texto_en": "I'm delighted with Doria Clinic, both for my children and for myself. The professionalism, warmth, closeness and honesty of Dr. Doria (and the rest of the team) are what I'd highlight most. I feel really well looked after compared with other clinics I've been to, and I recommend it 100%."
+    },
+    {
+      "autor": "Cris Guerra Cusí",
+      "texto_es": "Soy fiel al Dr. Doria y todo su equipo. Trato y servicio muy bueno. Voy con mis hijos y, a diferencia de otras clínicas, los tratan súper bien y con muchísimo cuidado, entendiendo que a los niños les da mucho respeto el dentista. Lo recomiendo 200%.",
+      "texto_ca": "Sóc fidel al Dr. Doria i tot el seu equip. Tracte i servei molt bons. Hi vaig amb els meus fills i, a diferència d'altres clíniques, els tracten súper bé i amb moltíssima cura, entenent que als nens els fa molt respecte el dentista. Ho recomano 200%.",
+      "texto_en": "I'm a loyal patient of Dr. Doria and his whole team. Very good service and care. I go with my children and, unlike other clinics, they treat them really well and with great care, understanding that children can be quite scared of the dentist. I recommend it 200%."
+    },
+    {
+      "autor": "Yvonne Bayer",
+      "texto_es": "El trato es cercano, profesional y muy humano. Se nota que sabe lo que hace, siempre salgo encantada con el resultado.",
+      "texto_ca": "El tracte és proper, professional i molt humà. Es nota que sap el que fa, sempre en surto encantada amb el resultat.",
+      "texto_en": "The care is warm, professional and very human. You can tell they know what they're doing — I always leave delighted with the result."
+    },
+    {
+      "autor": "Adela Zafrilla",
+      "texto_es": "Estoy muy muy contenta con esta clínica. Gracias a ellos he pasado de tener pánico al dentista a venir tan tranquila a lo que haga falta. ¡Los recomiendo!",
+      "texto_ca": "Estic molt molt contenta amb aquesta clínica. Gràcies a ells he passat de tenir pànic al dentista a venir tan tranquil·la a tot el que faci falta. Els recomano!",
+      "texto_en": "I'm so, so happy with this clinic. Thanks to them I've gone from being terrified of the dentist to coming in calmly for whatever I need. I recommend them!"
+    },
+    {
+      "autor": "Cristina G.",
+      "texto_es": "Muy recomendable, para toda la familia. Son un 10 todo el equipo. Trato súper amable, facilidad para pedir horas, y el dentista muy atento para hacerme sentir bien y que sea lo más rápido posible. Cero doloroso, que eso es lo más importante.",
+      "texto_ca": "Molt recomanable, per a tota la família. Són un 10 tot l'equip. Tracte súper amable, facilitat per demanar hora, i el dentista molt atent perquè em senti bé i que sigui com més ràpid millor. Zero dolorós, que això és el més important.",
+      "texto_en": "Highly recommended, for the whole family. The whole team is a 10. Super friendly service, easy to book appointments, and the dentist very attentive to make me feel comfortable and get it done as quickly as possible. Completely painless, which is the most important thing."
+    },
+    {
+      "autor": "Hugo M. R.",
+      "texto_es": "Equipo honesto y muy profesional. Recomiendo esta clínica tanto para adultos como para niños.",
+      "texto_ca": "Equip honest i molt professional. Recomano aquesta clínica tant per a adults com per a nens.",
+      "texto_en": "Honest and very professional team. I recommend this clinic for both adults and children."
+    },
+    {
+      "autor": "Ares Riu Madrid",
+      "texto_es": "He ido con mis hijos y un trato increíble en el que los niños quedan encantados con el trato y el servicio. También me he hecho varios tratamientos y la experiencia ha sido muy buena, gracias a todo el equipo.",
+      "texto_ca": "Hi he anat amb els meus fills i un tracte increïble en què els nens queden encantats amb el tracte i el servei. També m'he fet diversos tractaments i l'experiència ha estat molt bona, gràcies a tot l'equip.",
+      "texto_en": "I've gone with my children and the care is incredible — the kids end up delighted with how they're treated and the service. I've also had several treatments myself and the experience has been very good, thanks to the whole team."
+    },
+    {
+      "autor": "Alejandra Foncillas",
+      "texto_es": "Muy profesionales y además un trato personal de 10. Tanto los dentistas como en recepción nos atendieron a mí y a mis hijos de lujo. Además, la clínica es muy limpia y tiene una estética muy cuidada.",
+      "texto_ca": "Molt professionals i a més un tracte personal de 10. Tant els dentistes com a recepció ens van atendre a mi i als meus fills de luxe. A més, la clínica és molt neta i té una estètica molt cuidada.",
+      "texto_en": "Very professional and also a 10/10 personal touch. Both the dentists and the reception team took great care of me and my children. On top of that, the clinic is very clean and beautifully designed."
+    },
+    {
+      "autor": "Marta Bestard",
+      "texto_es": "Un trato de 10, ir al dentista así da gusto. Volveremos seguro.",
+      "texto_ca": "Un tracte de 10, anar al dentista així fa goig. Hi tornarem segur.",
+      "texto_en": "A 10/10 experience, going to the dentist like this is a pleasure. We'll definitely be back."
+    },
+    {
+      "autor": "Begoña Reñe",
+      "texto_es": "Un claro ejemplo de clínica que cuida los detalles y te hacen sentir como en casa. Por no hablar de la profesionalidad del Dr. Doria. Gracias por tu honestidad y consejo. Volveré.",
+      "texto_ca": "Un clar exemple de clínica que cuida els detalls i et fan sentir com a casa. Per no parlar de la professionalitat del Dr. Doria. Gràcies per la teva honestedat i consell. Hi tornaré.",
+      "texto_en": "A clear example of a clinic that cares about the details and makes you feel at home. Not to mention Dr. Doria's professionalism. Thank you for your honesty and advice. I'll be back."
+    }
+  ]
+}

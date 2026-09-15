@@ -102,8 +102,6 @@ const equipo = defineCollection({
 });
 
 const imagen = z.object({ src: z.string(), alt: z.string() });
-const opinion = z.object({ texto: z.string(), autor: z.string() });
-
 const home = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/home' }),
   schema: z.object({
@@ -121,12 +119,6 @@ const home = defineCollection({
     instalaciones_titulo: z.string(),
     instalaciones_texto: z.string(),
     instalaciones_imagenes: z.array(imagen).min(1),
-    primera_visita_titulo: z.string(),
-    primera_visita_texto: z.string(),
-    primera_visita_puntos: z.array(z.string()).min(1),
-    primera_visita_cta: z.string(),
-    opiniones_titulo: z.string(),
-    opiniones: z.array(opinion).default([]),
     seo,
   }),
 });

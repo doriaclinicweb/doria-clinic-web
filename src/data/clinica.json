@@ -30,6 +30,20 @@
     }
   ],
   "primera_visita_gratuita": true,
+  "primera_visita": {
+    "titulo": "Tu primera visita",
+    "titulo_ca": "La teva primera visita",
+    "titulo_en": "Your first visit",
+    "texto": "Revisión completa, diagnóstico personalizado y un plan de tratamiento adaptado a ti. Nos tomamos el tiempo de escucharte y de resolver todas tus dudas.",
+    "texto_ca": "Revisió completa, diagnòstic personalitzat i un pla de tractament adaptat a tu. Ens prenem el temps d'escoltar-te i de resoldre tots els teus dubtes.",
+    "texto_en": "A complete check-up, a personalised diagnosis and a treatment plan tailored to you. We take the time to listen and answer all your questions.",
+    "cta": "Reservar por WhatsApp",
+    "cta_ca": "Reservar per WhatsApp",
+    "cta_en": "Book by WhatsApp",
+    "puntos": ["Primera visita gratuita, sin compromiso", "Radiografía gratuita", "Diagnóstico personalizado"],
+    "puntos_ca": ["Primera visita gratuïta, sense compromís", "Radiografia gratuïta", "Diagnòstic personalitzat"],
+    "puntos_en": ["Free first visit, no obligation", "Free X-ray", "Personalised diagnosis"]
+  },
   "software_citas": "https://wa.me/34619186579?text=Hola,%20quiero%20pedir%20hora",
   "google_business_profile": "https://maps.app.goo.gl/evyvMBmimQb3Lrjp9",
   "nombre_google_maps": "Doria Clinic Dentista - Clínica Dental Barcelona",
