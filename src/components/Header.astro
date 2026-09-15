@@ -10,6 +10,7 @@ const wa = clinica.software_citas;
 const pathname = Astro.url.pathname;
 const idioma = detectarIdioma(pathname);
 const inicio = inicioDe(idioma);
+const esHome = pathname === inicio;
 const prefijo = idioma === 'es' ? '' : '/' + idioma;
 const etiquetasIdioma = { es: 'ES', ca: 'CA', en: 'EN' };
 const otrosIdiomas = IDIOMAS.filter((i) => i !== idioma).map((i) => ({
@@ -30,8 +31,8 @@ const t = {
       <a href={prefijo + '/especialidades/'}>{t.especialidades}</a>
       <a href={prefijo + '/tratamientos/'}>{t.tratamientos}</a>
       <a href={prefijo + '/equipo/'}>{t.equipo}</a>
-      <a href={enHero ? '#espacio' : inicio + '#espacio'}>{t.espacio}</a>
-      <a href={enHero ? '#contacto' : inicio + '#contacto'}>{t.contacto}</a>
+      <a href={esHome ? '#espacio' : inicio + '#espacio'}>{t.espacio}</a>
+      <a href={esHome ? '#contacto' : inicio + '#contacto'}>{t.contacto}</a>
     </nav>
     <div class="idiomas">
       {otrosIdiomas.map((o) => <a class="idioma" href={o.href}>{o.etiqueta}</a>)}
