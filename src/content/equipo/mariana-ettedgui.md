@@ -1,6 +1,6 @@
 ---
 nombre: "Dra. Mariana Ettedgui"
-numero_colegiado: "PENDIENTE"
+numero_colegiado: "08007381 (COEC)"
 orden: 3
 foto: "/img/marina-desktop-440x660.jpg"
 cargo: "Odontóloga especializada en ortodoncia"

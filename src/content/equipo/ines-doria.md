@@ -1,6 +1,6 @@
 ---
 nombre: "Dra. Inés Doria"
-numero_colegiado: "PENDIENTE"
+numero_colegiado: "08007331 (COEC)"
 orden: 2
 foto: "/img/ines-2-440x660.jpg"
 cargo: "Odontóloga especializada en odontología general y periodoncia"
