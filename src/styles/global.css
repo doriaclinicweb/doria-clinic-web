@@ -226,14 +226,20 @@ a { color: inherit; }
 .resenas-tarjeta q { font-family: var(--display); font-size: 1.05rem; line-height: 1.45; quotes: none; }
 .resenas-tarjeta cite { font-style: normal; font-size: 0.88rem; color: #556055; }
 
-.financiacion-banner { background: var(--verde); padding: clamp(3rem, 7vw, 5rem) 0; }
-.financiacion-banner .financiacion-destacada { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.9rem; text-decoration: none; color: var(--crema); max-width: 40rem; margin: 0 auto; }
-.financiacion-banner .financiacion-icono { flex: 0 0 auto; width: 4.2rem; height: 4.2rem; border-radius: 50%; }
-.financiacion-banner strong { font-family: var(--display); font-weight: 400; font-size: clamp(1.5rem, 3.2vw, 2.1rem); line-height: 1.25; }
-.financiacion-banner .financiacion-destacada > span:not(.financiacion-cta) { color: rgba(255,254,247,.82); font-size: 1.02rem; max-width: 34ch; }
-.financiacion-banner .financiacion-logo-tmf { width: 160px; height: auto; margin-top: 0.3rem; }
-.financiacion-banner .financiacion-cta { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.6rem; border: 1px solid var(--crema); border-radius: 999px; padding: 0.7rem 1.6rem; font-family: var(--display); font-size: 0.98rem; transition: background-color .2s, color .2s; }
-.financiacion-banner .financiacion-destacada:hover .financiacion-cta { background: var(--crema); color: var(--verde); }
+.financiacion-banner { background: var(--verde); padding: clamp(2rem, 4.5vw, 2.8rem) 0; }
+.financiacion-banner .financiacion-tarjeta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.6rem 2.5rem; text-decoration: none; color: var(--crema); }
+.financiacion-banner .financiacion-etiqueta { display: block; font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,254,247,.62); margin-bottom: 0.45rem; }
+.financiacion-banner .financiacion-texto { min-width: 0; }
+.financiacion-banner .financiacion-texto strong { display: block; font-family: var(--display); font-weight: 400; font-size: clamp(1.25rem, 2.4vw, 1.55rem); line-height: 1.25; }
+.financiacion-banner .financiacion-sub { display: block; color: rgba(255,254,247,.82); font-size: 0.95rem; margin-top: 0.35rem; }
+.financiacion-banner .financiacion-accion { flex: 0 0 auto; display: flex; align-items: center; gap: 1.6rem; }
+.financiacion-banner .financiacion-logo-tmf { width: 120px; height: auto; }
+.financiacion-banner .financiacion-cta { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; border: 1px solid var(--crema); border-radius: 999px; padding: 0.7rem 1.5rem; font-family: var(--display); font-size: 0.95rem; transition: background-color .2s, color .2s; }
+.financiacion-banner .financiacion-tarjeta:hover .financiacion-cta { background: var(--crema); color: var(--verde); }
+@media (max-width: 700px) {
+  .financiacion-banner .financiacion-tarjeta { flex-direction: column; text-align: center; }
+  .financiacion-banner .financiacion-accion { flex-direction: column; gap: 0.9rem; }
+}
 .rrss { background: var(--gris); padding: 1.4rem 0; }
 .rrss-tarjeta { display: flex; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--tinta); }
 .rrss-texto { display: flex; flex-direction: column; gap: 0.2rem; }
@@ -422,7 +428,11 @@ a { color: inherit; }
 .sello-tmf strong { font-family: var(--display); font-weight: 400; font-size: 1.1rem; display: block; margin-bottom: 0.4rem; }
 .sello-tmf p { margin: 0 0 0.5rem; color: #556055; font-size: 0.92rem; }
 .sello-tmf a { color: var(--verde); }
-.letra-pequena { font-size: 0.78rem; color: #7a8a7a; max-width: none; border-top: 1px solid var(--verde-claro); padding-top: 1.2rem; }
+.letra-pequena { font-size: 0.78rem; color: #7a8a7a; max-width: none; border-top: 1px solid var(--verde-claro); padding-top: 1.2rem; scroll-margin-top: 6.5rem; }
+.letra-pequena strong { color: var(--verde); }
+.asterisco-financiacion { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+@keyframes destacar-condiciones { 0%, 100% { background-color: transparent; } 30% { background-color: rgba(90,122,90,.16); } }
+.letra-pequena:target { animation: destacar-condiciones 1.8s ease; }
 @media (max-width: 560px) { .sello-tmf { flex-direction: column; text-align: center; } }
 
 .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: var(--verde); color: var(--crema); padding: 1.1rem clamp(1rem, 4vw, 2rem); box-shadow: 0 -4px 16px rgba(0,0,0,.15); }
