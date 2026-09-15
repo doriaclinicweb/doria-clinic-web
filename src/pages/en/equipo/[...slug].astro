@@ -60,7 +60,7 @@ const schema = {
 
   <div class="columnas">
     <div>
-      {trayectoriaEn.map((p: string) => <p>{p}</p>)}
+      {trayectoriaEn.map((p: string) => <p set:html={p} />)}
 
       {titulacionEn.length > 0 && (
         <>

@@ -133,14 +133,14 @@ const imagenCabecera = d.imagen || especialidad?.data.imagen;
       <div class="ficha-info">
         <dl>
           {d.precio_desde ? (<><dt>From</dt><dd>€{d.precio_desde}</dd></>) : null}
-          {d.financiacion_meses ? (<><dt>Financing</dt><dd>{d.financiacion_meses} months</dd></>) : null}
+          {d.financiacion_meses ? (<><dt><a href="/en/financiacion/">Financing</a></dt><dd>{d.financiacion_meses} months</dd></>) : null}
           {d.duracion_sesion ? (<><dt>Session</dt><dd>{d.duracion_sesion}</dd></>) : null}
           {d.numero_sesiones ? (<><dt>Sessions</dt><dd>{d.numero_sesiones}</dd></>) : null}
           {d.anestesia ? (<><dt>Anaesthesia</dt><dd>{anestesias[d.anestesia]}</dd></>) : null}
         </dl>
 
         <div class="firma">
-          <strong>{doctor?.data.nombre}</strong>
+          <strong><a href={`/en/equipo/${doctor?.id}/`}>{doctor?.data.nombre}</a></strong>
           {cargoEn}
           <span class="colegiado">Reg. no. {doctor?.data.numero_colegiado}</span>
         </div>

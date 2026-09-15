@@ -12,9 +12,15 @@ const equipo = (await getCollection('equipo', (e) => !e.data.noindex)).sort(
   descripcion="L'equip de doctors i especialistes de Doria Clinic a l'Eixample de Barcelona: formació, especialitat i trajectòria de cadascun."
   h1="Equip"
   lede="Un equip d'especialistes, cadascun format en la seva àrea, coordinats per tenir cura de la teva salut bucodental de manera integral."
+  imagenCabecera={{ src: '/img/instalaciones/03-pasillo-banco.jpg', alt: "Equip de Doria Clinic a l'Eixample de Barcelona" }}
+  introDosColumnas
+  anchoDoble
 >
-  <Fragment slot="intro-extra">
-    <IntroAccion idioma="ca" mensaje="Hola, vull demanar cita" />
+  <Fragment slot="intro-acciones">
+    <IntroAccion idioma="ca" mensaje="Hola, vull demanar cita" parte="acciones" />
+  </Fragment>
+  <Fragment slot="intro-razones">
+    <IntroAccion idioma="ca" mensaje="Hola, vull demanar cita" parte="razones" />
   </Fragment>
 
   <div class="equipo">

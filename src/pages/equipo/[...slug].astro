@@ -48,7 +48,7 @@ const schema = {
 
   <div class="columnas">
     <div>
-      {d.trayectoria.map((p: string) => <p>{p}</p>)}
+      {d.trayectoria.map((p: string) => <p set:html={p} />)}
 
       {d.titulacion.length > 0 && (
         <>

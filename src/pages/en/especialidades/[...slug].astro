@@ -107,7 +107,7 @@ const schema = {
       <div class="ficha-info">
         {doctor && (
           <div class="firma">
-            <strong>{doctor.data.nombre}</strong>
+            <strong><a href={`/en/equipo/${doctor.id}/`}>{doctor.data.nombre}</a></strong>
             {cargoEn}
             <span class="colegiado">Reg. no. {doctor.data.numero_colegiado}</span>
           </div>
