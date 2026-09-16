@@ -1,24 +1,25 @@
 ---
 idioma: en
-titulo: "Paediatric Dentistry"
-subtitulo: "Children's dental health"
-resumen: "Check-ups, sealants, fluoride treatment and interceptive orthodontics. Prevention in childhood is the foundation of a healthy smile in adulthood."
+titulo: Paediatric Dentistry
+subtitulo: Children's dental health
+resumen: Check-ups, sealants, fluoride treatment and interceptive orthodontics. Prevention in childhood is the foundation of a healthy smile in adulthood.
+resumen_corto: ''
 orden: 9
-icono: "/img/iconos/odontopediatria.svg"
-imagen: "/img/instalaciones/03-pasillo-banco.jpg"
+icono: /img/iconos/odontopediatria.svg
 especialista: mariana-ettedgui
-faqs:
-  - pregunta: "When should my child first go to the dentist?"
-    respuesta: "Around their first birthday, or when their first baby teeth come through. The sooner they get used to the clinic, the easier it will be for future visits to be a calm experience."
-  - pregunta: "Do cavities in baby teeth need treating if they're going to fall out anyway?"
-    respuesta: "Yes. An untreated cavity can become infected and affect the permanent tooth forming underneath, as well as causing pain and chewing problems in the meantime."
-  - pregunta: "Do dental sealants hurt?"
-    respuesta: "No. It's a quick, painless procedure that doesn't require anaesthesia: the molar is cleaned and the protective resin is applied directly to the surface."
-  - pregunta: "At what age should a dummy be given up or thumb-sucking corrected?"
-    respuesta: "Ideally before age 3-4. Continuing beyond that can affect the position of the teeth and the development of the palate."
+imagen: /img/instalaciones/03-pasillo-banco.jpg
 seo:
-  titulo_seo: "Paediatric Dentistry in Barcelona | Children's Dentist"
+  titulo_seo: Paediatric Dentistry in Barcelona | Children's Dentist
   meta_descripcion: "Children's dentist in the Eixample, Barcelona: check-ups, sealants and interceptive orthodontics. Free first visit."
+faqs:
+  - pregunta: When should my child first go to the dentist?
+    respuesta: Around their first birthday, or when their first baby teeth come through. The sooner they get used to the clinic, the easier it will be for future visits to be a calm experience.
+  - pregunta: Do cavities in baby teeth need treating if they're going to fall out anyway?
+    respuesta: Yes. An untreated cavity can become infected and affect the permanent tooth forming underneath, as well as causing pain and chewing problems in the meantime.
+  - pregunta: Do dental sealants hurt?
+    respuesta: "No. It's a quick, painless procedure that doesn't require anaesthesia: the molar is cleaned and the protective resin is applied directly to the surface."
+  - pregunta: At what age should a dummy be given up or thumb-sucking corrected?
+    respuesta: Ideally before age 3-4. Continuing beyond that can affect the position of the teeth and the development of the palate.
 ---
 
 At Doria Clinic we want a visit to the dentist to be a positive, fun experience.
