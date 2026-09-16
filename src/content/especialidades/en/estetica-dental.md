@@ -1,25 +1,25 @@
 ---
 idioma: en
-titulo: "Dental Aesthetics"
-subtitulo: "A balance between health and harmony"
-resumen: "Porcelain and composite veneers and teeth whitening, with digital smile planning so you can see the result before starting treatment."
-resumen_corto: "Porcelain and composite veneers and teeth whitening, with digital smile planning."
+titulo: Dental Aesthetics
+subtitulo: A balance between health and harmony
+resumen: Porcelain and composite veneers and teeth whitening, with digital smile planning so you can see the result before starting treatment.
+resumen_corto: Porcelain and composite veneers and teeth whitening, with digital smile planning.
 orden: 5
-icono: "/img/iconos/estetica-dental.svg"
-imagen: "/img/instalaciones/17-prueba-protesis.jpg"
+icono: /img/iconos/estetica-dental.svg
 especialista: ines-doria
-faqs:
-  - pregunta: "Do veneers damage the natural tooth?"
-    respuesta: "Composite veneers require almost no preparation of the tooth. Porcelain ones need minimal removal of the visible surface, always calculated to preserve as much natural structure as possible."
-  - pregunta: "How long do veneers last?"
-    respuesta: "Porcelain veneers can last more than 10 years with good maintenance. Composite ones last less, around 4-5 years, and are easier and cheaper to repair or renew."
-  - pregunta: "Is teeth whitening safe?"
-    respuesta: "Yes, as long as it's carried out under professional supervision with the appropriate concentrations. It doesn't damage enamel; it can cause temporary sensitivity, which goes away within a few days."
-  - pregunta: "Can I see the result before starting treatment?"
-    respuesta: "Yes. With digital smile planning we design your case virtually before touching any tooth, so you can decide having already seen the final result."
+imagen: /img/instalaciones/17-prueba-protesis.jpg
 seo:
-  titulo_seo: "Dental Aesthetics in Barcelona | Doria Clinic"
-  meta_descripcion: "Dental veneers and whitening in Barcelona with digital smile planning. Free first visit in the Eixample."
+  titulo_seo: Dental Aesthetics in Barcelona | Doria Clinic
+  meta_descripcion: Dental veneers and whitening in Barcelona with digital smile planning. Free first visit in the Eixample.
+faqs:
+  - pregunta: Do veneers damage the natural tooth?
+    respuesta: Composite veneers require almost no preparation of the tooth. Porcelain ones need minimal removal of the visible surface, always calculated to preserve as much natural structure as possible.
+  - pregunta: How long do veneers last?
+    respuesta: Porcelain veneers can last more than 10 years with good maintenance. Composite ones last less, around 4-5 years, and are easier and cheaper to repair or renew.
+  - pregunta: Is teeth whitening safe?
+    respuesta: Yes, as long as it's carried out under professional supervision with the appropriate concentrations. It doesn't damage enamel; it can cause temporary sensitivity, which goes away within a few days.
+  - pregunta: Can I see the result before starting treatment?
+    respuesta: Yes. With digital smile planning we design your case virtually before touching any tooth, so you can decide having already seen the final result.
 ---
 
 We see dental aesthetics as the balance between health and harmony, not "off the

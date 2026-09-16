@@ -1,25 +1,25 @@
 ---
 idioma: ca
-titulo: "Estètica dental"
-subtitulo: "Equilibri entre salut i harmonia"
-resumen: "Carilles de porcellana i composite i blanquejament dental, amb planificació digital del somriure per veure el resultat abans de començar el tractament."
-resumen_corto: "Carilles de porcellana i composite, i blanquejament dental, amb planificació digital del somriure."
+titulo: Estètica dental
+subtitulo: Equilibri entre salut i harmonia
+resumen: Carilles de porcellana i composite i blanquejament dental, amb planificació digital del somriure per veure el resultat abans de començar el tractament.
+resumen_corto: Carilles de porcellana i composite, i blanquejament dental, amb planificació digital del somriure.
 orden: 5
-icono: "/img/iconos/estetica-dental.svg"
-imagen: "/img/instalaciones/17-prueba-protesis.jpg"
+icono: /img/iconos/estetica-dental.svg
 especialista: ines-doria
-faqs:
-  - pregunta: "Les carilles fan malbé la dent natural?"
-    respuesta: "Les de composite gairebé no requereixen preparació de la dent. Les de porcellana necessiten un desgast mínim de la superfície visible, sempre calculat per preservar la màxima quantitat possible d'estructura natural."
-  - pregunta: "Quant duren les carilles?"
-    respuesta: "Les de porcellana poden durar més de 10 anys amb un bon manteniment. Les de composite duren menys, al voltant de 4-5 anys, i són més fàcils i econòmiques de reparar o renovar."
-  - pregunta: "El blanquejament dental és segur?"
-    respuesta: "Sí, sempre que es faci sota supervisió professional amb les concentracions adequades. No fa malbé l'esmalt; pot provocar sensibilitat temporal, que desapareix en pocs dies."
-  - pregunta: "Puc veure el resultat abans de començar el tractament?"
-    respuesta: "Sí. Amb la planificació digital del somriure dissenyem el teu cas de forma virtual abans de tocar cap dent, perquè decideixis amb el resultat final ja visible."
+imagen: /img/instalaciones/17-prueba-protesis.jpg
 seo:
-  titulo_seo: "Estètica dental a Barcelona | Doria Clinic"
-  meta_descripcion: "Carilles dentals i blanquejament a Barcelona amb planificació digital del somriure. Primera visita gratuïta a l'Eixample."
+  titulo_seo: Estètica dental a Barcelona | Doria Clinic
+  meta_descripcion: Carilles dentals i blanquejament a Barcelona amb planificació digital del somriure. Primera visita gratuïta a l'Eixample.
+faqs:
+  - pregunta: Les carilles fan malbé la dent natural?
+    respuesta: Les de composite gairebé no requereixen preparació de la dent. Les de porcellana necessiten un desgast mínim de la superfície visible, sempre calculat per preservar la màxima quantitat possible d'estructura natural.
+  - pregunta: Quant duren les carilles?
+    respuesta: Les de porcellana poden durar més de 10 anys amb un bon manteniment. Les de composite duren menys, al voltant de 4-5 anys, i són més fàcils i econòmiques de reparar o renovar.
+  - pregunta: El blanquejament dental és segur?
+    respuesta: Sí, sempre que es faci sota supervisió professional amb les concentracions adequades. No fa malbé l'esmalt; pot provocar sensibilitat temporal, que desapareix en pocs dies.
+  - pregunta: Puc veure el resultat abans de començar el tractament?
+    respuesta: Sí. Amb la planificació digital del somriure dissenyem el teu cas de forma virtual abans de tocar cap dent, perquè decideixis amb el resultat final ja visible.
 ---
 
 Entenem l'estètica dental com l'equilibri entre salut i harmonia, no com somriures "de
