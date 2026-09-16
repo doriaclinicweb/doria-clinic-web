@@ -1,8 +1,6 @@
 ---
 idioma: es
-hero_titular: |-
-  Nuestra especialidad
-  es tu bienestar
+hero_titular: Nuestra especialidad es tu bienestar
 hero_entradilla: Clínica dental en el Eixample especializada en salud bucodental, estética y atención al deportista.
 hero_imagenes:
   - src: /img/1-10.jpg
@@ -11,6 +9,10 @@ hero_imagenes:
     alt: Interior de la clínica
   - src: /img/3-10.jpg
     alt: Odontopediatra explicando el tratamiento a un niño
+  - src: /img/13-DORIA-SAH_7959 (1).jpg
+    alt: Sala de espera de la clinica
+  - src: /img/55-DORIA-SAH_8243.jpg
+    alt: Doctor haciendo tratamiento
 cta_texto: Pedir cita por WhatsApp
 intro_frase: Cuidamos personas, no solo sonrisas.
 intro_parrafos:
