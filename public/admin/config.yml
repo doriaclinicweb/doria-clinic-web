@@ -224,7 +224,7 @@ collections:
     summary: "{{idioma}}"
     fields:
       - { name: idioma, label: "Idioma", widget: select, options: [es, ca, en] }
-      - { name: hero_titular, label: "Titular", widget: string }
+      - { name: hero_titular, label: "Titular", widget: text, hint: "Cada línea nueva (Intro) es un salto de línea manual en el titular." }
       - { name: hero_entradilla, label: "Entradilla", widget: text }
       - name: hero_imagenes
         label: "Fotos del slider de portada"
