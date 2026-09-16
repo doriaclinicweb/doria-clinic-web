@@ -33,6 +33,17 @@ const t = {
       <a href={prefijo + '/equipo/'}>{t.equipo}</a>
       <a href={esHome ? '#espacio' : inicio + '#espacio'}>{t.espacio}</a>
       <a href={esHome ? '#contacto' : inicio + '#contacto'}>{t.contacto}</a>
+      <div class="nav-idiomas">
+        {IDIOMAS.map((i) => (
+          <a
+            class:list={['nav-idioma', { activo: i === idioma }]}
+            href={i === idioma ? undefined : rutaEn(pathname, i)}
+            aria-current={i === idioma ? 'page' : undefined}
+          >
+            {etiquetasIdioma[i]}
+          </a>
+        ))}
+      </div>
     </nav>
     <div class="idiomas">
       {otrosIdiomas.map((o) => <a class="idioma" href={o.href}>{o.etiqueta}</a>)}
