@@ -11,6 +11,10 @@ hero_imagenes:
     alt: Interior de la clínica
   - src: /img/3-10.jpg
     alt: Odontopediatra explicant el tractament a un nen
+  - src: /img/instalaciones/04-rincon-lectura.jpg
+    alt: Sala d'espera de la clinica
+  - src: /img/55-DORIA-SAH_8243.jpg
+    alt: Doctor fent un tractament
 cta_texto: Demanar cita per WhatsApp
 intro_frase: Cuidem persones, no només somriures.
 intro_parrafos:
