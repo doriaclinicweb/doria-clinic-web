@@ -77,6 +77,312 @@
       "texto_es": "Un claro ejemplo de clínica que cuida los detalles y te hacen sentir como en casa. Por no hablar de la profesionalidad del Dr. Doria. Gracias por tu honestidad y consejo. Volveré.",
       "texto_ca": "Un clar exemple de clínica que cuida els detalls i et fan sentir com a casa. Per no parlar de la professionalitat del Dr. Doria. Gràcies per la teva honestedat i consell. Hi tornaré.",
       "texto_en": "A clear example of a clinic that cares about the details and makes you feel at home. Not to mention Dr. Doria's professionalism. Thank you for your honesty and advice. I'll be back."
+    },
+    {
+      "autor": "Blanca de Gispert",
+      "texto_es": "Clínica TOP. Todo súper bien cuidado, nada de esperas, servicio increíble y sobre todo son honestos con el tipo de tratamientos sin añadirte extras que no hacen falta. ¡Lo valoro muchísimo para sentir que puedo confiar en ellos!",
+      "texto_ca": "Clínica TOP. Tot súper ben cuidat, gens d'esperes, servei increïble i sobretot són honestos amb el tipus de tractaments sense afegir-te extres que no fan falta. Ho valoro moltíssim per sentir que puc confiar-hi!",
+      "texto_en": "Top clinic. Everything is really well looked after, no waiting around, incredible service and above all they're honest about the treatments without adding extras you don't need. I really value being able to trust them!"
+    },
+    {
+      "autor": "Patricia Boucau",
+      "texto_es": "Tuve el placer de atenderme en la clínica. No solo resolvieron el problema puntual, sino que además me brindaron asesoramiento con una calidez que agradezco. Toda la clínica es impecable, con equipamiento de última generación, y la atención de los especialistas maravillosa. ¡Muy agradecida!",
+      "texto_ca": "Vaig tenir el plaer d'atendre'm a la clínica. No només van resoldre el problema puntual, sinó que a més em van oferir assessorament amb una calidesa que agraeixo. Tota la clínica és impecable, amb equipament d'última generació, i l'atenció dels especialistes meravellosa. Molt agraïda!",
+      "texto_en": "I had the pleasure of being treated at the clinic. They not only solved my immediate problem but also gave me advice with a warmth I really appreciate. The whole clinic is spotless, with state-of-the-art equipment, and the specialists' care was wonderful. Very grateful!"
+    },
+    {
+      "autor": "Cayana Studio",
+      "texto_es": "Excelente experiencia en Doria Clinic. El equipo muy profesional y amable. Me explicaron todo el proceso y me hicieron sentir muy cómoda. ¡Altamente recomendado!",
+      "texto_ca": "Excel·lent experiència a Doria Clinic. L'equip molt professional i amable. Em van explicar tot el procés i em van fer sentir molt còmoda. Molt recomanat!",
+      "texto_en": "Excellent experience at Doria Clinic. Very professional and friendly team. They explained the whole process and made me feel very comfortable. Highly recommended!"
+    },
+    {
+      "autor": "Albert Perona",
+      "texto_es": "100% recomendable Doria Clinic. El trato ha sido cercano y muy profesional en todo momento. Me explicaron el tratamiento con claridad. Sin duda la clínica dental de referencia.",
+      "texto_ca": "100% recomanable Doria Clinic. El tracte ha estat proper i molt professional en tot moment. Em van explicar el tractament amb claredat. Sens dubte la clínica dental de referència.",
+      "texto_en": "100% recommend Doria Clinic. The care was warm and highly professional throughout. They explained the treatment clearly. Without a doubt the go-to dental clinic."
+    },
+    {
+      "autor": "Valentina Gari",
+      "texto_es": "Todo impecable, hicieron que me sintiera como en casa, muy profesionales y mi boca mejora a diario gracias a ellos. Lo recomiendo 100%.",
+      "texto_ca": "Tot impecable, van fer que em sentís com a casa, molt professionals i la meva boca millora cada dia gràcies a ells. Ho recomano 100%.",
+      "texto_en": "Everything was flawless, they made me feel at home, very professional, and my mouth improves every day thanks to them. I recommend them 100%."
+    },
+    {
+      "autor": "Sandra Durany",
+      "texto_es": "Siempre que hemos ido a la consulta, tanto mis hijos como yo hemos salido felices con el resultado. Gracias equipo y gracias Dr. Doria, realmente la única clínica donde nos hemos sentido muy a gusto.",
+      "texto_ca": "Sempre que hem anat a la consulta, tant els meus fills com jo hem sortit contents amb el resultat. Gràcies equip i gràcies Dr. Doria, realment l'única clínica on ens hem sentit molt a gust.",
+      "texto_en": "Every time we've been to the clinic, both my children and I have come away happy with the result. Thank you to the team and Dr. Doria — truly the only clinic where we've felt so at ease."
+    },
+    {
+      "autor": "Belén Pont",
+      "texto_es": "Una clínica magnífica y muy buenos profesionales. El Dr. Doria súper cercano y honesto. Se lo recomiendo siempre a todo el mundo. Y destaca la gran amabilidad de recepción, te solucionan en cualquier horario y problema.",
+      "texto_ca": "Una clínica magnífica i molt bons professionals. El Dr. Doria súper proper i honest. L'hi recomano sempre a tothom. I destaca la gran amabilitat de recepció, et solucionen a qualsevol horari i problema.",
+      "texto_en": "A wonderful clinic with excellent professionals. Dr. Doria is very approachable and honest. I always recommend it to everyone. The reception team is also extremely kind and sorts out any issue at any time."
+    },
+    {
+      "autor": "José Maciá de Arana",
+      "texto_es": "Estoy en proceso de ortodoncia con mi hijo. Un trato genial y una profesionalidad total. Muchas gracias Doria Clinic.",
+      "texto_ca": "Estic en procés d'ortodòncia amb el meu fill. Un tracte genial i una professionalitat total. Moltes gràcies Doria Clinic.",
+      "texto_en": "My son and I are going through orthodontic treatment. Wonderful care and complete professionalism. Thank you very much, Doria Clinic."
+    },
+    {
+      "autor": "Patricia Maurizot",
+      "texto_es": "Tu boca no la puedes dejar en manos de cualquiera. Muy buen servicio y buen trato, 100% recomendable. Ideal para niños.",
+      "texto_ca": "La teva boca no la pots deixar en mans de qualsevol. Molt bon servei i bon tracte, 100% recomanable. Ideal per a nens.",
+      "texto_en": "You can't leave your mouth in just anyone's hands. Very good service and care, 100% recommended. Great for children too."
+    },
+    {
+      "autor": "Carlos Stampa",
+      "texto_es": "Servicio perfecto y asesoramiento impecable. La boca no se deja en manos de cualquiera, volveré. Muy recomendable.",
+      "texto_ca": "Servei perfecte i assessorament impecable. La boca no es deixa en mans de qualsevol, hi tornaré. Molt recomanable.",
+      "texto_en": "Perfect service and flawless advice. You shouldn't trust just anyone with your mouth — I'll be back. Highly recommended."
+    },
+    {
+      "autor": "Alfonso Segura",
+      "texto_es": "Muy sorprendido positivamente por la rapidez y cero dolor al hacerme la higiene dental. Recuerdo el dolor que pasé cuando fui por mutua a otro lugar. Así que muy recomendable.",
+      "texto_ca": "Molt sorprès positivament per la rapidesa i zero dolor en fer-me la higiene dental. Recordo el dolor que vaig passar quan vaig anar per mútua a un altre lloc. Així que molt recomanable.",
+      "texto_en": "Very pleasantly surprised by how quick and painless my dental cleaning was. I remember the pain I went through at another clinic through my insurance. So, highly recommended."
+    },
+    {
+      "autor": "Triana Vives Porqueras",
+      "texto_es": "Excelente trato y muy profesionales, sin duda los mejores.",
+      "texto_ca": "Excel·lent tracte i molt professionals, sens dubte els millors.",
+      "texto_en": "Excellent care and very professional, without a doubt the best."
+    },
+    {
+      "autor": "Luis Pablo Muñoz Figueras",
+      "texto_es": "Muy agradable tanto el espacio como el personal. Aun no gustándome ir al dentista, mi experiencia ha sido de 10. Puntuales y amables, tanto la higienista como el Dr. han sido profesionales y cuidadosos. Clínica muy recomendable.",
+      "texto_ca": "Molt agradable tant l'espai com el personal. Encara que no m'agradi anar al dentista, la meva experiència ha estat de 10. Puntuals i amables, tant la higienista com el Dr. han estat professionals i curosos. Clínica molt recomanable.",
+      "texto_en": "Both the space and the staff are very pleasant. Even though I don't like going to the dentist, my experience was a 10. Punctual and friendly — both the hygienist and the doctor were professional and careful. A highly recommended clinic."
+    },
+    {
+      "autor": "Mireia",
+      "texto_es": "¡Muy contenta con Doria Clinic! Muy transparentes, rápidos y cuidan cada pequeño detalle.",
+      "texto_ca": "Molt contenta amb Doria Clinic! Molt transparents, ràpids i cuiden cada petit detall.",
+      "texto_en": "Very happy with Doria Clinic! Very transparent, fast, and they take care of every little detail."
+    },
+    {
+      "autor": "Laia Morala",
+      "texto_es": "La mejor higiene que me han hecho en años. Un equipo muy profesional y cercano. ¡Hasta pronto!",
+      "texto_ca": "La millor higiene que m'han fet en anys. Un equip molt professional i proper. Fins aviat!",
+      "texto_en": "The best cleaning I've had in years. A very professional and warm team. See you soon!"
+    },
+    {
+      "autor": "Pablo Serrano Elorduy",
+      "texto_es": "Fantástica atención, muy profesional el Dr. Doria, y en un momento hemos resuelto la patología.",
+      "texto_ca": "Fantàstica atenció, molt professional el Dr. Doria, i en un moment hem resolt la patologia.",
+      "texto_en": "Fantastic care, Dr. Doria is very professional, and we sorted out the problem in no time."
+    },
+    {
+      "autor": "Gemma",
+      "texto_es": "En esta clínica te ofrecen confianza desde el primer momento, siendo muy amables, eficaces y profesionales. Una atención excelente por parte del Dr. Guille y la Srta. Alex, muy agradecida por el trato recibido.",
+      "texto_ca": "En aquesta clínica t'ofereixen confiança des del primer moment, sent molt amables, eficaços i professionals. Una atenció excel·lent per part del Dr. Guille i la Sra. Alex, molt agraïda pel tracte rebut.",
+      "texto_en": "This clinic gives you confidence from the very first moment, with very kind, efficient and professional staff. Excellent care from Dr. Guille and Alex — very grateful for how I was treated."
+    },
+    {
+      "autor": "Rocío García Falaguera",
+      "texto_es": "Ayer el Dr. Doria tuvo que extraerle un diente a mi hijo y, pese a la resistencia y lloros del chico, lo hizo con paz, serenidad y mucha empatía. Bravo al doctor y su equipo por ese trato amable, ágil y cariñoso.",
+      "texto_ca": "Ahir el Dr. Doria va haver d'extreure una dent al meu fill i, malgrat la resistència i els plors del noi, ho va fer amb pau, serenitat i molta empatia. Enhorabona al doctor i al seu equip per aquest tracte amable, àgil i afectuós.",
+      "texto_en": "Yesterday Dr. Doria had to extract a tooth from my son and, despite the boy's resistance and tears, he did it with calm, composure and a lot of empathy. Bravo to the doctor and his team for such kind, swift and caring treatment."
+    },
+    {
+      "autor": "Lola T.",
+      "texto_es": "Muy profesionales. Clínica muy recomendable.",
+      "texto_ca": "Molt professionals. Clínica molt recomanable.",
+      "texto_en": "Very professional. A highly recommended clinic."
+    },
+    {
+      "autor": "Marta Cusí",
+      "texto_es": "Llevé a mis hijos a revisión y salieron encantados (y eso que normalmente no les gusta ir al dentista). El Dr. Doria un 10 tanto por el trato como por la profesionalidad. El espacio impecable. Sin duda un lugar de confianza.",
+      "texto_ca": "Vaig portar els meus fills a revisió i van sortir encantats (i això que normalment no els agrada anar al dentista). El Dr. Doria un 10 tant pel tracte com per la professionalitat. L'espai impecable. Sens dubte un lloc de confiança.",
+      "texto_en": "I took my children for a check-up and they left delighted (even though they don't usually like going to the dentist). Dr. Doria is a 10 both for his care and his professionalism. Spotless space. Without a doubt a place you can trust."
+    },
+    {
+      "autor": "Pablo Guerrero",
+      "texto_es": "Impecable trato en la Clínica Doria. Lo doloroso, con las manos adecuadas, se hace más llevadero. ¡Gracias equipo!",
+      "texto_ca": "Tracte impecable a la Clínica Doria. El que fa mal, amb les mans adequades, es fa més portable. Gràcies equip!",
+      "texto_en": "Flawless care at Doria Clinic. The uncomfortable parts are much easier to bear with the right hands. Thank you, team!"
+    },
+    {
+      "autor": "Ana Garcia-Ventosa",
+      "texto_es": "Vamos toda la familia y no podemos estar más contentos. Trato súper cercano y grandes profesionales. Todo el equipo un 10. No podemos estar en mejores manos.",
+      "texto_ca": "Hi anem tota la família i no podem estar més contents. Tracte súper proper i grans professionals. Tot l'equip un 10. No podem estar en millors mans.",
+      "texto_en": "The whole family goes here and we couldn't be happier. Very warm care and great professionals. The whole team is a 10 — we couldn't be in better hands."
+    },
+    {
+      "autor": "Miguel Viñas de Simone",
+      "texto_es": "Personal preparado y cercano, fantástico trato. Lo recomiendo al 100%.",
+      "texto_ca": "Personal preparat i proper, fantàstic tracte. Ho recomano al 100%.",
+      "texto_en": "Skilled and approachable staff, fantastic care. I recommend it 100%."
+    },
+    {
+      "autor": "Mònica Llavador Sanchis",
+      "texto_es": "Trato excelente, servicio inmejorable. Muy recomendable tanto para niños como adultos.",
+      "texto_ca": "Tracte excel·lent, servei immillorable. Molt recomanable tant per a nens com per a adults.",
+      "texto_en": "Excellent care, unbeatable service. Highly recommended for both children and adults."
+    },
+    {
+      "autor": "Stella Coll",
+      "texto_es": "Muy buena atención. Son muy pacientes con los niños y explican todo con claridad. Nos encantó el trato. Da confianza desde el primer momento. Volveremos.",
+      "texto_ca": "Molt bona atenció. Són molt pacients amb els nens i ho expliquen tot amb claredat. Ens va encantar el tracte. Dona confiança des del primer moment. Hi tornarem.",
+      "texto_en": "Very good care. They're very patient with children and explain everything clearly. We loved how we were treated. It inspires confidence from the very first moment. We'll be back."
+    },
+    {
+      "autor": "Pol Eguino",
+      "texto_es": "Clínica impecable, el dentista muy amable y cero daño. Ideal para los que le tengan miedo a los dentistas.",
+      "texto_ca": "Clínica impecable, el dentista molt amable i cap dolor. Ideal per als qui tinguin por dels dentistes.",
+      "texto_en": "Spotless clinic, very friendly dentist and zero pain. Ideal for those afraid of the dentist."
+    },
+    {
+      "autor": "Patricia Pujol",
+      "texto_es": "He quedado encantada con el Dr. Doria. Trato inmejorable. Me han hecho 2 endodoncias y una limpieza bucal y parece que me haya hecho un blanqueamiento. Lo recomiendo 100%.",
+      "texto_ca": "He quedat encantada amb el Dr. Doria. Tracte immillorable. M'han fet 2 endodòncies i una neteja bucal i sembla que m'hagin fet un blanquejament. Ho recomano 100%.",
+      "texto_en": "I'm delighted with Dr. Doria. Unbeatable care. I had 2 root canals and a cleaning, and it looks like I got a whitening treatment. I recommend it 100%."
+    },
+    {
+      "autor": "Alejandra Ybern",
+      "texto_es": "Excelente trato con los niños. Recomiendo 100%.",
+      "texto_ca": "Excel·lent tracte amb els nens. Recomano 100%.",
+      "texto_en": "Excellent with children. I recommend it 100%."
+    },
+    {
+      "autor": "Pablo Serra",
+      "texto_es": "Mi hija está encantada con sus aparatos y con el Dr. Doria.",
+      "texto_ca": "La meva filla està encantada amb els seus aparells i amb el Dr. Doria.",
+      "texto_en": "My daughter is delighted with her braces and with Dr. Doria."
+    },
+    {
+      "autor": "Guillermo Ferrer",
+      "texto_es": "Mi dentista de siempre ha abierto esta nueva clínica y no me puede gustar más. Te sientes como en casa. Y sobre Guille, el trato excelente de siempre. Encantado.",
+      "texto_ca": "El meu dentista de sempre ha obert aquesta nova clínica i no em pot agradar més. Et sents com a casa. I sobre en Guille, el tracte excel·lent de sempre. Encantat.",
+      "texto_en": "My long-time dentist has opened this new clinic and I couldn't be happier. You feel right at home. And as for Guille, the same excellent care as always. Delighted."
+    },
+    {
+      "autor": "Itziar LL.",
+      "texto_es": "Profesionales excelentes. El Dr. Doria y su equipo un 10. El mejor dentista de la ciudad condal.",
+      "texto_ca": "Professionals excel·lents. El Dr. Doria i el seu equip un 10. El millor dentista de la ciutat comtal.",
+      "texto_en": "Excellent professionals. Dr. Doria and his team are a 10. The best dentist in Barcelona."
+    },
+    {
+      "autor": "Marc Guillot",
+      "texto_es": "Una clínica de referencia. El Dr. Guillermo Doria es un profesional que inspira confianza, explica bien todos los tratamientos y genera paz en el paciente. Es una clínica de referencia en Barcelona.",
+      "texto_ca": "Una clínica de referència. El Dr. Guillermo Doria és un professional que inspira confiança, explica bé tots els tractaments i genera pau al pacient. És una clínica de referència a Barcelona.",
+      "texto_en": "A benchmark clinic. Dr. Guillermo Doria is a professional who inspires confidence, explains every treatment clearly and puts patients at ease. A benchmark clinic in Barcelona."
+    },
+    {
+      "autor": "Andrea Bayer Pont",
+      "texto_es": "La experiencia es muy positiva, nada de daño y muy profesionales y atentos, tanto Guillermo como Laura. Volveré.",
+      "texto_ca": "L'experiència és molt positiva, cap dolor i molt professionals i atents, tant en Guillermo com la Laura. Hi tornaré.",
+      "texto_en": "A very positive experience, no pain at all, and both Guillermo and Laura are very professional and attentive. I'll be back."
+    },
+    {
+      "autor": "America Vallejo",
+      "texto_es": "Me salvó de un dolor insoportable la semana pasada. Era mi 5ª endodoncia. Manos magistrales. Transmite mucha seguridad.",
+      "texto_ca": "Em va salvar d'un dolor insuportable la setmana passada. Era la meva 5a endodòncia. Mans mestres. Transmet molta seguretat.",
+      "texto_en": "He saved me from unbearable pain last week. It was my 5th root canal. Masterful hands. Very reassuring."
+    },
+    {
+      "autor": "Pepe Quintero",
+      "texto_es": "Trato muy humano y cercano, caries arreglada de forma excelente, ahora vamos a por el Invisalign.",
+      "texto_ca": "Tracte molt humà i proper, càries arreglada de forma excel·lent, ara anem a per l'Invisalign.",
+      "texto_en": "Very warm and human care, my cavity was fixed excellently, now on to Invisalign."
+    },
+    {
+      "autor": "Elena BT",
+      "texto_es": "Un gran equipo. Muy recomendable.",
+      "texto_ca": "Un gran equip. Molt recomanable.",
+      "texto_en": "A great team. Highly recommended."
+    },
+    {
+      "autor": "Andy Penuela",
+      "texto_es": "Atención de primera, trato personal y profesional.",
+      "texto_ca": "Atenció de primera, tracte personal i professional.",
+      "texto_en": "First-class care, personal and professional."
+    },
+    {
+      "autor": "Pablo Fernández Aulet",
+      "texto_es": "Muy profesional, recomendable 100%.",
+      "texto_ca": "Molt professional, recomanable 100%.",
+      "texto_en": "Very professional, 100% recommended."
+    },
+    {
+      "autor": "Marcel Hernández",
+      "texto_es": "Muy profesional, totalmente recomendable.",
+      "texto_ca": "Molt professional, totalment recomanable.",
+      "texto_en": "Very professional, absolutely recommended."
+    },
+    {
+      "autor": "Alex Salvat",
+      "texto_es": "Muy profesional. Recomendado.",
+      "texto_ca": "Molt professional. Recomanat.",
+      "texto_en": "Very professional. Recommended."
+    },
+    {
+      "autor": "Lourdes Amigo",
+      "texto_es": "Trato exquisito.",
+      "texto_ca": "Tracte exquisit.",
+      "texto_en": "Exquisite care."
+    },
+    {
+      "autor": "Javier Sagalés",
+      "texto_es": "Me atendió Inés y el trato fue inmejorable, muy atenta. Me hicieron una revisión y limpieza y fue todo rápido y genial. ¡Muy recomendable!",
+      "texto_ca": "Em va atendre l'Inés i el tracte va ser immillorable, molt atenta. Em van fer una revisió i neteja i va ser tot ràpid i genial. Molt recomanable!",
+      "texto_en": "Inés took care of me and her attention was unbeatable, very thoughtful. I had a check-up and cleaning and it was quick and great. Highly recommended!"
+    },
+    {
+      "autor": "Fátima Sánchez Aparicio",
+      "texto_es": "He tenido un trato muy profesional, cercano y empático. Lo recomiendo sin duda.",
+      "texto_ca": "He tingut un tracte molt professional, proper i empàtic. Ho recomano sens dubte.",
+      "texto_en": "I received very professional, warm and empathetic care. I definitely recommend it."
+    },
+    {
+      "autor": "Ignacia Plaza",
+      "texto_es": "100% recomendado.",
+      "texto_ca": "100% recomanat.",
+      "texto_en": "100% recommended."
+    },
+    {
+      "autor": "Lucia Galant",
+      "texto_es": "Súper contentos con la clínica y el doctor, ¡una pasada! Amables y profesionales, una maravilla.",
+      "texto_ca": "Súper contents amb la clínica i el doctor, una passada! Amables i professionals, una meravella.",
+      "texto_en": "Really happy with the clinic and the doctor — amazing! Friendly and professional, wonderful."
+    },
+    {
+      "autor": "Claudia de la Riva",
+      "texto_es": "Para mí, por el cariñoso y profesional trato, por la experiencia del Dr. y que siempre me he quedado encantada, el mejor dentista de Barcelona.",
+      "texto_ca": "Per a mi, pel tracte càlid i professional, per l'experiència del Dr. i que sempre he quedat encantada, el millor dentista de Barcelona.",
+      "texto_en": "For me, because of the warm and professional care, the doctor's experience, and always leaving delighted, the best dentist in Barcelona."
+    },
+    {
+      "autor": "Alexia Sipkes",
+      "texto_es": "Han superado con creces mis expectativas. Nivel alto en conocimientos y experiencia.",
+      "texto_ca": "Han superat amb escreix les meves expectatives. Nivell alt en coneixements i experiència.",
+      "texto_en": "They've far exceeded my expectations. A high level of knowledge and experience."
+    },
+    {
+      "autor": "Santi Jansa",
+      "texto_es": "Mis hijos y yo somos pacientes de la clínica y estamos encantados. Me saqué las muelas del juicio sin ningún dolor ni problemas y mis hijos están encantados con el trato de Guille y su equipo. ¡Muchas gracias!",
+      "texto_ca": "Els meus fills i jo som pacients de la clínica i n'estem encantats. Em vaig treure les dents del seny sense cap dolor ni problema i els meus fills estan encantats amb el tracte d'en Guille i el seu equip. Moltes gràcies!",
+      "texto_en": "My children and I are patients at the clinic and we're delighted. I had my wisdom teeth removed with no pain or problems at all, and my children love how Guille and his team treat them. Thank you very much!"
+    },
+    {
+      "autor": "Julia Osorio",
+      "texto_es": "Un servicio excelente y cercano por parte del Dr. Doria y de la higienista Laura, quien calmó mis nervios e hizo el procedimiento muy agradable.",
+      "texto_ca": "Un servei excel·lent i proper per part del Dr. Doria i de la higienista Laura, que em va calmar els nervis i va fer el procediment molt agradable.",
+      "texto_en": "Excellent, warm service from Dr. Doria and the hygienist Laura, who calmed my nerves and made the procedure very pleasant."
+    },
+    {
+      "autor": "Maria Huerto Broto",
+      "texto_es": "He ido a la Clínica Dental Doria para hacerme una reconstrucción estética y el resultado ha sido inmejorable. Muy buen trabajo y un excelente trato por parte del doctor. Una experiencia buenísima de principio a fin. ¡Totalmente recomendable!",
+      "texto_ca": "He anat a la Clínica Dental Doria per fer-me una reconstrucció estètica i el resultat ha estat immillorable. Molt bona feina i un tracte excel·lent per part del doctor. Una experiència boníssima de principi a fi. Totalment recomanable!",
+      "texto_en": "I went to Doria Dental Clinic for cosmetic reconstruction work and the result was unbeatable. Great work and excellent care from the doctor. A great experience from start to finish. Totally recommended!"
+    },
+    {
+      "autor": "Rosa",
+      "texto_es": "¡Experiencia increíble, humanidad, comprensión y empatía, cinco estrellas!",
+      "texto_ca": "Experiència increïble, humanitat, comprensió i empatia, cinc estrelles!",
+      "texto_en": "Incredible experience, humanity, understanding and empathy, five stars!"
     }
   ]
 }

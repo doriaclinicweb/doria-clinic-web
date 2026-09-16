@@ -93,18 +93,38 @@ const resenas = resenasData.resenas.map((r) => ({
     actualizarFlechas();
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      let auto: ReturnType<typeof setInterval> | null = null;
-      const avanzar = () => {
-        const maximo = pista.scrollWidth - pista.clientWidth - 1;
-        if (pista.scrollLeft <= 0) pista.scrollTo({ left: maximo, behavior: 'auto' });
-        else desplazar(-1);
+      // Deriva continua y lenta (en vez de saltos de tarjeta en tarjeta
+      // con una pausa larga entre medio, que se percibía como parado la
+      // mayor parte del tiempo): cada fotograma retrocede el scroll una
+      // fracción de píxel, dando una sensación de movimiento constante.
+      const velocidad = 26; // px/s
+      let activo = true;
+      let ultimoTic = Date.now();
+
+      const tic = () => {
+        const ahora = Date.now();
+        const delta = (ahora - ultimoTic) / 1000;
+        ultimoTic = ahora;
+        if (activo) {
+          const maximo = pista.scrollWidth - pista.clientWidth - 1;
+          const siguiente = pista.scrollLeft - velocidad * delta;
+          pista.scrollLeft = siguiente < 0 ? maximo : siguiente;
+        }
       };
-      const iniciar = () => { if (!auto) auto = setInterval(avanzar, 4500); };
-      const detener = () => { if (auto) { clearInterval(auto); auto = null; } };
-      iniciar();
+      setInterval(tic, 50);
+
+      const detener = () => { activo = false; };
+      const iniciar = () => { activo = true; };
       carrusel.addEventListener('mouseenter', detener);
       carrusel.addEventListener('mouseleave', iniciar);
       carrusel.addEventListener('touchstart', detener, { passive: true });
+      carrusel.addEventListener('touchend', () => setTimeout(iniciar, 2000));
+      // Un clic en las flechas también debe pausar la deriva: si solo se
+      // pausara con el ratón encima (p. ej. navegación por teclado), el
+      // desplazamiento automático competiría con la animación del clic.
+      [anterior, siguiente].forEach((boton) => {
+        boton.addEventListener('click', () => { detener(); setTimeout(iniciar, 1200); });
+      });
     }
   });
 </script>
