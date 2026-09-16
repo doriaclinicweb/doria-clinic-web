@@ -96,7 +96,7 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .hero-slider .pista { transition: none; } }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,26,.55) 0%, rgba(26,31,26,.3) 45%, rgba(26,31,26,.55) 100%); }
 .hero .wrap { position: relative; z-index: 2; color: var(--crema); }
-.hero h1 { max-width: 15ch; font-family: "Tiempos Text", serif; }
+.hero h1 { font-family: "Tiempos Text", serif; }
 .hero .entradilla { font-family: "PP Fragment Sans", Helvetica, Arial, sans-serif; font-size: clamp(1.05rem, 1.6vw, 1.3rem); max-width: 46ch; margin: 1.5rem 0 1.4rem; opacity: 0.95; }
 
 .acciones { display: flex; gap: 0.8rem; flex-wrap: wrap; }
