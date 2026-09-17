@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Manual Operativo — Web de Doria Clinic</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2.2cm 2cm 2.4cm 2cm;
+    @bottom-center {
+      content: "Manual Operativo — doria.clinic · página " counter(page) " de " counter(pages);
+      font-size: 8.5pt;
+      color: #7a8a7a;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; background: #ffffff; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1a1f1a;
+    background: #ffffff;
+    margin: 0;
+  }
+  .portada {
+    height: 24.5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    page-break-after: always;
+  }
+  .portada .marca {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4D5E4F;
+    margin-bottom: 2.2cm;
+  }
+  .portada h1 {
+    font-size: 30pt;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 0.6cm;
+    color: #1a1f1a;
+    max-width: 12cm;
+  }
+  .portada .subtitulo {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5pt;
+    color: #4D5E4F;
+    max-width: 11cm;
+    margin-bottom: 3cm;
+  }
+  .portada .meta {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #556055;
+    border-top: 1px solid #d8ddd8;
+    padding-top: 0.5cm;
+    width: 9cm;
+  }
+  .portada .meta div { margin-bottom: 0.15cm; }
+
+  nav.indice { page-break-after: always; }
+  nav.indice h2 { margin-top: 0; }
+  nav.indice ol {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    padding-left: 1.1em;
+  }
+  nav.indice ol > li { margin-bottom: 0.55em; font-weight: 600; color: #1a1f1a; }
+  nav.indice ol ol { margin-top: 0.35em; padding-left: 1.3em; }
+  nav.indice ol ol > li { font-weight: 400; color: #3a453a; margin-bottom: 0.3em; }
+
+  h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    color: #4D5E4F;
+    border-bottom: 2px solid #4D5E4F;
+    padding-bottom: 0.25cm;
+    margin: 0 0 0.6cm;
+    page-break-before: always;
+  }
+  h1:first-of-type { page-break-before: avoid; }
+  h2 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a1f1a;
+    margin: 1.1cm 0 0.35cm;
+  }
+  h3 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #3a453a;
+    margin: 0.7cm 0 0.25cm;
+  }
+  p { margin: 0 0 0.55em; text-align: left; }
+  ul, ol { margin: 0 0 0.7em; padding-left: 1.3em; }
+  li { margin-bottom: 0.3em; }
+  strong { color: #1a1f1a; }
+  code, .codigo {
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 9.5pt;
+    background: #f1f3f0;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    color: #2f3b2f;
+  }
+  a { color: #4D5E4F; }
+
+  .callout {
+    background: #f4f6f3;
+    border-left: 4px solid #4D5E4F;
+    padding: 0.5cm 0.6cm;
+    margin: 0.6cm 0;
+    font-size: 10pt;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.aviso {
+    background: #fbf3ea;
+    border-left-color: #b8863a;
+  }
+  .callout.critico {
+    background: #faeeee;
+    border-left-color: #a5453f;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .titulo-callout {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 0.2cm;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5cm 0 0.8cm;
+    font-size: 9.7pt;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  th, td {
+    border: 1px solid #dbdfd9;
+    padding: 0.28cm 0.35cm;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #4D5E4F; color: #FFFEF7; font-weight: 600; }
+  tr:nth-child(even) td { background: #f7f8f6; }
+
+  .estado {
+    display: inline-block;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.1em 0.5em;
+    border-radius: 999px;
+  }
+  .estado.ok { background: #e2ede2; color: #2f5c33; }
+  .estado.pendiente { background: #fbe9d0; color: #8a5a13; }
+  .estado.no { background: #f3d9d7; color: #8a2e27; }
+
+  .grid-2 { display: flex; gap: 0.8cm; }
+  .grid-2 > div { flex: 1; }
+
+  .pie-seccion {
+    margin-top: 0.6cm;
+    padding-top: 0.3cm;
+    border-top: 1px solid #e4e7e2;
+    font-size: 9pt;
+    color: #7a8a7a;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<section class="portada">
+  <div class="marca">Doria Clinic</div>
+  <h1>Manual operativo<br>de la web</h1>
+  <div class="subtitulo">Cómo está diseñada, cómo se edita, quién tiene acceso a qué, y cómo seguir operándola con total autonomía.</div>
+  <div class="meta">
+    <div><strong>Sitio:</strong> https://doria.clinic</div>
+    <div><strong>Repositorio:</strong> github.com/doriaclinicweb/doria-clinic-web</div>
+    <div><strong>Documento preparado con:</strong> Claude Code (Anthropic), a petición de Nacho Rodés</div>
+    <div><strong>Fecha:</strong> 17 de septiembre de 2026 (v2 — incluye la migración de alojamiento de Cloudflare Pages a Netlify)</div>
+    <div><strong>Confidencial</strong> — de uso interno de Doria Clinic. No contiene contraseñas (ver sección 4).</div>
+  </div>
+</section>
+
+<nav class="indice">
+  <h2>Índice</h2>
+  <ol>
+    <li>Propósito de este documento
+      <ol><li>A quién va dirigido</li></ol>
+    </li>
+    <li>Resumen ejecutivo: cómo funciona todo, en una página</li>
+    <li>Mapa de cuentas: quién es dueño de qué</li>
+    <li>Seguridad: dónde están (y dónde no están) las contraseñas</li>
+    <li>Guía de edición desde el panel (CMS)
+      <ol>
+        <li>Cómo entrar</li>
+        <li>Especialidades</li>
+        <li>Tratamientos</li>
+        <li>Equipo</li>
+        <li>Inicio (Home)</li>
+        <li>Páginas de listado</li>
+        <li>Páginas sueltas (legales)</li>
+        <li>Ajustes generales de la clínica</li>
+        <li>Reseñas de Google</li>
+      </ol>
+    </li>
+    <li>Qué NO se puede editar sin programar</li>
+    <li>Estructura técnica del proyecto (para desarrolladores)</li>
+    <li>Dominio, DNS y certificados</li>
+    <li>Repositorio de código y despliegue automático</li>
+    <li>Analítica, cookies y SEO</li>
+    <li>Automatización pendiente: valoración de Google</li>
+    <li>Integraciones externas</li>
+    <li>Incidencias conocidas</li>
+    <li>Checklist de continuidad — «si yo no estoy»</li>
+    <li>Glosario de términos técnicos</li>
+    <li>Contactos de soporte de cada proveedor</li>
+  </ol>
+</nav>
+
+<h1>1. Propósito de este documento</h1>
+<p>Este manual reúne todo lo necesario para que la web de Doria Clinic (<strong>doria.clinic</strong>) pueda seguir editándose, manteniéndose y creciendo de forma autónoma, sin depender de una sola persona.</p>
+<p>Se escribió pensando en un escenario concreto: que el dueño actual del conocimiento técnico (Nacho) deje de estar disponible por el motivo que sea, y que el responsable de Doria Clinic necesite saber, sin ayuda externa, tres cosas: <strong>qué se puede tocar</strong>, <strong>cómo se toca</strong>, y <strong>a quién pedir ayuda</strong> para lo demás.</p>
+
+<h2>1.1 A quién va dirigido</h2>
+<p>Tiene dos lectores distintos en mente:</p>
+<ul>
+  <li><strong>El propietario de la clínica</strong>, sin conocimientos técnicos: las secciones 2 a 5 y 13 a 15 son las que le interesan. Explican cómo editar textos, precios, fotos y datos de contacto desde un panel visual, sin tocar código.</li>
+  <li><strong>Un desarrollador</strong> contratado en el futuro para hacer cambios de diseño o funcionalidad: las secciones 6 a 12 documentan la arquitectura técnica completa para que pueda ponerse al día en minutos, no en días.</li>
+</ul>
+<div class="callout">
+  <span class="titulo-callout">Idea clave</span>
+  <p>La web <strong>no depende de ningún programa instalado en ningún ordenador concreto</strong>. Todo vive en internet: el contenido en GitHub, el sitio publicado en Netlify, el DNS en Cloudflare, el dominio registrado en Dinahosting. Cualquier persona con las cuentas correctas puede seguir editando la web desde cualquier navegador, en cualquier ordenador.</p>
+</div>
+
+<h1>2. Resumen ejecutivo: cómo funciona todo, en una página</h1>
+<p>La web de Doria Clinic es una <strong>web estática</strong>: no tiene una base de datos tradicional ni un servidor que haya que mantener. Cada página se genera de antemano a partir de archivos de texto y se sirve ya "montada", lo que la hace muy rápida y prácticamente inmune a caídas por sobrecarga.</p>
+<p>El circuito completo, de principio a fin, es este:</p>
+<ol>
+  <li>Alguien edita un texto, precio o foto desde el panel visual en <span class="codigo">doria.clinic/admin</span> (el CMS, ver sección 5), o un desarrollador edita directamente el código.</li>
+  <li>Ese cambio se guarda automáticamente como una "versión" (<em>commit</em>) en un repositorio de <strong>GitHub</strong> — el archivador central de todo el contenido y el código, con historial completo de cada cambio hecho jamás.</li>
+  <li><strong>Netlify</strong> detecta el cambio en GitHub y reconstruye la web entera automáticamente (típicamente en 1-3 minutos).</li>
+  <li>La nueva versión se publica sola en <strong>doria.clinic</strong>, sin que nadie tenga que "subir archivos" a ningún sitio ni reiniciar ningún servidor.</li>
+</ol>
+<div class="callout aviso">
+  <span class="titulo-callout">Cambio de proveedor de alojamiento (17 de septiembre de 2026)</span>
+  <p>La web se alojó inicialmente en <strong>Cloudflare Pages</strong>. Se migró a <strong>Netlify</strong> porque algunos operadores españoles (Movistar, Vodafone, Orange...) bloquean, por los bloqueos judiciales contra el fútbol pirata, rangos de IP compartidos de Cloudflare que dejaban la web inaccesible de forma intermitente para parte de las visitas — un problema ajeno al contenido de la web (detalle completo en la sección 13). Cloudflare se mantiene únicamente como gestor del DNS del dominio (ver sección 8).</p>
+</div>
+<div class="grid-2">
+  <div>
+    <h3>Las 5 piezas del engranaje</h3>
+    <ul>
+      <li><strong>Dinahosting</strong> — solo el registro legal del dominio doria.clinic.</li>
+      <li><strong>Cloudflare</strong> — únicamente el DNS del dominio (ya no aloja la web).</li>
+      <li><strong>Netlify</strong> — aloja y publica la web.</li>
+      <li><strong>GitHub</strong> — guarda el código y todo el contenido, con historial.</li>
+      <li><strong>Sveltia CMS</strong> — el panel visual de edición, en /admin.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Coste mensual de infraestructura</h3>
+    <ul>
+      <li>Netlify: plan gratuito (0 €).</li>
+      <li>Cloudflare (solo DNS): plan gratuito (0 €).</li>
+      <li>GitHub: repositorio privado, plan gratuito (0 €).</li>
+      <li>Dinahosting: solo la renovación anual del dominio.</li>
+      <li>Sveltia CMS: software libre, sin coste.</li>
+    </ul>
+  </div>
+</div>
+<div class="pie-seccion">El proyecto de Cloudflare Pages (doria-clinic-web.pages.dev) se dejó creado pero sin usar como posible respaldo — se puede eliminar sin ningún impacto en la web real.</div>
+
+<h1>3. Mapa de cuentas: quién es dueño de qué</h1>
+<p>Esta tabla es el mapa completo de todas las cuentas que hacen funcionar la web. <strong>Ninguna contiene contraseñas</strong> — solo el nombre de la cuenta y dónde se recupera el acceso (ver sección 4 para el porqué).</p>
+<table>
+  <tr><th>Servicio</th><th>Para qué sirve</th><th>Cuenta / identificador</th><th>Panel de acceso</th></tr>
+  <tr>
+    <td>Dinahosting</td>
+    <td>Registro legal del dominio doria.clinic (propiedad del nombre de dominio y su renovación anual)</td>
+    <td>guillermo.doria@gmail.com</td>
+    <td>panel.dinahosting.com</td>
+  </tr>
+  <tr>
+    <td>Cloudflare</td>
+    <td>Únicamente gestión del DNS del dominio (nameservers). Ya no aloja la web ni actúa de proxy</td>
+    <td>doriaclinicweb@gmail.com</td>
+    <td>dash.cloudflare.com</td>
+  </tr>
+  <tr>
+    <td>Netlify</td>
+    <td>Aloja y publica la web + certificado SSL automático + redirecciones (ver secciones 8 y 9)</td>
+    <td>doriaclinicweb@gmail.com (inicio de sesión con la cuenta de GitHub doriaclinicweb, sin contraseña propia de Netlify salvo que se configure una)</td>
+    <td>app.netlify.com</td>
+  </tr>
+  <tr>
+    <td>GitHub</td>
+    <td>Repositorio de código y contenido (<span class="codigo">doriaclinicweb/doria-clinic-web</span>, privado), con historial completo de cambios</td>
+    <td>Cuenta propietaria: <strong>doriaclinicweb</strong><br>Colaborador con acceso total: <strong>ignaciorodesg</strong> (Nacho)</td>
+    <td>github.com</td>
+  </tr>
+  <tr>
+    <td>Sveltia CMS</td>
+    <td>Panel visual de edición de contenido</td>
+    <td>Usa el inicio de sesión de GitHub (cuenta doriaclinicweb) a través de un puente de autenticación propio</td>
+    <td>doria.clinic/admin</td>
+  </tr>
+  <tr>
+    <td>Google Analytics 4</td>
+    <td>Estadísticas de visitas del sitio (ID <span class="codigo">G-WG0JW6FWEC</span>)</td>
+    <td>Por confirmar — verificar con Nacho o Guillermo qué cuenta de Google la administra</td>
+    <td>analytics.google.com</td>
+  </tr>
+  <tr>
+    <td>Google Business Profile</td>
+    <td>Ficha de Google Maps: reseñas, horario, fotos, «Cómo llegar»</td>
+    <td>Por confirmar — normalmente ligada al Gmail de la clínica</td>
+    <td>business.google.com</td>
+  </tr>
+  <tr>
+    <td>Google Cloud / Places API</td>
+    <td>Clave de API necesaria para automatizar la actualización mensual de la valoración de Google (ver sección 10)</td>
+    <td>Pendiente de crear — ver sección 10</td>
+    <td>console.cloud.google.com</td>
+  </tr>
+  <tr>
+    <td>WhatsApp Business</td>
+    <td>Número de citas (+34 619 186 579) y de urgencias, usado en todos los botones "Pedir cita"</td>
+    <td>Gestionado directamente por la clínica</td>
+    <td>App de WhatsApp Business</td>
+  </tr>
+  <tr>
+    <td>Instagram / LinkedIn / YouTube</td>
+    <td>Redes sociales enlazadas desde el pie de página</td>
+    <td>Gestionadas directamente por la clínica</td>
+    <td>App / web de cada red</td>
+  </tr>
+</table>
+<div class="callout critico">
+  <span class="titulo-callout">La cuenta más importante de todas</span>
+  <p>El correo <strong>doriaclinicweb@gmail.com</strong> es la cuenta de recuperación de <strong>Cloudflare</strong> y de <strong>GitHub</strong>, y además es la cuenta de GitHub la que da acceso directo a <strong>Netlify</strong> (login «Continuar con GitHub», sin contraseña independiente). Quien controle ese buzón de Gmail (con su contraseña y, sobre todo, su verificación en dos pasos) puede recuperar el acceso a prácticamente toda la infraestructura técnica aunque se pierdan las contraseñas individuales. Proteger ese correo — y asegurarse de que más de una persona de confianza puede acceder a él en caso de emergencia — es, con diferencia, la acción de continuidad más importante de todas.</p>
+</div>
+
+<h1>4. Seguridad: dónde están (y dónde no están) las contraseñas</h1>
+<p>Este manual <strong>no incluye ninguna contraseña real</strong>, de forma deliberada. No es un descuido ni una omisión: un documento PDF puede acabar reenviado por email, guardado en un ordenador compartido, impreso o subido sin querer a algún sitio — y en ese momento, cualquier contraseña escrita en él deja de ser secreta. Guardar contraseñas en texto plano dentro de un documento es, en la práctica, casi lo mismo que no tener contraseña.</p>
+<h3>Qué hacer en su lugar</h3>
+<ul>
+  <li>Usar un <strong>gestor de contraseñas</strong> (1Password, Bitwarden o similar) para guardar el usuario y la contraseña de cada servicio de la tabla de la sección 3.</li>
+  <li>Compartir el acceso a ese gestor con al menos una persona de confianza adicional (un "contacto de emergencia"), para que la continuidad no dependa de una sola persona.</li>
+  <li>Activar la <strong>verificación en dos pasos (2FA)</strong> en Google, GitHub y Cloudflare, y guardar los códigos de recuperación de cada una también en el gestor de contraseñas.</li>
+  <li>Si se pierde el acceso a una cuenta y no hay contraseña guardada, casi todos estos servicios permiten recuperar el acceso a través del correo electrónico asociado (de ahí la importancia de proteger doriaclinicweb@gmail.com, señalada en la sección 3).</li>
+</ul>
+<div class="callout aviso">
+  <span class="titulo-callout">Nota sobre este documento</span>
+  <p>Una contraseña de Dinahosting fue compartida puntualmente por chat durante una sesión de trabajo con Claude. Por la misma razón explicada arriba, esa contraseña <strong>no se guardó en ningún sitio</strong> por parte del asistente — ni en este manual, ni en ninguna memoria persistente. Si esa contraseña sigue siendo válida y no está ya en un gestor de contraseñas, es buen momento para guardarla ahí y, si se comparte de nuevo por chat en el futuro, considerar cambiarla después.</p>
+</div>
+
+<h1>5. Guía de edición desde el panel (CMS)</h1>
+<p>El día a día de la web — precios, textos, fotos, horarios, datos de contacto — se edita desde un panel visual llamado <strong>Sveltia CMS</strong>, sin tocar ni una línea de código.</p>
+
+<h2>5.1 Cómo entrar</h2>
+<ol>
+  <li>Ir a <span class="codigo">https://doria.clinic/admin</span></li>
+  <li>Pulsar «Iniciar sesión con GitHub» (Login with GitHub)</li>
+  <li>Iniciar sesión con la cuenta de GitHub <strong>doriaclinicweb</strong> (o con la cuenta personal, si esta tiene acceso de colaborador al repositorio)</li>
+  <li>El panel muestra las «colecciones» de contenido a la izquierda</li>
+</ol>
+<div class="callout">
+  <span class="titulo-callout">Importante</span>
+  <p>Cada vez que se pulsa «Guardar» (Save/Publish) en el CMS, el cambio se publica en la web real automáticamente en 1-3 minutos, sin ningún paso adicional. No existe un modo "borrador invisible" salvo que se use explícitamente el flujo de revisión del CMS.</p>
+</div>
+
+<h2>5.2 Especialidades <span class="estado ok">Editable en CMS</span></h2>
+<p>11 especialidades (Odontología general, Endodoncia, Implantes dentales, Traumatología dental, Estética dental, Ortodoncia, Periodoncia, Odontología deportiva, Odontopediatría, Cirugía oral, Prótesis dental), cada una con una entrada independiente <strong>por idioma</strong> (español, catalán, inglés — 33 entradas en total). Campos editables: título, subtítulo, resumen, resumen corto (para la tarjeta de la home), orden en el menú, si se muestra en la home, icono, especialista responsable, imagen de cabecera, preguntas frecuentes, y los datos de SEO (título y descripción para Google, y la opción de ocultarla de los buscadores). El cuerpo de texto largo se edita como contenido enriquecido (Markdown).</p>
+
+<h2>5.3 Tratamientos <span class="estado ok">Editable en CMS</span></h2>
+<p>22 tratamientos, también con una entrada por idioma (66 entradas). Además de los campos de especialidades, incluye: precio desde, meses de financiación, duración de la sesión, número de sesiones, tipo de anestesia, especialista que lo firma, situaciones en las que se indica, proceso paso a paso, preguntas frecuentes, y casos de antes/después (<strong>solo debe subirse un caso si existe el consentimiento del paciente firmado y archivado</strong> — hay una casilla obligatoria para confirmarlo). También incluye la fecha de última revisión del contenido.</p>
+
+<h2>5.4 Equipo <span class="estado ok">Editable en CMS</span></h2>
+<p>4 fichas de equipo (Dr. Guillermo Doria, Dra. Inés Doria, Dra. Mariana Ettedgui, Laura Rojas), cada una en un único archivo con campos separados para cada idioma cuando aplica. Editable: nombre, <strong>número de colegiado</strong> (dato real y verificado, nunca inventar), orden de aparición, foto, cargo (3 idiomas), titulación (3 idiomas), especialidades que trata, biografía corta (3 idiomas, la que aparece en la home y en la ficha lateral), trayectoria completa —uno o varios párrafos— (3 idiomas, el texto principal de su página propia), y agenda de congresos/cursos/ponencias con fecha y enlace opcional (3 idiomas).</p>
+
+<h2>5.5 Inicio (Home) <span class="estado ok">Editable en CMS</span></h2>
+<p>Titular de portada (admite saltos de línea manuales: cada línea nueva que se escriba en el campo se respeta tal cual en la web), entradilla, fotos del carrusel de portada, texto del botón principal, frase y párrafos de introducción, títulos de las secciones de Tratamientos y Equipo, título y texto de Instalaciones, imágenes de Instalaciones, y SEO de la portada.</p>
+
+<h2>5.6 Páginas de listado <span class="estado ok">Editable en CMS</span></h2>
+<p>Las páginas «Todas las especialidades» y «Todos los tratamientos» (por idioma): título, entradilla, preguntas frecuentes propias de esa página, y SEO.</p>
+
+<h2>5.7 Páginas sueltas (legales) <span class="estado ok">Editable en CMS</span></h2>
+<p>Aviso legal, Política de privacidad y Política de cookies, en los 3 idiomas: título, entradilla, fecha de última actualización, SEO, y el contenido completo como texto enriquecido (Markdown).</p>
+
+<h2>5.8 Ajustes generales de la clínica <span class="estado ok">Editable en CMS</span></h2>
+<p>Es el único archivo de datos que no es «contenido de una página», sino configuración que se usa en todo el sitio a la vez (aparece en el CMS como «Datos de la clínica»): nombre, teléfono, teléfono de urgencias, WhatsApp, email, dirección completa, coordenadas del mapa, horarios, el módulo «Tu primera visita» (título, texto, botón y puntos, en 3 idiomas — aparece en todas las páginas), el módulo «¿Por qué elegirnos?» (título y 5 razones, en 3 idiomas — también en todas las páginas), el enlace usado para pedir cita, el enlace al perfil de Google Business, el nombre exacto tal como aparece en Google Maps (para que el mapa incrustado muestre el pin con nombre), la valoración media y el número de reseñas de Google, las URL de las redes sociales, y el ID de Google Analytics (dejarlo vacío desactiva la analítica en todo el sitio).</p>
+
+<h2>5.9 Reseñas de Google <span class="estado ok">Editable en CMS</span></h2>
+<p>La lista de reseñas que se muestran en el carrusel de la web (autor y texto en los 3 idiomas). <strong>Importante:</strong> estos textos son reales, copiados a mano de reseñas genuinas de Google — nunca hay que inventar ni generar reseñas de fantasía. Solo la valoración media y el número total de reseñas (sección 5.8) están pensados para actualizarse solos en el futuro (ver sección 10); el texto de cada reseña siempre se actualiza a mano.</p>
+
+<h1>6. Qué NO se puede editar sin programar</h1>
+<p>Todo lo que sigue requiere abrir el código del proyecto — no está disponible desde el panel visual:</p>
+<ul>
+  <li>El diseño visual: colores, tipografías, tamaños, espaciados y disposición de cualquier página.</li>
+  <li>El orden y la aparición de los módulos compartidos (dónde sale «Tu primera visita», el carrusel de reseñas o «Por qué elegirnos» en cada tipo de página).</li>
+  <li>Añadir una red social nueva a los iconos del pie de página (hay que añadir el icono en el código; una vez añadido, su URL sí se podrá editar desde el CMS).</li>
+  <li>Crear un tipo de página nuevo, o cambiar los enlaces del menú de navegación.</li>
+  <li>El comportamiento del carrusel de reseñas, el banner de cookies, el mapa incrustado, o cualquier otra pieza interactiva.</li>
+  <li>Las reglas de redirección del dominio o la configuración de DNS.</li>
+  <li>Añadir nuevos campos a una colección de contenido (por ejemplo, si mañana se quisiera añadir un campo «vídeo» a los tratamientos).</li>
+</ul>
+<p>Para cualquiera de estos cambios hace falta un desarrollador con conocimientos de Astro y del ecosistema de Netlify/GitHub — o continuar usando una herramienta de programación asistida (como Claude Code) apuntando a este mismo repositorio.</p>
+
+<h1>7. Estructura técnica del proyecto (para desarrolladores)</h1>
+<h2>7.1 Stack tecnológico</h2>
+<ul>
+  <li><strong>Astro 6</strong> — generador de sitios estáticos; salida 100% HTML/CSS/JS, sin servidor Node en producción.</li>
+  <li><strong>i18n</strong> — español (idioma por defecto, sin prefijo en la URL), catalán (prefijo <span class="codigo">/ca/</span>), inglés (prefijo <span class="codigo">/en/</span>).</li>
+  <li><strong>Sveltia CMS</strong> — panel de edición de código abierto (sucesor espiritual de Decap/Netlify CMS), configurado en <span class="codigo">public/admin/config.yml</span>.</li>
+  <li><strong>Backend del CMS: GitHub directo</strong> — cada guardado en el panel es un commit real en el repositorio.</li>
+  <li><strong>Autenticación del CMS</strong> — un Cloudflare Worker propio, <span class="codigo">sveltia-cms-auth</span>, actúa de puente OAuth entre el panel y GitHub. Si el login del CMS deja de funcionar, este Worker es el primer sitio a revisar (Cloudflare → Workers & Pages → sveltia-cms-auth).</li>
+</ul>
+
+<h2>7.2 Colecciones de contenido</h2>
+<table>
+  <tr><th>Colección</th><th>Contenido</th><th>Volumen</th></tr>
+  <tr><td>especialidades</td><td>Las 11 especialidades de la clínica</td><td>11 × 3 idiomas = 33 archivos</td></tr>
+  <tr><td>tratamientos</td><td>Los 22 tratamientos concretos</td><td>22 × 3 idiomas = 66 archivos</td></tr>
+  <tr><td>equipo</td><td>Fichas del equipo médico</td><td>4 archivos (multi-idioma dentro de cada uno)</td></tr>
+  <tr><td>home</td><td>Contenido de la portada</td><td>3 archivos (uno por idioma)</td></tr>
+  <tr><td>paginas</td><td>Legales: aviso legal, privacidad, cookies</td><td>3 × 3 idiomas = 9 archivos</td></tr>
+  <tr><td>listados</td><td>Páginas «todas las especialidades» / «todos los tratamientos»</td><td>2 × 3 idiomas = 6 archivos</td></tr>
+</table>
+<p>Fuera de las colecciones, dos archivos de datos globales se usan en todo el sitio: <span class="codigo">src/data/clinica.json</span> (ajustes de la sección 5.8) y <span class="codigo">src/data/resenas.json</span> (reseñas de la sección 5.9).</p>
+
+<h2>7.3 Componentes compartidos clave</h2>
+<table>
+  <tr><th>Archivo</th><th>Qué hace</th></tr>
+  <tr><td>Header.astro</td><td>Cabecera con navegación, incluido el menú móvil con selector de idioma</td></tr>
+  <tr><td>Footer.astro</td><td>Pie de página: banner de financiación, redes sociales, mapa, wordmark de cierre</td></tr>
+  <tr><td>PrimeraVisitaModulo.astro</td><td>Bloque «Tu primera visita», repetido en todas las páginas</td></tr>
+  <tr><td>ReviewsModulo.astro</td><td>Carrusel de reseñas de Google, repetido en todas las páginas</td></tr>
+  <tr><td>PorQueElegirnosModulo.astro</td><td>Bloque «¿Por qué elegirnos?», repetido en todas las páginas</td></tr>
+  <tr><td>EquipoModulo.astro</td><td>Bloque de fichas de equipo en páginas de especialidad/tratamiento</td></tr>
+  <tr><td>CookieBanner.astro</td><td>Banner de consentimiento de cookies, controla si se carga Google Analytics</td></tr>
+</table>
+<div class="callout aviso">
+  <span class="titulo-callout">Particularidad importante para desarrolladores</span>
+  <p>La página de inicio (<span class="codigo">src/pages/index.astro</span> → <span class="codigo">src/components/PaginaInicio.astro</span>) <strong>no usa</strong> la plantilla compartida <span class="codigo">Base.astro</span> que usa el resto del sitio: construye su propio documento HTML completo desde cero. Cualquier cambio en elementos globales del <span class="codigo">&lt;head&gt;</span> o del pie (favicon, Google Analytics, banner de cookies) debe aplicarse manualmente en <strong>ambos</strong> sitios, o solo afectará a las páginas que no son la portada. Este es el error más fácil de cometer al tocar este proyecto.</p>
+</div>
+
+<h2>7.4 Estilos y sistema de diseño</h2>
+<p>Un único archivo, <span class="codigo">src/styles/global.css</span>, con variables CSS centralizadas:</p>
+<ul>
+  <li><strong>Colores:</strong> <span class="codigo">--verde</span> (#4D5E4F, verde principal de marca), <span class="codigo">--verde-claro</span> (#B8BFB9), <span class="codigo">--crema</span> (#FFFEF7, fondo claro), <span class="codigo">--tinta</span> (#1A1F1A, casi negro).</li>
+  <li><strong>Tipografías:</strong> «PP Fragment Sans» para títulos y menús, «Tiempos Text» para el titular de portada, tipografía de sistema para el cuerpo de texto.</li>
+</ul>
+<div class="callout">
+  <span class="titulo-callout">Nota técnica pendiente</span>
+  <p>Las declaraciones <span class="codigo">@font-face</span> apuntan a archivos <span class="codigo">/fonts/PPFragment-SansRegular.woff2</span> y <span class="codigo">/fonts/TiemposText-Regular.woff2</span> que <strong>no existen</strong> en el proyecto actualmente. El sitio funciona correctamente porque cada tipografía tiene alternativas de reserva, pero no se está mostrando la tipografía de marca original ("PP Fragment Sans", de la fundición Pangram Pangram — es la misma que se usó para dibujar el logo "Doria" de la cabecera). En el wordmark gigante del pie de página esto llegó a causar artefactos visuales (barras) con la fuente de reserva a tamaño extremo, así que ahí se forzó Georgia explícitamente como solución temporal. Para restaurar la tipografía real en todo el sitio hace falta <strong>comprar la licencia en pangrampangram.com</strong> y añadir el archivo a <span class="codigo">public/fonts/</span> — no es algo que se pueda generar ni obtener gratis.</p>
+</div>
+
+<h2>7.5 Imágenes y activos</h2>
+<p>Carpeta <span class="codigo">public/img/</span>: fotos del equipo, fotos de instalaciones (carpeta <span class="codigo">instalaciones/</span>), logos de partners (Tu Medicina Financiada) e iconos. La carpeta <span class="codigo">public/admin/</span> contiene el propio panel del CMS.</p>
+
+<h1>8. Dominio, DNS y certificados</h1>
+<ul>
+  <li>El dominio <strong>doria.clinic</strong> está registrado en <strong>Dinahosting</strong> (cuenta guillermo.doria@gmail.com). Ese registro solo cubre la propiedad legal del nombre de dominio y su renovación anual — no aloja ningún contenido web.</li>
+  <li>Los servidores de nombres (nameservers) del dominio son los de <strong>Cloudflare</strong>: <span class="codigo">liz.ns.cloudflare.com</span> y <span class="codigo">matteo.ns.cloudflare.com</span>. Cloudflare gestiona la resolución DNS del dominio, pero — a diferencia del planteamiento inicial — <strong>ya no aloja la web</strong> (ver el aviso de la sección 2 sobre el cambio de proveedor).</li>
+  <li>Los registros de correo electrónico (MX, SPF, DKIM, autodiscover, autoconfig — usados por Microsoft 365/Outlook para el correo de la clínica) siguen intactos en Cloudflare, configurados en modo <strong>«DNS only»</strong> (nube gris). <strong>No tocar estos registros</strong>, o el correo de la clínica dejaría de funcionar.</li>
+  <li><span class="codigo">doria.clinic</span> y <span class="codigo">www.doria.clinic</span> son registros <strong>CNAME</strong> en Cloudflare que apuntan a <span class="codigo">apex-loadbalancer.netlify.com</span>, en modo <strong>«DNS only»</strong> (nube gris, sin pasar por el proxy/CDN de Cloudflare). Este es el cambio clave que resolvió el bloqueo intermitente: el tráfico ya no pasa por las IPs compartidas de Cloudflare en ningún momento.</li>
+</ul>
+<h3>Redirecciones configuradas</h3>
+<table>
+  <tr><th>Origen</th><th>Destino</th><th>Dónde vive la regla</th></tr>
+  <tr><td><span class="codigo">www.doria.clinic/*</span></td><td><span class="codigo">https://doria.clinic/*</span></td><td>Automático — Netlify redirige el alias <span class="codigo">www</span> al dominio principal sin necesidad de regla manual</td></tr>
+  <tr><td><span class="codigo">/politica-de-privacidad/*</span></td><td><span class="codigo">/politica-privacidad/</span></td><td>Archivo <span class="codigo">public/_redirects</span> en el repositorio (301)</td></tr>
+  <tr><td><span class="codigo">/politica-de-cookies/*</span></td><td><span class="codigo">/politica-cookies/</span></td><td>Archivo <span class="codigo">public/_redirects</span> en el repositorio (301)</td></tr>
+</table>
+<p>El certificado SSL de <span class="codigo">doria.clinic</span> lo emite y renueva <strong>Netlify</strong> automáticamente (Let's Encrypt), sin intervención manual, en cuanto el DNS apunta correctamente — no hace falta ninguna gestión de certificados en Cloudflare para el dominio principal.</p>
+
+<h1>9. Repositorio de código y despliegue automático</h1>
+<ul>
+  <li>Todo el código y el contenido vive en <span class="codigo">github.com/doriaclinicweb/doria-clinic-web</span> (repositorio privado).</li>
+  <li>Cada guardado desde el CMS, o cada cambio de código subido por un desarrollador, se registra como un commit en la rama <span class="codigo">main</span>.</li>
+  <li><strong>Netlify</strong> está conectado a ese repositorio mediante inicio de sesión con GitHub (cuenta <span class="codigo">doriaclinicweb</span>). Reconstruye y publica la web automáticamente en cada cambio de la rama <span class="codigo">main</span>.</li>
+  <li>Configuración de construcción en el archivo <span class="codigo">netlify.toml</span> del propio repositorio: comando <span class="codigo">npm run build</span>, carpeta de salida <span class="codigo">dist</span>. Al estar en el repo (y no solo en el panel de Netlify), un desarrollador nuevo puede ver la configuración de build sin tener que entrar en Netlify.</li>
+  <li>Las redirecciones (sección 8) se definen en <span class="codigo">public/_redirects</span>, también dentro del repositorio.</li>
+  <li>El proyecto en Netlify se llama <span class="codigo">gregarious-maamoul-411d9d</span> (nombre autogenerado; se puede renombrar desde Netlify → Project configuration → cualquier momento, sin afectar a doria.clinic).</li>
+  <li>El historial completo de publicaciones (deploys) se puede consultar en Netlify → proyecto → pestaña Deploys — y, si algo sale mal, <strong>cualquier versión anterior se puede volver a publicar con un clic</strong> desde ahí (rollback / «Publish deploy»), sin tocar código.</li>
+</ul>
+<div class="pie-seccion">El proyecto de Cloudflare Pages original (<span class="codigo">doria-clinic-web</span>, en <span class="codigo">doria-clinic-web.pages.dev</span>) sigue existiendo y también se reconstruye con cada push, pero ya no recibe tráfico real — el DNS ya no apunta ahí. Se puede eliminar desde Cloudflare sin ningún efecto en la web.</div>
+
+<h1>10. Analítica, cookies y SEO</h1>
+<ul>
+  <li><strong>Google Analytics 4</strong> (ID <span class="codigo">G-WG0JW6FWEC</span>) está integrado, pero solo se activa si la persona visitante acepta las cookies analíticas en el banner de consentimiento — cumpliendo el RGPD. Se puede desactivar del todo vaciando el campo correspondiente en Ajustes (sección 5.8).</li>
+  <li>Cada página tiene sus propios metadatos SEO editables desde el CMS: título en Google, descripción, y la opción de ocultarla de los buscadores.</li>
+  <li>El sitio genera automáticamente un mapa del sitio en <span class="codigo">/sitemap-index.xml</span>, enviado a Google Search Console para facilitar la indexación.</li>
+  <li>El contenido está enlazado internamente de forma extensa a propósito (especialidades, tratamientos, fichas de doctores y la página de financiación se citan entre sí) como estrategia de posicionamiento SEO.</li>
+</ul>
+
+<h1>11. Automatización pendiente: valoración de Google</h1>
+<p><span class="estado pendiente">Pendiente de activar</span></p>
+<p>Existe un script (<span class="codigo">scripts/actualizar-resenas-google.mjs</span>) pensado para actualizar automáticamente, una vez al mes, la valoración media y el número de reseñas de Google que se muestran en la web (sección 5.8) — sin tocar los textos de las reseñas, que siempre se actualizan a mano.</p>
+<p>Para activarlo faltan estos pasos, todavía no completados:</p>
+<ol>
+  <li>Crear una clave de la <strong>Google Places API</strong> (versión clásica/legacy) en Google Cloud Console — requiere una cuenta de facturación de Google Cloud, aunque el uso real de este script es mínimo y entra dentro del nivel gratuito.</li>
+  <li>Añadir esa clave como <em>secret</em> llamado <span class="codigo">GOOGLE_PLACES_API_KEY</span> en GitHub → repositorio → Settings → Secrets and variables → Actions.</li>
+  <li>Opcionalmente, añadir también una <em>variable</em> <span class="codigo">GOOGLE_PLACE_ID</span> con el identificador exacto de la ficha de Doria Clinic en Google Maps.</li>
+  <li>Subir manualmente el archivo <span class="codigo">.github/workflows/actualizar-resenas-google.yml</span> a través de la web de GitHub (Add file → Create new file) — este paso no se pudo automatizar porque el permiso de API usado durante el desarrollo no alcanza para crear archivos dentro de <span class="codigo">.github/workflows/</span>; es una restricción deliberada de seguridad de GitHub, no un error.</li>
+</ol>
+<p>El contenido exacto de ese archivo de workflow ya existe en el proyecto (en <span class="codigo">.github/workflows/actualizar-resenas-google.yml</span>, aunque todavía no subido a GitHub) — solo hay que copiarlo tal cual.</p>
+
+<h1>12. Integraciones externas</h1>
+<h3>WhatsApp</h3>
+<p>El número de citas (+34 933 534 840 por teléfono, +34 619 186 579 por WhatsApp) y el de urgencias generan automáticamente enlaces <span class="codigo">wa.me</span> con un mensaje predefinido distinto según la página desde la que se pulse el botón.</p>
+<h3>Tu Medicina Financiada (TMF)</h3>
+<p>Partner de financiación de tratamientos. Su logotipo y sello de calidad son imágenes en <span class="codigo">public/img/</span>. El texto legal de ejemplo (condiciones de financiación) está escrito directamente en el código de la página de financiación (<span class="codigo">src/pages/financiacion.astro</span> y sus versiones <span class="codigo">/ca/</span> y <span class="codigo">/en/</span>) — si TMF cambia sus condiciones, hay que actualizar el texto a mano en esos 3 archivos, no es editable desde el CMS.</p>
+<h3>Redes sociales</h3>
+<p>Los iconos del pie de página (Instagram, LinkedIn, YouTube, y Facebook/TikTok/X ya preparados pero sin URL todavía) solo aparecen si tienen una URL rellenada desde Ajustes (sección 5.8) — dejar el campo vacío oculta el icono automáticamente.</p>
+
+<h1>13. Incidencias conocidas</h1>
+<div class="callout">
+  <span class="titulo-callout">Resuelto — bloqueo intermitente por operadores españoles (fútbol pirata)</span>
+  <p>Cuando la web estaba alojada en Cloudflare Pages, algunos operadores de internet españoles (Movistar, Vodafone, Orange, MásMóvil...) bloqueaban, por orden judicial contra el fútbol pirata, rangos completos de direcciones IP de Cloudflare. Como el plan gratuito de Cloudflare reparte muchísimos sitios web distintos sobre las mismas IPs compartidas, <strong>doria.clinic quedaba bloqueada como «daño colateral»</strong> para las personas que usaban esos operadores, de forma intermitente y sin que tuviera nada que ver con el contenido de la web. No era un fallo de configuración, sino un riesgo estructural de usar IPs compartidas de Cloudflare como proxy.</p>
+  <p><strong>Solución aplicada el 17 de septiembre de 2026:</strong> se migró el alojamiento de Cloudflare Pages a <strong>Netlify</strong> (detalle en las secciones 8 y 9), manteniendo Cloudflare solo para el DNS, en modo «DNS only» — es decir, sin que el tráfico pase en ningún momento por el proxy de Cloudflare. Verificado tras el cambio: la conexión ya no se bloquea. Si en el futuro volviera a aparecer un problema similar (poco probable, ya que Netlify no está tan asociado a webs de streaming pirata en España), la solución de fondo sería conseguir una IP dedicada para el hosting.</p>
+</div>
+<p><strong>Fuentes tipográficas de marca no cargadas</strong> — ver nota técnica en la sección 7.4.</p>
+<p><strong>Automatización de la valoración de Google sin activar</strong> — ver sección 11.</p>
+
+<h1>14. Checklist de continuidad — «si yo no estoy»</h1>
+<ol>
+  <li>Confirma que tienes acceso al correo <strong>doriaclinicweb@gmail.com</strong> (la llave de recuperación de GitHub, Cloudflare y Netlify) y a <strong>guillermo.doria@gmail.com</strong> (Dinahosting).</li>
+  <li>Guarda (o pide que te compartan) todas las contraseñas de la tabla de la sección 3 en un gestor de contraseñas, con verificación en dos pasos activada donde sea posible.</li>
+  <li>Para el día a día — precios, textos, fotos, horarios, reseñas — entra en <span class="codigo">doria.clinic/admin</span> y sigue la guía de la sección 5. No hace falta saber programar.</li>
+  <li>Para cambios de diseño, nuevas secciones o funcionalidad nueva, contrata a un desarrollador con experiencia en Astro, o continúa usando una herramienta de programación asistida por IA (como Claude Code) apuntando a este mismo repositorio de GitHub — este manual (secciones 6 a 12) le pondrá al día en minutos.</li>
+  <li>Revisa cada año la fecha de renovación del dominio en el panel de Dinahosting, con margen suficiente para evitar que caduque.</li>
+  <li>Si algo deja de funcionar después de un cambio, en Netlify → Deploys se puede volver a publicar cualquier versión anterior de la web con un solo clic, sin tocar código.</li>
+  <li>Ante cualquier duda sobre qué es cada cosa, la sección 16 (Glosario) explica los términos técnicos en lenguaje llano.</li>
+</ol>
+
+<h1>15. Glosario de términos técnicos</h1>
+<table>
+  <tr><th>Término</th><th>Qué significa</th></tr>
+  <tr><td>Astro</td><td>El programa (framework) con el que está construida la web. Genera páginas ya montadas, sin necesitar un servidor complejo.</td></tr>
+  <tr><td>CMS</td><td>«Sistema de gestión de contenidos» — el panel visual (Sveltia) desde el que se edita texto sin tocar código.</td></tr>
+  <tr><td>Repositorio / GitHub</td><td>El archivador central donde vive todo el código y contenido, con historial completo de cada cambio.</td></tr>
+  <tr><td>Commit</td><td>Cada «versión guardada» de un cambio, con fecha, autor y descripción.</td></tr>
+  <tr><td>Deploy / despliegue</td><td>El proceso automático de publicar una nueva versión de la web tras un cambio.</td></tr>
+  <tr><td>DNS</td><td>El «listín telefónico» de internet: traduce el nombre doria.clinic a la dirección técnica real donde vive la web.</td></tr>
+  <tr><td>Nameserver</td><td>El servicio que responde a las preguntas de DNS de un dominio — hoy son los de Cloudflare.</td></tr>
+  <tr><td>Registro A / CNAME / MX / TXT</td><td>Distintos tipos de instrucciones dentro del DNS: A y CNAME dicen dónde está la web, MX dice por dónde llega el correo, TXT guarda verificaciones y configuración de seguridad del correo.</td></tr>
+  <tr><td>SSL / HTTPS</td><td>El «candado» de seguridad que cifra la conexión entre el visitante y la web.</td></tr>
+  <tr><td>Netlify</td><td>El servicio que aloja y publica la web hoy, y la reconstruye automáticamente con cada cambio.</td></tr>
+  <tr><td>IP compartida / dedicada</td><td>Una IP compartida sirve miles de webs distintas a la vez (barato, pero con el riesgo de bloqueos colaterales explicado en la sección 13); una IP dedicada sirve solo la web de Doria Clinic.</td></tr>
+  <tr><td>Proxy / CDN</td><td>Un intermediario entre el visitante y el servidor real, que puede acelerar y proteger la web — pero también hereda los bloqueos que afecten a su IP compartida, como ocurrió con Cloudflare.</td></tr>
+  <tr><td>i18n</td><td>«Internacionalización» — el sistema que permite tener la web en español, catalán e inglés.</td></tr>
+  <tr><td>SEO</td><td>El conjunto de técnicas para que Google encuentre y posicione mejor la web.</td></tr>
+  <tr><td>Sitemap</td><td>Un listado de todas las páginas del sitio que se envía a Google para ayudarle a encontrarlas todas.</td></tr>
+</table>
+
+<h1>16. Contactos de soporte de cada proveedor</h1>
+<table>
+  <tr><th>Proveedor</th><th>Contacto</th></tr>
+  <tr><td>Netlify</td><td>app.netlify.com → Support</td></tr>
+  <tr><td>Cloudflare</td><td>dash.cloudflare.com → Support (chat/ticket)</td></tr>
+  <tr><td>Dinahosting</td><td>900 854 000 · soporte@dinahosting.com · chat en panel.dinahosting.com</td></tr>
+  <tr><td>GitHub</td><td>support.github.com</td></tr>
+  <tr><td>Sveltia CMS</td><td>Proyecto de código abierto — documentación y soporte de la comunidad en github.com/sveltia/sveltia-cms</td></tr>
+</table>
+
+<div class="pie-seccion">Fin del manual. Documento vivo: se recomienda revisarlo y actualizarlo cada vez que cambie algo importante en la infraestructura (proveedor, cuenta, o pieza de la arquitectura).</div>
+
+</body>
+</html>
