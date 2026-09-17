@@ -1,0 +1,49 @@
+---
+import clinica from '../data/clinica.json';
+import type { Idioma } from '../utils/idioma';
+
+interface Props { idioma: Idioma; compacto?: boolean }
+const { idioma, compacto = false } = Astro.props;
+
+const titulo = { es: 'Síguenos en Instagram', ca: 'Segueix-nos a Instagram', en: 'Follow us on Instagram' }[idioma];
+const verPerfil = { es: 'Ver perfil →', ca: 'Veure perfil →', en: 'View profile →' }[idioma];
+const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').pop();
+
+// Marcador temporal: sustituir por las 10 imágenes reales de los posts de
+// Instagram en cuanto se proporcionen (public/img/instagram/post-01.jpg,
+// etc.) y actualizar esta lista con sus rutas definitivas.
+const posts = [
+  '/img/instalaciones/01-recepcion-mostrador.jpg',
+  '/img/instalaciones/09-box-tratamiento.jpg',
+  '/img/instalaciones/08-sillon-dental.jpg',
+  '/img/instalaciones/03-pasillo-banco.jpg',
+  '/img/instalaciones/15-escaner-intraoral-1.jpg',
+  '/img/instalaciones/05-sala-espera-paciente.jpg',
+  '/img/instalaciones/11-equipo-rayos.jpg',
+  '/img/instalaciones/17-prueba-protesis.jpg',
+  '/img/instalaciones/04-rincon-lectura.jpg',
+  '/img/instalaciones/13-revision-radiografia.jpg',
+];
+---
+<section class:list={['seccion', { 'instagram-compacto': compacto }]}>
+  <div class="wrap">
+    <div class="encabezado-tratamientos">
+      <div>
+        <h2>{titulo}</h2>
+        {instagramHandle && <p class="instagram-arroba">@{instagramHandle}</p>}
+      </div>
+      <a class="ver-todas" href={clinica.redes.instagram} target="_blank" rel="noopener">{verPerfil}</a>
+    </div>
+    <div class="carrusel-tratamientos instagram-carrusel" data-auto-carrusel data-dir-auto="1">
+      <div class="carrusel-pista">
+        {posts.map((src) => (
+          <a class="instagram-tarjeta" href={clinica.redes.instagram} target="_blank" rel="noopener" aria-label={instagramHandle ? `@${instagramHandle}` : 'Instagram'}>
+            <img src={src} alt="" loading="lazy" />
+          </a>
+        ))}
+      </div>
+      <button type="button" class="carrusel-flecha anterior" data-dir="-1" aria-label="Anterior"></button>
+      <button type="button" class="carrusel-flecha siguiente" data-dir="1" aria-label="Siguiente"></button>
+    </div>
+  </div>
+</section>

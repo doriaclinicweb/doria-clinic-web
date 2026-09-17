@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import clinica from '../data/clinica.json';
 import { detectarIdioma, rutaEn, IDIOMAS } from '../utils/idioma';
+import InstagramModulo from './InstagramModulo.astro';
 
 const tel = 'tel:' + clinica.telefono.replace(/\s/g, '');
 const wa = clinica.software_citas;
@@ -45,8 +46,6 @@ const t = {
     cookies: 'Política de cookies',
     legal:
       "El contingut sobre salut d'aquesta web està redactat i revisat per l'equip clínic de Doria Clinic. No rebem finançament extern ni allotgem publicitat de tercers. La informació publicada complementa, però no substitueix, la relació entre el professional sanitari i el pacient.",
-    siguenosTitulo: 'Segueix-nos',
-    siguenosTexto: "El dia a dia de la clínica, casos i consells, a l'Instagram.",
     financiacionEtiqueta: 'Amb Tu Medicina Financiada · Centre Premium',
     financiacionTitulo: 'Finança el teu tractament sense interessos',
     financiacionTexto: 'Fins al 100% en 12 mesos',
@@ -70,8 +69,6 @@ const t = {
     cookies: 'Cookie policy',
     legal:
       'The health content on this website is written and reviewed by the Doria Clinic clinical team. We receive no external funding and host no third-party advertising. The information published complements, but does not replace, the relationship between healthcare professional and patient.',
-    siguenosTitulo: 'Follow us',
-    siguenosTexto: "The clinic's day to day, cases and tips, on Instagram.",
     financiacionEtiqueta: 'With Tu Medicina Financiada · Premium Centre',
     financiacionTitulo: 'Finance your treatment interest-free',
     financiacionTexto: 'Up to 100% over 12 months',
@@ -95,8 +92,6 @@ const t = {
     cookies: 'Política de cookies',
     legal:
       'El contenido sobre salud de esta web está redactado y revisado por el equipo clínico de Doria Clinic. No recibimos financiación externa ni alojamos publicidad de terceros. La información publicada complementa, pero no sustituye, la relación entre el profesional sanitario y el paciente.',
-    siguenosTitulo: 'Síguenos',
-    siguenosTexto: 'El día a día de la clínica, casos y consejos, en Instagram.',
     financiacionEtiqueta: 'Con Tu Medicina Financiada · Centro Premium',
     financiacionTitulo: 'Financia tu tratamiento sin intereses',
     financiacionTexto: 'Hasta el 100% en 12 meses',
@@ -143,7 +138,6 @@ const redes = [
   clinica.redes.tiktok && { nombre: 'TikTok', url: clinica.redes.tiktok, icono: 'tiktok' },
   clinica.redes.x && { nombre: 'X', url: clinica.redes.x, icono: 'x' },
 ].filter(Boolean) as { nombre: string; url: string; icono: string }[];
-const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').pop();
 const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
 ---
 {clinica.redes.instagram && (
@@ -166,18 +160,7 @@ const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
     </section>
   )}
 
-  <section class="rrss">
-    <div class="wrap">
-      <a class="rrss-tarjeta" href={clinica.redes.instagram} target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-        <span class="rrss-texto">
-          <strong>{t.siguenosTitulo} @{instagramHandle}</strong>
-          <span>{t.siguenosTexto}</span>
-        </span>
-        <span class="rrss-flecha" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
+  <InstagramModulo idioma={idioma} compacto />
   </Fragment>
 )}
 

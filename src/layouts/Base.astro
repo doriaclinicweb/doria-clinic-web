@@ -148,5 +148,72 @@ const schemaMigas = {
 
     <Footer />
     <CookieBanner idioma={idioma} />
+
+    <script>
+      // Carrusel con avance automático continuo (reseñas, Instagram...),
+      // marcado con data-auto-carrusel. data-dir-auto="1" desplaza el
+      // contenido hacia la izquierda (scrollLeft creciente); cualquier
+      // otro valor (u omitido) lo desplaza hacia la derecha. Se pausa
+      // con el ratón/dedo encima o al usar las flechas manuales, y no
+      // se activa con prefers-reduced-motion. Compartido por todos los
+      // carruseles automáticos del sitio: solo debe cargarse una vez
+      // por página (ver la copia gemela en PaginaInicio.astro, que no
+      // usa esta plantilla).
+      document.querySelectorAll<HTMLElement>('[data-auto-carrusel]').forEach((carrusel) => {
+        const pista = carrusel.querySelector<HTMLElement>('.carrusel-pista');
+        const anterior = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.anterior');
+        const siguiente = carrusel.querySelector<HTMLButtonElement>('.carrusel-flecha.siguiente');
+        if (!pista || !anterior || !siguiente) return;
+
+        const actualizarFlechas = () => {
+          const maximo = pista.scrollWidth - pista.clientWidth - 1;
+          anterior.disabled = pista.scrollLeft <= 0;
+          siguiente.disabled = pista.scrollLeft >= maximo;
+        };
+
+        const desplazar = (dir: number) => {
+          const tarjeta = pista.firstElementChild as HTMLElement | null;
+          const paso = tarjeta ? tarjeta.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).gap || '0') : pista.clientWidth;
+          pista.scrollBy({ left: dir * paso, behavior: 'smooth' });
+        };
+
+        anterior.addEventListener('click', () => desplazar(-1));
+        siguiente.addEventListener('click', () => desplazar(1));
+        pista.addEventListener('scroll', actualizarFlechas, { passive: true });
+        window.addEventListener('resize', actualizarFlechas);
+        actualizarFlechas();
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          const velocidad = 26; // px/s
+          const signo = carrusel.dataset.dirAuto === '1' ? 1 : -1;
+          let activo = true;
+          let ultimoTic = Date.now();
+
+          const tic = () => {
+            const ahora = Date.now();
+            const delta = (ahora - ultimoTic) / 1000;
+            ultimoTic = ahora;
+            if (activo) {
+              const maximo = pista.scrollWidth - pista.clientWidth - 1;
+              let siguientePos = pista.scrollLeft + signo * velocidad * delta;
+              if (siguientePos < 0) siguientePos = maximo;
+              else if (siguientePos > maximo) siguientePos = 0;
+              pista.scrollLeft = siguientePos;
+            }
+          };
+          setInterval(tic, 50);
+
+          const detener = () => { activo = false; };
+          const iniciar = () => { activo = true; };
+          carrusel.addEventListener('mouseenter', detener);
+          carrusel.addEventListener('mouseleave', iniciar);
+          carrusel.addEventListener('touchstart', detener, { passive: true });
+          carrusel.addEventListener('touchend', () => setTimeout(iniciar, 2000));
+          [anterior, siguiente].forEach((boton) => {
+            boton.addEventListener('click', () => { detener(); setTimeout(iniciar, 1200); });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
