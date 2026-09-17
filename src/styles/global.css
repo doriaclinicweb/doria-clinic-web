@@ -470,7 +470,10 @@ a { color: inherit; }
 @media (max-width: 560px) { .sello-tmf { flex-direction: column; text-align: center; } }
 
 .marca-cierre { display: block; overflow: hidden; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); margin-top: 2.5rem; padding: clamp(0.6rem, 2.4vw, 1.4rem) 0; text-align: center; text-decoration: none; }
-.marca-cierre span { display: block; font-family: var(--display); font-weight: 400; color: var(--crema); font-size: calc(100vw / 5.04); line-height: 0.95; letter-spacing: -0.02em; white-space: nowrap; }
+/* Fuente forzada a Georgia (saltándose Optima/Palatino de var(--display)):
+   a un tamaño tan extremo, la fuente de reserva del sistema producía
+   artefactos de renderizado (barras) en algunos navegadores. */
+.marca-cierre span { display: block; font-family: "PP Fragment Sans", Georgia, serif; font-weight: 400; color: var(--crema); font-size: calc(100vw / 5.05); line-height: 0.95; letter-spacing: -0.02em; white-space: nowrap; }
 
 .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: var(--verde); color: var(--crema); padding: 1.1rem clamp(1rem, 4vw, 2rem); box-shadow: 0 -4px 16px rgba(0,0,0,.15); }
 .cookie-banner-cuerpo { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
