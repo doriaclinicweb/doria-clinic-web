@@ -69,6 +69,6 @@ instalaciones_imagenes:
     alt: Esterilizador en la encimera de un box
 seo:
   titulo_seo: Clínica dental en el Eixample de Barcelona | Doria Clinic
-  meta_descripcion: Clínica dental en Carrer Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Primera visita sin compromiso.
+  meta_descripcion: Clínica dental en C. Villarroel, Barcelona. Salud bucodental integral, estética dental y atención al deportista. Tu sonrisa tiene una cita pendiente.
   noindex: false
 ---
