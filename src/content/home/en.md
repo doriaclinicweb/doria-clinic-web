@@ -20,6 +20,7 @@ intro_frase: We care for people, not just smiles.
 intro_parrafos:
   - "We're a team of dentists with our own way of doing things: rigour, warmth and attention to every detail. We believe a visit to the dentist shouldn't cause doubt or discomfort."
   - That's why we offer an experience designed to make you feel comfortable, at ease and well looked after from day one.
+  - Your well-being is the most important thing to us. Every corner of the clinic is designed for you to feel comfortable and at ease, with pleasant spaces, natural light, and an atmosphere that conveys calm and trust, where you can feel comfortable and in good hands.
 tratamientos_titulo: Treatments
 equipo_titulo: 'More than dentists: your trusted team'
 instalaciones_titulo: Facilities
