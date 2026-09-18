@@ -20,6 +20,7 @@ intro_frase: Cuidem persones, no només somriures.
 intro_parrafos:
   - "Som un equip d'odontòlegs amb una manera pròpia de fer les coses: amb rigor, proximitat i atenció a cada detall. Creiem que anar al dentista no hauria de generar dubtes ni incomoditat."
   - Per això t'oferim una experiència pensada perquè et sentis còmode, tranquil i ben acompanyat des del primer dia.
+  - El teu benestar és el més important per a nosaltres. Cada racó de la clínica està dissenyat perquè et sentis còmode i tranquil, amb espais agradables, llum natural i un ambient que transmet calma i confiança, on et puguis sentir còmode i en bones mans.
 tratamientos_titulo: Tractaments
 equipo_titulo: 'Més que dentistes: el teu equip de confiança'
 instalaciones_titulo: Instal·lacions
