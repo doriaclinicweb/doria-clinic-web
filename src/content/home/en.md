@@ -11,6 +11,8 @@ hero_imagenes:
     alt: Interior of the clinic
   - src: /img/3-10.jpg
     alt: Paediatric dentist explaining the treatment to a child
+  - src: /img/instalaciones/04-rincon-lectura.jpg
+    alt: waiting room
 cta_texto: Book by WhatsApp
 intro_frase: We care for people, not just smiles.
 intro_parrafos:
