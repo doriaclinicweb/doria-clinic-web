@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ignaciorodesg/doria-clinic-web
+  repo: doriaclinicweb/doria-clinic-web
   branch: main
   base_url: https://sveltia-cms-auth.doriaclinicweb.workers.dev
 
