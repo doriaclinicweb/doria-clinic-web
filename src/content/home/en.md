@@ -13,6 +13,8 @@ hero_imagenes:
     alt: Paediatric dentist explaining the treatment to a child
   - src: /img/instalaciones/04-rincon-lectura.jpg
     alt: waiting room
+  - src: /img/55-DORIA-SAH_8243.jpg
+    alt: specialist performing a treatment
 cta_texto: Book by WhatsApp
 intro_frase: We care for people, not just smiles.
 intro_parrafos:
