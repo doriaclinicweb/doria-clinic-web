@@ -18,7 +18,7 @@ intro_frase: Cuidamos personas, no solo sonrisas.
 intro_parrafos:
   - 'Somos un equipo de odontólogos con una manera propia de hacer las cosas: con rigor, cercanía y atención a cada detalle. Creemos que venir al dentista no debería generar dudas ni incomodidad.'
   - Por eso te ofrecemos una experiencia pensada para que te sientas cómodo, tranquilo y bien acompañado desde el primer día.
-  - Tu bienestar es lo más importante para nosotros. Cada rincón de la clínica está diseñado para que te sientas cómodo y tranquilo, con espacios agradables, luz natural y un ambiente que transmite calma y confianza, donde puedas sentirte cómodo y en buenas manos.
+  - Tu bienestar es lo más importante para nosotros.
 tratamientos_titulo: Tratamientos
 equipo_titulo: 'Más que dentistas: tu equipo de confianza'
 instalaciones_titulo: Instalaciones
