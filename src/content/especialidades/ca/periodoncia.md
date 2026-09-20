@@ -1,24 +1,25 @@
 ---
 idioma: ca
-titulo: "Periodòncia"
-subtitulo: "Salut de les genives i de l'os que sosté les dents"
-resumen: "Prevenció, diagnòstic i tractament de gingivitis i periodontitis, la principal causa de pèrdua dental en adults. Cirurgia periodontal i empelts de geniva."
+titulo: Periodòncia
+subtitulo: Salut de les genives i de l'os que sosté les dents
+resumen: Prevenció, diagnòstic i tractament de gingivitis i periodontitis, la principal causa de pèrdua dental en adults. Cirurgia periodontal i empelts de geniva.
+resumen_corto: ''
 orden: 7
-icono: "/img/iconos/periodoncia.svg"
-imagen: "/img/instalaciones/19-esterilizador-2.jpg"
+icono: /img/iconos/periodoncia.svg
 especialista: ines-doria
-faqs:
-  - pregunta: "Com sé si tinc malaltia periodontal?"
-    respuesta: "El signe més habitual és el sagnat de genives en raspallar-te, tot i que en molts casos no hi ha cap senyal evident. Per això recomanem revisions periòdiques: el diagnòstic precoç és la part més important del tractament."
-  - pregunta: "Es pot curar la periodontitis?"
-    respuesta: "Es pot controlar i aturar el seu avanç amb el tractament adequat i un manteniment periòdic, encara que l'os que ja s'ha perdut no es recupera de manera espontània."
-  - pregunta: "El curetatge fa mal?"
-    respuesta: "Es fa amb anestèsia local, així que no se sent dolor durant el tractament. És normal notar sensibilitat els dies posteriors."
-  - pregunta: "Amb quina freqüència necessito manteniment periodontal?"
-    respuesta: "Depèn de cada cas, però en pacients amb periodontitis solem recomanar revisions cada 3 o 4 mesos per controlar la profunditat de les butxaques i evitar recaigudes."
+imagen: /img/instalaciones/19-esterilizador-2.jpg
 seo:
-  titulo_seo: "Periodòncia a Barcelona | Tractament de genives"
+  titulo_seo: Periodòncia a Barcelona | Tractament de genives
   meta_descripcion: "Tractament de genives a Barcelona: curetatges, periodontitis, empelts de geniva i gingivectomia. Primera visita gratuïta a l'Eixample."
+faqs:
+  - pregunta: Com sé si tinc malaltia periodontal?
+    respuesta: 'El signe més habitual és el sagnat de genives en raspallar-te, tot i que en molts casos no hi ha cap senyal evident. Per això recomanem revisions periòdiques: el diagnòstic precoç és la part més important del tractament.'
+  - pregunta: Es pot curar la periodontitis?
+    respuesta: Es pot controlar i aturar el seu avanç amb el tractament adequat i un manteniment periòdic, encara que l'os que ja s'ha perdut no es recupera de manera espontània.
+  - pregunta: El curetatge fa mal?
+    respuesta: Es fa amb anestèsia local, així que no se sent dolor durant el tractament. És normal notar sensibilitat els dies posteriors.
+  - pregunta: Amb quina freqüència necessito manteniment periodontal?
+    respuesta: Depèn de cada cas, però en pacients amb periodontitis solem recomanar revisions cada 3 o 4 mesos per controlar la profunditat de les butxaques i evitar recaigudes.
 ---
 
 La patologia periodontal sorgeix per l'acumulació de bacteris en forma de placa sobre

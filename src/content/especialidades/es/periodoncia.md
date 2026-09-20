@@ -1,24 +1,27 @@
 ---
 idioma: es
-titulo: "Periodoncia"
-subtitulo: "Salud de las encías y del hueso que sostiene los dientes"
-resumen: "Prevención, diagnóstico y tratamiento de gingivitis y periodontitis, la principal causa de pérdida dental en adultos. Cirugía periodontal e injertos de encía."
+titulo: Periodoncia
+subtitulo: Salud de las encías y del hueso que sostiene los dientes
+resumen: Prevención, diagnóstico y tratamiento de gingivitis y periodontitis, la principal causa de pérdida dental en adultos. Cirugía periodontal e injertos de encía.
+resumen_corto: ''
 orden: 7
-icono: "/img/iconos/periodoncia.svg"
-imagen: "/img/instalaciones/19-esterilizador-2.jpg"
-especialista: ines-doria
-faqs:
-  - pregunta: "¿Cómo sé si tengo enfermedad periodontal?"
-    respuesta: "El signo más habitual es el sangrado de encías al cepillarte, aunque en muchos casos no hay ninguna señal evidente. Por eso recomendamos revisiones periódicas: el diagnóstico precoz es la parte más importante del tratamiento."
-  - pregunta: "¿Se puede curar la periodontitis?"
-    respuesta: "Se puede controlar y detener su avance con el tratamiento adecuado y un mantenimiento periódico, aunque el hueso que ya se ha perdido no se recupera de forma espontánea."
-  - pregunta: "¿El curetaje duele?"
-    respuesta: "Se realiza con anestesia local, así que no se siente dolor durante el tratamiento. Es normal notar sensibilidad los días posteriores."
-  - pregunta: "¿Con qué frecuencia necesito mantenimiento periodontal?"
-    respuesta: "Depende de cada caso, pero en pacientes con periodontitis solemos recomendar revisiones cada 3 o 4 meses para controlar la profundidad de las bolsas y evitar recaídas."
+mostrar_en_home: true
+icono: /img/iconos/periodoncia.svg
+especialista: guillermo-doria
+imagen: /img/instalaciones/19-esterilizador-2.jpg
 seo:
-  titulo_seo: "Periodoncia en Barcelona | Tratamiento de encías"
-  meta_descripcion: "Tratamiento de encías en Barcelona: curetajes, periodontitis, injertos de encía y gingivectomía. Primera visita gratuita en el Eixample."
+  titulo_seo: Periodoncia en Barcelona | Tratamiento de encías
+  meta_descripcion: 'Tratamiento de encías en Barcelona: curetajes, periodontitis, injertos de encía y gingivectomía. Primera visita gratuita en el Eixample.'
+  noindex: false
+faqs:
+  - pregunta: ¿Cómo sé si tengo enfermedad periodontal?
+    respuesta: 'El signo más habitual es el sangrado de encías al cepillarte, aunque en muchos casos no hay ninguna señal evidente. Por eso recomendamos revisiones periódicas: el diagnóstico precoz es la parte más importante del tratamiento.'
+  - pregunta: ¿Se puede curar la periodontitis?
+    respuesta: Se puede controlar y detener su avance con el tratamiento adecuado y un mantenimiento periódico, aunque el hueso que ya se ha perdido no se recupera de forma espontánea.
+  - pregunta: ¿El curetaje duele?
+    respuesta: Se realiza con anestesia local, así que no se siente dolor durante el tratamiento. Es normal notar sensibilidad los días posteriores.
+  - pregunta: ¿Con qué frecuencia necesito mantenimiento periodontal?
+    respuesta: Depende de cada caso, pero en pacientes con periodontitis solemos recomendar revisiones cada 3 o 4 meses para controlar la profundidad de las bolsas y evitar recaídas.
 ---
 
 La patología periodontal surge por la acumulación de bacterias en forma de placa sobre

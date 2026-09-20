@@ -1,24 +1,25 @@
 ---
 idioma: en
-titulo: "Periodontics"
-subtitulo: "Health of the gums and the bone that supports your teeth"
-resumen: "Prevention, diagnosis and treatment of gingivitis and periodontitis, the leading cause of tooth loss in adults. Periodontal surgery and gum grafts."
+titulo: Periodontics
+subtitulo: Health of the gums and the bone that supports your teeth
+resumen: Prevention, diagnosis and treatment of gingivitis and periodontitis, the leading cause of tooth loss in adults. Periodontal surgery and gum grafts.
+resumen_corto: ''
 orden: 7
-icono: "/img/iconos/periodoncia.svg"
-imagen: "/img/instalaciones/19-esterilizador-2.jpg"
+icono: /img/iconos/periodoncia.svg
 especialista: ines-doria
-faqs:
-  - pregunta: "How do I know if I have gum disease?"
-    respuesta: "The most common sign is bleeding gums when brushing, although in many cases there's no obvious sign at all. That's why we recommend regular check-ups: early diagnosis is the most important part of treatment."
-  - pregunta: "Can periodontitis be cured?"
-    respuesta: "It can be controlled and its progression stopped with the right treatment and regular maintenance, although bone that has already been lost doesn't grow back on its own."
-  - pregunta: "Does scaling and root planing hurt?"
-    respuesta: "It's carried out under local anaesthesia, so you won't feel pain during treatment. It's normal to notice some sensitivity in the following days."
-  - pregunta: "How often do I need periodontal maintenance?"
-    respuesta: "It depends on the case, but for patients with periodontitis we usually recommend check-ups every 3 to 4 months to monitor pocket depth and prevent relapse."
+imagen: /img/instalaciones/19-esterilizador-2.jpg
 seo:
-  titulo_seo: "Periodontics in Barcelona | Gum Treatment"
-  meta_descripcion: "Gum treatment in Barcelona: scaling and root planing, periodontitis, gum grafts and gingivectomy. Free first visit in the Eixample."
+  titulo_seo: Periodontics in Barcelona | Gum Treatment
+  meta_descripcion: 'Gum treatment in Barcelona: scaling and root planing, periodontitis, gum grafts and gingivectomy. Free first visit in the Eixample.'
+faqs:
+  - pregunta: How do I know if I have gum disease?
+    respuesta: "The most common sign is bleeding gums when brushing, although in many cases there's no obvious sign at all. That's why we recommend regular check-ups: early diagnosis is the most important part of treatment."
+  - pregunta: Can periodontitis be cured?
+    respuesta: It can be controlled and its progression stopped with the right treatment and regular maintenance, although bone that has already been lost doesn't grow back on its own.
+  - pregunta: Does scaling and root planing hurt?
+    respuesta: It's carried out under local anaesthesia, so you won't feel pain during treatment. It's normal to notice some sensitivity in the following days.
+  - pregunta: How often do I need periodontal maintenance?
+    respuesta: It depends on the case, but for patients with periodontitis we usually recommend check-ups every 3 to 4 months to monitor pocket depth and prevent relapse.
 ---
 
 Periodontal disease is caused by the build-up of bacteria as plaque on the teeth. If
