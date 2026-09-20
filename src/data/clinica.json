@@ -40,39 +40,96 @@
     "cta": "Reservar por WhatsApp",
     "cta_ca": "Reservar per WhatsApp",
     "cta_en": "Book by WhatsApp",
-    "puntos": ["Primera visita gratuita, sin compromiso", "Radiografía gratuita", "Diagnóstico personalizado"],
-    "puntos_ca": ["Primera visita gratuïta, sense compromís", "Radiografia gratuïta", "Diagnòstic personalitzat"],
-    "puntos_en": ["Free first visit, no obligation", "Free X-ray", "Personalised diagnosis"]
+    "puntos": [
+      "Primera visita gratuita, sin compromiso",
+      "Radiografía gratuita",
+      "Diagnóstico personalizado"
+    ],
+    "puntos_ca": [
+      "Primera visita gratuïta, sense compromís",
+      "Radiografia gratuïta",
+      "Diagnòstic personalitzat"
+    ],
+    "puntos_en": [
+      "Free first visit, no obligation",
+      "Free X-ray",
+      "Personalised diagnosis"
+    ]
   },
   "elegirnos_titulo": "¿Por qué elegirnos?",
   "elegirnos_titulo_ca": "Per què triar-nos?",
   "elegirnos_titulo_en": "Why choose us?",
   "elegirnos": [
-    { "titulo": "Cercanía", "texto": "Te hacemos sentir como en casa, desde el primer día." },
-    { "titulo": "Confianza", "texto": "Te escuchamos, te explicamos y te acompañamos." },
-    { "titulo": "Innovación", "texto": "Tecnología avanzada al servicio de tu salud y tu comodidad." },
-    { "titulo": "Honestidad", "texto": "Siempre con transparencia y sin sorpresas." },
-    { "titulo": "Profesionalidad", "texto": "Más de 15 años de experiencia, cuidado y pasión por lo que hacemos." }
+    {
+      "titulo": "Cercanía",
+      "texto": "Te hacemos sentir como en casa, desde el primer día."
+    },
+    {
+      "titulo": "Confianza",
+      "texto": "Te escuchamos, te explicamos y te acompañamos."
+    },
+    {
+      "titulo": "Innovación",
+      "texto": "Tecnología avanzada al servicio de tu salud y tu comodidad."
+    },
+    {
+      "titulo": "Honestidad",
+      "texto": "Siempre con transparencia y sin sorpresas."
+    },
+    {
+      "titulo": "Profesionalidad",
+      "texto": "Más de 15 años de experiencia, cuidado y pasión por lo que hacemos."
+    }
   ],
   "elegirnos_ca": [
-    { "titulo": "Proximitat", "texto": "Et fem sentir com a casa, des del primer dia." },
-    { "titulo": "Confiança", "texto": "T'escoltem, t'ho expliquem i t'acompanyem." },
-    { "titulo": "Innovació", "texto": "Tecnologia avançada al servei de la teva salut i la teva comoditat." },
-    { "titulo": "Honestedat", "texto": "Sempre amb transparència i sense sorpreses." },
-    { "titulo": "Professionalitat", "texto": "Més de 15 anys d'experiència, cura i passió per la feina que fem." }
+    {
+      "titulo": "Proximitat",
+      "texto": "Et fem sentir com a casa, des del primer dia."
+    },
+    {
+      "titulo": "Confiança",
+      "texto": "T'escoltem, t'ho expliquem i t'acompanyem."
+    },
+    {
+      "titulo": "Innovació",
+      "texto": "Tecnologia avançada al servei de la teva salut i la teva comoditat."
+    },
+    {
+      "titulo": "Honestedat",
+      "texto": "Sempre amb transparència i sense sorpreses."
+    },
+    {
+      "titulo": "Professionalitat",
+      "texto": "Més de 15 anys d'experiència, cura i passió per la feina que fem."
+    }
   ],
   "elegirnos_en": [
-    { "titulo": "Warmth", "texto": "We make you feel at home, from day one." },
-    { "titulo": "Trust", "texto": "We listen, explain and support you." },
-    { "titulo": "Innovation", "texto": "Advanced technology serving your health and comfort." },
-    { "titulo": "Honesty", "texto": "Always transparent, no surprises." },
-    { "titulo": "Professionalism", "texto": "Over 15 years of experience, care and passion for what we do." }
+    {
+      "titulo": "Warmth",
+      "texto": "We make you feel at home, from day one."
+    },
+    {
+      "titulo": "Trust",
+      "texto": "We listen, explain and support you."
+    },
+    {
+      "titulo": "Innovation",
+      "texto": "Advanced technology serving your health and comfort."
+    },
+    {
+      "titulo": "Honesty",
+      "texto": "Always transparent, no surprises."
+    },
+    {
+      "titulo": "Professionalism",
+      "texto": "Over 15 years of experience, care and passion for what we do."
+    }
   ],
   "software_citas": "https://wa.me/34619186579?text=Hola,%20quiero%20pedir%20hora",
   "google_business_profile": "https://maps.app.goo.gl/evyvMBmimQb3Lrjp9",
   "nombre_google_maps": "Doria Clinic Dentista - Clínica Dental Barcelona",
   "google_valoracion": 5,
-  "google_num_resenas": 81,
+  "google_num_resenas": 84,
   "redes": {
     "instagram": "https://www.instagram.com/doriaclinic/",
     "linkedin": "https://www.linkedin.com/company/doria-clinic/",
@@ -81,6 +138,6 @@
     "tiktok": "",
     "x": ""
   },
-  "nif": "",
-  "google_analytics_id": "G-WG0JW6FWEC"
+  "google_analytics_id": "G-WG0JW6FWEC",
+  "nif": ""
 }
