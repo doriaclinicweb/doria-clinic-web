@@ -70,6 +70,10 @@ instalaciones_imagenes:
     alt: Sterilisation autoclave in use
   - src: /img/instalaciones/19-esterilizador-2.jpg
     alt: Steriliser on a treatment room counter
+  - src: /img/51-DORIA-SAH_8217 (1).jpg
+    alt: Zona de juegos niños clinica
+  - src: /img/5-DORIA-SAH_7928 (1).jpg
+    alt: Puerta del raton perez clinica
 seo:
   titulo_seo: Dental clinic in the Eixample, Barcelona | Doria Clinic
   meta_descripcion: Dental clinic on Carrer Villarroel, Barcelona. Comprehensive oral health, dental aesthetics and care for athletes. Free first visit, no obligation.
