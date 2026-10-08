@@ -451,12 +451,12 @@
 <table>
   <tr><th>Archivo</th><th>Qué hace</th></tr>
   <tr><td>Header.astro</td><td>Cabecera con navegación, incluido el menú móvil con selector de idioma</td></tr>
-  <tr><td>Footer.astro</td><td>Pie de página: banner de financiación, redes sociales, mapa (imagen estática), enlace «Configurar cookies», wordmark de cierre</td></tr>
+  <tr><td>Footer.astro</td><td>Pie de página: banner de financiación, redes sociales, mapa de Google (con consentimiento), enlace «Configurar cookies», wordmark de cierre</td></tr>
   <tr><td>PrimeraVisitaModulo.astro</td><td>Bloque «Tu primera visita», repetido en todas las páginas</td></tr>
   <tr><td>ReviewsModulo.astro</td><td>Carrusel de reseñas de Google, repetido en todas las páginas</td></tr>
   <tr><td>PorQueElegirnosModulo.astro</td><td>Bloque «¿Por qué elegirnos?», repetido en todas las páginas</td></tr>
   <tr><td>EquipoModulo.astro</td><td>Bloque de fichas de equipo en páginas de especialidad/tratamiento</td></tr>
-  <tr><td>CookieBanner.astro</td><td>Banner de consentimiento de cookies: controla si se carga Google Analytics, guarda la decisión 12 meses y permite retirarla</td></tr>
+  <tr><td>CookieBanner.astro</td><td>Banner de consentimiento de cookies: controla si se cargan Google Analytics y el mapa de Google, guarda la decisión 12 meses y permite retirarla</td></tr>
 </table>
 <div class="callout aviso">
   <span class="titulo-callout">Particularidad importante para desarrolladores</span>
@@ -515,10 +515,10 @@
 
 <h2>10.1 Cookies: cómo funciona y qué mantener</h2>
 <ul>
-  <li><strong>Banner.</strong> Aparece en la primera visita con los botones «Rechazar» y «Aceptar» con el mismo aspecto y peso visual (requisito de la AEPD). La web se puede usar sin aceptar. No se carga nada de Google Analytics hasta que se acepta.</li>
+  <li><strong>Banner.</strong> Aparece en la primera visita con los botones «Rechazar» y «Aceptar» con el mismo aspecto y peso visual (requisito de la AEPD). La web se puede usar sin aceptar. No se carga nada de Google Analytics ni de Google Maps hasta que se acepta.</li>
   <li><strong>Retirar el consentimiento.</strong> El enlace «Configurar cookies» del pie de página reabre el aviso en cualquier momento. Si se rechaza tras haber aceptado, se borran las cookies <span class="codigo">_ga</span> y <span class="codigo">_ga_WG0JW6FWEC</span> y se detiene la medición.</li>
   <li><strong>Caducidad.</strong> La decisión se guarda 12 meses en el navegador (almacenamiento local, clave <span class="codigo">doria-cookies</span>); después se vuelve a preguntar.</li>
-  <li><strong>Mapa sin cookies.</strong> El mapa del pie es una imagen propia (<span class="codigo">public/img/mapa-clinica.webp</span>) generada con teselas de OpenStreetMap, con su atribución visible, y un botón «Abrir en Google Maps» que sale de la web. No hay iframe de Google, por lo que no hay cookies de terceros ni conexión con Google al cargar la página. Si la clínica cambiara de dirección habría que regenerar la imagen.</li>
+  <li><strong>Mapa de Google.</strong> Es el mapa de Google Maps de siempre, pero <strong>no se carga hasta que la persona acepta las cookies</strong>: Google instala cookies y recibe la IP del visitante al cargarlo, así que cargarlo sin consentimiento incumpliría la normativa. Quien no ha aceptado ve un recuadro con el botón «Ver mapa» (lo carga solo en ese momento, por decisión expresa) y un enlace «Abrir en Google Maps». Si rechaza después de haber aceptado, el mapa se retira de la página. El código está en <span class="codigo">Footer.astro</span> (cargador) y <span class="codigo">CookieBanner.astro</span> (consentimiento).</li>
   <li><strong>Hosting.</strong> Netlify no envía cookies en esta web (verificado con las cabeceras HTTP). Cloudflare solo hace de DNS y el Worker del CMS solo se usa en <span class="codigo">/admin</span>.</li>
   <li><strong>Qué revisar si se añade algo nuevo.</strong> Cualquier herramienta que cargue contenido de terceros (un vídeo de YouTube, un widget de reservas, un píxel de Meta o de Google Ads, un chat, Google Fonts desde Google) puede instalar cookies o enviar la IP del visitante. Antes de añadirla hay que: (1) bloquearla hasta que haya consentimiento, (2) añadirla a la tabla de la política de cookies en los 3 idiomas, y (3) actualizar la política de privacidad.</li>
   <li><strong>Ajustes de la cuenta de Google Analytics (los gestiona la clínica, no el código).</strong> En analytics.google.com conviene tener la retención de datos en 2 o 14 meses (Administrar → Recopilación y modificación de datos → Retención de datos) y las señales de Google y la personalización de anuncios desactivadas. El código ya las desactiva, pero conviene que coincida con el panel.</li>

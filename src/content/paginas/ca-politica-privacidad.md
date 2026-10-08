@@ -33,7 +33,7 @@ Quan ens escrius per WhatsApp, correu electrònic o telèfon, tractem les dades 
 
 No cedim les teves dades a tercers, llevat d'obligació legal. Si ens escrius per WhatsApp, tingues en compte que Meta Platforms Ireland Ltd., com a proveïdor del servei, tracta les metadades de la comunicació d'acord amb la seva pròpia política de privacitat.
 
-Per servir aquest lloc web fem servir com a proveïdor d'allotjament Netlify, Inc., que tracta dades tècniques de la connexió (com l'adreça IP) als registres del servidor, amb l'única finalitat de lliurar-te el web i mantenir-lo segur. A més, si acceptes les cookies analítiques, Google Ireland Ltd. tracta dades d'ús del lloc web (Google Analytics) d'acord amb la seva política de privacitat; aquesta informació pot transferir-se als Estats Units amb les garanties previstes pel RGPD. La base de legitimació d'aquest tractament és el teu consentiment, que pots retirar en qualsevol moment des de «Configurar cookies» al peu de pàgina.
+Per servir aquest lloc web fem servir com a proveïdor d'allotjament Netlify, Inc., que tracta dades tècniques de la connexió (com l'adreça IP) als registres del servidor, amb l'única finalitat de lliurar-te el web i mantenir-lo segur. A més, si acceptes les cookies, Google Ireland Ltd. tracta dades d'ús del lloc web (Google Analytics) i les dades de connexió necessàries per mostrar el mapa (Google Maps, inclosa la teva adreça IP) d'acord amb la seva política de privacitat; aquesta informació pot transferir-se als Estats Units amb les garanties previstes pel RGPD. La base de legitimació d'aquest tractament és el teu consentiment, que pots retirar en qualsevol moment des de «Configurar cookies» al peu de pàgina.
 
 ## 6. Els teus drets
 
@@ -45,7 +45,7 @@ Només conservem les dades de les comunicacions que ens escrius el temps necessa
 
 ## 8. Cookies
 
-Aquest lloc web només utilitza cookies analítiques de Google Analytics, i únicament si les acceptes, a més d'un emmagatzematge tècnic propi per recordar la teva decisió. Pots consultar el detall i gestionar el teu consentiment a la nostra [política de cookies](/ca/politica-cookies/).
+Aquest lloc web només utilitza cookies de Google Analytics i de Google Maps, i únicament si les acceptes, a més d'un emmagatzematge tècnic propi per recordar la teva decisió. Pots consultar el detall i gestionar el teu consentiment a la nostra [política de cookies](/ca/politica-cookies/).
 
 ## 9. Canvis en aquesta política
 

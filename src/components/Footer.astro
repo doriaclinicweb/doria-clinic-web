@@ -122,12 +122,17 @@ const diasCa = diasTraducidos[idioma] ?? {};
 const franjaCa = franjaTraducida[idioma] ?? {};
 
 const direccionCompleta = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
-// Mapa estático (imagen propia, generada con teselas de OpenStreetMap): no
-// carga nada de terceros ni instala cookies. Para regenerarlo, ver el manual.
+// El mapa de Google solo se carga con consentimiento (o si la persona pulsa
+// «Ver mapa»): al cargarlo, Google puede instalar cookies. Ver CookieBanner.
+const { lat, lng } = clinica.coordenadas;
+const mapaQuery =
+  clinica.nombre_google_maps ||
+  (lat != null && lng != null ? `${lat},${lng}(${clinica.nombre})` : direccionCompleta);
+const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapaQuery)}&output=embed`;
 const mapaTextos = {
-  es: { alt: `Mapa con la ubicación de Doria Clinic: ${direccionCompleta}`, abrir: 'Abrir en Google Maps', atribucion: '© colaboradores de OpenStreetMap' },
-  ca: { alt: `Mapa amb la ubicació de Doria Clinic: ${direccionCompleta}`, abrir: 'Obrir a Google Maps', atribucion: '© col·laboradors d’OpenStreetMap' },
-  en: { alt: `Map showing the location of Doria Clinic: ${direccionCompleta}`, abrir: 'Open in Google Maps', atribucion: '© OpenStreetMap contributors' },
+  es: { titulo: 'Mapa de ubicación de Doria Clinic', aviso: 'El mapa lo ofrece Google Maps, que puede instalar cookies al cargarlo.', ver: 'Ver mapa', abrir: 'Abrir en Google Maps' },
+  ca: { titulo: 'Mapa d’ubicació de Doria Clinic', aviso: 'El mapa l’ofereix Google Maps, que pot instal·lar cookies en carregar-lo.', ver: 'Veure mapa', abrir: 'Obrir a Google Maps' },
+  en: { titulo: 'Map of Doria Clinic’s location', aviso: 'The map is provided by Google Maps, which may set cookies when it loads.', ver: 'Show map', abrir: 'Open in Google Maps' },
 }[idioma];
 
 const redes = [
@@ -164,13 +169,37 @@ const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
   </Fragment>
 )}
 
-<section class="mapa">
-  <a class="mapa-enlace" href={clinica.google_business_profile} target="_blank" rel="noopener noreferrer" aria-label={mapaTextos.abrir}>
-    <img src="/img/mapa-clinica.webp" alt={mapaTextos.alt} width="2560" height="880" loading="lazy" />
-    <span class="mapa-abrir">{mapaTextos.abrir} <span aria-hidden="true">→</span></span>
-  </a>
-  <a class="mapa-atribucion" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">{mapaTextos.atribucion}</a>
+<section class="mapa" id="doria-mapa" data-src={mapaSrc} data-titulo={mapaTextos.titulo}>
+  <div class="mapa-aviso">
+    <p>{mapaTextos.aviso}</p>
+    <div class="mapa-aviso-acciones">
+      <button type="button" class="boton boton-verde" onclick="window.doriaCargarMapa()">{mapaTextos.ver}</button>
+      <a class="boton boton-contorno" href={clinica.google_business_profile} target="_blank" rel="noopener noreferrer">{mapaTextos.abrir}</a>
+    </div>
+  </div>
 </section>
+<script is:inline>
+  (function () {
+    window.doriaCargarMapa = function () {
+      var s = document.getElementById('doria-mapa');
+      if (!s || s.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = s.getAttribute('data-src');
+      f.title = s.getAttribute('data-titulo');
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      s.appendChild(f);
+      s.classList.add('mapa-cargado');
+    };
+    window.doriaDescargarMapa = function () {
+      var s = document.getElementById('doria-mapa');
+      if (!s) return;
+      var f = s.querySelector('iframe');
+      if (f) f.remove();
+      s.classList.remove('mapa-cargado');
+    };
+  })();
+</script>
 
 <footer class="pie" id="contacto">
   <div class="wrap">

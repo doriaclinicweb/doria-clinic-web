@@ -9,7 +9,7 @@ const gaId = clinica.google_analytics_id;
 const t = {
   ca: {
     etiqueta: 'Avís de cookies',
-    texto: 'A Doria Clinic fem servir cookies analítiques de tercers (Google Analytics) per conèixer, de manera agregada, com s’utilitza el web i millorar-lo. Només s’instal·len si les acceptes. Pots rebutjar-les o canviar la teva decisió quan vulguis des de «Configurar cookies», al peu de pàgina.',
+    texto: 'A Doria Clinic fem servir cookies de tercers: analítiques (Google Analytics), per conèixer de manera agregada com s’utilitza el web i millorar-lo, i les de Google Maps, per mostrar el mapa. Només s’instal·len si les acceptes. Pots rebutjar-les o canviar la teva decisió quan vulguis des de «Configurar cookies», al peu de pàgina.',
     mas: 'Política de cookies',
     href: '/ca/politica-cookies/',
     rechazar: 'Rebutjar',
@@ -17,7 +17,7 @@ const t = {
   },
   en: {
     etiqueta: 'Cookie notice',
-    texto: 'At Doria Clinic we use third-party analytics cookies (Google Analytics) to understand, in aggregate, how the website is used and to improve it. They are only installed if you accept them. You can reject them or change your mind at any time via “Cookie settings” in the footer.',
+    texto: 'At Doria Clinic we use third-party cookies: analytics (Google Analytics), to understand in aggregate how the website is used and improve it, and Google Maps, to show the map. They are only installed if you accept them. You can reject them or change your mind at any time via “Cookie settings” in the footer.',
     mas: 'Cookie policy',
     href: '/en/politica-cookies/',
     rechazar: 'Reject',
@@ -25,7 +25,7 @@ const t = {
   },
   es: {
     etiqueta: 'Aviso de cookies',
-    texto: 'En Doria Clinic usamos cookies analíticas de terceros (Google Analytics) para conocer, de forma agregada, cómo se usa la web y mejorarla. Solo se instalan si las aceptas. Puedes rechazarlas o cambiar tu decisión cuando quieras desde «Configurar cookies», en el pie de página.',
+    texto: 'En Doria Clinic usamos cookies de terceros: analíticas (Google Analytics), para conocer de forma agregada cómo se usa la web y mejorarla, y las de Google Maps, para mostrar el mapa. Solo se instalan si las aceptas. Puedes rechazarlas o cambiar tu decisión cuando quieras desde «Configurar cookies», en el pie de página.',
     mas: 'Política de cookies',
     href: '/politica-cookies/',
     rechazar: 'Rechazar',
@@ -99,14 +99,19 @@ const t = {
     function mostrar() { var el = banner(); if (el) el.hidden = false; }
     function ocultar() { var el = banner(); if (el) el.hidden = true; }
 
+    function cargarMapa() { if (window.doriaCargarMapa) window.doriaCargarMapa(); }
+    function descargarMapa() { if (window.doriaDescargarMapa) window.doriaDescargarMapa(); }
+
     window.doriaAceptarCookies = function () {
       guardar('granted');
       cargarGA();
+      cargarMapa();
       ocultar();
     };
     window.doriaRechazarCookies = function () {
       guardar('denied');
       borrarCookiesGA();
+      descargarMapa();
       ocultar();
     };
     window.doriaAbrirCookies = function () {
@@ -117,7 +122,11 @@ const t = {
     };
 
     var consentimiento = leer();
-    if (consentimiento === 'granted') cargarGA();
+    if (consentimiento === 'granted') {
+      cargarGA();
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cargarMapa);
+      else cargarMapa();
+    }
 
     if (!consentimiento) {
       if (document.readyState === 'loading') {

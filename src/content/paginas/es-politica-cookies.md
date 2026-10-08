@@ -5,7 +5,7 @@ titulo: "Política de cookies"
 actualizado: "octubre de 2026"
 seo:
   titulo_seo: "Política de cookies | Doria Clinic"
-  meta_descripcion: "Qué cookies utiliza el sitio web de Doria Clinic: solo cookies analíticas de Google Analytics, y únicamente si las aceptas."
+  meta_descripcion: "Qué cookies utiliza el sitio web de Doria Clinic: cookies analíticas de Google Analytics y del mapa de Google Maps, y únicamente si las aceptas."
   noindex: false
 ---
 
@@ -25,17 +25,18 @@ Este sitio web **no utiliza cookies de publicidad ni de perfilado**. Solo pueden
 | --- | --- | --- | --- | --- | --- |
 | `_ga` | Google (tercero) | Analítica | Distinguir a los visitantes de forma anónima para elaborar estadísticas agregadas de uso. | 2 años | Sí |
 | `_ga_WG0JW6FWEC` | Google (tercero) | Analítica | Mantener el estado de la sesión de navegación. | 2 años | Sí |
+| `NID`, `AEC`, `SOCS` y similares | Google (tercero) | Preferencias y seguridad (mapa) | Mostrar el mapa de Google Maps y mantener sus preferencias y su seguridad. Las instala Google al cargar el mapa. | Hasta 13 meses, según informa Google | Sí |
 | `doria-cookies` (almacenamiento local) | Doria Clinic (propia) | Técnica | Recordar tu decisión sobre las cookies. | 12 meses | No, es estrictamente necesaria |
 
 - **Cookies analíticas de Google Analytics.** Utilizamos Google Analytics para conocer, de forma agregada, cómo se usa el sitio web (páginas más visitadas, procedencia de las visitas) y así poder mejorarlo. **Solo se instalan si las aceptas** en el aviso de cookies; mientras no lo hagas, no se carga ningún recurso de Google Analytics. Los datos son tratados por Google Ireland Ltd. y pueden implicar una transferencia a Estados Unidos, amparada en las garantías previstas por el RGPD (como el Marco de Privacidad de Datos UE-EE. UU.). Más información en la [política de privacidad de Google](https://policies.google.com/privacy).
 - **Alojamiento web.** El sitio se sirve desde Netlify, que no instala ninguna cookie en tu navegador al visitar esta web.
-- **Mapa.** El mapa del pie de página es una imagen estática de OpenStreetMap alojada en nuestro propio servidor: no se conecta con terceros ni instala cookies. Si pulsas «Abrir en Google Maps» saldrás de nuestro sitio web y se aplicarán las condiciones y la política de cookies de Google.
+- **Mapa de Google Maps.** El mapa del pie de página lo ofrece Google Maps. **No se carga hasta que aceptas las cookies** en el aviso; si no las has aceptado, verás un recuadro con el botón «Ver mapa», que carga el mapa solo en ese momento y por tu decisión expresa, y un enlace «Abrir en Google Maps» que te lleva al sitio de Google. Al cargarse, Google puede instalar sus propias cookies y recibe datos como tu dirección IP; se aplica la [política de privacidad de Google](https://policies.google.com/privacy).
 - **Redes sociales y botones de contacto.** Los enlaces a Instagram y a otras redes, y los botones de WhatsApp, llamada o correo, simplemente te llevan al servicio correspondiente o abren la aplicación en tu dispositivo; no cargan contenido de terceros en nuestra web ni instalan cookies.
 
 ## Cómo gestionar tu consentimiento
 
-- Al entrar por primera vez en el sitio web verás un aviso donde puedes **aceptar o rechazar** las cookies analíticas, con la misma facilidad. Puedes seguir navegando sin aceptarlas.
-- Puedes **cambiar o retirar tu decisión en cualquier momento** desde el enlace «Configurar cookies» que encontrarás en el pie de página de todas las páginas. Si las rechazas después de haberlas aceptado, eliminamos las cookies de Google Analytics de tu navegador.
+- Al entrar por primera vez en el sitio web verás un aviso donde puedes **aceptar o rechazar** las cookies analíticas y las del mapa, con la misma facilidad. Puedes seguir navegando sin aceptarlas.
+- Puedes **cambiar o retirar tu decisión en cualquier momento** desde el enlace «Configurar cookies» que encontrarás en el pie de página de todas las páginas. Si las rechazas después de haberlas aceptado, eliminamos las cookies de Google Analytics y retiramos el mapa de la página; las cookies que Google haya instalado al cargar el mapa solo puedes borrarlas desde la configuración de tu navegador.
 - Guardamos tu decisión durante 12 meses; pasado ese tiempo volveremos a preguntarte.
 - También puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (consulta su menú de ayuda).
 

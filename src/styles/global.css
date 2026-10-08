@@ -296,13 +296,12 @@ a { color: inherit; }
 .rrss-texto strong { font-family: var(--display); font-weight: 400; font-size: 1.05rem; }
 .rrss-texto span:last-child { font-size: 0.88rem; color: #556055; }
 .rrss-flecha { margin-left: auto; font-family: var(--display); font-size: 1.2rem; }
-.mapa { position: relative; width: 100%; height: clamp(300px, 32vw, 440px); overflow: hidden; background: #e8e6df; }
-.mapa-enlace { display: block; width: 100%; height: 100%; }
-.mapa img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: grayscale(55%) sepia(8%) contrast(1.05) brightness(0.98); }
-.mapa-abrir { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: 1.4rem; background: var(--verde); color: var(--crema); font-family: var(--display); font-size: 0.95rem; padding: 0.65rem 1.2rem; border-radius: 999px; box-shadow: 0 2px 10px rgba(0,0,0,.2); transition: opacity .2s; }
-.mapa-enlace:hover .mapa-abrir { opacity: 0.88; }
-.mapa-atribucion { position: absolute; right: 0; bottom: 0; background: rgba(255,255,255,.8); color: #333; font-size: 0.7rem; padding: 0.15rem 0.55rem; text-decoration: none; }
-.mapa-atribucion:hover { text-decoration: underline; }
+.mapa { position: relative; width: 100%; height: clamp(300px, 32vw, 440px); overflow: hidden; background: var(--gris); }
+.mapa iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(55%) sepia(8%) contrast(1.05) brightness(0.98); }
+.mapa-aviso { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem; padding: 1.5rem; text-align: center; }
+.mapa-aviso p { margin: 0; max-width: 46ch; color: #556055; font-size: 0.95rem; }
+.mapa-aviso-acciones { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+.mapa-cargado .mapa-aviso { display: none; }
 
 .pie { background: var(--verde); color: var(--crema); padding: clamp(3rem, 6vw, 5rem) 0 2rem; }
 .pie .cuerpo { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 2.5rem; align-items: start; }
