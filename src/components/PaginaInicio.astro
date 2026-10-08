@@ -206,7 +206,7 @@ const schema = {
         };
 
         const desplazar = (dir: number) => {
-          const tarjeta = pista.firstElementChild as HTMLElement | null;
+          const tarjeta = Array.from(pista.children).find((c) => (c as HTMLElement).offsetWidth > 0) as HTMLElement | undefined;
           const paso = tarjeta ? tarjeta.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).gap || '0') : pista.clientWidth;
           pista.scrollBy({ left: dir * paso, behavior: 'smooth' });
         };
@@ -271,7 +271,7 @@ const schema = {
         };
 
         const desplazar = (dir: number) => {
-          const tarjeta = pista.firstElementChild as HTMLElement | null;
+          const tarjeta = Array.from(pista.children).find((c) => (c as HTMLElement).offsetWidth > 0) as HTMLElement | undefined;
           const paso = tarjeta ? tarjeta.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).gap || '0') : pista.clientWidth;
           pista.scrollBy({ left: dir * paso, behavior: 'smooth' });
         };

@@ -1,5 +1,6 @@
 ---
 import clinica from '../data/clinica.json';
+import instagram from '../data/instagram.json';
 import type { Idioma } from '../utils/idioma';
 
 interface Props { idioma: Idioma; compacto?: boolean }
@@ -9,22 +10,10 @@ const titulo = { es: 'Síguenos en Instagram', ca: 'Segueix-nos a Instagram', en
 const verPerfil = { es: 'Ver perfil →', ca: 'Veure perfil →', en: 'View profile →' }[idioma];
 const instagramHandle = clinica.redes.instagram?.replace(/\/$/, '').split('/').pop();
 
-// Marcador temporal: sustituir por las 10 imágenes reales de los posts de
-// Instagram en cuanto se proporcionen (public/img/instagram/post-01.jpg,
-// etc.) y actualizar esta lista con sus rutas definitivas.
-const posts = [
-  '/img/instalaciones/01-recepcion-mostrador.jpg',
-  '/img/instalaciones/09-box-tratamiento.jpg',
-  '/img/instalaciones/08-sillon-dental.jpg',
-  '/img/instalaciones/03-pasillo-banco.jpg',
-  '/img/instalaciones/15-escaner-intraoral-1.jpg',
-  '/img/instalaciones/05-sala-espera-paciente.jpg',
-  '/img/instalaciones/11-equipo-rayos.jpg',
-  '/img/instalaciones/17-prueba-protesis.jpg',
-  '/img/instalaciones/04-rincon-lectura.jpg',
-  '/img/instalaciones/13-revision-radiografia.jpg',
-];
+// Las fotos se gestionan desde el CMS («Instagram (fotos del carrusel)»).
+const fotos = (instagram.fotos as { imagen: string; alt?: string; dispositivo?: string }[]).filter((f) => f.imagen);
 ---
+{fotos.length > 0 && (
 <section class:list={['seccion', { 'instagram-compacto': compacto }]}>
   <div class="wrap">
     <div class="encabezado-tratamientos">
@@ -36,9 +25,18 @@ const posts = [
     </div>
     <div class="carrusel-tratamientos instagram-carrusel" data-auto-carrusel data-dir-auto="1">
       <div class="carrusel-pista">
-        {posts.map((src) => (
-          <a class="instagram-tarjeta" href={clinica.redes.instagram} target="_blank" rel="noopener" aria-label={instagramHandle ? `@${instagramHandle}` : 'Instagram'}>
-            <img src={src} alt="" loading="lazy" />
+        {fotos.map((f) => (
+          <a
+            class:list={['instagram-tarjeta', { 'solo-escritorio': f.dispositivo === 'escritorio', 'solo-movil': f.dispositivo === 'movil' }]}
+            href={clinica.redes.instagram}
+            target="_blank"
+            rel="noopener"
+            aria-label={f.alt || (instagramHandle ? `@${instagramHandle}` : 'Instagram')}
+          >
+            <img src={f.imagen} alt="" loading="lazy" />
+            <span class="instagram-icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </span>
           </a>
         ))}
       </div>
@@ -47,3 +45,4 @@ const posts = [
     </div>
   </div>
 </section>
+)}

@@ -1,0 +1,54 @@
+{
+  "fotos": [
+    {
+      "imagen": "/img/instalaciones/01-recepcion-mostrador.jpg",
+      "alt": "Recepción de Doria Clinic",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/09-box-tratamiento.jpg",
+      "alt": "Box de tratamiento",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/08-sillon-dental.jpg",
+      "alt": "Sillón dental",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/03-pasillo-banco.jpg",
+      "alt": "Pasillo de la clínica",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/15-escaner-intraoral-1.jpg",
+      "alt": "Escáner intraoral",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/05-sala-espera-paciente.jpg",
+      "alt": "Sala de espera",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/11-equipo-rayos.jpg",
+      "alt": "Equipo de rayos",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/17-prueba-protesis.jpg",
+      "alt": "Prueba de prótesis",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/04-rincon-lectura.jpg",
+      "alt": "Rincón de lectura",
+      "dispositivo": "ambos"
+    },
+    {
+      "imagen": "/img/instalaciones/13-revision-radiografia.jpg",
+      "alt": "Revisión de radiografía",
+      "dispositivo": "ambos"
+    }
+  ]
+}

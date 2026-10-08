@@ -412,3 +412,23 @@ collections:
               - { name: texto_es, label: "Texto (español)", widget: text }
               - { name: texto_ca, label: "Texto (català)", widget: text }
               - { name: texto_en, label: "Texto (English)", widget: text }
+      - name: instagram
+        label: "Instagram (fotos del carrusel)"
+        file: "src/data/instagram.json"
+        fields:
+          - name: fotos
+            label: "Fotos"
+            widget: list
+            summary: "{{fields.alt}} · {{fields.dispositivo}}"
+            hint: "Se muestran en este orden (arrastra para reordenar). Elige para cada foto si sale en ordenador, en móvil o en ambos."
+            fields:
+              - { name: imagen, label: "Imagen", widget: image, hint: "Mejor cuadrada (por ejemplo 1080 × 1080 px)." }
+              - { name: alt, label: "Descripción de la foto", widget: string, required: false, hint: "Para accesibilidad y buscadores. Ej.: «Sonrisa tras un blanqueamiento»." }
+              - name: dispositivo
+                label: "Dónde se muestra"
+                widget: select
+                default: ambos
+                options:
+                  - { label: "Móvil y ordenador", value: ambos }
+                  - { label: "Solo ordenador", value: escritorio }
+                  - { label: "Solo móvil", value: movil }

@@ -269,9 +269,16 @@ a { color: inherit; }
 .instagram-carrusel { background: transparent; padding: 0 clamp(1.6rem, 4vw, 2.6rem); margin-top: 2.5rem; }
 .instagram-carrusel .carrusel-pista { scroll-snap-type: none; }
 @media (max-width: 700px) { .instagram-carrusel { padding: 0 1.6rem; } }
-.instagram-tarjeta { flex: 0 0 clamp(9rem, 16vw, 12rem); aspect-ratio: 1 / 1; border-radius: calc(14 * var(--size)); overflow: hidden; display: block; }
-.instagram-tarjeta img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.instagram-carrusel .carrusel-pista { gap: clamp(0.5rem, 1vw, 0.9rem); }
+.instagram-tarjeta { position: relative; flex: 0 0 clamp(16rem, 27vw, 25rem); aspect-ratio: 1 / 1; border-radius: 0; overflow: hidden; display: block; }
+.instagram-tarjeta img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.instagram-tarjeta::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,28,22,.45), transparent 45%); opacity: 0; transition: opacity .3s; }
 .instagram-tarjeta:hover img { transform: scale(1.06); }
+.instagram-tarjeta:hover::after { opacity: 1; }
+.instagram-icono { position: absolute; right: 0.9rem; bottom: 0.9rem; z-index: 1; color: var(--crema); opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; display: flex; }
+.instagram-tarjeta:hover .instagram-icono { opacity: 1; transform: none; }
+@media (max-width: 740px) { .instagram-tarjeta { flex-basis: 72vw; } .solo-escritorio { display: none; } .instagram-icono { opacity: 1; transform: none; } }
+@media (min-width: 741px) { .solo-movil { display: none; } }
 
 /* Variante compacta: usada en el pie de página (entre el banner de
    financiación y el mapa), en vez del gran padding de .seccion. */
