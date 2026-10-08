@@ -2,7 +2,7 @@
 idioma: ca
 ruta: politica-privacidad
 titulo: "Política de privacitat"
-actualizado: "setembre de 2026"
+actualizado: "octubre de 2026"
 seo:
   titulo_seo: "Política de privacitat | Doria Clinic"
   meta_descripcion: "Com tracta Doria Clinic les dades personals de qui visita aquest lloc web i de qui contacta per WhatsApp, telèfon o correu electrònic."
@@ -11,8 +11,8 @@ seo:
 
 ## 1. Responsable del tractament
 
-- Titular: Doria Clinic (nom comercial «Doria Clinic»)
-- NIF: pendent de completar
+- Titular: DORIMA DENTAL SLP (nom comercial «Doria Clinic»)
+- NIF: B22758023
 - Domicili: Carrer Villarroel, 221, 08036 Barcelona
 - Correu electrònic: info@doria.clinic
 - Telèfon: +34 933 534 840
@@ -33,6 +33,8 @@ Quan ens escrius per WhatsApp, correu electrònic o telèfon, tractem les dades 
 
 No cedim les teves dades a tercers, llevat d'obligació legal. Si ens escrius per WhatsApp, tingues en compte que Meta Platforms Ireland Ltd., com a proveïdor del servei, tracta les metadades de la comunicació d'acord amb la seva pròpia política de privacitat.
 
+Per servir aquest lloc web fem servir com a proveïdor d'allotjament Netlify, Inc., que tracta dades tècniques de la connexió (com l'adreça IP) als registres del servidor, amb l'única finalitat de lliurar-te el web i mantenir-lo segur. A més, si acceptes les cookies analítiques, Google Ireland Ltd. tracta dades d'ús del lloc web (Google Analytics) d'acord amb la seva política de privacitat; aquesta informació pot transferir-se als Estats Units amb les garanties previstes pel RGPD. La base de legitimació d'aquest tractament és el teu consentiment, que pots retirar en qualsevol moment des de «Configurar cookies» al peu de pàgina.
+
 ## 6. Els teus drets
 
 Pots exercir els teus drets d'accés, rectificació, supressió, oposició, limitació del tractament i portabilitat escrivint a [info@doria.clinic](mailto:info@doria.clinic) o per correu postal a Carrer Villarroel, 221, 08036 Barcelona, adjuntant còpia d'un document que acrediti la teva identitat. També pots reclamar davant l'Agència Espanyola de Protecció de Dades ([aepd.es](https://www.aepd.es)) si consideres que no hem atès correctament la teva sol·licitud.
@@ -43,7 +45,7 @@ Només conservem les dades de les comunicacions que ens escrius el temps necessa
 
 ## 8. Cookies
 
-Aquest lloc web utilitza cookies pròpies i de tercers. Pots consultar el detall a la nostra [política de cookies](/ca/politica-cookies/).
+Aquest lloc web només utilitza cookies analítiques de Google Analytics, i únicament si les acceptes, a més d'un emmagatzematge tècnic propi per recordar la teva decisió. Pots consultar el detall i gestionar el teu consentiment a la nostra [política de cookies](/ca/politica-cookies/).
 
 ## 9. Canvis en aquesta política
 

@@ -2,7 +2,7 @@
 idioma: es
 ruta: politica-privacidad
 titulo: "Política de privacidad"
-actualizado: "septiembre de 2026"
+actualizado: "octubre de 2026"
 seo:
   titulo_seo: "Política de privacidad | Doria Clinic"
   meta_descripcion: "Cómo trata Doria Clinic los datos personales de quienes visitan este sitio web y de quienes contactan por WhatsApp, teléfono o correo electrónico."
@@ -11,8 +11,8 @@ seo:
 
 ## 1. Responsable del tratamiento
 
-- Titular: Doria Clinic (nombre comercial «Doria Clinic»)
-- NIF: pendiente de completar
+- Titular: DORIMA DENTAL SLP (nombre comercial «Doria Clinic»)
+- NIF: B22758023
 - Domicilio: Carrer Villarroel, 221, 08036 Barcelona
 - Correo electrónico: info@doria.clinic
 - Teléfono: +34 933 534 840
@@ -33,6 +33,8 @@ Cuando nos escribes por WhatsApp, correo electrónico o teléfono, tratamos los 
 
 No cedemos tus datos a terceros, salvo obligación legal. Si nos escribes por WhatsApp, ten en cuenta que Meta Platforms Ireland Ltd., como proveedor del servicio, trata los metadatos de la comunicación conforme a su propia política de privacidad.
 
+Para servir este sitio web utilizamos como proveedor de alojamiento a Netlify, Inc., que trata datos técnicos de la conexión (como la dirección IP) en los registros del servidor, con la única finalidad de entregarte la web y mantenerla segura. Además, si aceptas las cookies analíticas, Google Ireland Ltd. trata datos de uso del sitio web (Google Analytics) conforme a su política de privacidad; esa información puede transferirse a Estados Unidos con las garantías previstas por el RGPD. La base de legitimación de este tratamiento es tu consentimiento, que puedes retirar en cualquier momento desde «Configurar cookies» en el pie de página.
+
 ## 6. Tus derechos
 
 Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a [info@doria.clinic](mailto:info@doria.clinic) o por correo postal a Carrer Villarroel, 221, 08036 Barcelona, adjuntando copia de un documento que acredite tu identidad. También puedes reclamar ante la Agencia Española de Protección de Datos ([aepd.es](https://www.aepd.es)) si consideras que no hemos atendido correctamente tu solicitud.
@@ -43,7 +45,7 @@ Solo conservamos los datos de las comunicaciones que nos escribes el tiempo nece
 
 ## 8. Cookies
 
-Este sitio web utiliza cookies propias y de terceros. Puedes consultar el detalle en nuestra [política de cookies](/politica-cookies/).
+Este sitio web solo utiliza cookies analíticas de Google Analytics, y únicamente si las aceptas, además de un almacenamiento técnico propio para recordar tu decisión. Puedes consultar el detalle y gestionar tu consentimiento en nuestra [política de cookies](/politica-cookies/).
 
 ## 9. Cambios en esta política
 

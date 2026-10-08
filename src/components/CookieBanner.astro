@@ -8,22 +8,25 @@ const gaId = clinica.google_analytics_id;
 
 const t = {
   ca: {
-    texto: 'Utilitzem galetes pròpies i de tercers (Google Maps, Google Analytics) per millorar la teva experiència i analitzar el trànsit.',
-    mas: 'Més informació',
+    etiqueta: 'Avís de cookies',
+    texto: 'A Doria Clinic fem servir cookies analítiques de tercers (Google Analytics) per conèixer, de manera agregada, com s’utilitza el web i millorar-lo. Només s’instal·len si les acceptes. Pots rebutjar-les o canviar la teva decisió quan vulguis des de «Configurar cookies», al peu de pàgina.',
+    mas: 'Política de cookies',
     href: '/ca/politica-cookies/',
     rechazar: 'Rebutjar',
     aceptar: 'Acceptar',
   },
   en: {
-    texto: 'We use our own and third-party cookies (Google Maps, Google Analytics) to improve your experience and analyse traffic.',
-    mas: 'More information',
+    etiqueta: 'Cookie notice',
+    texto: 'At Doria Clinic we use third-party analytics cookies (Google Analytics) to understand, in aggregate, how the website is used and to improve it. They are only installed if you accept them. You can reject them or change your mind at any time via “Cookie settings” in the footer.',
+    mas: 'Cookie policy',
     href: '/en/politica-cookies/',
     rechazar: 'Reject',
     aceptar: 'Accept',
   },
   es: {
-    texto: 'Usamos cookies propias y de terceros (Google Maps, Google Analytics) para mejorar tu experiencia y analizar el tráfico.',
-    mas: 'Más información',
+    etiqueta: 'Aviso de cookies',
+    texto: 'En Doria Clinic usamos cookies analíticas de terceros (Google Analytics) para conocer, de forma agregada, cómo se usa la web y mejorarla. Solo se instalan si las aceptas. Puedes rechazarlas o cambiar tu decisión cuando quieras desde «Configurar cookies», en el pie de página.',
+    mas: 'Política de cookies',
     href: '/politica-cookies/',
     rechazar: 'Rechazar',
     aceptar: 'Aceptar',
@@ -32,19 +35,42 @@ const t = {
 ---
 {gaId && (
 <Fragment>
-<div id="doria-cookie-banner" class="cookie-banner" hidden>
+<div id="doria-cookie-banner" class="cookie-banner" role="region" aria-label={t.etiqueta} hidden>
   <div class="cookie-banner-cuerpo">
-    <p>{t.texto} <a href={t.href}>{t.mas}</a></p>
+    <p>{t.texto}{' '}<a href={t.href}>{t.mas}</a></p>
     <div class="cookie-banner-acciones">
       <button type="button" onclick="window.doriaRechazarCookies()">{t.rechazar}</button>
-      <button type="button" class="aceptar" onclick="window.doriaAceptarCookies()">{t.aceptar}</button>
+      <button type="button" onclick="window.doriaAceptarCookies()">{t.aceptar}</button>
     </div>
   </div>
 </div>
 
 <script is:inline define:vars={{ gaId }}>
   (function () {
+    var CLAVE = 'doria-cookies';
+    var VIGENCIA_MS = 365 * 24 * 60 * 60 * 1000;
+
+    function guardar(valor) {
+      try { localStorage.setItem(CLAVE, JSON.stringify({ v: valor, t: Date.now() })); } catch (e) {}
+    }
+
+    function leer() {
+      try {
+        var bruto = localStorage.getItem(CLAVE);
+        if (!bruto) return null;
+        if (bruto === 'granted' || bruto === 'denied') {
+          guardar(bruto);
+          return bruto;
+        }
+        var o = JSON.parse(bruto);
+        if (!o || (o.v !== 'granted' && o.v !== 'denied') || typeof o.t !== 'number') return null;
+        if (Date.now() - o.t > VIGENCIA_MS) return null;
+        return o.v;
+      } catch (e) { return null; }
+    }
+
     function cargarGA() {
+      window['ga-disable-' + gaId] = false;
       if (window.__gaCargado) return;
       window.__gaCargado = true;
       var s = document.createElement('script');
@@ -54,31 +80,46 @@ const t = {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
-      window.gtag('config', gaId, { anonymize_ip: true });
+      window.gtag('config', gaId, { allow_google_signals: false, allow_ad_personalization_signals: false });
     }
 
-    var consentimiento;
-    try { consentimiento = localStorage.getItem('doria-cookies'); } catch (e) { consentimiento = null; }
+    function borrarCookiesGA() {
+      window['ga-disable-' + gaId] = true;
+      var nombres = ['_ga', '_ga_' + gaId.replace(/^G-/, ''), '_gid', '_gat'];
+      var host = location.hostname.replace(/^www\./, '');
+      var dominios = ['', '; domain=' + location.hostname, '; domain=.' + host];
+      nombres.forEach(function (n) {
+        dominios.forEach(function (d) {
+          document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+        });
+      });
+    }
 
-    if (consentimiento === 'granted') cargarGA();
+    function banner() { return document.getElementById('doria-cookie-banner'); }
+    function mostrar() { var el = banner(); if (el) el.hidden = false; }
+    function ocultar() { var el = banner(); if (el) el.hidden = true; }
 
     window.doriaAceptarCookies = function () {
-      try { localStorage.setItem('doria-cookies', 'granted'); } catch (e) {}
+      guardar('granted');
       cargarGA();
-      var el = document.getElementById('doria-cookie-banner');
-      if (el) el.hidden = true;
+      ocultar();
     };
     window.doriaRechazarCookies = function () {
-      try { localStorage.setItem('doria-cookies', 'denied'); } catch (e) {}
-      var el = document.getElementById('doria-cookie-banner');
-      if (el) el.hidden = true;
+      guardar('denied');
+      borrarCookiesGA();
+      ocultar();
+    };
+    window.doriaAbrirCookies = function () {
+      mostrar();
+      var el = banner();
+      var primero = el && el.querySelector('button');
+      if (primero) primero.focus();
     };
 
+    var consentimiento = leer();
+    if (consentimiento === 'granted') cargarGA();
+
     if (!consentimiento) {
-      var mostrar = function () {
-        var el = document.getElementById('doria-cookie-banner');
-        if (el) el.hidden = false;
-      };
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', mostrar);
       } else {

@@ -2,31 +2,43 @@
 idioma: es
 ruta: politica-cookies
 titulo: "Política de cookies"
-actualizado: "septiembre de 2026"
+actualizado: "octubre de 2026"
 seo:
   titulo_seo: "Política de cookies | Doria Clinic"
-  meta_descripcion: "Qué cookies utiliza el sitio web de Doria Clinic: técnicas, de Google Analytics y de terceros del mapa de Google incrustado."
+  meta_descripcion: "Qué cookies utiliza el sitio web de Doria Clinic: solo cookies analíticas de Google Analytics, y únicamente si las aceptas."
   noindex: false
 ---
 
+## Quién es el responsable
+
+El responsable de este sitio web es DORIMA DENTAL SLP (nombre comercial «Doria Clinic»), con NIF B22758023 y domicilio en Carrer Villarroel, 221, 08036 Barcelona y correo electrónico [info@doria.clinic](mailto:info@doria.clinic). Encontrarás el resto de sus datos y cómo tratamos tus datos personales en la [política de privacidad](/politica-privacidad/).
+
 ## Qué son las cookies
 
-Las cookies son pequeños archivos que un sitio web instala en tu navegador y que permiten, entre otras cosas, almacenar y recuperar información sobre tus hábitos de navegación.
+Las cookies son pequeños archivos que un sitio web instala en tu navegador y que permiten, entre otras cosas, almacenar y recuperar información sobre tus hábitos de navegación. Esta política también se refiere a tecnologías similares, como el almacenamiento local del navegador.
 
 ## Cookies que utiliza este sitio web
 
-Este sitio web no utiliza cookies de publicidad. Las cookies que pueden llegar a instalarse son:
+Este sitio web **no utiliza cookies de publicidad ni de perfilado**. Solo pueden instalarse las siguientes:
 
-- **Cookies técnicas de Cloudflare**, nuestro proveedor de alojamiento, necesarias para servir el sitio web de forma segura y repartir la carga entre servidores. No se usan con fines publicitarios y no requieren tu consentimiento.
-- **Cookies analíticas de Google Analytics**: utilizamos Google Analytics para conocer de forma agregada y anónima cómo se usa el sitio web (páginas más visitadas, procedencia de las visitas) y así poder mejorarlo. Estas cookies solo se instalan si aceptas su uso en el aviso de cookies. Puedes consultar la [política de privacidad de Google](https://policies.google.com/privacy) para más información.
-- **Cookies de Google Maps**: en las páginas del sitio incrustamos un mapa de Google para mostrar la ubicación de la clínica. Al interactuar con el mapa, Google puede instalar sus propias cookies, sujetas a la [política de privacidad de Google](https://policies.google.com/privacy).
+| Cookie | Titular | Tipo | Finalidad | Duración | ¿Requiere consentimiento? |
+| --- | --- | --- | --- | --- | --- |
+| `_ga` | Google (tercero) | Analítica | Distinguir a los visitantes de forma anónima para elaborar estadísticas agregadas de uso. | 2 años | Sí |
+| `_ga_WG0JW6FWEC` | Google (tercero) | Analítica | Mantener el estado de la sesión de navegación. | 2 años | Sí |
+| `doria-cookies` (almacenamiento local) | Doria Clinic (propia) | Técnica | Recordar tu decisión sobre las cookies. | 12 meses | No, es estrictamente necesaria |
 
-Ningún botón de contacto de este sitio web (WhatsApp, llamada, correo) instala cookies: simplemente abren la aplicación correspondiente en tu dispositivo.
+- **Cookies analíticas de Google Analytics.** Utilizamos Google Analytics para conocer, de forma agregada, cómo se usa el sitio web (páginas más visitadas, procedencia de las visitas) y así poder mejorarlo. **Solo se instalan si las aceptas** en el aviso de cookies; mientras no lo hagas, no se carga ningún recurso de Google Analytics. Los datos son tratados por Google Ireland Ltd. y pueden implicar una transferencia a Estados Unidos, amparada en las garantías previstas por el RGPD (como el Marco de Privacidad de Datos UE-EE. UU.). Más información en la [política de privacidad de Google](https://policies.google.com/privacy).
+- **Alojamiento web.** El sitio se sirve desde Netlify, que no instala ninguna cookie en tu navegador al visitar esta web.
+- **Mapa.** El mapa del pie de página es una imagen estática de OpenStreetMap alojada en nuestro propio servidor: no se conecta con terceros ni instala cookies. Si pulsas «Abrir en Google Maps» saldrás de nuestro sitio web y se aplicarán las condiciones y la política de cookies de Google.
+- **Redes sociales y botones de contacto.** Los enlaces a Instagram y a otras redes, y los botones de WhatsApp, llamada o correo, simplemente te llevan al servicio correspondiente o abren la aplicación en tu dispositivo; no cargan contenido de terceros en nuestra web ni instalan cookies.
 
 ## Cómo gestionar tu consentimiento
 
-Al entrar por primera vez al sitio web puedes aceptar o rechazar las cookies analíticas desde el aviso que aparece en pantalla. Si las rechazas, no se instalará ninguna cookie de Google Analytics. También puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de tu navegador; ten en cuenta que bloquear las cookies de Google Maps puede impedir que el mapa se muestre correctamente.
+- Al entrar por primera vez en el sitio web verás un aviso donde puedes **aceptar o rechazar** las cookies analíticas, con la misma facilidad. Puedes seguir navegando sin aceptarlas.
+- Puedes **cambiar o retirar tu decisión en cualquier momento** desde el enlace «Configurar cookies» que encontrarás en el pie de página de todas las páginas. Si las rechazas después de haberlas aceptado, eliminamos las cookies de Google Analytics de tu navegador.
+- Guardamos tu decisión durante 12 meses; pasado ese tiempo volveremos a preguntarte.
+- También puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (consulta su menú de ayuda).
 
 ## Cambios en esta política
 
-Actualizaremos esta página si en el futuro incorporamos nuevas herramientas o servicios que utilicen cookies.
+Actualizaremos esta página si en el futuro incorporamos nuevas herramientas o servicios que utilicen cookies o tecnologías similares.

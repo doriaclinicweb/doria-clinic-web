@@ -296,8 +296,13 @@ a { color: inherit; }
 .rrss-texto strong { font-family: var(--display); font-weight: 400; font-size: 1.05rem; }
 .rrss-texto span:last-child { font-size: 0.88rem; color: #556055; }
 .rrss-flecha { margin-left: auto; font-family: var(--display); font-size: 1.2rem; }
-.mapa { width: 100%; height: clamp(300px, 32vw, 440px); overflow: hidden; filter: grayscale(55%) sepia(8%) contrast(1.05) brightness(0.98); }
-.mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+.mapa { position: relative; width: 100%; height: clamp(300px, 32vw, 440px); overflow: hidden; background: #e8e6df; }
+.mapa-enlace { display: block; width: 100%; height: 100%; }
+.mapa img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: grayscale(55%) sepia(8%) contrast(1.05) brightness(0.98); }
+.mapa-abrir { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: 1.4rem; background: var(--verde); color: var(--crema); font-family: var(--display); font-size: 0.95rem; padding: 0.65rem 1.2rem; border-radius: 999px; box-shadow: 0 2px 10px rgba(0,0,0,.2); transition: opacity .2s; }
+.mapa-enlace:hover .mapa-abrir { opacity: 0.88; }
+.mapa-atribucion { position: absolute; right: 0; bottom: 0; background: rgba(255,255,255,.8); color: #333; font-size: 0.7rem; padding: 0.15rem 0.55rem; text-decoration: none; }
+.mapa-atribucion:hover { text-decoration: underline; }
 
 .pie { background: var(--verde); color: var(--crema); padding: clamp(3rem, 6vw, 5rem) 0 2rem; }
 .pie .cuerpo { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 2.5rem; align-items: start; }
@@ -496,6 +501,12 @@ a { color: inherit; }
 .cookie-banner p { margin: 0; font-size: 0.9rem; max-width: 68ch; color: rgba(255,254,247,.9); }
 .cookie-banner a { color: var(--crema); }
 .cookie-banner-acciones { display: flex; gap: 0.6rem; flex: 0 0 auto; }
-.cookie-banner button { font-family: var(--display); font-size: 0.9rem; padding: 0.55rem 1.2rem; border-radius: 999px; border: 1px solid var(--crema); background: transparent; color: var(--crema); cursor: pointer; }
-.cookie-banner button.aceptar { background: var(--crema); color: var(--verde); }
+.cookie-banner button { font-family: var(--display); font-size: 0.9rem; padding: 0.55rem 1.4rem; min-width: 7.5rem; border-radius: 999px; border: 1px solid var(--crema); background: var(--crema); color: var(--verde); cursor: pointer; }
 .cookie-banner button:hover { opacity: 0.85; }
+.pie .enlace-boton { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; }
+.pie .enlace-boton:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Tablas en contenido markdown (p. ej. tabla de cookies de la política) */
+main table { display: block; overflow-x: auto; border-collapse: collapse; width: 100%; font-size: 0.92rem; margin: 1.4rem 0; }
+main th, main td { border: 1px solid rgba(77,94,79,.25); padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
+main th { background: var(--gris); font-family: var(--display); font-weight: 400; }

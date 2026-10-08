@@ -44,6 +44,7 @@ const t = {
     avisoLegal: 'Avís legal',
     privacidad: 'Política de privacitat',
     cookies: 'Política de cookies',
+    configCookies: 'Configurar cookies',
     legal:
       "El contingut sobre salut d'aquesta web està redactat i revisat per l'equip clínic de Doria Clinic. No rebem finançament extern ni allotgem publicitat de tercers. La informació publicada complementa, però no substitueix, la relació entre el professional sanitari i el pacient.",
     financiacionEtiqueta: 'Amb Tu Medicina Financiada · Centre Premium',
@@ -67,6 +68,7 @@ const t = {
     avisoLegal: 'Legal notice',
     privacidad: 'Privacy policy',
     cookies: 'Cookie policy',
+    configCookies: 'Cookie settings',
     legal:
       'The health content on this website is written and reviewed by the Doria Clinic clinical team. We receive no external funding and host no third-party advertising. The information published complements, but does not replace, the relationship between healthcare professional and patient.',
     financiacionEtiqueta: 'With Tu Medicina Financiada · Premium Centre',
@@ -90,6 +92,7 @@ const t = {
     avisoLegal: 'Aviso legal',
     privacidad: 'Política de privacidad',
     cookies: 'Política de cookies',
+    configCookies: 'Configurar cookies',
     legal:
       'El contenido sobre salud de esta web está redactado y revisado por el equipo clínico de Doria Clinic. No recibimos financiación externa ni alojamos publicidad de terceros. La información publicada complementa, pero no sustituye, la relación entre el profesional sanitario y el paciente.',
     financiacionEtiqueta: 'Con Tu Medicina Financiada · Centro Premium',
@@ -119,16 +122,13 @@ const diasCa = diasTraducidos[idioma] ?? {};
 const franjaCa = franjaTraducida[idioma] ?? {};
 
 const direccionCompleta = `${clinica.direccion.calle}, ${clinica.direccion.codigo_postal} ${clinica.direccion.ciudad}`;
-// Buscamos por el nombre exacto de la ficha de Google Business (no solo
-// "Doria Clinic": es ambiguo y el mapa no devuelve ningún resultado). Así
-// el mapa muestra el pin con el nombre y la tarjeta de la ficha real, en
-// vez de un pin sin etiqueta. Si ese campo se vaciara, caemos a las
-// coordenadas exactas (sin etiqueta) y, en último caso, a la dirección.
-const { lat, lng } = clinica.coordenadas;
-const mapaQuery =
-  clinica.nombre_google_maps ||
-  (lat != null && lng != null ? `${lat},${lng}(${clinica.nombre})` : direccionCompleta);
-const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapaQuery)}&output=embed`;
+// Mapa estático (imagen propia, generada con teselas de OpenStreetMap): no
+// carga nada de terceros ni instala cookies. Para regenerarlo, ver el manual.
+const mapaTextos = {
+  es: { alt: `Mapa con la ubicación de Doria Clinic: ${direccionCompleta}`, abrir: 'Abrir en Google Maps', atribucion: '© colaboradores de OpenStreetMap' },
+  ca: { alt: `Mapa amb la ubicació de Doria Clinic: ${direccionCompleta}`, abrir: 'Obrir a Google Maps', atribucion: '© col·laboradors d’OpenStreetMap' },
+  en: { alt: `Map showing the location of Doria Clinic: ${direccionCompleta}`, abrir: 'Open in Google Maps', atribucion: '© OpenStreetMap contributors' },
+}[idioma];
 
 const redes = [
   clinica.redes.instagram && { nombre: 'Instagram', url: clinica.redes.instagram, icono: 'instagram' },
@@ -165,12 +165,11 @@ const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
 )}
 
 <section class="mapa">
-  <iframe
-    src={mapaSrc}
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title={{ es: 'Mapa de ubicación de Doria Clinic', ca: 'Mapa d’ubicació de Doria Clinic', en: 'Map of Doria Clinic’s location' }[idioma]}
-  ></iframe>
+  <a class="mapa-enlace" href={clinica.google_business_profile} target="_blank" rel="noopener noreferrer" aria-label={mapaTextos.abrir}>
+    <img src="/img/mapa-clinica.webp" alt={mapaTextos.alt} width="2560" height="880" loading="lazy" />
+    <span class="mapa-abrir">{mapaTextos.abrir} <span aria-hidden="true">→</span></span>
+  </a>
+  <a class="mapa-atribucion" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">{mapaTextos.atribucion}</a>
 </section>
 
 <footer class="pie" id="contacto">
@@ -259,6 +258,9 @@ const esPaginaFinanciacion = /^\/(ca\/|en\/)?financiacion\/?$/.test(pathname);
           <li><a href={`${prefijo}/aviso-legal/`}>{t.avisoLegal}</a></li>
           <li><a href={`${prefijo}/politica-privacidad/`}>{t.privacidad}</a></li>
           <li><a href={`${prefijo}/politica-cookies/`}>{t.cookies}</a></li>
+          {clinica.google_analytics_id && (
+            <li><button type="button" class="enlace-boton" onclick="window.doriaAbrirCookies && window.doriaAbrirCookies()">{t.configCookies}</button></li>
+          )}
           {otrosIdiomas.map((o) => (
             <li class="idioma-pie"><a href={o.href}>{o.etiqueta}</a></li>
           ))}

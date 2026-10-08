@@ -2,7 +2,7 @@
 idioma: en
 ruta: politica-privacidad
 titulo: "Privacy policy"
-actualizado: "September 2026"
+actualizado: "October 2026"
 seo:
   titulo_seo: "Privacy Policy | Doria Clinic"
   meta_descripcion: "How Doria Clinic handles the personal data of visitors to this website and of people who contact us by WhatsApp, phone or email."
@@ -11,8 +11,8 @@ seo:
 
 ## 1. Data controller
 
-- Owner: Doria Clinic (trading as «Doria Clinic»)
-- Tax ID (NIF): to be completed
+- Owner: DORIMA DENTAL SLP (trading as «Doria Clinic»)
+- Tax ID (NIF): B22758023
 - Address: Carrer Villarroel, 221, 08036 Barcelona
 - Email: info@doria.clinic
 - Phone: +34 933 534 840
@@ -33,6 +33,8 @@ When you write to us by WhatsApp, email or phone, we process the data you provid
 
 We do not share your data with third parties, except where legally required. If you write to us via WhatsApp, please note that Meta Platforms Ireland Ltd., as the service provider, processes the communication's metadata in accordance with its own privacy policy.
 
+To serve this website we use Netlify, Inc. as our hosting provider, which processes technical connection data (such as your IP address) in its server logs, solely to deliver the website to you and keep it secure. In addition, if you accept analytics cookies, Google Ireland Ltd. processes website usage data (Google Analytics) in accordance with its privacy policy; this information may be transferred to the United States with the safeguards provided for by the GDPR. The legal basis for this processing is your consent, which you can withdraw at any time via "Cookie settings" in the footer.
+
 ## 6. Your rights
 
 You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to [info@doria.clinic](mailto:info@doria.clinic) or by post to Carrer Villarroel, 221, 08036 Barcelona, enclosing a copy of a document proving your identity. You may also lodge a complaint with the Spanish Data Protection Agency (AEPD) ([aepd.es](https://www.aepd.es)) if you believe we have not properly handled your request.
@@ -43,7 +45,7 @@ We only keep the data from the communications you send us for as long as necessa
 
 ## 8. Cookies
 
-This website uses first-party and third-party cookies. You can find the details in our [cookie policy](/en/politica-cookies/).
+This website only uses Google Analytics analytics cookies, and only if you accept them, plus a first-party technical storage item to remember your choice. You can find the details and manage your consent in our [cookie policy](/en/politica-cookies/).
 
 ## 9. Changes to this policy
 

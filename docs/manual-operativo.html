@@ -196,7 +196,7 @@
     <div><strong>Sitio:</strong> https://doria.clinic</div>
     <div><strong>Repositorio:</strong> github.com/doriaclinicweb/doria-clinic-web</div>
     <div><strong>Documento preparado con:</strong> Claude Code (Anthropic), a petición de Nacho Rodés</div>
-    <div><strong>Fecha:</strong> 17 de septiembre de 2026 (v2 — incluye la migración de alojamiento de Cloudflare Pages a Netlify)</div>
+    <div><strong>Fecha:</strong> 8 de octubre de 2026 (v3 — incluye la migración a Netlify y la revisión de cookies y mapa)</div>
     <div><strong>Confidencial</strong> — de uso interno de Doria Clinic. No contiene contraseñas (ver sección 4).</div>
   </div>
 </section>
@@ -419,7 +419,7 @@
   <li>El orden y la aparición de los módulos compartidos (dónde sale «Tu primera visita», el carrusel de reseñas o «Por qué elegirnos» en cada tipo de página).</li>
   <li>Añadir una red social nueva a los iconos del pie de página (hay que añadir el icono en el código; una vez añadido, su URL sí se podrá editar desde el CMS).</li>
   <li>Crear un tipo de página nuevo, o cambiar los enlaces del menú de navegación.</li>
-  <li>El comportamiento del carrusel de reseñas, el banner de cookies, el mapa incrustado, o cualquier otra pieza interactiva.</li>
+  <li>El comportamiento del carrusel de reseñas, el banner de cookies, el mapa del pie de página, o cualquier otra pieza interactiva.</li>
   <li>Las reglas de redirección del dominio o la configuración de DNS.</li>
   <li>Añadir nuevos campos a una colección de contenido (por ejemplo, si mañana se quisiera añadir un campo «vídeo» a los tratamientos).</li>
 </ul>
@@ -451,12 +451,12 @@
 <table>
   <tr><th>Archivo</th><th>Qué hace</th></tr>
   <tr><td>Header.astro</td><td>Cabecera con navegación, incluido el menú móvil con selector de idioma</td></tr>
-  <tr><td>Footer.astro</td><td>Pie de página: banner de financiación, redes sociales, mapa, wordmark de cierre</td></tr>
+  <tr><td>Footer.astro</td><td>Pie de página: banner de financiación, redes sociales, mapa (imagen estática), enlace «Configurar cookies», wordmark de cierre</td></tr>
   <tr><td>PrimeraVisitaModulo.astro</td><td>Bloque «Tu primera visita», repetido en todas las páginas</td></tr>
   <tr><td>ReviewsModulo.astro</td><td>Carrusel de reseñas de Google, repetido en todas las páginas</td></tr>
   <tr><td>PorQueElegirnosModulo.astro</td><td>Bloque «¿Por qué elegirnos?», repetido en todas las páginas</td></tr>
   <tr><td>EquipoModulo.astro</td><td>Bloque de fichas de equipo en páginas de especialidad/tratamiento</td></tr>
-  <tr><td>CookieBanner.astro</td><td>Banner de consentimiento de cookies, controla si se carga Google Analytics</td></tr>
+  <tr><td>CookieBanner.astro</td><td>Banner de consentimiento de cookies: controla si se carga Google Analytics, guarda la decisión 12 meses y permite retirarla</td></tr>
 </table>
 <div class="callout aviso">
   <span class="titulo-callout">Particularidad importante para desarrolladores</span>
@@ -507,10 +507,22 @@
 
 <h1>10. Analítica, cookies y SEO</h1>
 <ul>
-  <li><strong>Google Analytics 4</strong> (ID <span class="codigo">G-WG0JW6FWEC</span>) está integrado, pero solo se activa si la persona visitante acepta las cookies analíticas en el banner de consentimiento — cumpliendo el RGPD. Se puede desactivar del todo vaciando el campo correspondiente en Ajustes (sección 5.8).</li>
+  <li><strong>Google Analytics 4</strong> (ID <span class="codigo">G-WG0JW6FWEC</span>) está integrado, pero solo se activa si la persona visitante acepta las cookies analíticas en el banner de consentimiento — cumpliendo el RGPD y la LSSI. Se puede desactivar del todo vaciando el campo correspondiente en Ajustes (sección 5.8): sin ID, desaparecen el banner y el enlace «Configurar cookies».</li>
   <li>Cada página tiene sus propios metadatos SEO editables desde el CMS: título en Google, descripción, y la opción de ocultarla de los buscadores.</li>
   <li>El sitio genera automáticamente un mapa del sitio en <span class="codigo">/sitemap-index.xml</span>, enviado a Google Search Console para facilitar la indexación.</li>
   <li>El contenido está enlazado internamente de forma extensa a propósito (especialidades, tratamientos, fichas de doctores y la página de financiación se citan entre sí) como estrategia de posicionamiento SEO.</li>
+</ul>
+
+<h2>10.1 Cookies: cómo funciona y qué mantener</h2>
+<ul>
+  <li><strong>Banner.</strong> Aparece en la primera visita con los botones «Rechazar» y «Aceptar» con el mismo aspecto y peso visual (requisito de la AEPD). La web se puede usar sin aceptar. No se carga nada de Google Analytics hasta que se acepta.</li>
+  <li><strong>Retirar el consentimiento.</strong> El enlace «Configurar cookies» del pie de página reabre el aviso en cualquier momento. Si se rechaza tras haber aceptado, se borran las cookies <span class="codigo">_ga</span> y <span class="codigo">_ga_WG0JW6FWEC</span> y se detiene la medición.</li>
+  <li><strong>Caducidad.</strong> La decisión se guarda 12 meses en el navegador (almacenamiento local, clave <span class="codigo">doria-cookies</span>); después se vuelve a preguntar.</li>
+  <li><strong>Mapa sin cookies.</strong> El mapa del pie es una imagen propia (<span class="codigo">public/img/mapa-clinica.webp</span>) generada con teselas de OpenStreetMap, con su atribución visible, y un botón «Abrir en Google Maps» que sale de la web. No hay iframe de Google, por lo que no hay cookies de terceros ni conexión con Google al cargar la página. Si la clínica cambiara de dirección habría que regenerar la imagen.</li>
+  <li><strong>Hosting.</strong> Netlify no envía cookies en esta web (verificado con las cabeceras HTTP). Cloudflare solo hace de DNS y el Worker del CMS solo se usa en <span class="codigo">/admin</span>.</li>
+  <li><strong>Qué revisar si se añade algo nuevo.</strong> Cualquier herramienta que cargue contenido de terceros (un vídeo de YouTube, un widget de reservas, un píxel de Meta o de Google Ads, un chat, Google Fonts desde Google) puede instalar cookies o enviar la IP del visitante. Antes de añadirla hay que: (1) bloquearla hasta que haya consentimiento, (2) añadirla a la tabla de la política de cookies en los 3 idiomas, y (3) actualizar la política de privacidad.</li>
+  <li><strong>Ajustes de la cuenta de Google Analytics (los gestiona la clínica, no el código).</strong> En analytics.google.com conviene tener la retención de datos en 2 o 14 meses (Administrar → Recopilación y modificación de datos → Retención de datos) y las señales de Google y la personalización de anuncios desactivadas. El código ya las desactiva, pero conviene que coincida con el panel.</li>
+  <li><strong>Identificación de la titular.</strong> El aviso legal, la política de privacidad y la de cookies identifican a DORIMA DENTAL SLP (NIF B22758023, Carrer Villarroel 221, Barcelona), como exige la LSSI. Si cambiaran los datos societarios hay que actualizarlos en los 9 archivos de «Páginas legales» del CMS.</li>
 </ul>
 
 <h1>11. Automatización pendiente: valoración de Google</h1>
