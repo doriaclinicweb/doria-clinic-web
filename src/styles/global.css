@@ -223,7 +223,8 @@ a { color: inherit; }
 .visita { background: var(--verde); color: var(--crema); }
 .visita .cuerpo { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .visita p { color: rgba(255,254,247,.9); }
-.insignia-gratis { display: inline-block; margin-bottom: 1rem; padding: 0.4rem 0.9rem; border-radius: 999px; background: var(--crema); color: var(--verde); font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.02em; }
+.visita .visita-gratis { position: relative; margin: 1.1rem 0 0; padding-left: 1.7rem; font-family: var(--display); font-size: 1rem; color: var(--crema); }
+.visita .visita-gratis::before { content: "✓"; position: absolute; left: 0; top: 0.05em; }
 .visita ul { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-direction: column; gap: 0.9rem; }
 .visita li { position: relative; padding-left: 1.7rem; font-family: var(--display); }
 .visita li::before { content: "✓"; position: absolute; left: 0; top: 0.05em; }

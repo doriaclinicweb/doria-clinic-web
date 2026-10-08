@@ -18,12 +18,12 @@ const wa = clinica.software_citas;
 <section class="seccion visita">
   <div class="wrap cuerpo">
     <div>
-      {clinica.primera_visita_gratuita && <span class="insignia-gratis">{textoGratis}</span>}
       <h2>{titulo}</h2>
       <p>{texto}</p>
       <div class="acciones" style="margin-top:2rem">
         <a class="boton boton-primario" href={wa} target="_blank" rel="noopener noreferrer">{cta}</a>
       </div>
+      {clinica.primera_visita_gratuita && <p class="visita-gratis">{textoGratis}</p>}
     </div>
     <ul>
       {puntos.map((p: string) => <li>{p}</li>)}
