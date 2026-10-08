@@ -267,7 +267,7 @@ const schema = {
         window.addEventListener('resize', actualizarFlechas);
         actualizarFlechas();
 
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (!carrusel.hasAttribute('data-sin-auto') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
           const velocidad = 26; // px/s
           const signo = carrusel.dataset.dirAuto === '1' ? 1 : -1;
           let activo = true;

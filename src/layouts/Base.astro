@@ -155,7 +155,7 @@ const schemaMigas = {
       // contenido hacia la izquierda (scrollLeft creciente); cualquier
       // otro valor (u omitido) lo desplaza hacia la derecha. Se pausa
       // con el ratón/dedo encima o al usar las flechas manuales, y no
-      // se activa con prefers-reduced-motion. Compartido por todos los
+      // se activa con prefers-reduced-motion ni si lleva data-sin-auto (solo flechas). Compartido por todos los
       // carruseles automáticos del sitio: solo debe cargarse una vez
       // por página (ver la copia gemela en PaginaInicio.astro, que no
       // usa esta plantilla).
@@ -183,7 +183,7 @@ const schemaMigas = {
         window.addEventListener('resize', actualizarFlechas);
         actualizarFlechas();
 
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (!carrusel.hasAttribute('data-sin-auto') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
           const velocidad = 26; // px/s
           const signo = carrusel.dataset.dirAuto === '1' ? 1 : -1;
           let activo = true;
