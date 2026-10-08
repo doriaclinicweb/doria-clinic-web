@@ -1,6 +1,8 @@
 ---
 idioma: es
-hero_titular: Nuestra especialidad es tu bienestar
+hero_titular: |-
+  Nuestra especialidad
+  es tu bienestar
 hero_entradilla: Clínica dental en el Eixample especializada en salud bucodental, estética y atención al deportista.
 hero_imagenes:
   - src: /img/1-10.jpg
