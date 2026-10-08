@@ -235,6 +235,20 @@ a { color: inherit; }
 .espacio { overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent); }
 .espacio-pista { display: flex; width: max-content; gap: clamp(0.8rem, 2vw, 1.4rem); animation: espacio-desfile 65s linear infinite; }
 .espacio-pista img { height: clamp(9rem, 22vw, 16rem); width: auto; flex: 0 0 auto; object-fit: cover; display: block; border-radius: calc(20 * var(--size)); }
+.espacio-foto { flex: 0 0 auto; display: block; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in; border-radius: calc(20 * var(--size)); }
+.visor { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--crema); }
+.visor[open] { display: flex; align-items: center; justify-content: center; }
+.visor::backdrop { background: rgba(20, 28, 22, 0.93); }
+.visor figure { margin: 0; max-width: min(92vw, 1400px); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+.visor img { max-width: 100%; max-height: 78vh; width: auto; height: auto; object-fit: contain; border-radius: 12px; display: block; }
+.visor figcaption { font-size: 0.95rem; text-align: center; color: rgba(255,254,247,.85); }
+.visor-cerrar, .visor-flecha { position: absolute; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid rgba(255,254,247,.5); background: rgba(20,28,22,.55); color: var(--crema); font-size: 1.7rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0 0 0.15rem; }
+.visor-cerrar:hover, .visor-flecha:hover { background: rgba(255,254,247,.18); }
+.visor-cerrar { top: 1rem; right: 1rem; }
+.visor-flecha { top: 50%; transform: translateY(-50%); }
+.visor-flecha.anterior { left: clamp(0.5rem, 2vw, 1.5rem); }
+.visor-flecha.siguiente { right: clamp(0.5rem, 2vw, 1.5rem); }
+@media (max-width: 700px) { .visor-flecha { top: auto; bottom: 1rem; transform: none; } .visor img { max-height: 70vh; } }
 .espacio:hover .espacio-pista { animation-play-state: paused; }
 @keyframes espacio-desfile { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .espacio-pista { animation: none; overflow-x: auto; } }

@@ -21,6 +21,11 @@ const d = home.data;
 
 const prefijo = idioma === 'es' ? '' : '/' + idioma;
 const base = inicioDe(idioma);
+const visorT = {
+  es: { abrir: 'Ampliar foto', cerrar: 'Cerrar', anterior: 'Foto anterior', siguiente: 'Foto siguiente', visor: 'Fotos de las instalaciones' },
+  ca: { abrir: 'Ampliar foto', cerrar: 'Tancar', anterior: 'Foto anterior', siguiente: 'Foto següent', visor: 'Fotos de les instal·lacions' },
+  en: { abrir: 'Enlarge photo', cerrar: 'Close', anterior: 'Previous photo', siguiente: 'Next photo', visor: 'Facilities photos' },
+}[idioma];
 const canonical = `https://doria.clinic${base}`;
 
 const especialidades = (await getCollection('especialidades', (e) => e.data.idioma === idioma && e.data.mostrar_en_home))
@@ -161,13 +166,23 @@ const schema = {
           <div class="espacio-pista">
             {[...d.instalaciones_imagenes, ...d.instalaciones_imagenes].map((img, i) => (
               i < d.instalaciones_imagenes.length
-                ? <img src={img.src} alt={img.alt} loading="lazy" />
-                : <img src={img.src} alt="" aria-hidden="true" loading="lazy" />
+                ? <button type="button" class="espacio-foto" data-indice={i} aria-label={`${visorT.abrir}: ${img.alt}`}><img src={img.src} alt="" loading="lazy" /></button>
+                : <button type="button" class="espacio-foto" data-indice={i - d.instalaciones_imagenes.length} tabindex="-1" aria-hidden="true"><img src={img.src} alt="" loading="lazy" /></button>
             ))}
           </div>
         </div>
       </div>
     </section>
+
+    <dialog id="espacio-visor" class="visor" aria-label={visorT.visor} data-fotos={JSON.stringify(d.instalaciones_imagenes)}>
+      <button type="button" class="visor-cerrar" aria-label={visorT.cerrar}>×</button>
+      <button type="button" class="visor-flecha anterior" aria-label={visorT.anterior}>‹</button>
+      <figure>
+        <img id="visor-img" src="" alt="" />
+        <figcaption id="visor-pie"></figcaption>
+      </figure>
+      <button type="button" class="visor-flecha siguiente" aria-label={visorT.siguiente}>›</button>
+    </dialog>
 
     <Footer />
     <CookieBanner idioma={idioma} />
@@ -298,6 +313,46 @@ const schema = {
           });
         }
       });
+
+      // Visor de fotos de las instalaciones: al pulsar una foto se abre a
+      // pantalla grande (flechas, teclado, deslizar y Esc para cerrar).
+      const visor = document.getElementById('espacio-visor') as HTMLDialogElement | null;
+      if (visor) {
+        const fotos: { src: string; alt: string }[] = JSON.parse(visor.dataset.fotos || '[]');
+        const img = visor.querySelector<HTMLImageElement>('#visor-img')!;
+        const pie = visor.querySelector<HTMLElement>('#visor-pie')!;
+        let actual = 0;
+        const mostrar = (i: number) => {
+          actual = (i + fotos.length) % fotos.length;
+          img.src = fotos[actual].src;
+          img.alt = fotos[actual].alt;
+          pie.textContent = `${fotos[actual].alt} · ${actual + 1} / ${fotos.length}`;
+        };
+        document.querySelectorAll<HTMLButtonElement>('.espacio-foto').forEach((b) => {
+          b.addEventListener('click', () => {
+            mostrar(Number(b.dataset.indice));
+            visor.showModal();
+            document.body.style.overflow = 'hidden';
+          });
+        });
+        visor.querySelector('.visor-cerrar')!.addEventListener('click', () => visor.close());
+        visor.querySelector('.anterior')!.addEventListener('click', () => mostrar(actual - 1));
+        visor.querySelector('.siguiente')!.addEventListener('click', () => mostrar(actual + 1));
+        visor.addEventListener('click', (e) => { if (e.target === visor) visor.close(); });
+        visor.addEventListener('close', () => { document.body.style.overflow = ''; });
+        visor.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') mostrar(actual - 1);
+          if (e.key === 'ArrowRight') mostrar(actual + 1);
+        });
+        let x0: number | null = null;
+        visor.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+        visor.addEventListener('touchend', (e) => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0;
+          x0 = null;
+          if (Math.abs(dx) > 50) mostrar(actual + (dx < 0 ? 1 : -1));
+        });
+      }
     </script>
   </body>
 </html>
