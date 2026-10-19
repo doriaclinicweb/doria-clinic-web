@@ -1,8 +1,8 @@
 ---
-idioma: es
+idioma: en
 ruta: instalaciones
-titulo: Instalaciones
-lede: 'Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma.'
+titulo: Instalacions
+lede: 'Your well-being is our top priority. Every corner is thoughtfully designed to make you feel comfortable: natural light, warm materials, and an atmosphere that inspires calm and trust. A place where you can feel you’re in good hands.'
 actualizado: ''
 seo:
   titulo_seo: Instalaciones Doria clinic
