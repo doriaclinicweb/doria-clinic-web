@@ -1,8 +1,8 @@
 ---
-idioma: ca
+idioma: es
 ruta: instalaciones
 titulo: Instalacions
-lede: 'El teu benestar és el més important per a nosaltres. Cada racó està pensat perquè et sentis còmode: llum natural, materials càlids i un ambient que transmet calma i confiança. Un espai on et puguis sentir en bones mans.'
+lede: 'Tu bienestar es lo más importante para nosotros. Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma y en confianza. Donde puedas sentirte en buenas manos.'
 actualizado: ''
 seo:
   titulo_seo: Instalaciones Doria clinic
