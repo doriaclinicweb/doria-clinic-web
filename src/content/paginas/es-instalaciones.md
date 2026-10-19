@@ -1,8 +1,8 @@
 ---
-idioma: en
+idioma: ca
 ruta: instalaciones
 titulo: Instalacions
-lede: 'Your well-being is our top priority. Every corner is thoughtfully designed to make you feel comfortable: natural light, warm materials, and an atmosphere that inspires calm and trust. A place where you can feel you’re in good hands.'
+lede: 'El teu benestar és el més important per a nosaltres. Cada racó està pensat perquè et sentis còmode: llum natural, materials càlids i un ambient que transmet calma i confiança. Un espai on et puguis sentir en bones mans.'
 actualizado: ''
 seo:
   titulo_seo: Instalaciones Doria clinic
