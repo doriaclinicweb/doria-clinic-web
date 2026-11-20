@@ -3,7 +3,7 @@ idioma: es
 ruta: instalaciones
 titulo: Instalacions
 lede: 'Tu bienestar es lo más importante para nosotros. Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma y en confianza. Donde puedas sentirte en buenas manos.'
-actualizado: ''
+actualizado: Noviembre 2026
 seo:
   titulo_seo: Instalaciones Doria clinic
   meta_descripcion: 'Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma y en confianza.'
