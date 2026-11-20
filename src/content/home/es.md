@@ -24,7 +24,7 @@ intro_parrafos:
 tratamientos_titulo: Tratamientos
 equipo_titulo: 'Más que dentistas: tu equipo de confianza'
 instalaciones_titulo: Instalaciones
-instalaciones_texto: 'Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma.'
+instalaciones_texto: 'Tu bienestar es lo más importante para nosotros. Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma y en confianza. Donde puedas sentirte en buenas manos.'
 instalaciones_imagenes:
   - src: /img/3-10.jpg
     alt: Odontopediatra explicando el tratamiento a un niño
