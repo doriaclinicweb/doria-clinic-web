@@ -6,7 +6,7 @@ lede: 'Tu bienestar es lo más importante para nosotros. Cada rincón está pens
 actualizado: ''
 seo:
   titulo_seo: Instalaciones Doria clinic
-  meta_descripcion: 'Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma.'
+  meta_descripcion: 'Cada rincón está pensado para que te sientas cómodo: luz natural, materiales cálidos y un ambiente que transmite calma y en confianza.'
   noindex: false
 ---
 
